@@ -4,7 +4,6 @@ from flask_login import UserMixin
 from .server_member import server_member
 
 
-
 class User(db.Model, UserMixin):
     __tablename__ = 'users'
 
