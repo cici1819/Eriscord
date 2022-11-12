@@ -17,10 +17,10 @@ class Server(db.Model):
 
 
     user_s = db.relationship("User", back_populates="server_u")
-    # channel_s = db.relationship(
-    #     "Channel", back_populates="server_c", cascade='all, delete')
-    # message_s = db.relationship(
-    #     "Message", back_populates="server_m", cascade='all, delete')
+    channel_s = db.relationship(
+        "Channel", back_populates="server_c", cascade='all, delete')
+    message_s = db.relationship(
+        "Message", back_populates="server_m", cascade='all, delete')
 
     server_server_members = db.relationship(
         "User",
@@ -49,7 +49,7 @@ class Server(db.Model):
             "description": self.description,
             "img": self.img,
             "is_dm": self.is_dm,
-            # "messages": [message.to_dict() for message in self.message_s]
+            "messages": [message.to_dict() for message in self.message_s]
         }
         return server_dm_dict
 
@@ -61,7 +61,7 @@ class Server(db.Model):
             "description": self.description,
             "img": self.img,
             "is_dm": self.is_dm,
-            # "channels": [channel.to_dict() for channel in self.channel_s],
+            "channels": [channel.to_dict() for channel in self.channel_s],
             "users": [user.to_dict() for user in self.user_s]
         }
         return server_regular_dict

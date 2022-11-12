@@ -4,6 +4,7 @@ from flask_login import UserMixin
 from .server_member import server_member
 
 
+
 class User(db.Model, UserMixin):
     __tablename__ = 'users'
 
@@ -18,8 +19,8 @@ class User(db.Model, UserMixin):
 
     server_u = db.relationship(
         "Server", back_populates="user_s", cascade='all, delete')
-    # message_u = db.relationship(
-    #     "Message", back_populates="user_m", cascade='all, delete')
+    message_u = db.relationship(
+        "Message", back_populates="user_m", cascade='all, delete')
 
     user_server_member = db.relationship(
         "Server",
