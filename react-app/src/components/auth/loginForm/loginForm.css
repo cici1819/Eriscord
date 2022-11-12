@@ -1,5 +1,98 @@
-
+.login-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: aqua;
+    width: 100vw;
+    height:100vh;
+}
 .login-form {
-    background-color: rgb(40, 38, 38);
-   
+    background-color: rgb(54, 57, 63);
+    border-radius:8px;
+    width: 450px;
+    height: 430px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+.welcome-title{
+    color: white;
+    font-size: 16px;
+
+}
+.welcome-content {
+    color: rgb(100,102,107);
+    font-size: 14px;
+    margin-top: -15px;
+}
+
+.error-lists{
+    margin-top: -10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 10px;
+    width: 95%;
+    font-size:10px;
+    color:white ;
+    font-weight: 600;
+}
+.e-p-input-div{
+    margin-top: 10px;
+    /* background-color: bisque; */
+    display: inline-block;
+
+}
+.e-font {
+    position: relative;
+    margin-right: 360px;
+    color: rgb(159,161,165);
+    font-size: 13px;
+    margin-bottom: 10px;
+}
+.e-p-input-div input{
+    position: relative;
+    /* background-color: antiquewhite; */
+    margin-right: 220px;
+    width: 95%;
+    height: 33px;
+    border-radius: 8px;
+    background-color: black;
+    border-color:rgb(54, 57, 63) ;
+ }
+
+ .p-font{
+    position: relative;
+    color: rgb(159,161,165);
+    font-size: 13px;
+    margin-bottom: 10px;
+    margin-right: 330px;
+ }
+.login-button button{
+    margin-top: 20px;
+    background-color:rgb(71,82,196) ;
+    color: white;
+    width: 96%;
+    height: 40px;
+    margin-right: 95px;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+
+.link-register > span{
+color: rgb(100,102,107);
+font-size: 15px;
+margin-left: 30px;
+
+}
+
+.link-register{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+.Demo-button{
+
 }

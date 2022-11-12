@@ -1,10 +1,15 @@
 .demo-user-login-button{
     border: none;
-    background-color: grey;
-    font-size: 20px;
-    cursor: pointer;
+    background-color: rgb(71,82,196);
+    font-size: 15px;
     border-radius: 8px;
-    width: 20%;
+    width: 85%;
     color:white;
     height: 40px;
+    margin-left: -15px;
+    margin-bottom: 20px;
 }
+
+/* .demo-user-login-button:hover {
+    filter: brightness(90%)
+} */
