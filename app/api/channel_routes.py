@@ -12,15 +12,16 @@ channel_routes = Blueprint('channels', __name__)
 def get_channel_by_id(channel_id):
     channel = Channel.query.get(channel_id)
 
-    return channel.to_dict(), 200 if channel else {"errors": "Channel couldn't be found"}, 404
+    return channel.to_dict_messages() if channel else {"errors": "Channel couldn't be found"}, 404
 
 
 
 @channel_routes.route('/new', methods= ["POST"])
+@login_required
 def add_channel():
     # args = request.args
     # console.log("args!!!!", args)
-    
+
     form= ChannelForm()
     if form.validate_on_submit():
         new_channel= Channel(
