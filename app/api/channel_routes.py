@@ -16,6 +16,21 @@ def get_channel_by_id(channel_id):
 
 
 
+@channel_routes.route('/new', methods= ["POST"])
+def add_channel():
+    form= ChannelForm()
+    if form.validate_on_submit():
+        new_channel= Channel(
+            name= form.data["name"],
+            topic= form.data["topic"]
+            )
+        db.session.add(new_channel)
+        db.session.commit()
+        return {"messages": "Channel created successfully"}, 200
+    else:
+        return form.errors
+
+
 
 @channel_routes.route('/<int:channel_id>', methods=['POST'])
 @login_required
