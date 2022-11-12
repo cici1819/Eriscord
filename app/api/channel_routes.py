@@ -18,6 +18,9 @@ def get_channel_by_id(channel_id):
 
 @channel_routes.route('/new', methods= ["POST"])
 def add_channel():
+    # args = request.args
+    # console.log("args!!!!", args)
+    
     form= ChannelForm()
     if form.validate_on_submit():
         new_channel= Channel(
