@@ -4,50 +4,50 @@ Colors = ["lightgrey", "lightred", "lightbrown", "lightblue",
           "lightyellow", "lightgreen", "lightsalmon", "lightpink"]
 
 # Adds a demo user, you can add other users here if you want
+demo = User(
+    username='Demo',
+    email='demo@aa.io',
+    password='password',
+    color=Colors[0])
+freya = User(
+    username='Freya',
+    email='freya@aa.io',
+    password='password',
+    color=Colors[1])
+atlas = User(
+    username='Atlas',
+    email='atlas@aa.io',
+    password='password',
+    color=Colors[2])
+helen = User(
+    username='Helen',
+    email='helen@aa.io',
+    password='password',
+    color=Colors[3])
+apollo = User(
+    username='Apollo',
+    email='apollo@aa.io',
+    password='password',
+    color=Colors[4])
+ares = User(
+    username='Ares',
+    email='ares@aa.io',
+    password='password',
+    color=Colors[5])
+athena = User(
+    username='Athena',
+    email='athena@aa.io',
+    password='password',
+    color=Colors[6])
+phoebe = User(
+    username='Phoebe',
+    email='phoebe@aa.io',
+    password='password',
+    color=Colors[7])
 
 
 def seed_users():
-    demo = User(
-        username='Demo',
-        email='demo@aa.io',
-        password='password',
-        color=Colors[0])
-    freya = User(
-        username='Freya',
-        email='freya@aa.io',
-        password='password',
-        color=Colors[1])
-    atlas = User(
-        username='Atlas',
-        email='atlas@aa.io',
-        password='password',
-        color=Colors[2])
-    helen = User(
-        username='Helen',
-        email='helen@aa.io',
-        password='password',
-        color=Colors[3])
-    apollo = User(
-        username='Apollo',
-        email='apollo@aa.io',
-        password='password',
-        color=Colors[4])
-    ares = User(
-        username='Ares',
-        email='ares@aa.io',
-        password='password',
-        color=Colors[5])
-    athena = User(
-        username='Athena',
-        email='athena@aa.io',
-        password='password',
-        color=Colors[6])
-    phoebe = User(
-        username='Phoebe',
-        email='phoebe@aa.io',
-        password='password',
-        color=Colors[7])
-
+   
     db.session.add(demo)
     db.session.add(freya)
     db.session.add(atlas)
