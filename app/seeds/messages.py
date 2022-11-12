@@ -9,7 +9,7 @@ def seed_messages():
         channel_id=2,
         server_id=6,
         created_at=datetime.now(),
-        memberl_id=1
+        sender_id=1
     )
     db.session.add(first)
     second = Message(
@@ -17,7 +17,7 @@ def seed_messages():
         channel_id=2,
         server_id=6,
         created_at=datetime.now(),
-        memberl_id=2
+        sender_id=2
     )
     db.session.add(second)
     third = Message(
@@ -25,7 +25,7 @@ def seed_messages():
         channel_id=2,
         server_id=6,
         created_at=datetime.now(),
-        memberl_id=3
+        sender_id=3
     )
     db.session.add(third)
     fourth = Message(
@@ -33,7 +33,7 @@ def seed_messages():
         channel_id=2,
         server_id=6,
         created_at=datetime.now(),
-        memberl_id=4
+        sender_id=4
     )
     db.session.add(fourth)
     fifth = Message(
@@ -41,7 +41,7 @@ def seed_messages():
         channel_id=2,
         server_id=6,
         created_at=datetime.now(),
-        memberl_id=5
+        sender_id=5
     )
     db.session.add(fifth)
     sixth = Message(
@@ -49,7 +49,7 @@ def seed_messages():
         channel_id=2,
         server_id=6,
         created_at=datetime.now(),
-        memberl_id=1
+        sender_id=1
     )
     db.session.add(sixth)
     seventh = Message(
@@ -57,7 +57,7 @@ def seed_messages():
         channel_id=5,
         server_id=7,
         created_at=datetime.now(),
-        memberl_id=1
+        sender_id=1
     )
     db.session.add(seventh)
     eighth = Message(
@@ -65,7 +65,7 @@ def seed_messages():
         channel_id=5,
         server_id=7,
         created_at=datetime.now(),
-        memberl_id=8
+        sender_id=8
     )
     db.session.add(eighth)
     ninth = Message(
@@ -73,7 +73,7 @@ def seed_messages():
         channel_id=5,
         server_id=7,
         created_at=datetime.now(),
-        memberl_id=1
+        sender_id=1
     )
     db.session.add(ninth)
     tenth = Message(
@@ -81,7 +81,7 @@ def seed_messages():
         channel_id=5,
         server_id=7,
         created_at=datetime.now(),
-        memberl_id=9
+        sender_id=9
     )
     db.session.add(tenth)
     eleventh = Message(
@@ -89,7 +89,7 @@ def seed_messages():
         channel_id=5,
         server_id=7,
         created_at=datetime.now(),
-        memberl_id=10
+        sender_id=10
     )
     db.session.add(eleventh)
     twelfth = Message(
@@ -97,7 +97,7 @@ def seed_messages():
         channel_id=6,
         server_id=7,
         created_at=datetime.now(),
-        memberl_id=1
+        sender_id=1
     )
     db.session.add(twelfth)
     db.session.commit()

@@ -10,14 +10,14 @@ class Message(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     content = db.Column(db.String(255), nullable=False)
     channel_id = db.Column(db.Integer, db.ForeignKey('channels.id'))
-    # server_id = db.Column(db.Integer, db.ForeignKey('servers.id'))
+    server_id = db.Column(db.Integer, db.ForeignKey('servers.id'))
     sender_id = db.Column(
         db.Integer, db.ForeignKey('users.id'), nullable=False)
     created_at = db.Column(db.DateTime, nullable=False)
 
     user_m = db.relationship("User", back_populates="message_u")
     channel_m = db.relationship("Channel", back_populates="message_c")
-    # server_m = db.relationship("Server", back_populates="message_s")
+    server_m = db.relationship("Server", back_populates="message_s")
 
     # stop case:
     def to_dict(self):
@@ -25,11 +25,11 @@ class Message(db.Model):
             "id": self.id,
             "content": self.content,
             "channel_id": self.channel_id,
-            # "server_id": self.server_id,
+            "server_id": self.server_id,
             "sender_id": self.sender_id,
             "created_at": self.created_at,
         }
         return message_dict
 
-    # def __repr__(self):
-    #     return f'<Message model: id={self.id}, content={self.content}, channel_id={self.channel_id}, server_id={self.server_id}, sender_id={self.sender_id}, created_at={self.created_at}>'
+    def __repr__(self):
+        return f'<Message model: id={self.id}, content={self.content}, channel_id={self.channel_id}, server_id={self.server_id}, sender_id={self.sender_id}, created_at={self.created_at}>'
