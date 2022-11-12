@@ -69,7 +69,7 @@
     margin-right: 330px;
  }
 .login-button button{
-    margin-top: 20px;
+    margin-top: 25px;
     background-color:rgb(71,82,196) ;
     color: white;
     width: 96%;
@@ -78,7 +78,7 @@
     border-radius: 8px;
     font-size: 15px;
     font-weight: 500;
-    margin-bottom: 20px;
+    margin-bottom: 25px;
 }
 
 .link-register > span{
@@ -92,7 +92,8 @@ margin-left: 30px;
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
+    gap:25px
 }
-.Demo-button{
+/* .Demo-button{
 
-}
+} */
