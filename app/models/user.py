@@ -18,8 +18,8 @@ class User(db.Model, UserMixin):
 
     # server_u = db.relationship(
     #     "Server", back_populates="user_s", cascade='all, delete')
-    # message_u = db.relationship(
-    #     "Message", back_populates="user_m", cascade='all, delete')
+    message_u = db.relationship(
+        "Message", back_populates="user_m", cascade='all, delete')
 
     # user_server_member = db.relationship(
     #     "Server",
