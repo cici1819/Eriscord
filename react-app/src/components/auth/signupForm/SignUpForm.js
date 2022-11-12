@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux'
 import { Redirect, Link } from 'react-router-dom';
-import { signUp } from '../../store/session';
-import DemoUserLogin from './DemoUser';
+import { signUp } from '../../../store/session';
+import DemoUserLogin from '../DemoUser';
 
 const SignUpForm = () => {
   const [errors, setErrors] = useState([]);
