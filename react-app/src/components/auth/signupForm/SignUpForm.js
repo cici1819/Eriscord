@@ -54,7 +54,7 @@ const SignUpForm = () => {
           <div className='form-title'>
             <h1>Create an account </h1>
           </div>
-          <div className='error-lists'>
+          <div className='error2-lists'>
             {errors.map((error, ind) => (
               <div key={ind}>{error}</div>
             ))}

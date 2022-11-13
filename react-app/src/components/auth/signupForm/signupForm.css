@@ -2,9 +2,9 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: aqua;
     width: 100vw;
     height: 100vh;
+    position: fixed;
 }
 
 .signup-form {
@@ -84,4 +84,17 @@
     border-radius: 8px;
     font-size: 15px;
     font-weight: 500;
+}
+.error2-lists{
+    margin-top: -15px;
+    margin-left: 130px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    height: 10px;
+    width: 95%;
+    font-size:10px;
+    color:rgb(8,157,216);
+    font-weight: 500;
+    margin-bottom: 20px;
 }

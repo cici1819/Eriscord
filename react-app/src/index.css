@@ -29,8 +29,8 @@ input:focus {
    outline: none;
 }
 
-input:focus{
-    color: black;
+input {
+    color:white;
 }
 
 button {

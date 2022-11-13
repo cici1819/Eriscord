@@ -3,10 +3,10 @@
     background-color: rgb(88,101,242);
     font-size: 15px;
     border-radius: 8px;
-    width: 85%;
+    width: 83%;
     color:white;
     height: 40px;
-    margin-left: -15px;
+    /* margin-left: -1px; */
     margin-bottom: 25px;
 }
 
