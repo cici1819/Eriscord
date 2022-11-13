@@ -2,9 +2,9 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: aqua;
     width: 100vw;
     height: 100vh;
+    position: fixed;
 }
 
 .signup-form {
