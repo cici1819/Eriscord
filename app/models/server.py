@@ -62,7 +62,7 @@ class Server(db.Model):
             "img": self.img,
             "is_dm": self.is_dm,
             "channels": [channel.to_dict() for channel in self.channel_s],
-            "users": [user.to_dict() for user in self.user_s]
+            "users": [user.to_dict() for user in self.server_server_members]
         }
         return server_regular_dict
 

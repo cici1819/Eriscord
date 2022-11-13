@@ -1,0 +1,87 @@
+.signup-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: aqua;
+    width: 100vw;
+    height: 100vh;
+}
+
+.signup-form {
+    background-color: rgb(54, 57, 63);
+    border-radius: 8px;
+    width: 500px;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.form-title {
+    color: white;
+    font-size: 16px;
+}
+
+.u-e-p-c-div {
+    margin-top: 10px;
+    /* background-color: bisque; */
+    /* display: inline-block; */
+}
+
+.u-font {
+    position: relative;
+    margin-right: 380px;
+    color: rgb(159, 161, 165);
+    font-size: 13px;
+    margin-bottom: 10px;
+}
+
+.c-p-font {
+    position: relative;
+    margin-right: 320px;
+    color: rgb(159, 161, 165);
+    font-size: 13px;
+    margin-bottom: 10px;
+}
+
+.u-e-p-c-div input {
+    position: relative;
+    /* background-color: antiquewhite; */
+    /* margin-right: 100px; */
+    width: 88%;
+    height: 33px;
+    border-radius: 8px;
+    background-color: black;
+    border-color: rgb(54, 57, 63);
+}
+
+.s-e-font {
+    position: relative;
+    margin-right: 410px;
+    color: rgb(159, 161, 165);
+    font-size: 13px;
+    margin-bottom: 10px;
+}
+
+.s-p-font {
+    position: relative;
+    margin-right: 380px;
+    color: rgb(159, 161, 165);
+    font-size: 13px;
+    margin-bottom: 10px;
+}
+
+.signup-button {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.signup-button button {
+    background-color:rgb(88,101,242) ;
+    color: white;
+    width: 89%;
+    height: 40px;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: 500;
+}

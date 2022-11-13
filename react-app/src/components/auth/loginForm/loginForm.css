@@ -34,8 +34,8 @@
     height: 10px;
     width: 95%;
     font-size:10px;
-    color:white ;
-    font-weight: 600;
+    color:rgb(8,157,216);
+    font-weight: 500;
 }
 .e-p-input-div{
     margin-top: 10px;
@@ -70,7 +70,7 @@
  }
 .login-button button{
     margin-top: 25px;
-    background-color:rgb(71,82,196) ;
+    background-color:rgb(88,101,242) ;
     color: white;
     width: 96%;
     height: 40px;
