@@ -30,7 +30,10 @@ input:focus {
 }
 
 input:focus{
-    color: white;
+    color:hotpink;
+}
+input {
+   color: hotpink;
 }
 
 button {
