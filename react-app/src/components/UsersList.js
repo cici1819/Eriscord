@@ -1,9 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import { NavLink } from 'react-router-dom';
-import ChannelBar from './ChannelBar';
+import ChannelBar from './Channel/ChannelBar';
+import { useDispatch } from 'react-redux';
+
 
 function UsersList() {
   const [users, setUsers] = useState([]);
+  const dispatch = useDispatch();
 
   useEffect(() => {
     async function fetchData() {
@@ -13,6 +16,7 @@ function UsersList() {
     }
     fetchData();
   }, []);
+
 
   const userComponents = users.map((user) => {
     return (

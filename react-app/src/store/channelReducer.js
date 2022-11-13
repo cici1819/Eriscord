@@ -36,12 +36,15 @@ export const deleteOneChannel = (id) => {
 
 
 export const thunkAddChannelToServer = (data) => async dispatch => {
-    const { serverId, name, topic } = data
+    const { name, topic } = data
+    const server_id = data.serverId
+    // console.log('thunk++++', {data})
+    // console.log('thunk!!!!', server_id, name, topic)
 
-    const response = await fetch(`/api/servers/${serverId}/channels`, {
+    const response = await fetch(`/api/channels/new`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ name, topic }),
+        body: JSON.stringify({ server_id, name, topic }),
     })
     // console.log('!!!!!!response', response)
     if (response.ok) {
@@ -52,27 +55,38 @@ export const thunkAddChannelToServer = (data) => async dispatch => {
     }
 }
 
+
 export const thunkLoadoneChannel = (channelId) => async (dispatch) => {
 
     const response = await fetch(`/api/channels/${channelId}`)
+    // console.log('herre')
+    // console.log('response', response)
     if (response.ok) {
         const channel = await response.json();
-        // console.log("!!!!!!!!channel", channel)
+        // console.log("!!!!!!!!channel!!!!!!!!!!", channel)
         dispatch(loadOneChannel(channel))
         return channel
     }
 }
 
 export const thunkEditOneChannel = (data) => async dispatch => {
-    const { channelId, name, topic } = data;
+    const { name, topic } = data;
+
+    let channelId = 20
+
+    // console.log('herre')
+    console.log('data', name, topic)
 
     const response = await fetch(`/api/channels/${channelId}`, {
-        method: "PUT",
+        method: "POST",
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
             name, topic
         }),
     });
+
+    console.log('response', response)
+
     if (response.ok) {
         const editedChannel = await response.json();
         // console.log('spot!!!!!!!!!!!!', spot)
