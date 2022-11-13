@@ -32,7 +32,7 @@ app.config.from_object(Config)
 app.register_blueprint(user_routes, url_prefix='/api/users')
 app.register_blueprint(auth_routes, url_prefix='/api/auth')
 app.register_blueprint(channel_routes, url_prefix='/api/channels')
-app.register_blueprint(server_routes, url_prefix='/api/servers')
+# app.register_blueprint(server_routes, url_prefix='/api/servers')
 
 db.init_app(app)
 Migrate(app, db)
@@ -80,14 +80,13 @@ def react_root(path):
     return app.send_static_file('index.html')
 
 
-
 @app.route("/api/docs")
 def api_help():
     """
     Returns all API routes and their doc strings
     """
     acceptable_methods = ['GET', 'POST', 'PUT', 'PATCH', 'DELETE']
-    route_list = { rule.rule: [[ method for method in rule.methods if method in acceptable_methods ],
-                    app.view_functions[rule.endpoint].__doc__ ]
-                    for rule in app.url_map.iter_rules() if rule.endpoint != 'static' }
+    route_list = {rule.rule: [[method for method in rule.methods if method in acceptable_methods],
+                              app.view_functions[rule.endpoint].__doc__]
+                  for rule in app.url_map.iter_rules() if rule.endpoint != 'static'}
     return route_list

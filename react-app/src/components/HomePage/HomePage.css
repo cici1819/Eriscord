@@ -1,4 +1,5 @@
 /* Section 1 */
+
 .home-page-section-1 {
     background-color: #5865f2;
     display: flex;
@@ -6,6 +7,7 @@
     align-items: center;
     background-image: url(../../img/home-page/1-0.png);
     background-size: 2560px 626px;
+    width: 100%;
     /* object-fit: cover;
 
     position: absolute;
@@ -92,6 +94,11 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+#s2,
+#s4 {
+    background-color: #FFFFFF;
 }
 
 #s3 {
