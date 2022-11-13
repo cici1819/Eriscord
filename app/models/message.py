@@ -27,6 +27,8 @@ class Message(db.Model):
             "channel_id": self.channel_id,
             "server_id": self.server_id,
             "sender_id": self.sender_id,
+            "sender_name": self.user_m.username,
+            "sender_color": self.user_m.color,
             "created_at": self.created_at,
         }
         return message_dict

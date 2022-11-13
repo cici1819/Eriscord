@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { NavLink } from 'react-router-dom';
-import ChannelBar from './Channel/ChannelBar';
+import ChannelBar from './Channel/MessagesBox';
 import { useDispatch } from 'react-redux';
 
 
