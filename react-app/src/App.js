@@ -8,6 +8,7 @@ import ProtectedRoute from './components/auth/ProtectedRoute';
 import UsersList from './components/UsersList';
 import User from './components/User';
 import HomePage from './components/HomePage';
+import MainPage from './components/MainPage';
 import { authenticate } from './store/session';
 
 function App() {
@@ -37,6 +38,18 @@ function App() {
         <Route path='/sign-up' exact={true}>
           <SignUpForm />
         </Route>
+
+        <ProtectedRoute path='/channels/@me' exact={true}>
+          <MainPage />
+        </ProtectedRoute>
+
+        <ProtectedRoute path='/channels/@me/:serverId' exact={true}>
+          <MainPage />
+        </ProtectedRoute>
+
+        <ProtectedRoute path='/channels/:serverId/:channelId' exact={true}>
+          <MainPage />
+        </ProtectedRoute>
 
         <ProtectedRoute path='/users' exact={true} >
           <UsersList/>
