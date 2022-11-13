@@ -1,7 +1,9 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from 'react-redux';
+// import { Modal } from "../../../context/Modal";
 import { thunkLoadoneChannel } from "../../../store/channelReducer";
-import ChannelCreate from "../ChannelCreate"
+import ChannelCreate from "../ChannelCreate/ChannelCreateForm"
+import ChannelCreateModal from "../ChannelCreate"
 import ChannelDelete from "../ChannelDelete";
 import ChannelEdit from "../ChannelEdit"
 import './ChannelBar.css';
@@ -46,7 +48,7 @@ function ChannelBar() {
             message3: {channelArr?.[0]?.messages[2].content}
             </div>
 
-            <ChannelCreate />
+            <ChannelCreateModal />
             <ChannelEdit />
             <ChannelDelete />
         </>
