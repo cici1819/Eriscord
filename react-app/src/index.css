@@ -3,6 +3,7 @@ html,
 body {
     font-family: "Whitney";
     box-sizing: border-box;
+    margin:0;
 }
 
 ul,
