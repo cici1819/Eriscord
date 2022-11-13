@@ -1,74 +1,36 @@
-import React, { useState } from "react";
-import { useDispatch, useSelector } from 'react-redux';
-import { useHistory } from "react-router-dom";
-import { thunkAddChannelToServer } from "../../../store/channelReducer";
-import './ChannelCreate.css';
 
+import React, { useState } from 'react';
+import { Modal } from '../../../context/Modal';
+import { useSelector } from 'react-redux';
+import ChannelCreate from './ChannelCreateForm';
 
-function ChannelCreate() {
-    const dispatch = useDispatch();
-    const [name, setName] = useState('');
-    const [topic, setTopic] = useState('');
-    const [hasSubmitted, setHasSubmitted] = useState("");
-    const [errors, setErrors] = useState([]);
-    const history = useHistory();
-
-    const handleSubmit = async (e) => {
-        e.preventDefault();
-        setHasSubmitted(true);
-
-        let serverId = 5
-
-        const channelPayload = { name, topic }
-        channelPayload.serverId = serverId
-        // console.log("!!!!!frontend", channelPayload)
-        let createdChannel = await dispatch(thunkAddChannelToServer(channelPayload)).catch(async (res) => {
-
-            const data = await res.json();
-
-            if (data && data.errors) {
-                setErrors(data.errors)
-            };
-        });
-
-        if (createdChannel) {
-            // history.push(`/`)
-            console.log(createdChannel)
-        }
+function ChannelCreateModal() {
+    const [showModal, setShowModal] = useState(false);
+    const sessionUser = useSelector((state) => state.session.user);
+    if (!sessionUser) {
+        return null;
     }
-
 
     return (
         <>
-            <hr></hr>
-            <>
-                This gonna be the channel create!
-            </>
-            <div>
-                <form onSubmit={handleSubmit}>
-
-                        <label > Name </label>
-                        <input type="text"
-                            value={name}
-                            onChange={(e) => setName(e.target.value)}
-                            required/>
-
-
-                        <label >topic</label>
-                        <input type="text"
-                            value={topic}
-                            onChange={(e) => setTopic(e.target.value)}
-                            required/>
-
-                    <button type="submit">create channel</button>
-
-                </form>
+            <div className='add-channel'>
+                <div className='text-channel'>
+                    <span className='text-span'>
+                        TEXT CHANNELS
+                    </span>
+                    <div className='fa-div' >
+                        <i className="fa-duotone fa-plus" onClick={() => setShowModal(true)} > </i>
+                    </div>
+                </div>
+                {showModal && (
+                    <Modal onClose={() => setShowModal(false)}>
+                        <ChannelCreate setShowModal={setShowModal} />
+                    </Modal>
+                )}
             </div>
         </>
-    )
+    );
 }
 
 
-
-
-export default ChannelCreate;
+export default ChannelCreateModal;
