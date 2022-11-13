@@ -91,7 +91,7 @@ def seed_servers():
     channel_server6 = Server(
         name = "friEnds",
         owner_id = 6,
-        description = "If you're chill, want friends, and like comfy servers, then join for shitposting, frens, and brain cancer ",
+        description = "If you're chill, want friends, and like comfy servers, then join for funposting, friends, and good times ",
         img = "https://static.wikia.nocookie.net/smiling-friends/images/1/18/Smilingfriends.png",
         is_dm = False,
         server_server_members = [demo, freya, ares]
