@@ -29,11 +29,11 @@ input:focus {
    outline: none;
 }
 
-input:focus{
+/* input:focus{
     color:hotpink;
-}
+} */
 input {
-   color: hotpink;
+   color: white;
 }
 
 button {
