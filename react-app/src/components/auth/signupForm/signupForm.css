@@ -70,3 +70,18 @@
     font-size: 13px;
     margin-bottom: 10px;
 }
+
+.signup-button {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.signup-button button {
+    background-color:rgb(88,101,242) ;
+    color: white;
+    width: 89%;
+    height: 40px;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: 500;
+}
