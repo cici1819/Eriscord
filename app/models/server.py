@@ -49,7 +49,8 @@ class Server(db.Model):
             "description": self.description,
             "img": self.img,
             "is_dm": self.is_dm,
-            "messages": [message.to_dict() for message in self.message_s]
+            "messages": [message.to_dict() for message in self.message_s],
+            "users": [user.to_dict() for user in self.server_server_members]
         }
         return server_dm_dict
 

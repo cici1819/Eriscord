@@ -22,10 +22,38 @@ def validation_errors_to_error_messages(validation_errors):
 def all_servers():
     all_servers = Server.query.filter_by(is_dm= False)
     return json.dumps({"servers": [server.to_dict_regulars() for server in all_servers]})
+
+
 @server_routes.route('/dm')
 def dm_servers():
     all_servers = Server.query.filter_by(is_dm= True)
     return json.dumps({"servers": [server.to_dict_dms() for server in all_servers]})
+
+@server_routes.route('/current')
+@login_required
+def current_servers():
+    all_servers = Server.query.filter_by(is_dm= False)
+    dicts= [server.to_dict_regulars() for server in all_servers]
+    user = request.current_user
+    user= user.to_dict()
+    to_return= []
+    for server in dicts:
+        if user in server["users"]:
+            to_return.append(server)
+    return json.dumps(to_return)
+@server_routes.route('/current')
+@login_required
+def current_servers():
+    all_servers = Server.query.filter_by(is_dm= True)
+    dicts= [server.to_dict_dms() for server in all_servers]
+    user = request.current_user
+    user= user.to_dict()
+    to_return= []
+    for server in dicts:
+        if user in server["users"]:
+            to_return.append(server)
+    return json.dumps(to_return)
+
 @server_routes.route('/<int:server_id>')
 def single_server(server_id):
     server= Server.query.get(server_id)
@@ -33,6 +61,8 @@ def single_server(server_id):
         return server.to_dict_dms()
     else:
         return server.to_dict_regulars()
+
+
 @server_routes.route('/new', methods= ["POST"])
 @login_required
 def add_server():
@@ -45,6 +75,8 @@ def add_server():
     db.session.add(new_server)
     db.session.commit()
     return "Successfully created"
+
+
 @server_routes.route('/<int:server_id>', methods= ["PUT"])
 @login_required
 def update_server(server_id):
@@ -59,6 +91,8 @@ def update_server(server_id):
         return "Successfully updated"
     else:
         return form.errors
+
+
 @server_routes.route('/<int:server_id>', methods= ["DELETE"])
 @login_required
 def delete_server(server_id):
