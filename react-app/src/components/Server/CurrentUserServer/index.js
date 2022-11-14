@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from "react-router";
 import { getPersonalServers, getRegularServers } from "../../../store/serverReducer";
+import SingleServer from "../SingleServer"
 import './CurrentUserServer.css';
 
 
@@ -13,7 +14,6 @@ function CurrentUserServer() {
 
     useEffect(() => {
         dispatch(getPersonalServers())
-        // dispatch(getRegularServers())
     }, [dispatch]);
 
 
@@ -22,8 +22,6 @@ function CurrentUserServer() {
     let servers = useSelector(state => state.server.servers)
 
     console.log('servers!!!!!!!!', servers)
-
-    // console.log('channelArr!!!!!!!!', channelArr)
 
     // if (!) { return null }
 
@@ -39,15 +37,12 @@ function CurrentUserServer() {
             </div>
 
             <hr></hr>
-            <div>
-                {/* {messagesArr.map((message) => (
-                    <div className='single-message-container' key={message.id}>
-                        <div className='review-name'>background color:  {message?.sender_color}</div>
-                        <div className='review-name'>sender name:  {message?.sender_name}</div>
-                        <div className='review-name'>content:  {message?.content}</div>
-                        <hr></hr>
-                    </div>
-                ))} */}
+            <div className="single-server-container">
+            {servers?.map((server) => {
+                return (
+                    <SingleServer server={server} key={server.id} />
+                )
+            })}
 
             </div>
 

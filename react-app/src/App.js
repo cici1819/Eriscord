@@ -51,6 +51,10 @@ function App() {
           <MainPage />
         </ProtectedRoute>
 
+        <ProtectedRoute path='/channels/:serverId' exact={true}>
+          <MainPage />
+        </ProtectedRoute>
+
         <ProtectedRoute path='/users' exact={true} >
           <UsersList/>
         </ProtectedRoute>
