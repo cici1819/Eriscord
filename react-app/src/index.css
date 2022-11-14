@@ -36,6 +36,10 @@ input {
     color: white;
     /* outline: none; */
     /* border: none; */
+    height: 33px;
+    border-radius: 8px;
+    background-color: black;
+    border-color: rgb(54, 57, 63);
 }
 
 button {

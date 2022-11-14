@@ -180,3 +180,15 @@
     border-radius: 50%;
 
 }
+
+.error3-lists {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 10px;
+    width: 95%;
+    font-size: 10px;
+    color: rgb(8, 157, 216);
+    font-weight: 500;
+    margin-top: -15px;
+}
