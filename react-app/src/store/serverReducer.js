@@ -61,7 +61,7 @@ export const getAllServers = () => async dispatch => {
     const response = await fetch(`/api/servers`);
     if (response.ok) {
       const servers = await response.json();
-      //console.log("THUNK SERVERS :", servers)
+    //   console.log("THUNK SERVERS :", servers)
       const result = dispatch(loadAll(servers.servers))
       //console.log("RESULT OF DISPATCHING :", result)
       return result

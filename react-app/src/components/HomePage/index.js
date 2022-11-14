@@ -1,6 +1,5 @@
-import React, { useState } from "react";
+import React from "react";
 import { NavLink } from "react-router-dom";
-import NavBar from "../NavBar";
 import './HomePage.css';
 import eriscord_clear_logo from '../../img/favicon_clear_eriscord_192x192.png';
 import sec2_img from "../../img/home-page/2-1.png"
@@ -10,8 +9,6 @@ import sec4_img from "../../img/home-page/4-1.png"
 function HomePage() {
     return (
         <div className="home-page-container">
-            <NavBar />
-            add those funny pictures here
             <div className="home-page-section-1">
                 {/* <div className="hps1-background"></div> */}
                 <div className="hps1-nav-bar-section">
