@@ -98,15 +98,13 @@ export const thunkLoadOneServer = (serverId) => async (dispatch) => {
     const response = await fetch(`/api/servers/${serverId}`)
     if (response.ok) {
         const server = await response.json();
-        dispatch(loadOneServer(server))
+        dispatch(loadOne(server))
         return server
     }
 }
 
-export const thunkEditServer = (data) => async dispatch => {
+export const thunkEditServer = (data, serverId) => async dispatch => {
     const { name, img, description } = data;
-
-
 
     const response = await fetch(`/api/servers/${serverId}`, {
         method: "POST",
@@ -134,11 +132,11 @@ export const thunkDeleteOneServer = (serverId) => async dispatch => {
     if (response.ok) {
         const toDelete = await response.json();
         dispatch(deleteServer(serverId));
-    } action
+    }
 }
 
 
-const serverReducer = (state = initialState, action) => {
+const serverReducer = (state = {}, action) => {
     let newState;
     switch (action.type) {
         //separate loads for regular and dm servers
@@ -148,7 +146,7 @@ const serverReducer = (state = initialState, action) => {
         case LOAD_DM:
             //console.log("GET SERVERS ACTION :", action)
             return { ...newState, dmServers: [...action.servers] };
-        case GET_ONE_SERVER:
+        case LOAD_ONE:
             newState = { ...state, [action.server.id]: action.server }
             return newState
         case ADD_SERVER:
@@ -167,7 +165,7 @@ const serverReducer = (state = initialState, action) => {
             return {
                 ...state,
             };
-        case REMOVE_SERVER:
+        case DELETE_SERVER:
             const newServers = state.servers.filter(server => server.id === action.serverId)
             newState = { ...state, servers: newServers }
             return newState;
