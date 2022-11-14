@@ -6,6 +6,7 @@ import eriscord_clear_logo from '../../img/favicon_clear_eriscord_192x192.png';
 import sec2_img from "../../img/home-page/2-1.png"
 import sec3_img from "../../img/home-page/3-1.png"
 import sec4_img from "../../img/home-page/4-1.png"
+import sec5_img from "../../img/home-page/5-1.png"
 
 function HomePage() {
     return (
@@ -53,7 +54,7 @@ function HomePage() {
                     <div id="section-container">
                         <h2>Where hanging out is easy</h2>
                         <div id="section-content">
-                            Grab a seat in a voice channel when you’re free. Friends in your server can see you’re around and instantly pop in to talk without having to call.
+                            Grab a seat in a channel when you're free. Friends in your server can see you're around and instantly pop in to chat.
                         </div>
                     </div>
                     <img src={sec3_img} id="sec-img" />
@@ -68,6 +69,15 @@ function HomePage() {
                             Get any community running with moderation tools and custom member access. Give members special powers, set up private channels, and more.
                         </div>
                     </div>
+                </div>
+            </div>
+            <div className="home-page-section-5" id="s5">
+                <div className="home-page-section-5-inner">
+                    <h2>RELIABLE TECH FOR STAYING CLOSE</h2>
+                    <div id="section-content">
+                        Low-latency voice and video feels like you’re in the same room. Wave hello over video, watch friends stream their games, or gather up and have a drawing session with screen share.
+                    </div>
+                    <img src={sec5_img} id="sec-img" />
                 </div>
             </div>
         </div>

@@ -146,3 +146,47 @@
     line-height: 1.625;
     margin-top: 24px;
 }
+
+
+/* section 5 */
+.home-page-section-5 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #F6F6F6;
+}
+
+.home-page-section-5-inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 1180px;
+    height: 858.55px;
+    padding: 120px 40px 80px 40px;
+    text-align: center;
+}
+
+.home-page-section-5-inner h2 {
+    font-size: 50px;
+    color: #23272A;
+    font-family: "Ginto Nord", "Whitney", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+    font-weight: 800;
+    /* line-height: 95%; */
+    margin-top: 0px;
+    margin-bottom: 0px;
+    width: 980px;
+}
+
+.home-page-section-5-inner #section-content {
+    width: 980px;
+    margin-top: 24px;
+    line-height: 1.625;
+}
+
+#sec-img {
+    width: 1180px;
+    height: 700px;
+    padding-top: 16px;
+    max-width: 100%;
+    height: auto;
+}
