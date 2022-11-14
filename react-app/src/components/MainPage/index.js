@@ -6,6 +6,7 @@ import LogoutButton from "../auth/LogoutButton";
 import './MainPage.css';
 import CurrentUserServer from "../Server/CurrentUserServer";
 import UsersInOneServer from "../Server/UsersInOneServer";
+import ServerCreate from "../Server/ServerCreate";
 
 
 function MainPage(){
@@ -14,6 +15,7 @@ function MainPage(){
 
         <div className="server-sidebar"> direct messages and server bar
         <CurrentUserServer />
+        <ServerCreate />
         </div>
 
             <div className="channel-or-DM-sidebar"> direct frined or channels
