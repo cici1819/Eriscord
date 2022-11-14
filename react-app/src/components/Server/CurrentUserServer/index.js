@@ -21,7 +21,7 @@ function CurrentUserServer() {
 
     let servers = useSelector(state => state.server.servers)
 
-    console.log('servers!!!!!!!!', servers)
+    // console.log('servers!!!!!!!!', servers)
 
     // if (!) { return null }
 

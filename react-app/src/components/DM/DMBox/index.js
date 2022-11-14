@@ -24,7 +24,7 @@ function DMBox() {
     if (servers){
         currentServer = servers.find(server=> server.id= serverId)
         console.log("CURRENT SERVER IN DMS", currentServer)
-        messagesArr= currentServer.messages
+        messagesArr= currentServer?.messages
     }
 
     if (!messagesArr) { return "THIS WILL BE DM MESSAGES" }
