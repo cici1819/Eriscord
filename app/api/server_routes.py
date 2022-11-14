@@ -34,13 +34,25 @@ def dm_servers():
 def current_servers():
     all_servers = Server.query.filter_by(is_dm= False)
     dicts= [server.to_dict_regulars() for server in all_servers]
-    user = request.current_user
+    user = current_user
     user= user.to_dict()
     to_return= []
     for server in dicts:
         if user in server["users"]:
             to_return.append(server)
-    return json.dumps(to_return)
+    return json.dumps({"servers" :to_return})
+@server_routes.route('/current/dm')
+@login_required
+def current_dm_servers():
+    all_servers = Server.query.filter_by(is_dm= True)
+    dicts= [server.to_dict_regulars() for server in all_servers]
+    user = current_user
+    user= user.to_dict()
+    to_return= []
+    for server in dicts:
+        if user in server["users"]:
+            to_return.append(server)
+    return json.dumps({"servers" :to_return})
 
 @server_routes.route('/<int:server_id>')
 def single_server(server_id):

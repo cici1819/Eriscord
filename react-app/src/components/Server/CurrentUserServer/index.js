@@ -12,8 +12,8 @@ function CurrentUserServer() {
 
 
     useEffect(() => {
-        // dispatch(getPersonalServers())
-        dispatch(getRegularServers())
+        dispatch(getPersonalServers())
+        // dispatch(getRegularServers())
     }, [dispatch]);
 
 
