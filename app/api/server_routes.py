@@ -41,18 +41,6 @@ def current_servers():
         if user in server["users"]:
             to_return.append(server)
     return json.dumps(to_return)
-@server_routes.route('/current')
-@login_required
-def current_servers():
-    all_servers = Server.query.filter_by(is_dm= True)
-    dicts= [server.to_dict_dms() for server in all_servers]
-    user = request.current_user
-    user= user.to_dict()
-    to_return= []
-    for server in dicts:
-        if user in server["users"]:
-            to_return.append(server)
-    return json.dumps(to_return)
 
 @server_routes.route('/<int:server_id>')
 def single_server(server_id):
@@ -77,7 +65,7 @@ def add_server():
     return "Successfully created"
 
 
-@server_routes.route('/<int:server_id>', methods= ["PUT"])
+@server_routes.route('/<int:server_id>', methods= ["POST"])
 @login_required
 def update_server(server_id):
     form= ServerForm()
