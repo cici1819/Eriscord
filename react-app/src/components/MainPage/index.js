@@ -9,6 +9,7 @@ import UsersInOneServer from "../Server/UsersInOneServer";
 import ServerCreate from "../Server/ServerCreate";
 import ServerEdit from "../Server/ServerEdit";
 import ServerDelete from "../Server/ServerDelete";
+import ChannelListInServer from "../Channel/ChannelListInServer";
 
 
 function MainPage(){
@@ -24,19 +25,20 @@ function MainPage(){
 
             <ServerEdit />
             <ServerDelete />
-            direct frined or channels
+            <ChannelListInServer />
                 <div>
                 <ChannelCreateModal/>
                 </div>
 
                 <div>
-                    (mapping channel list,each channel have this icon to click to edit channel content)
+                <ChannelListInServer />
                  <ChannelEditModal />
                 </div>
 
                 <div>
                 <LogoutButton />
                 </div>
+
 
             </div>
 
