@@ -53,7 +53,7 @@ function HomePage() {
                     <div id="section-container">
                         <h2>Where hanging out is easy</h2>
                         <div id="section-content">
-                            Grab a seat in a voice channel when you’re free. Friends in your server can see you’re around and instantly pop in to talk without having to call.
+                            Grab a seat in a voice channel when you're free. Friends in your server can see you're around and instantly pop in to talk without having to call.
                         </div>
                     </div>
                     <img src={sec3_img} id="sec-img" />
