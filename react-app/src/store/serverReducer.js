@@ -101,7 +101,17 @@ export const thunkAddServer = (data) => async dispatch => {
         return newServer
     }
 }
-
+export const getPersonalDMServers = () => async dispatch => {
+    const response = await fetch(`/api/servers/current/dm`);
+    if (response.ok) {
+      const servers = await response.json();
+    //   console.log("THUNK SERVERS :", servers)
+      const result = dispatch(loadAll(servers.servers))
+      //console.log("RESULT OF DISPATCHING :", result)
+      return result
+    // return "HELLO"
+    }
+  };
 
 export const thunkLoadOneServer = (serverId) => async (dispatch) => {
 
