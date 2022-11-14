@@ -1,10 +1,7 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from "react-router";
-import { thunkLoadoneChannel } from "../../../store/channelReducer";
-import ChannelCreate from "../ChannelCreate"
-import ChannelDelete from "../ChannelDelete";
-import ChannelEdit from "../ChannelEdit"
+import { thunkLoadoneChannel } from "../../../store/channelReducer"
 import './MessagesBox.css';
 
 
@@ -59,10 +56,6 @@ function MessagesBox() {
 
             </div>
 
-
-            <ChannelCreate />
-            <ChannelEdit />
-            <ChannelDelete />
         </>
     )
 }

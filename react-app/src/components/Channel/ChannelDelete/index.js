@@ -22,13 +22,9 @@ function ChannelDelete() {
 
     return (
         <>
-            <hr></hr>
-            <>
-                This is where you delete the channel
-            </>
             <div>
                 <button
-                    onClick={(e) => handleDelete(channelId)}>DELETE THIS CHANNEL</button>
+                    onClick={(e) => handleDelete(channelId)}>DELETE CHANNEL</button>
             </div>
         </>
     )
