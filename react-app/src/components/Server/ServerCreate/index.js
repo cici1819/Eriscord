@@ -70,7 +70,7 @@ function ServerCreate() {
 
                     <div className="tbd">
                         <div className="tbd">
-                            <button type="submit">Create Channel</button>
+                            <button type="submit">Create Server</button>
                         </div>
 
                     </div>

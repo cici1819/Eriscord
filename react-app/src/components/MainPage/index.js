@@ -38,6 +38,7 @@ function MainPage(){
                 <LogoutButton />
                 </div>
 
+
             </div>
 
         <div className="messages-container"> all the messages map
