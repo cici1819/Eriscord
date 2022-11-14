@@ -26,7 +26,9 @@ function ChannelCreate({ setShowModal }) {
 
             const data = await res.json();
 
-            if (data && data.errors) {
+            console.log("data#################",data.errors)
+
+            if (data & data.errors) {
                 setErrors(data.errors)
             };
         });
@@ -51,6 +53,11 @@ function ChannelCreate({ setShowModal }) {
                     </div>
                     <div className="create-title2">
                         <p>in Text Channels</p>
+                    </div>
+                    <div className='error3-lists'>
+                        {errors.map((error, ind) => (
+                            <div key={ind}>{error}</div>
+                        ))}
                     </div>
                     <div className="c-type">
                         CHANNEL TYPE
