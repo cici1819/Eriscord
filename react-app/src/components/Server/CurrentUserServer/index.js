@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from "react-router";
-import { getPersonalServers, getAllServers } from "../../../store/serverReducer";
+import { getPersonalServers, getRegularServers } from "../../../store/serverReducer";
 import './CurrentUserServer.css';
 
 
@@ -13,13 +13,13 @@ function CurrentUserServer() {
 
     useEffect(() => {
         // dispatch(getPersonalServers())
-        dispatch(getAllServers())
+        dispatch(getRegularServers())
     }, [dispatch]);
 
 
     // console.log(channelId, serverId)
 
-    let servers = useSelector(state => state)
+    let servers = useSelector(state => state.server.servers)
 
     console.log('servers!!!!!!!!', servers)
 

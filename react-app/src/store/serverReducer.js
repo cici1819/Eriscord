@@ -57,11 +57,21 @@ export const deleteServer = (id) => {
         id
     };
 };
-export const getAllServers = () => async dispatch => {
-    const response = await fetch(`/api/servers`);
+export const getRegularServers = () => async dispatch => {
+    const response = await fetch(`/api/servers/regular`);
     if (response.ok) {
       const servers = await response.json();
-    //   console.log("THUNK SERVERS :", servers)
+      console.log("THUNK SERVERS :", servers)
+      const result = dispatch(loadAll(servers.servers))
+      //console.log("RESULT OF DISPATCHING :", result)
+      return result
+    }
+  };
+  export const getDMServers = () => async dispatch => {
+    const response = await fetch(`/api/servers/dm`);
+    if (response.ok) {
+      const servers = await response.json();
+      //console.log("THUNK SERVERS :", servers)
       const result = dispatch(loadAll(servers.servers))
       //console.log("RESULT OF DISPATCHING :", result)
       return result
@@ -87,7 +97,7 @@ export const thunkAddServer = (data) => async dispatch => {
     })
     if (response.ok) {
         const newServer = await response.json();
-        dispatch(addServer(newServer))
+        dispatch(addServer(response))
         return newServer
     }
 }
