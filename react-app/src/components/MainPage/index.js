@@ -7,6 +7,8 @@ import './MainPage.css';
 import CurrentUserServer from "../Server/CurrentUserServer";
 import UsersInOneServer from "../Server/UsersInOneServer";
 import ServerCreate from "../Server/ServerCreate";
+import ServerEdit from "../Server/ServerEdit";
+import ServerDelete from "../Server/ServerDelete";
 
 
 function MainPage(){
@@ -18,7 +20,11 @@ function MainPage(){
         <ServerCreate />
         </div>
 
-            <div className="channel-or-DM-sidebar"> direct frined or channels
+            <div className="channel-or-DM-sidebar">
+
+            <ServerEdit />
+            <ServerDelete />
+            direct frined or channels
                 <div>
                 <ChannelCreateModal/>
                 </div>

@@ -7,8 +7,7 @@ import './MessagesBox.css';
 
 function MessagesBox() {
     const dispatch = useDispatch();
-    const { channelId } = useParams();
-    const { serverId } = useParams();
+    const { channelId, serverId } = useParams();
 
 
     useEffect(() => {

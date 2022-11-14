@@ -1,11 +1,12 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from "react-router-dom";
+import { useParams } from "react-router";
 import { thunkAddServer } from "../../../store/serverReducer";
 import './ServerCreate.css';
 
 
-function ServerCreate({ setShowModal }) {
+function ServerCreate() {
     const dispatch = useDispatch();
     const [img, setImg] = useState('');
     const [name, setName] = useState('');
@@ -13,6 +14,7 @@ function ServerCreate({ setShowModal }) {
     const [hasSubmitted, setHasSubmitted] = useState("");
     const [errors, setErrors] = useState([]);
     const history = useHistory();
+    // const { channelId, serverId } = useParams();
 
     const handleSubmit = async (e) => {
         e.preventDefault();

@@ -7,8 +7,8 @@ import './CurrentUserServer.css';
 
 function CurrentUserServer() {
     const dispatch = useDispatch();
-    const { channelId } = useParams();
-    const { serverId } = useParams();
+    // const { channelId, serverId } = useParams();
+
 
 
     useEffect(() => {
