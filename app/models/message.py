@@ -21,15 +21,17 @@ class Message(db.Model):
 
     # stop case:
     def to_dict(self):
+        dicted= self.user_m.to_dict()
+
         message_dict = {
             "id": self.id,
             "content": self.content,
             "channel_id": self.channel_id,
             "server_id": self.server_id,
             "sender_id": self.sender_id,
-            "sender_name": self.user_m.username,
-            "sender_color": self.user_m.color,
-            "created_at": self.created_at,
+            "sender_name" : dicted["username"],
+            "sender_color": dicted["color"],
+            "created_at": str(self.created_at)
         }
         return message_dict
 
