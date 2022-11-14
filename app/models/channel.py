@@ -11,7 +11,7 @@ class Channel(db.Model):
     name = db.Column(db.String(50), nullable=False)
     server_id = db.Column(db.Integer, db.ForeignKey(
         'servers.id'), nullable=False)
-    topic = db.Column(db.String(255), nullable=False)
+    topic = db.Column(db.String(50), nullable=True)
     server_c = db.relationship(
         "Server", back_populates="channel_s")
     message_c = db.relationship(

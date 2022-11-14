@@ -26,6 +26,7 @@ a:hover {
     cursor: pointer;
 }
 
+
 button,
 input:focus {
     outline: none;
@@ -33,6 +34,8 @@ input:focus {
 
 input {
     color: white;
+    /* outline: none; */
+    /* border: none; */
 }
 
 button {

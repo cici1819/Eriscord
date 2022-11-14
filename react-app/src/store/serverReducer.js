@@ -79,7 +79,7 @@ export const getRegularServers = () => async dispatch => {
   };
 export const thunkAddServer = (data) => async dispatch => {
     const { name, img, description } = data
-
+    // console.log('thunk!!!!!', name, img, description)
     const response = await fetch(`/api/servers/new`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },

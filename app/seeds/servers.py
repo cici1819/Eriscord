@@ -1,6 +1,7 @@
 from app.models import db, Server, environment, SCHEMA
 from .users import demo, freya, atlas, helen, apollo, ares, athena, phoebe
 def seed_servers():
+    # dm server id 1-5
     dm_server1 = Server(
         name = "Demo-2",
         # img = "https://logos-world.net/wp-content/uploads/2020/12/Discord-Logo.png",
@@ -37,7 +38,8 @@ def seed_servers():
         server_server_members = [demo, athena]
     )
 
-    # channel--server  id 6-12
+
+    # channel--server  id 6-11
     channel_server1 = Server(
         name = "Demo-server-1",
         owner_id = 1,
