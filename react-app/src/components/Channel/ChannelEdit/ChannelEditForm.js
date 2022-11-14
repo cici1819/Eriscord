@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from 'react-redux';
+import { useParams } from "react-router";
 import { useHistory } from "react-router-dom";
 import { thunkEditOneChannel } from "../../../store/channelReducer";
 import ChannelDelete from "../ChannelDelete";
@@ -13,12 +14,13 @@ function ChannelEdit({setShowModal}) {
     const [hasSubmitted, setHasSubmitted] = useState("");
     const [errors, setErrors] = useState([]);
     const history = useHistory();
+    const { channelId, serverId } = useParams();
 
     const handleSubmit = async (e) => {
         e.preventDefault();
         setHasSubmitted(true);
 
-        let channelId = 20
+
 
         const editedchannelPayload = { name, topic }
         editedchannelPayload.channelId = channelId

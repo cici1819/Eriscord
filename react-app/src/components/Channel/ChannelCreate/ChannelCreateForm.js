@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from "react-router-dom";
+import { useParams } from "react-router";
 import { thunkAddChannelToServer } from "../../../store/channelReducer";
 import './ChannelCreate.css';
 
@@ -13,6 +14,7 @@ function ChannelCreate({ setShowModal }) {
     const [validationErrors, setValidationErrors] = useState([]);
     const [errors, setErrors] = useState([]);
     const history = useHistory();
+    const { channelId, serverId } = useParams();
 
     useEffect(() => {
         const errors = [];
@@ -29,6 +31,19 @@ function ChannelCreate({ setShowModal }) {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
+        setHasSubmitted(true);
+
+        const channelPayload = { name }
+        channelPayload.serverId = serverId
+        // console.log("!!!!!frontend", channelPayload)
+        let createdChannel = await dispatch(thunkAddChannelToServer(channelPayload)).catch(async (res) => {
+
+            const data = await res.json();
+
+            if (data && data.errors) {
+                setErrors(data.errors)
+            };
+        });
         setErrors(validationErrors)
         if (!validationErrors.length) {
             let serverId = 5

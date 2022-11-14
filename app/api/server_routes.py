@@ -34,13 +34,25 @@ def dm_servers():
 def current_servers():
     all_servers = Server.query.filter_by(is_dm= False)
     dicts= [server.to_dict_regulars() for server in all_servers]
-    user = request.current_user
+    user = current_user
     user= user.to_dict()
     to_return= []
     for server in dicts:
         if user in server["users"]:
             to_return.append(server)
-    return json.dumps(to_return)
+    return json.dumps({"servers" :to_return})
+@server_routes.route('/current/dm')
+@login_required
+def current_dm_servers():
+    all_servers = Server.query.filter_by(is_dm= True)
+    dicts= [server.to_dict_regulars() for server in all_servers]
+    user = current_user
+    user= user.to_dict()
+    to_return= []
+    for server in dicts:
+        if user in server["users"]:
+            to_return.append(server)
+    return json.dumps({"servers" :to_return})
 
 @server_routes.route('/<int:server_id>')
 def single_server(server_id):
@@ -56,13 +68,14 @@ def single_server(server_id):
 def add_server():
     form= ServerForm()
     data= form.data
-    user = request.current_user
+    user_id = current_user.id
+
     form['csrf_token'].data = request.cookies['csrf_token']
     # "is_dm" : false because route is only for regular servers
-    new_server= Server(name= data["name"], img= data["img"], description= data["description"], is_dm= False, owner_id= user["id"])
+    new_server= Server(name= data["name"], img= data["img"], description= data["description"], is_dm= False, owner_id= user_id)
     db.session.add(new_server)
     db.session.commit()
-    return "Successfully created"
+    return json.dumps(new_server.to_dict_regulars())
 
 
 @server_routes.route('/<int:server_id>', methods= ["POST"])
@@ -76,7 +89,7 @@ def update_server(server_id):
         server.name= data["name"]
         server.img= data["img"]
         db.session.commit()
-        return "Successfully updated"
+        return json.dumps(server.to_dict_regulars())
     else:
         return form.errors
 
@@ -87,4 +100,4 @@ def delete_server(server_id):
     server= Server.query.get(server_id)
     db.session.delete(server)
     db.session.commit()
-    return "Successfully deleted"
+    return json.dumps("Successfully deleted")
