@@ -36,23 +36,11 @@ function ChannelCreate({ setShowModal }) {
         const channelPayload = { name }
         channelPayload.serverId = serverId
         // console.log("!!!!!frontend", channelPayload)
-        let createdChannel = await dispatch(thunkAddChannelToServer(channelPayload)).catch(async (res) => {
+        let createdChannel = await dispatch(thunkAddChannelToServer(channelPayload))
 
-            const data = await res.json();
-
-            if (data && data.errors) {
-                setErrors(data.errors)
-            };
-        });
         setErrors(validationErrors)
         if (!validationErrors.length) {
-            let serverId = 5
             setHasSubmitted(true);
-            const channelPayload = { name }
-            channelPayload.serverId = serverId
-            // console.log("!!!!!frontend", channelPayload)
-            let createdChannel = await dispatch(thunkAddChannelToServer(channelPayload))
-
             if (createdChannel) {
                 // history.push(`/`)
                 setValidationErrors([]);
@@ -85,11 +73,7 @@ function ChannelCreate({ setShowModal }) {
                             </ul>
                         </div>
                     )}
-                    {/* <div className='error3-lists'>
-                        {errors.map((error, ind) => (
-                            <div key={ind}>{error}</div>
-                        ))}
-                    </div> */}
+
                     <div className="c-type">
                         CHANNEL TYPE
                     </div>
