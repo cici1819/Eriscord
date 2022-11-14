@@ -8,20 +8,17 @@ import sec3_img from "../../img/home-page/3-1.png"
 import sec4_img from "../../img/home-page/4-1.png"
 import sec5_img from "../../img/home-page/5-1.png"
 
+
 function HomePage() {
     return (
         <div className="home-page-container">
             <NavBar />
             add those funny pictures here
             <div className="home-page-section-1">
-                {/* <div className="hps1-background"></div> */}
                 <div className="hps1-nav-bar-section">
                     <div className="hps1-nav-bar-section-left">
-                        <img src={eriscord_clear_logo} id="logo-img" />
+                        <img src={eriscord_clear_logo} id="logo-img" alt="home-img" />
                         <div id='logo-name'>Eriscord</div>
-                    </div>
-                    <div className="hps1-nav-bar-section-middle">
-
                     </div>
                     <div className="hps1-nav-bar-section-right">
                         <NavLink to={"/login"}>
@@ -40,7 +37,7 @@ function HomePage() {
             </div>
             <div className="home-page-section-2-4" id="s2" >
                 <div className="home-page-section-2">
-                    <img src={sec2_img} id="sec-img" />
+                    <img src={sec2_img} id="sec-img" alt="home-img" />
                     <div id="section-container">
                         <h2>Create an invite-only place where you belong</h2>
                         <div id="section-content">
@@ -57,12 +54,12 @@ function HomePage() {
                             Grab a seat in a channel when you're free. Friends in your server can see you're around and instantly pop in to chat.
                         </div>
                     </div>
-                    <img src={sec3_img} id="sec-img" />
+                    <img src={sec3_img} id="sec-img" alt="home-img" />
                 </div>
             </div>
             <div className="home-page-section-2-4" id="s4">
                 <div className="home-page-section-4">
-                    <img src={sec4_img} id="sec-img" />
+                    <img src={sec4_img} id="sec-img" alt="home-img" />
                     <div id="section-container">
                         <h2>From few to a fandom</h2>
                         <div id="section-content">
@@ -75,9 +72,42 @@ function HomePage() {
                 <div className="home-page-section-5-inner">
                     <h2>RELIABLE TECH FOR STAYING CLOSE</h2>
                     <div id="section-content">
-                        Low-latency voice and video feels like you’re in the same room. Wave hello over video, watch friends stream their games, or gather up and have a drawing session with screen share.
+                        Low-latency voice and video feels like you're in the same room. Wave hello over video, watch friends stream their games, or gather up and have a drawing session with screen share.
                     </div>
-                    <img src={sec5_img} id="sec-img" />
+                    <img src={sec5_img} id="sec-img-5" alt="home-img" />
+                </div>
+            </div>
+            <div className="home-page-section-6" id="s6">
+                <div className="home-page-section-6-inner">
+                    <div className="home-page-section-6-inner-h4">
+                        <h4>Ready to start your journey?</h4>
+                    </div>
+                    <div className="home-page-section-6-login">
+                        <NavLink to={"/login"}>
+                            <button id="sec6-login-button">Login to Eriscord</button>
+                        </NavLink>
+                    </div>
+                </div>
+            </div>
+            <div className="home-page-section-7" id="s7">
+                <div className="home-page-section-7-top">
+                    <div className="s7-top-left">ERISCORD DEVELOPERS</div>
+                    <a className='s7-top-name' href=''>Cici Cheng</a>
+                    <a className='s7-top-name' href=''>Frank Song</a>
+                    <a className='s7-top-name' href=''>Jason Arnold</a>
+                    <a className='s7-top-name' href=''>Ming Liu</a>
+                </div>
+                <div id='dot'> · </div>
+                <div className="home-page-section-7-bottom">
+                    <div className="hps1-nav-bar-section-left">
+                        <img src={eriscord_clear_logo} id="logo-img" alt="home-img" />
+                        <div id='logo-name'>Eriscord</div>
+                    </div>
+                    <div className="hps1-nav-bar-section-right">
+                        <NavLink to={"/sign-up"}>
+                            <button id="home-login-button">Sign up</button>
+                        </NavLink>
+                    </div>
                 </div>
             </div>
         </div>
