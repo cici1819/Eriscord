@@ -24,7 +24,9 @@ function DMBox() {
     if (servers){
         currentServer = servers.find(server=> server.id= serverId)
         console.log("CURRENT SERVER IN DMS", currentServer)
-        messagesArr= currentServer.messages
+        if (currentServer){
+            messagesArr= currentServer.messages
+        }
     }
 
     if (!messagesArr) { return "THIS WILL BE DM MESSAGES" }
@@ -34,7 +36,7 @@ function DMBox() {
         <>
             <hr></hr>
             <>
-                This gonna be the messages display box!
+                This gonna be the DM display box!
             </>
 
             <hr></hr>
