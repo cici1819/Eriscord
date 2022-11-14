@@ -32,7 +32,6 @@ function MainPage(props) {
             <div className="channel-or-DM-sidebar">
             {messageShow && <ServerEdit />}
                 {messageShow &&<ServerDelete />}
-                <ChannelListInServer />
                 <div>
                     {messageShow &&
                     <ChannelCreateModal />

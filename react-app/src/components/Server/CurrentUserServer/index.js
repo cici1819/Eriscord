@@ -26,7 +26,7 @@ function CurrentUserServer() {
 
     // if (!) { return null }
     const dmRedirect = () => {
-        history.push("@me")
+        history.push("/channels/@me")
     }
 
     return (
