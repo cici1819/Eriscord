@@ -77,7 +77,7 @@ def add_server():
     return "Successfully created"
 
 
-@server_routes.route('/<int:server_id>', methods= ["PUT"])
+@server_routes.route('/<int:server_id>', methods= ["POST"])
 @login_required
 def update_server(server_id):
     form= ServerForm()
