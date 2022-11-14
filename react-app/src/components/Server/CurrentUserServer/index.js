@@ -1,57 +1,53 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from "react-router";
-import { thunkLoadoneChannel } from "../../../store/channelReducer"
-import './MessagesBox.css';
+import { getPersonalServers, getRegularServers } from "../../../store/serverReducer";
+import './CurrentUserServer.css';
 
 
-function MessagesBox() {
+function CurrentUserServer() {
     const dispatch = useDispatch();
-    const { channelId, serverId } = useParams();
+    // const { channelId, serverId } = useParams();
+
 
 
     useEffect(() => {
-        dispatch(thunkLoadoneChannel(channelId))
+        dispatch(getPersonalServers())
+        // dispatch(getRegularServers())
     }, [dispatch]);
 
 
     // console.log(channelId, serverId)
 
+    let servers = useSelector(state => state.server.servers)
 
-    let channel = useSelector(state => state.channel)
-    let messagesArr = useSelector(state => state.channel[+channelId]?.messages)
-    // console.log('messages!!!!!!!!', messagesArr)
-    let channelArr = Object.values(channel)
+    console.log('servers!!!!!!!!', servers)
+
     // console.log('channelArr!!!!!!!!', channelArr)
 
-    if (!messagesArr) { return null }
+    // if (!) { return null }
 
 
     return (
         <>
-            <hr></hr>
+        <hr></hr>
             <>
-                This gonna be the messages display box!
+                This is the list of current user servers
             </>
             <div>
-                name: {channelArr?.[0]?.name}
+                server:
             </div>
-            <div>
-                topic: {channelArr?.[0]?.topic}
-            </div>
-            <div>
-                serverId: {channelArr?.[0]?.server_id}
-            </div>
+
             <hr></hr>
             <div>
-                {messagesArr.map((message) => (
+                {/* {messagesArr.map((message) => (
                     <div className='single-message-container' key={message.id}>
                         <div className='review-name'>background color:  {message?.sender_color}</div>
                         <div className='review-name'>sender name:  {message?.sender_name}</div>
                         <div className='review-name'>content:  {message?.content}</div>
                         <hr></hr>
                     </div>
-                ))}
+                ))} */}
 
             </div>
 
@@ -62,4 +58,4 @@ function MessagesBox() {
 
 
 
-export default MessagesBox;
+export default CurrentUserServer;

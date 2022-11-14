@@ -21,7 +21,12 @@ class Message(db.Model):
 
     # stop case:
     def to_dict(self):
-        dicted= self.user_m.to_dict()
+        dicted= {
+            "username": "unknown",
+            "color" : 4
+        }
+        if self.user_m:
+            dicted= self.user_m.to_dict()
 
         message_dict = {
             "id": self.id,

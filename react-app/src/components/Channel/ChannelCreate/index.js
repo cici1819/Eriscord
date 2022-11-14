@@ -19,7 +19,7 @@ function ChannelCreateModal() {
                         TEXT CHANNELS
                     </span>
                     <div className='fa-div' >
-                        <i className="fa-duotone fa-plus" onClick={() => setShowModal(true)} > </i>
+                        <i className="fa-regular fa-plus" onClick={() => setShowModal(true)} > </i>
                     </div>
                 </div>
                 {showModal && (

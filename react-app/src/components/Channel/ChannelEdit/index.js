@@ -1,74 +1,33 @@
-import React, { useState } from "react";
-import { useDispatch, useSelector } from 'react-redux';
-import { useHistory } from "react-router-dom";
-import { thunkEditOneChannel } from "../../../store/channelReducer";
-import './ChannelEdit.css';
 
+import React, { useState } from 'react';
+import { Modal } from '../../../context/Modal';
+import { useSelector } from 'react-redux';
+import ChannelEdit from './ChannelEditForm';
 
-function ChannelEdit() {
-    const dispatch = useDispatch();
-    const [name, setName] = useState('');
-    const [topic, setTopic] = useState('');
-    const [hasSubmitted, setHasSubmitted] = useState("");
-    const [errors, setErrors] = useState([]);
-    const history = useHistory();
-
-    const handleSubmit = async (e) => {
-        e.preventDefault();
-        setHasSubmitted(true);
-
-        let channelId = 20
-
-        const editedchannelPayload = { name, topic }
-        editedchannelPayload.channelId = channelId
-        console.log("!!!!!frontend", editedchannelPayload)
-        let editedChannel = await dispatch(thunkEditOneChannel(editedchannelPayload)).catch(async (res) => {
-
-            const data = await res.json();
-
-            if (data && data.errors) {
-                setErrors(data.errors)
-            };
-        });
-
-        if (editedChannel) {
-            // history.push(`/`)
-            console.log(editedChannel)
-        }
+function ChannelEditModal() {
+    const [showModal, setShowModal] = useState(false);
+    const sessionUser = useSelector((state) => state.session.user);
+    if (!sessionUser) {
+        return null;
     }
-
 
     return (
         <>
-            <hr></hr>
-            <>
-                This gonna be where you edit the channel
-            </>
-            <div>
-                <form onSubmit={handleSubmit}>
-
-                        <label > Name </label>
-                        <input type="text"
-                            value={name}
-                            onChange={(e) => setName(e.target.value)}
-                            required/>
-
-
-                        <label >topic</label>
-                        <input type="text"
-                            value={topic}
-                            onChange={(e) => setTopic(e.target.value)}
-                            required/>
-
-                    <button type="submit">edit channel</button>
-
-                </form>
+            <div className='edit-channel'>
+                <div className='text-channel'>
+                    <div className='gear-div'>
+                    <i className="fa-sharp fa-solid fa-gear" onClick={() => setShowModal(true)} > </i>
+                    </div>
+                </div>
+                {showModal && (
+                    <Modal onClose={() => setShowModal(false)}>
+                        <ChannelEdit setShowModal={setShowModal} />
+                    </Modal>
+                )}
             </div>
         </>
-    )
+    );
 }
 
 
-
-
-export default ChannelEdit;
+export default ChannelEditModal;
