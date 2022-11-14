@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from "react-router-dom";
 import { thunkAddChannelToServer } from "../../../store/channelReducer";
@@ -9,33 +9,42 @@ function ChannelCreate({ setShowModal }) {
     const dispatch = useDispatch();
     const [name, setName] = useState('');
     // const [topic, setTopic] = useState('');
-    const [hasSubmitted, setHasSubmitted] = useState("");
+    const [hasSubmitted, setHasSubmitted] = useState(false);
+    const [validationErrors, setValidationErrors] = useState([]);
     const [errors, setErrors] = useState([]);
     const history = useHistory();
 
+    useEffect(() => {
+        const errors = [];
+        if (!name.length) {
+            errors.push("Name is required")
+        } else if (name.length > 50) {
+            errors.push("Name should be less than 50 characters")
+        } else if (name.length < 4) {
+            errors.push("Name should be more than 3 characters")
+        }
+        setValidationErrors(errors);
+    }, [name])
+
+
     const handleSubmit = async (e) => {
         e.preventDefault();
-        setHasSubmitted(true);
+        setErrors(validationErrors)
+        if (!validationErrors.length) {
+            let serverId = 5
+            setHasSubmitted(true);
+            const channelPayload = { name }
+            channelPayload.serverId = serverId
+            // console.log("!!!!!frontend", channelPayload)
+            let createdChannel = await dispatch(thunkAddChannelToServer(channelPayload))
 
-        let serverId = 5
-
-        const channelPayload = { name }
-        channelPayload.serverId = serverId
-        // console.log("!!!!!frontend", channelPayload)
-        let createdChannel = await dispatch(thunkAddChannelToServer(channelPayload)).catch(async (res) => {
-
-            const data = await res.json();
-
-            console.log("data#################",data.errors)
-
-            if (data & data.errors) {
-                setErrors(data.errors)
-            };
-        });
-
-        if (createdChannel) {
-            // history.push(`/`)
-            console.log(createdChannel)
+            if (createdChannel) {
+                // history.push(`/`)
+                setValidationErrors([]);
+                setErrors([]);
+                setShowModal(false);
+                console.log(createdChannel)
+            }
         }
     }
 
@@ -54,11 +63,18 @@ function ChannelCreate({ setShowModal }) {
                     <div className="create-title2">
                         <p>in Text Channels</p>
                     </div>
-                    <div className='error3-lists'>
+                    {errors.length > 0 && (
+                        <div className='error3-lists'>
+                            <ul className='error-list'>
+                                {errors.map((error) => <li id='errors' key={error}>{error}</li>)}
+                            </ul>
+                        </div>
+                    )}
+                    {/* <div className='error3-lists'>
                         {errors.map((error, ind) => (
                             <div key={ind}>{error}</div>
                         ))}
-                    </div>
+                    </div> */}
                     <div className="c-type">
                         CHANNEL TYPE
                     </div>
@@ -88,14 +104,12 @@ function ChannelCreate({ setShowModal }) {
                 </form>
                 <div className="c-button-div">
                     <div className="c-create-button">
-                        <button type="submit">Create Channel</button>
+                        <button type="submit" onClick={handleSubmit}>Create Channel</button>
                     </div>
                     <div className="c-cancel" onClick={() => setShowModal(false)}>
                         Cancel
                     </div>
                 </div>
-
-
 
             </div>
 

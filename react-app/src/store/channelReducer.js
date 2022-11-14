@@ -36,15 +36,16 @@ export const deleteOneChannel = (id) => {
 
 
 export const thunkAddChannelToServer = (data) => async dispatch => {
-    const { name, topic } = data
+    const { name } = data
     const server_id = data.serverId
+    const topic = " add a topic"
     // console.log('thunk++++', {data})
     // console.log('thunk!!!!', server_id, name, topic)
 
     const response = await fetch(`/api/channels/new`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ server_id, name, topic }),
+        body: JSON.stringify({ server_id, name ,topic}),
     })
     // console.log('!!!!!!response', response)
     if (response.ok) {
