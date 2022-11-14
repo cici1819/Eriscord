@@ -12,7 +12,7 @@ function MessagesBox() {
 
     useEffect(() => {
         dispatch(thunkLoadoneChannel(channelId))
-    }, [dispatch]);
+    }, [dispatch, channelId]);
 
 
     // console.log(channelId, serverId)
@@ -33,15 +33,7 @@ function MessagesBox() {
             <>
                 This gonna be the messages display box!
             </>
-            <div>
-                name: {channelArr?.[0]?.name}
-            </div>
-            <div>
-                topic: {channelArr?.[0]?.topic}
-            </div>
-            <div>
-                serverId: {channelArr?.[0]?.server_id}
-            </div>
+
             <hr></hr>
             <div>
                 {messagesArr.map((message) => (
