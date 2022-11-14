@@ -55,7 +55,11 @@ function ChannelEdit({setShowModal}) {
                             required/>
 
 
+<<<<<<< HEAD
                         <label >TOPIC</label>
+=======
+                        <label>TOPIC</label>
+>>>>>>> 7b9451b8e59970d8580475fb2b1106d4c6335801
                         <input type="text"
                             value={topic}
                             onChange={(e) => setTopic(e.target.value)}

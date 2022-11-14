@@ -27,6 +27,7 @@ function MainPage(){
         <MessagesBox />
         </div>
 
+        <div className="server-users-bar">users who subscribed the server bar</div>
         </div>
     )
 }

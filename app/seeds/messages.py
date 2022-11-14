@@ -4,6 +4,8 @@ from datetime import datetime
 
 
 def seed_messages():
+    # channel messages -----------------------------------------
+    # message id 1-6 for server 6, channel 2---------------------
     first = Message(
         content="HELLO, I AM NEW",
         channel_id=2,
@@ -52,6 +54,7 @@ def seed_messages():
         sender_id=1
     )
     db.session.add(sixth)
+    # message id 7-11 for server 7, channel 5---------------------
     seventh = Message(
         content="Hey, how's everyone doing?",
         channel_id=5,
@@ -92,14 +95,82 @@ def seed_messages():
         sender_id=10
     )
     db.session.add(eleventh)
+    # message id 12 for server 7, channel 6---------------------
     twelfth = Message(
         content="Anyone here?",
-        channel_id=6,
-        server_id=7,
+        server_id=1,
+        created_at=datetime.now(),
+        sender_id=2
+    )
+    db.session.add(twelfth)
+
+    # DM messages -----------------------------------------
+    # message id 13-15 for server 1---------------------------
+    thirteen = Message(
+        content="Hey! Demo",
+        server_id=1,
+        created_at=datetime.now(),
+        sender_id=2
+    )
+    db.session.add(thirteen)
+
+    fourteen = Message(
+        content="Hi, Freya!",
+        server_id=1,
         created_at=datetime.now(),
         sender_id=1
     )
-    db.session.add(twelfth)
+    db.session.add(fourteen)
+
+    fifteen = Message(
+        content="Good to see you here!!!",
+        server_id=1,
+        created_at=datetime.now(),
+        sender_id=1
+    )
+    db.session.add(fifteen)
+
+    # message id 16-17 for server 2---------------------------
+    sixteen = Message(
+        content="Morning, Atlas!",
+        server_id=2,
+        created_at=datetime.now(),
+        sender_id=1
+    )
+    db.session.add(sixteen)
+
+    seventeen = Message(
+        content="Hi Demo, good morning",
+        server_id=2,
+        created_at=datetime.now(),
+        sender_id=3
+    )
+    db.session.add(seventeen)
+    # message id 18-20 for server 3---------------------------
+    eighteen = Message(
+        content="Hi Demo, how is going?",
+        server_id=3,
+        created_at=datetime.now(),
+        sender_id=4
+    )
+    db.session.add(eighteen)
+
+    nineteen = Message(
+        content="I'm doing good Helen, how are you today?",
+        server_id=3,
+        created_at=datetime.now(),
+        sender_id=1
+    )
+    db.session.add(nineteen)
+
+    twenty = Message(
+        content="also pretty good here! just wanna say Hi!!!",
+        server_id=3,
+        created_at=datetime.now(),
+        sender_id=4
+    )
+    db.session.add(twenty)
+
     db.session.commit()
 
 
