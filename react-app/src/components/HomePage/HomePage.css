@@ -7,6 +7,7 @@
     align-items: center;
     background-image: url(../../img/home-page/1-0.png);
     background-size: 2560px 626px;
+    background-position: center center;
     width: 100%;
     /* object-fit: cover;
 
@@ -29,21 +30,31 @@
     flex-direction: row;
     align-items: center;
     justify-content: space-around;
-    width: 115px;
+    width: 135px;
     height: 34px;
 }
 
 .hps1-nav-bar-section-left #logo-img {
-    width: 30px;
-    height: 30px;
+    width: 36px;
+    height: 36px;
 }
 
 .hps1-nav-bar-section-left #logo-name {
     font-family: "Ginto Nord", "Whitney", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
-    font-size: 21px;
+    font-size: 24px;
     font-weight: 700;
     color: #FFFFFF;
 
+}
+
+.hps1-nav-bar-section-right button {
+    background-color: #FFFFFF;
+    padding: 12px 16px;
+    color: #23272A;
+    font-size: 14px;
+    border-radius: 40px;
+    font-family: "Whitney", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+    ;
 }
 
 .hps1-word-section {
@@ -145,4 +156,149 @@
     color: #23272A;
     line-height: 1.625;
     margin-top: 24px;
+}
+
+
+/* section 5 */
+.home-page-section-5 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #F6F6F6;
+}
+
+.home-page-section-5-inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 1180px;
+    height: 858.55px;
+    padding: 120px 40px 80px 40px;
+    text-align: center;
+}
+
+.home-page-section-5-inner h2 {
+    font-size: 50px;
+    color: #23272A;
+    font-family: "Ginto Nord", "Whitney", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+    font-weight: 800;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    width: 980px;
+}
+
+.home-page-section-5-inner #section-content {
+    width: 980px;
+    margin-top: 24px;
+    line-height: 1.625;
+}
+
+#sec-img-5 {
+    width: 1180px;
+    height: 700px;
+    padding-top: 16px;
+    max-width: 100%;
+    height: auto;
+}
+
+/* section 6 */
+.home-page-section-6 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #F6F6F6;
+    height: 286px;
+}
+
+.home-page-section-6-inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 1180px;
+    height: 200px;
+    padding: 0px 40px 0px 40px;
+    margin-bottom: 120px;
+    text-align: center;
+}
+
+.home-page-section-6-inner #sec-img {
+    width: 531px;
+    height: 49px;
+}
+
+.home-page-section-6-inner-h4 {
+    display: table-cell;
+    width: 531px;
+    height: 100px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    vertical-align: bottom;
+    background-image: url(../../img/home-page/6-1.png);
+    background-repeat: no-repeat;
+    background-position: 0px 14px;
+    font-size: 34px;
+    color: #000000;
+    font-family: "Ginto Normal", "Whitney", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+    font-weight: 600;
+}
+
+.home-page-section-6-login button {
+    background-color: #5865F2;
+    padding: 16px 32px;
+    margin-top: 40px;
+    color: #FFFFFF;
+    font-size: 20px;
+    border-radius: 28px;
+}
+
+/* section 7 footer */
+.home-page-section-7 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 200px;
+    padding: 80px 0px 64px 0px;
+    background-color: #23272A;
+}
+
+.home-page-section-7-top {
+    display: flex;
+    flex-direction: row;
+    width: 1180px;
+    margin-bottom: 40px;
+}
+
+.s7-top-left {
+    width: 300px;
+    color: #5865F2;
+    font-size: 32px;
+    font-weight: 900;
+    font-family: "Ginto Nord", "Whitney", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+}
+
+.s7-top-name {
+    display: flex;
+    align-items: center;
+    width: 220px;
+    color: #FFFFFF;
+    font-size: 20px;
+    vertical-align: bottom;
+
+}
+
+.home-page-section-7-bottom {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 1180px;
+    height: 80px;
+    vertical-align: bottom;
+    padding-top: 30px;
+    border-top: 1.5px solid #5865F2;
+}
+
+.home-page-section-7-bottom button {
+    background-color: #5865F2;
+    color: #FFFFFF;
 }

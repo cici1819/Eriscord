@@ -7,13 +7,12 @@ import './MessagesBox.css';
 
 function MessagesBox() {
     const dispatch = useDispatch();
-    const { channelId } = useParams();
-    const { serverId } = useParams();
+    const { channelId, serverId } = useParams();
 
 
     useEffect(() => {
         dispatch(thunkLoadoneChannel(channelId))
-    }, [dispatch]);
+    }, [dispatch, channelId]);
 
 
     // console.log(channelId, serverId)
@@ -21,7 +20,7 @@ function MessagesBox() {
 
     let channel = useSelector(state => state.channel)
     let messagesArr = useSelector(state => state.channel[+channelId]?.messages)
-    console.log('messages!!!!!!!!', messagesArr)
+    // console.log('messages!!!!!!!!', messagesArr)
     let channelArr = Object.values(channel)
     // console.log('channelArr!!!!!!!!', channelArr)
 
@@ -34,15 +33,7 @@ function MessagesBox() {
             <>
                 This gonna be the messages display box!
             </>
-            <div>
-                name: {channelArr?.[0]?.name}
-            </div>
-            <div>
-                topic: {channelArr?.[0]?.topic}
-            </div>
-            <div>
-                serverId: {channelArr?.[0]?.server_id}
-            </div>
+
             <hr></hr>
             <div>
                 {messagesArr.map((message) => (

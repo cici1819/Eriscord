@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from "react-router-dom";
+import { useParams } from "react-router";
 import { thunkAddChannelToServer } from "../../../store/channelReducer";
 import './ChannelCreate.css';
 
@@ -13,6 +14,20 @@ function ChannelCreate({ setShowModal }) {
     const [validationErrors, setValidationErrors] = useState([]);
     const [errors, setErrors] = useState([]);
     const history = useHistory();
+    const { channelId, serverId } = useParams();
+
+    useEffect(() => {
+        const errors = [];
+        if (!name.length) {
+            errors.push("Name is required")
+        } else if (name.length > 50) {
+            errors.push("Name should be less than 50 characters")
+        } else if (name.length < 4) {
+            errors.push("Name should be more than 3 characters")
+        }
+        setValidationErrors(errors);
+    }, [name])
+
 
     useEffect(() => {
         const errors = [];
@@ -29,14 +44,21 @@ function ChannelCreate({ setShowModal }) {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        setErrors(validationErrors)
-        if (!validationErrors.length) {
-            let serverId = 5
-            setHasSubmitted(true);
-            const channelPayload = { name }
-            channelPayload.serverId = serverId
-            // console.log("!!!!!frontend", channelPayload)
-            let createdChannel = await dispatch(thunkAddChannelToServer(channelPayload))
+        setHasSubmitted(true);
+
+        let serverId = 5
+
+        const channelPayload = { name }
+        channelPayload.serverId = serverId
+        // console.log("!!!!!frontend", channelPayload)
+        let createdChannel = await dispatch(thunkAddChannelToServer(channelPayload)).catch(async (res) => {
+
+            const data = await res.json();
+
+            if (data && data.errors) {
+                setErrors(data.errors)
+            };
+        });
 
             if (createdChannel) {
                 // history.push(`/`)
