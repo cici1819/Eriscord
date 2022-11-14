@@ -56,13 +56,14 @@ def single_server(server_id):
 def add_server():
     form= ServerForm()
     data= form.data
-    user = request.current_user
+    user_id = current_user.id
+
     form['csrf_token'].data = request.cookies['csrf_token']
     # "is_dm" : false because route is only for regular servers
-    new_server= Server(name= data["name"], img= data["img"], description= data["description"], is_dm= False, owner_id= user["id"])
+    new_server= Server(name= data["name"], img= data["img"], description= data["description"], is_dm= False, owner_id= user_id)
     db.session.add(new_server)
     db.session.commit()
-    return "Successfully created"
+    return json.dumps(new_server.to_dict_regulars())
 
 
 @server_routes.route('/<int:server_id>', methods= ["POST"])

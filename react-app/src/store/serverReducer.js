@@ -67,6 +67,16 @@ export const getRegularServers = () => async dispatch => {
       return result
     }
   };
+  export const getDMServers = () => async dispatch => {
+    const response = await fetch(`/api/servers/dm`);
+    if (response.ok) {
+      const servers = await response.json();
+      //console.log("THUNK SERVERS :", servers)
+      const result = dispatch(loadAll(servers.servers))
+      //console.log("RESULT OF DISPATCHING :", result)
+      return result
+    }
+  };
   export const getPersonalServers = () => async dispatch => {
     const response = await fetch(`/api/servers/current`);
     if (response.ok) {
@@ -87,7 +97,7 @@ export const thunkAddServer = (data) => async dispatch => {
     })
     if (response.ok) {
         const newServer = await response.json();
-        dispatch(addServer(newServer))
+        dispatch(addServer(response))
         return newServer
     }
 }

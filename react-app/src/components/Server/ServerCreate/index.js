@@ -26,7 +26,7 @@ function ServerCreate() {
         let createdServer = await dispatch(thunkAddServer(serverPayload)).catch(async (res) => {
 
             const data = await res.json();
-
+            console.log("THIS IS RES :",res)
             if (data && data.errors) {
                 setErrors(data.errors)
             };
