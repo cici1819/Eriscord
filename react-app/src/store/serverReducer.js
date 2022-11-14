@@ -58,7 +58,7 @@ export const deleteServer = (id) => {
     };
 };
 export const getAllServers = () => async dispatch => {
-    const response = await csrfFetch(`/api/servers`);
+    const response = await fetch(`/api/servers`);
     if (response.ok) {
       const servers = await response.json();
       //console.log("THUNK SERVERS :", servers)
@@ -68,7 +68,7 @@ export const getAllServers = () => async dispatch => {
     }
   };
   export const getPersonalServers = () => async dispatch => {
-    const response = await csrfFetch(`/api/servers/current`);
+    const response = await fetch(`/api/servers/current`);
     if (response.ok) {
       const servers = await response.json();
       //console.log("THUNK SERVERS :", servers)
