@@ -33,7 +33,6 @@ function MainPage(props) {
 
                 <ServerEdit />
                 <ServerDelete />
-                <ChannelListInServer />
                 <div>
                     <ChannelCreateModal />
                 </div>
