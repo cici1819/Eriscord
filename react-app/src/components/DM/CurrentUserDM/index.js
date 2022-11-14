@@ -13,7 +13,6 @@ function CurrentUserDm() {
 
     useEffect(() => {
         dispatch(getPersonalDMServers())
-        // dispatch(getRegularServers())
     }, [dispatch]);
 
 

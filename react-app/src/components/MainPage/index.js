@@ -30,17 +30,29 @@ function MainPage(props) {
             </div>
 
             <div className="channel-or-DM-sidebar">
-
-                <ServerEdit />
-                <ServerDelete />
+            {messageShow && <ServerEdit />}
+                {messageShow &&<ServerDelete />}
                 <ChannelListInServer />
                 <div>
+                    {messageShow &&
                     <ChannelCreateModal />
+
+                    }
                 </div>
 
                 <div>
+                    {
+                        messageShow &&
                     <ChannelListInServer />
+                    }
+                    {
+                        dmShow &&
+                  <CurrentUserDm />
+
+                    }
+                    {messageShow &&
                     <ChannelEditModal />
+                    }
                 </div>
 
                 <div>
@@ -62,7 +74,6 @@ function MainPage(props) {
                 <UsersInOneServer />
             </div>
             <div>
-                <CurrentUserDm />
 
             </div>
         </div>

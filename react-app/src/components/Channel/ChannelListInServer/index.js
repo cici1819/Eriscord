@@ -38,7 +38,8 @@ function ChannelListInServer() {
             <div>
                 {channelsArr.map((channel) => (
                     <NavLink
-                        to={`/channels/${serverId}/${channel.id}`}>
+                        to={`/channels/${serverId}/${channel.id}`}
+                        key={channel.id}>
                         <div>
                             {channel.name}
                         </div>
