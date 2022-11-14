@@ -77,7 +77,7 @@ def update_server(server_id):
         server.name= data["name"]
         server.img= data["img"]
         db.session.commit()
-        return "Successfully updated"
+        return json.dumps(server.to_dict_regulars())
     else:
         return form.errors
 
@@ -88,4 +88,4 @@ def delete_server(server_id):
     server= Server.query.get(server_id)
     db.session.delete(server)
     db.session.commit()
-    return "Successfully deleted"
+    return json.dumps("Successfully deleted")
