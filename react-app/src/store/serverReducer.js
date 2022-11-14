@@ -107,7 +107,7 @@ export const getPersonalDMServers = () => async dispatch => {
     if (response.ok) {
       const servers = await response.json();
     //   console.log("THUNK SERVERS :", servers)
-      const result = dispatch(loadAll(servers.servers))
+      const result = dispatch(loadDm(servers.servers))
       //console.log("RESULT OF DISPATCHING :", result)
       return result
     // return "HELLO"
@@ -163,10 +163,10 @@ const serverReducer = (state = {}, action) => {
         //separate loads for regular and dm servers
         case LOAD_ALL:
             //console.log("GET SERVERS ACTION :", action)
-            return { ...newState, servers: [...action.servers] };
+            return { ...state, ...newState, servers: [...action.servers] };
         case LOAD_DM:
             //console.log("GET SERVERS ACTION :", action)
-            return { ...newState, dmServers: [...action.servers] };
+            return {...state, ...newState, dmServers: [...action.servers] };
         case LOAD_ONE:
             newState = { ...state, [action.server.id]: action.server }
             return newState

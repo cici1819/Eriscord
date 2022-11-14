@@ -40,19 +40,19 @@ function App() {
         </Route>
 
         <ProtectedRoute path='/channels/@me' exact={true}>
-          <MainPage />
+          <MainPage dmShow= {true}/>
         </ProtectedRoute>
 
         <ProtectedRoute path='/channels/@me/:serverId' exact={true}>
-          <MainPage />
+          <MainPage dmShow= {true} />
         </ProtectedRoute>
 
         <ProtectedRoute path='/channels/:serverId/:channelId' exact={true}>
-          <MainPage />
+          <MainPage dmShow= {false} />
         </ProtectedRoute>
 
         <ProtectedRoute path='/channels/:serverId' exact={true}>
-          <MainPage />
+          <MainPage dmShow= {false}/>
         </ProtectedRoute>
 
         <ProtectedRoute path='/users' exact={true} >
