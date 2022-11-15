@@ -1,8 +1,8 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from "react-router-dom";
 import { useParams } from "react-router";
-import { thunkEditServer } from "../../../store/serverReducer";
+import { thunkEditServer, getPersonalServers } from "../../../store/serverReducer";
 import './ServerEdit.css';
 
 
@@ -12,14 +12,27 @@ function ServerEdit({ setShowModal }) {
     const [img, setImg] = useState('');
     const [description, setDescription] = useState('');
     const [hasSubmitted, setHasSubmitted] = useState("");
+    const [validationErrors, setValidationErrors] = useState([]);
     const [errors, setErrors] = useState([]);
     const history = useHistory();
     const { serverId } = useParams();
 
+
+    useEffect(() => {
+        let errors = [];
+
+        if (!img.includes('.com') && !img.includes('.jpg') && !img.includes('.png') && !img.includes('.jpeg')) {
+          errors.push('please provide a valid image URL!')
+        }
+        // console.log(typeof Number(price))
+        setValidationErrors(errors)
+      }, [img])
+
     const handleSubmit = async (e) => {
         e.preventDefault();
         setHasSubmitted(true);
-        console.log('serverId', serverId)
+        if (validationErrors.length) { return }
+        // console.log('serverId', serverId)
 
         const editedServerPayload = { serverId, name, img, description }
         editedServerPayload.serverId = serverId
@@ -34,8 +47,8 @@ function ServerEdit({ setShowModal }) {
         });
 
         if (editedServer) {
-            // history.push(`/`)
-            console.log(editedServer)
+            setShowModal(false);
+            dispatch(getPersonalServers())
         }
     }
 
@@ -44,6 +57,11 @@ function ServerEdit({ setShowModal }) {
         <>
 
             <div>
+            {hasSubmitted && !!validationErrors.length && (<div>
+            <ul>
+              {validationErrors.map((error, idx) => <li key={idx}>{error}</li>)}
+            </ul>
+          </div>)}
                 <form onSubmit={handleSubmit}>
 
                     <input type="text"
