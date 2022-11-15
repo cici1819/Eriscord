@@ -31,7 +31,6 @@ function CurrentUserServer() {
 
     return (
         <>
-<<<<<<< HEAD
             <hr></hr>
             <>
             </>
@@ -40,10 +39,6 @@ function CurrentUserServer() {
             </div>
             <button onClick={dmRedirect}> VIEW YOUR DMS</button>
             <hr></hr>
-=======
-
-    
->>>>>>> 3f7a171ac4eac6f77768bbf6c3f4e6f4c6a8f053
             <div className="single-server-container">
                 {servers?.map((server) => {
                     return (

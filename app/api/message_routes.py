@@ -38,9 +38,9 @@ def add_channel_message(channel_id):
     db.session.commit()
     return json.dumps(new_message.to_dict())
 
-@message_routes.route('/dms/<int:channel_id>', methods=["POST"])
+@message_routes.route('/dms/<int:server_id>', methods=["POST"])
 # @login_required
-def add_channel_message(channel_id):
+def add_dm_message(channel_id):
     form= MessageForm()
     data= form.data
     # sender_id = current_user.id
@@ -52,7 +52,7 @@ def add_channel_message(channel_id):
     db.session.commit()
     return json.dumps(new_message.to_dict())
 @message_routes.route('/dms/<int:server_id>')
-def dm_messages(channel_id):
-    id = channel_id
-    channel_messages = Message.query.filter_by(message_id=id)
-    return json.dumps({"messages": [message.to_dict() for message in channel_messages]})
+def dm_messages(server_id):
+    id = server_id
+    server_messages = Message.query.filter_by(message_id=id)
+    return json.dumps({"messages": [message.to_dict() for message in server_messages]})
