@@ -152,6 +152,7 @@ export const thunkDeleteOneServer = (serverId) => async dispatch => {
     });
     if (response.ok) {
         const toDelete = await response.json();
+        console.log(toDelete)
         dispatch(deleteServer(serverId));
     }
 }

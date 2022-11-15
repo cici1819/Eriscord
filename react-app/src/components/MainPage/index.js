@@ -8,7 +8,7 @@ import './MainPage.css';
 import CurrentUserServer from "../Server/CurrentUserServer";
 import UsersInOneServer from "../Server/UsersInOneServer";
 import ServerCreate from "../Server/ServerCreate";
-import ServerEdit from "../Server/ServerEdit";
+import ServerEditModal from "../Server/ServerEdit";
 import ServerDelete from "../Server/ServerDelete";
 import ChannelListInServer from "../Channel/ChannelListInServer";
 import CurrentUserDm from "../DM/CurrentUserDM";
@@ -30,7 +30,7 @@ function MainPage(props) {
             </div>
 
             <div className="channel-or-DM-sidebar">
-            {messageShow && <ServerEdit />}
+            {messageShow && <ServerEditModal />}
                 {messageShow &&<ServerDelete />}
                 <div>
                     {messageShow &&
