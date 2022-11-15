@@ -1,15 +1,15 @@
-.main-page-container{
+.main-page-container {
     display: flex;
     flex-direction: row;
 }
 
 
-.server-sidebar{
+.server-sidebar {
     width: 200px;
 }
 
 
-.channel-or-DM-sidebar{
+.channel-or-DM-sidebar {
     width: 200px;
     height: 500px;
     border-left: 2px solid black;
@@ -18,9 +18,9 @@
 
 
 
-.server-users-bar{
+/* .server-users-bar{
     width: 100px;
     height: 500px;
     border-left: 2px solid black;
     border-right: 2px solid black;
-}
+} */
