@@ -13,9 +13,11 @@ function ServerDelete() {
 
     const handleDelete = async (e) => {
 
-        dispatch(thunkDeleteOneServer(serverId))
+        await dispatch(thunkDeleteOneServer(serverId))
 
-        dispatch(getPersonalServers())
+        await dispatch(getPersonalServers())
+
+        await history.push("/channels/@me")
 
     }
 
