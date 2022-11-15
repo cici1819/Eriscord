@@ -17,8 +17,8 @@ import DMBox from "../DM/DMBox";
 
 
 
-    function MainPage(props) {
-        const { dmShow } = props
+function MainPage(props) {
+    const { dmShow } = props
     let messageShow;
     if (dmShow === false) {
         messageShow = true
@@ -38,17 +38,20 @@ import DMBox from "../DM/DMBox";
     return (
         <div className="main-page-container">
 
-            <div className="server-sidebar"> direct messages and server bar
-
+            <div className="server-sidebar">
                 <CurrentUserServer />
-                <ServerCreateModal />
+                <div className="server-plus">
+                    <ServerCreateModal />
+                </div>
+
             </div>
+
             <div className="channel-or-DM-sidebar">
-            {messageShow && <ServerEditModal />}
-                {messageShow &&<ServerDelete />}
+                {messageShow && <ServerEditModal />}
+                {messageShow && <ServerDelete />}
                 <div>
                     {messageShow &&
-                    <ChannelCreateModal />
+                        <ChannelCreateModal />
 
                     }
                 </div>
@@ -56,15 +59,15 @@ import DMBox from "../DM/DMBox";
                 <div>
                     {
                         messageShow &&
-                    <ChannelListInServer />
+                        <ChannelListInServer />
                     }
                     {
                         dmShow &&
-                  <CurrentUserDm />
+                        <CurrentUserDm />
 
                     }
                     {messageShow &&
-                    <ChannelEditModal />
+                        <ChannelEditModal />
                     }
                 </div>
 
@@ -74,14 +77,14 @@ import DMBox from "../DM/DMBox";
 
 
             </div>
-            { messageShow &&
+            {messageShow &&
                 <div className="messages-container"> all the messages map
                     <MessagesBox />
                 </div>
             }
             {dmShow &&
-            <>
-            <DMBox />
+                <>
+                    <DMBox />
                 </>
             }
             <div className="server-users-bar">users who subscribed the server bar
