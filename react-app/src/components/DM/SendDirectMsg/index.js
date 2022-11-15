@@ -9,14 +9,13 @@ function SendDirectMsg() {
     const dispatch = useDispatch();
     const [content, setContent] = useState('');
 
-    const { channelId, serverId } = useParams();
-    let channel_id = channelId
+    const { serverId } = useParams();
     let server_id = serverId
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-
-        const msgPayload = { content, channel_id, server_id }
+        console.log('content, server_id', content, server_id)
+        const msgPayload = { content, server_id }
         dispatch(DMServerAddMessage(msgPayload))
     }
 
