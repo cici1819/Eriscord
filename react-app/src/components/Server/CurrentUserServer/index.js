@@ -28,15 +28,8 @@ function CurrentUserServer() {
 
     return (
         <>
-        <hr></hr>
-            <>
-                This is the list of current user servers
-            </>
-            <div>
-                server:
-            </div>
 
-            <hr></hr>
+    
             <div className="single-server-container">
             {servers?.map((server) => {
                 return (
