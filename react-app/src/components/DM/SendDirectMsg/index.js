@@ -17,9 +17,9 @@ function SendDirectMsg() {
         e.preventDefault();
         console.log('content, server_id', content, server_id)
         const msgPayload = { content, server_id }
-        dispatch(DMServerAddMessage(msgPayload))
-        dispatch(getPersonalDMServers())
-        setContent('')
+        await dispatch(DMServerAddMessage(msgPayload))
+        await dispatch(getPersonalDMServers())
+        await setContent('')
     }
 
     return (

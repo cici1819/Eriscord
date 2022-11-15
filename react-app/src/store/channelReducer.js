@@ -75,7 +75,7 @@ export const thunkEditOneChannel = (data) => async dispatch => {
 
 
     // console.log('herre')
-    console.log('data', name, topic)
+    console.log('data')
 
     const response = await fetch(`/api/channels/${channelId}`, {
         method: "POST",

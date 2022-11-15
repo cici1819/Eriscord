@@ -18,9 +18,9 @@ function SendRegulerMsg() {
         e.preventDefault();
 
         const msgPayload = { content, channel_id, server_id }
-        dispatch(channelAddMessage(msgPayload))
-        dispatch(thunkLoadoneChannel(channelId))
-        setContent('')
+        await dispatch(channelAddMessage(msgPayload))
+        await dispatch(thunkLoadoneChannel(channelId))
+        await setContent('')
     }
 
     return (
