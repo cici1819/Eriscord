@@ -68,32 +68,32 @@ body {
     height: 100%;
     color: white;
     /* background-color: antiquewhite; */
+}
 
+.messages-container {
+    background-color: rgb(54, 57, 63);
+    /* margin-left: 150px; */
+    position: absolute;
+    /* left: 360px; */
+    height: 100%;
+    width: calc(100vw - 80px - 260px - 260px);
+    color: white;
+}
 
-    .messages-container {
-        background-color: rgb(54, 57, 63);
-        /* margin-left: 150px; */
-        position: absolute;
-        /* left: 360px; */
-        height: 100%;
-        width: calc(100vw - 80px - 260px - 260px);
-        color: white;
-    }
-
-    /* .messges-user-div{
+/* .messges-user-div{
     display:flex;
     flex-direction: row-reverse;
     align-items: flex-end;
     background-color: aqua;
 } */
 
-    .add-server {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin-top: 20px;
-        /* width: 50px;
+.add-server {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    /* width: 50px;
     height: 50px;
     border-radius: 50%;
     background-color: rgb(47, 49, 54); */
-    }
+}
