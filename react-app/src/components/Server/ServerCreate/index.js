@@ -14,12 +14,12 @@ function ServerCreateModal() {
     return (
         <>
             <div className='add-server'>
-                <div className='plus-icon'>
-                <i className = "fa-regular fa-plus-large" onClick={() => setShowModal(true)} > </i>
+                <div className='server-create-icon'>
+                    <i className="fa-regular fa-plus" onClick={() => setShowModal(true)} > </i>
                 </div>
                 {showModal && (
                     <Modal onClose={() => setShowModal(false)}>
-                        <ServerCreate setShowModal={setShowModal}  />
+                        <ServerCreate setShowModal={setShowModal} />
                     </Modal>
                 )}
             </div>
