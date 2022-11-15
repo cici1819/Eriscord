@@ -41,7 +41,7 @@ import SendRegulerMsg from "../RM/SendRegulerMsg";
             <div className="server-sidebar"> direct messages and server bar
 
                 <CurrentUserServer />
-                <ServerCreate />
+                <ServerCreateModal />
             </div>
             <div className="channel-or-DM-sidebar">
             {messageShow && <ServerEditModal />}

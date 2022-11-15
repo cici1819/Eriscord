@@ -46,7 +46,6 @@ function MessagesBox() {
                 ))}
 
             </div>
-<<<<<<< HEAD:react-app/src/components/Channel/MessagesBox/index.js
             {/* <div className="channel-message-form">
             <form className='channel-send-message-form'>
                         <textarea
@@ -61,9 +60,7 @@ function MessagesBox() {
             </div> */}
 
 
-=======
             <SendRegulerMsg />
->>>>>>> 5bde70c6db47b4e396964e6159f736678ba45c1e:react-app/src/components/RM/MessagesBox/index.js
         </>
     )
 }
