@@ -29,7 +29,7 @@ const LoginForm = () => {
   };
 
   if (user) {
-    return <Redirect to='/channels/@me' />;
+    return <Redirect to='/channels/@me'/>;
   }
 
   return (

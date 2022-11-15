@@ -102,7 +102,7 @@ export const thunkDeleteOneChannel = (channelId) => async dispatch => {
         headers: { 'Content-Type': 'application/json' }
     });
     if (response.ok) {
-        const channelToDelete = await response.json();
+        // const channelToDelete = await response.json();
         dispatch(deleteOneChannel(channelId));
     }
 }

@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import { NavLink } from 'react-router-dom';
-import ChannelBar from './Channel/MessagesBox';
 import { useDispatch } from 'react-redux';
 
 
@@ -30,7 +29,6 @@ function UsersList() {
     <>
       <h1>User List: </h1>
       <ul>{userComponents}</ul>
-      <ChannelBar />
     </>
   );
 }
