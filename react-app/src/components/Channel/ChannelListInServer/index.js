@@ -2,6 +2,8 @@ import React, { useEffect } from "react";
 import { useDispatch, useSelector } from 'react-redux';
 import { NavLink, useParams } from "react-router-dom"
 import { thunkLoadOneServer } from "../../../store/serverReducer";
+import ChannelEditModal from "../ChannelEdit";
+import ChannelEdit from "../ChannelEdit/ChannelEditForm";
 import './ChannelListInServer.css';
 
 
@@ -43,6 +45,7 @@ function ChannelListInServer() {
                         <div>
                             {channel.name}
                         </div>
+                        <ChannelEditModal />
                     </NavLink>
                 ))}
 

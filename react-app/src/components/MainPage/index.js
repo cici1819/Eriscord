@@ -66,9 +66,7 @@ function MainPage(props) {
                         <CurrentUserDm />
 
                     }
-                    {messageShow &&
-                        <ChannelEditModal />
-                    }
+
                 </div>
 
                 <div>
