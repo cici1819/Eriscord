@@ -42,7 +42,7 @@ function UsersInOneServer() {
                 MEMBERS - {usersInCurrentServer.length}
             </div>
             <div className="members-list-container">
-                {usersInCurrentServer?.map((user) => <OneUserInfo user={user} />)}
+                {usersInCurrentServer?.map((user) => <OneUserInfo key = {user.id} user={user} />)}
             </div>
         </div>
     )

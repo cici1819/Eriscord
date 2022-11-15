@@ -55,7 +55,7 @@ function App() {
           <MainPage dmShow= {false}/>
         </ProtectedRoute>
 
-        <ProtectedRoute path='/channels/' exact={true}>
+        <ProtectedRoute path='/channels' exact={true}>
           <MainPage dmShow= {false}/>
         </ProtectedRoute>
 

@@ -26,7 +26,6 @@ class Server(db.Model):
         "User",
         secondary=server_member,
         back_populates="user_server_member",
-        cascade="all, delete"
     )
 
 # stop case:

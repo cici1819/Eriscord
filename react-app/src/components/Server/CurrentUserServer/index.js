@@ -9,9 +9,9 @@ import './CurrentUserServer.css';
 
 function CurrentUserServer() {
     const dispatch = useDispatch();
-    // const { channelId, serverId } = useParams();
+    const { channelId, serverId } = useParams();
     const history = useHistory();
-
+    let servers = useSelector(state => state.server.servers)
 
     useEffect(() => {
         dispatch(getPersonalServers())
@@ -20,11 +20,9 @@ function CurrentUserServer() {
 
     // console.log(channelId, serverId)
 
-    let servers = useSelector(state => state.server.servers)
-
     // console.log('servers!!!!!!!!', servers)
 
-    // if (!) { return null }
+    if (!servers) { return null }
     const dmRedirect = () => {
         history.push("/channels/@me")
     }
@@ -42,7 +40,7 @@ function CurrentUserServer() {
             <div className="single-server-container">
                 {servers?.map((server) => {
                     return (
-                        <SingleServer server={server} key={server.id} />
+                        <SingleServer server={server} key={server?.id} />
                     )
                 })}
 
