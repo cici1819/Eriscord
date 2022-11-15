@@ -26,15 +26,17 @@ function ServerCreate({setShowModal}) {
         let createdServer = await dispatch(thunkAddServer(serverPayload)).catch(async (res) => {
 
             const data = await res.json();
-            console.log("THIS IS RES :",res)
+            // console.log("THIS IS RES :",res)
             if (data && data.errors) {
                 setErrors(data.errors)
             };
         });
         console.log("createdServer+++++++", createdServer)
         if (createdServer) {
-            setShowModal(false);
-            dispatch(getPersonalServers())
+
+            await dispatch(getPersonalServers())
+            await setShowModal(false);
+            await history.push(`/channels/${createdServer.id}`)
         }
     }
 

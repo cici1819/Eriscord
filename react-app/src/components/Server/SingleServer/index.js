@@ -5,12 +5,25 @@ import './SingleServer.css';
 
 
 function SingleServer({ server }) {
-    // console.log('server!!!!!!!!!!!!!!!!!!!!', server.channels[0].id)
-    let firstChannelId = server?.channels[0]?.id
 
-    if (server?.img?.length!==0 || server==undefined) {
+    if (!server) { return null }
+
+    let firstChannelId
+    // console.log("server!!!!!!!!!!!!!!!!!", server)
+
+    if (server.hasOwnProperty('channels') && server.channels.length > 0) {
+        firstChannelId = server.channels[0].id
+        return (
+            <NavLink
+                to={`/channels/${server?.id}/${firstChannelId}`}>
+                <img className={`single-server-logo`} src={server?.img} alt='single-server-logo' />
+            </NavLink>
+        )
+    } else {
+        firstChannelId = 0
         return (
             <>
+
                 <NavLink
                     to={`/channels/${server?.id}/${firstChannelId}`}>
                     <img className={`single-server-logo`} src={server?.img} alt='single-server-logo' />
@@ -19,17 +32,7 @@ function SingleServer({ server }) {
         )
     }
 
-    return (
-        <>
-
-            <NavLink
-                to={`/channels/${server?.id}`}>
-                name: {server.name}
-            </NavLink>
-        </>
-    )
 }
-
 
 
 

@@ -15,7 +15,7 @@ function ServerEditModal() {
 
     let name
     if (servers) {
-        let currentServer = servers.find(server => server.id == serverId)
+        let currentServer = servers.find(server => server?.id == serverId)
         console.log("CURRENT SERVER IN DMS", currentServer)
         name = currentServer?.name
     }
