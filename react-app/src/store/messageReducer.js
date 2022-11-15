@@ -64,13 +64,13 @@ export const channelAddMessage = (data) => async dispatch => {
 
 export const DMServerAddMessage = (data) => async dispatch => {
     const { content, server_id } = data
-    // console.log("reducer here", content, server_id)
-    const response = await fetch(`/api/messages/dms/server_id`, {
+    console.log("reducer here", content, server_id)
+    const response = await fetch(`/api/messages/dms/${server_id}`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ content, server_id }),
     })
-    console.log('reducer 2 here response', response)
+    // console.log('reducer 2 here response', response)
     if (response.ok) {
         const newDMMessage = await response.json();
         dispatch(addDirectMsg(response))

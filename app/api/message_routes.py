@@ -52,7 +52,7 @@ def add_dm_message(server_id):
     form['csrf_token'].data = request.cookies['csrf_token']
     # "is_dm" : false because route is only for regular messages
     new_message = Message(
-        content=data["content"], server_id=server_id, sender_id=1, created_at=current_time)
+        content=data["content"], server_id=server_id, sender_id=sender_id, created_at=current_time)
     db.session.add(new_message)
     db.session.commit()
     return json.dumps(new_message.to_dict())
