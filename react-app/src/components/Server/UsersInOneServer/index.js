@@ -2,12 +2,19 @@ import React, { useEffect } from "react";
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from "react-router";
 import { thunkLoadOneServer } from "../../../store/serverReducer";
+import OneUserInfo from "./OneUserDropDown";
 import './UsersInOneServer.css';
 
 
 function UsersInOneServer() {
     const dispatch = useDispatch();
+    // const [memberDetail, setMemberDetail] = useState(false);
     const { serverId } = useParams();
+
+    // const showMemberDetail = () => {
+    //     if (memberDetail) return;
+    //     setMemberDetail(true);
+    // };
 
 
     useEffect(() => {
@@ -19,7 +26,7 @@ function UsersInOneServer() {
     let currentServer = useSelector(state => state.server)
     let usersInCurrentServer = useSelector(state => state.server[+serverId]?.users)
 
-    // console.log('usersInCurrentServer!!!!!!!!', usersInCurrentServer)
+    console.log('usersInCurrentServer!!!!!!!!', usersInCurrentServer)
 
     // console.log('channelArr!!!!!!!!', channelArr)
 
@@ -27,33 +34,28 @@ function UsersInOneServer() {
 
     if (!currentServer || currentServer[+serverId].is_dm) return (<></>)
 
+
     return (
-        <>
-        <hr></hr>
-            <>
-                list of users in current server
-            </>
-            <div>
-                users:
+        <div className="main-page-server-members-container">
+
+            <div className="members-list-title">
+                MEMBERS - {usersInCurrentServer.length}
             </div>
-
-            <hr></hr>
-            <div>
-                {usersInCurrentServer?.map((user) => (
-                    <div className='single-message-container' key={user?.id}>
-                        <div className='review-name'>avatar color:  {user?.color}</div>
-                        <div className='review-name'>name:  {user?.username}</div>
-                        <hr></hr>
-                    </div>
-                ))}
-
+            <div className="members-list-container">
+                {usersInCurrentServer?.map((user) => <OneUserInfo user={user} />)}
             </div>
-
-        </>
+        </div>
     )
 }
 
 
-
-
 export default UsersInOneServer;
+
+
+
+{/* <div className='single-member-container' key={user?.id} >
+                        <img src={eriscord_clear_logo} id="logo-img" style={{ backgroundColor: user?.color }} alt="home-img" />
+
+                        <div className='review-name'>{user?.username}</div>
+
+                    </div> */}
