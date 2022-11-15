@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from "react-router";
 import { thunkLoadoneChannel } from "../../../store/channelReducer"
+import SendRegulerMsg from "../SendRegulerMsg";
 import './MessagesBox.css';
 
 
@@ -46,7 +47,7 @@ function MessagesBox() {
                 ))}
 
             </div>
-
+            <SendRegulerMsg />
         </>
     )
 }

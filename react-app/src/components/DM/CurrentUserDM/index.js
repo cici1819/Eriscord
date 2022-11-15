@@ -36,7 +36,7 @@ function CurrentUserDm() {
             let users=currentServer.users
             // console.log("USERS ITERATION :", users)
             let notYou= users.find(user=> user.id !== current)
-            console.log("OTHER USER :", notYou)
+            // console.log("OTHER USER :", notYou)
             currentServer.otherIcon= notYou.color
             currentServer.otherName= notYou.username
             // console.log(currentServer)

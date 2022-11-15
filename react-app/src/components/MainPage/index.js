@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useParams } from "react-router";
-import MessagesBox from "../Channel/MessagesBox";
+import MessagesBox from "../RM/MessagesBox";
 import ChannelCreateModal from "../Channel/ChannelCreate";
 import ChannelEditModal from "../Channel/ChannelEdit"
 import LogoutButton from "../auth/LogoutButton";
@@ -13,6 +13,7 @@ import ServerDelete from "../Server/ServerDelete";
 import ChannelListInServer from "../Channel/ChannelListInServer";
 import CurrentUserDm from "../DM/CurrentUserDM";
 import DMBox from "../DM/DMBox";
+import SendRegulerMsg from "../RM/SendRegulerMsg";
 
 function MainPage(props) {
     const { dmShow } = props
@@ -30,7 +31,7 @@ function MainPage(props) {
             </div>
 
             <div className="channel-or-DM-sidebar">
-            {messageShow && <ServerEdit />}
+            {messageShow && <ServerEditModal />}
                 {messageShow &&<ServerDelete />}
                 <div>
                     {messageShow &&
@@ -66,8 +67,9 @@ function MainPage(props) {
                 </div>
             }
             {dmShow &&
+            <>
             <DMBox />
-
+                </>
             }
             <div className="server-users-bar">users who subscribed the server bar
                 <UsersInOneServer />
