@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from "react-router-dom";
 // import { useParams } from "react-router";
-import { thunkAddServer } from "../../../store/serverReducer";
+import { thunkAddServer, getPersonalServers } from "../../../store/serverReducer";
 import './ServerCreate.css';
 
 
@@ -33,8 +33,8 @@ function ServerCreate({setShowModal}) {
         });
         console.log("createdServer+++++++", createdServer)
         if (createdServer) {
-            // history.push(`/`)
-            console.log(createdServer)
+            setShowModal(false);
+            dispatch(getPersonalServers())
         }
     }
 
