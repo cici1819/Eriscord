@@ -14,14 +14,15 @@ function ServerEdit({ setShowModal }) {
     const [hasSubmitted, setHasSubmitted] = useState("");
     const [errors, setErrors] = useState([]);
     const history = useHistory();
-    const { channelId, serverId } = useParams();
+    const { serverId } = useParams();
 
     const handleSubmit = async (e) => {
         e.preventDefault();
         setHasSubmitted(true);
+        console.log('serverId', serverId)
 
-        const editedServerPayload = { name, img, description }
-        editedServerPayload.channelId = channelId
+        const editedServerPayload = { serverId, name, img, description }
+        editedServerPayload.serverId = serverId
         // console.log("!!!!!editedServerPayload", editedServerPayload)
         let editedServer = await dispatch(thunkEditServer(editedServerPayload)).catch(async (res) => {
 

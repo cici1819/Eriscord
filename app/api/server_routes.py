@@ -88,6 +88,7 @@ def update_server(server_id):
         server= Server.query.get(server_id)
         server.name= data["name"]
         server.img= data["img"]
+        server.description= data["description"]
         db.session.commit()
         return json.dumps(server.to_dict_regulars())
     else:

@@ -124,9 +124,9 @@ export const thunkLoadOneServer = (serverId) => async (dispatch) => {
     }
 }
 
-export const thunkEditServer = (data, serverId) => async dispatch => {
-    const { name, img, description } = data;
-
+export const thunkEditServer = (data) => async dispatch => {
+    const { serverId, name, img, description } = data;
+    console.log(serverId, name, img, description)
     const response = await fetch(`/api/servers/${serverId}`, {
         method: "POST",
         headers: { 'Content-Type': 'application/json' },
