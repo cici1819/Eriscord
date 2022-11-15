@@ -49,7 +49,7 @@ def add_channel():
 def edit_channel_by_id(channel_id):
     channel_id = 20
     channel = Channel.query.get(channel_id)
-    print('herre!!!!!!!')
+    # print('herre!!!!!!!')
 
     if channel:
         form = ChannelForm()
