@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from "react-router";
 import { thunkLoadoneChannel } from "../../../store/channelReducer"
+import SendRegulerMsg from "../SendRegulerMsg";
 import './MessagesBox.css';
 
 
@@ -41,12 +42,25 @@ function MessagesBox() {
                         <div className='review-name'>background color:  {message?.sender_color}</div>
                         <div className='review-name'>sender name:  {message?.sender_name}</div>
                         <div className='review-name'>content:  {message?.content}</div>
-                        <hr></hr>
                     </div>
                 ))}
 
             </div>
+            {/* <div className="channel-message-form">
+            <form className='channel-send-message-form'>
+                        <textarea
+                        className='channel-send-message-content'
+                        placeholder={`Message @${channel.name}`}
+                        rows='1'
+                        onChange={handleMessageInput}
+                        value={messageInput}
+                        />
+                    <button type='submit' id='send-message-btn' style={{display: 'none'}} />
+                    </form>
+            </div> */}
 
+
+            <SendRegulerMsg />
         </>
     )
 }

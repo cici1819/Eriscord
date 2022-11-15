@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
-import SendRegulerMsg from './temMsg/SendRegulerMsg';
 
 
 function UsersList() {
@@ -30,7 +29,6 @@ function UsersList() {
     <>
       <h1>User List: </h1>
       <ul>{userComponents}</ul>
-      <SendRegulerMsg />
     </>
   );
 }
