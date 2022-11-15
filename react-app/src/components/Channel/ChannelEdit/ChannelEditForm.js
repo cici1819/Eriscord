@@ -4,6 +4,7 @@ import { useParams } from "react-router";
 import { useHistory } from "react-router-dom";
 import { thunkEditOneChannel } from "../../../store/channelReducer";
 import ChannelDelete from "../ChannelDelete";
+import { thunkLoadOneServer } from "../../../store/serverReducer";
 import './ChannelEdit.css';
 
 
@@ -22,9 +23,9 @@ function ChannelEdit({ setShowModal }) {
 
 
 
-        const editedchannelPayload = { name, topic, channelId }
+        const editedchannelPayload = { name, topic, serverId }
         editedchannelPayload.channelId = channelId
-        console.log("!!!!!frontend", editedchannelPayload)
+
         let editedChannel = await dispatch(thunkEditOneChannel(editedchannelPayload)).catch(async (res) => {
 
             const data = await res.json();
@@ -35,8 +36,9 @@ function ChannelEdit({ setShowModal }) {
         });
 
         if (editedChannel) {
-            // history.push(`/`)
-            console.log(editedChannel)
+
+            await await dispatch(thunkLoadOneServer(serverId))
+            await setShowModal(false);
         }
     }
 
@@ -61,10 +63,12 @@ function ChannelEdit({ setShowModal }) {
                         value={topic}
                         onChange={(e) => setTopic(e.target.value)}
                         required />
-                    <button type="submit">Edit Channel</button>
+                    <button
+                    onClick={handleSubmit}
+                    type="submit">Edit Channel</button>
                 </form>
                 <div>
-                    <ChannelDelete />
+                    <ChannelDelete setShowModal={setShowModal}/>
                 </div>
             </div>
         </>

@@ -37,14 +37,15 @@ function ServerEdit({ setShowModal }) {
         const editedServerPayload = { serverId, name, img, description }
         editedServerPayload.serverId = serverId
         // console.log("!!!!!editedServerPayload", editedServerPayload)
-        let editedServer = await dispatch(thunkEditServer(editedServerPayload)).catch(async (res) => {
+        let editedServer = await dispatch(thunkEditServer(editedServerPayload))
+        //     .catch(async (res) => {
 
-            const data = await res.json();
+        //     const data = await res.json();
 
-            if (data && data.errors) {
-                setErrors(data.errors)
-            };
-        });
+        //     if (data && data.errors) {
+        //         setErrors(data.errors)
+        //     };
+        // });
 
         if (editedServer) {
             setShowModal(false);

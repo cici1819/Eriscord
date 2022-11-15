@@ -45,17 +45,22 @@ def add_channel():
 @channel_routes.route('/<int:channel_id>', methods=['POST'])
 @login_required
 def edit_channel_by_id(channel_id):
-    # channel_id = 20
+
     channel = Channel.query.get(channel_id)
-    # print('herre!!!!!!!')
 
     if channel:
         form = ChannelForm()
         form['csrf_token'].data = request.cookies['csrf_token']
         if form.validate_on_submit:
-            form.populate_obj(channel)
+            data = form.data
+            channel = Channel.query.get(channel_id)
+            print (channel.id)
+            channel.name = data["name"]
+            channel.topic = data["topic"]
             db.session.commit()
-        return channel.to_dict_messages(), 200
+            return channel.to_dict_messages(), 200
+        else:
+            return form.errors
     else:
         return {"errors": "Channel couldn't be found"}, 404
 

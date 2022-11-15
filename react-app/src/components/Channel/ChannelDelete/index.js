@@ -2,22 +2,21 @@ import React, { useState } from "react";
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from "react-router";
 import { thunkDeleteOneChannel } from "../../../store/channelReducer";
+import { thunkLoadOneServer } from "../../../store/serverReducer";
 import './ChannelDelete.css';
 
 
-function ChannelDelete() {
+function ChannelDelete({ setShowModal }) {
     const dispatch = useDispatch();
 
     const { channelId, serverId } = useParams();
 
     const handleDelete = async (e) => {
 
-        let deleteChannel = await dispatch(thunkDeleteOneChannel(channelId));
+        await dispatch(thunkDeleteOneChannel(channelId));
+        await dispatch(thunkLoadOneServer(serverId))
+        await setShowModal(false);
 
-        if (deleteChannel) {
-            // history.push(`/`)
-            console.log("delete successfully")
-        }
     }
 
 
