@@ -65,6 +65,7 @@ function MainPage(props) {
                 </div>
             </div>
             <div className="messages-users-container">
+                <>test test</>
                 <div> <MessagesBoxTop /></div>
                 <div>
                     {messageShow &&

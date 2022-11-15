@@ -52,8 +52,12 @@ body {
 .messages-users-container {
     display: flex;
     flex-direction: column;
-    height: 48px;
-    color: white;
+    height: 100%;
+    width: calc(100% - 80px - 260px);
+    position: absolute;
+    right: 0px;
+    color: red;
+    background-color: white;
 }
 
 .server-users-bar {
@@ -70,7 +74,7 @@ body {
     background-color: rgb(54, 57, 63);
     /* margin-left: 150px; */
     position: absolute;
-    left: 360px;
+    /* left: 360px; */
     height: 100%;
     width: calc(100vw - 80px - 260px - 260px);
     color: white;
