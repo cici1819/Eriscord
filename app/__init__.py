@@ -10,7 +10,7 @@ from .api.auth_routes import auth_routes
 from .api.channel_routes import channel_routes
 from .api.server_routes import server_routes
 from .api.message_routes import message_routes
-
+from flask_socketio import SocketIO
 from .seeds import seed_commands
 from .config import Config
 
