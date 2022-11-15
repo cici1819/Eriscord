@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from "react-router";
-import { channelAddMessage } from "../../../store/messageReducer";
+import { DMServerAddMessage } from "../../../store/messageReducer";
 import './SendDirectMsg.css';
 
 
@@ -17,7 +17,7 @@ function SendDirectMsg() {
         e.preventDefault();
 
         const msgPayload = { content, channel_id, server_id }
-        dispatch(channelAddMessage(msgPayload))
+        dispatch(DMServerAddMessage(msgPayload))
     }
 
     return (
