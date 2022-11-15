@@ -45,7 +45,7 @@ export const thunkAddChannelToServer = (data) => async dispatch => {
     const response = await fetch(`/api/channels/new`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ server_id, name ,topic}),
+        body: JSON.stringify({ server_id, name, topic }),
     })
     // console.log('!!!!!!response', response)
     if (response.ok) {
@@ -71,9 +71,8 @@ export const thunkLoadoneChannel = (channelId) => async (dispatch) => {
 }
 
 export const thunkEditOneChannel = (data) => async dispatch => {
-    const { name, topic } = data;
+    const { name, topic, channelId, serverId } = data;
 
-    let channelId = 20
 
     // console.log('herre')
     console.log('data', name, topic)
@@ -82,7 +81,7 @@ export const thunkEditOneChannel = (data) => async dispatch => {
         method: "POST",
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-            name, topic
+            name, topic, serverId, channelId
         }),
     });
 

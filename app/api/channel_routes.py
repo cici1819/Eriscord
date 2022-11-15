@@ -20,22 +20,21 @@ def get_channel_by_id(channel_id):
     # return channel.to_dict_messages() if channel else {"errors": "Channel couldn't be found"}, 404
 
 
-
-@channel_routes.route('/new', methods= ["POST"])
+@channel_routes.route('/new', methods=["POST"])
 @login_required
 def add_channel():
     # args = request.args
     # console.log("args!!!!", args)
-    print ('here')
-    form= ChannelForm()
+    print('here')
+    form = ChannelForm()
     form['csrf_token'].data = request.cookies['csrf_token']
 
     if form.validate_on_submit():
-        new_channel= Channel(
-            name= form.data["name"],
-            topic= form.data["topic"],
-            server_id = form.data["server_id"]
-            )
+        new_channel = Channel(
+            name=form.data["name"],
+            topic=form.data["topic"],
+            server_id=form.data["server_id"]
+        )
         db.session.add(new_channel)
         db.session.commit()
         return {"messages": "Channel created successfully"}, 200
@@ -43,11 +42,10 @@ def add_channel():
         return form.errors
 
 
-
 @channel_routes.route('/<int:channel_id>', methods=['POST'])
 @login_required
 def edit_channel_by_id(channel_id):
-    channel_id = 20
+    # channel_id = 20
     channel = Channel.query.get(channel_id)
     # print('herre!!!!!!!')
 
@@ -60,8 +58,6 @@ def edit_channel_by_id(channel_id):
         return channel.to_dict_messages(), 200
     else:
         return {"errors": "Channel couldn't be found"}, 404
-
-
 
 
 @channel_routes.route('/<int:channel_id>', methods=['DELETE'])
