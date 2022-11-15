@@ -45,9 +45,8 @@ def add_channel():
 @channel_routes.route('/<int:channel_id>', methods=['POST'])
 @login_required
 def edit_channel_by_id(channel_id):
-    # channel_id = 20
+
     channel = Channel.query.get(channel_id)
-    # print('herre!!!!!!!')
 
     if channel:
         form = ChannelForm()
@@ -58,7 +57,6 @@ def edit_channel_by_id(channel_id):
             print (channel.id)
             channel.name = data["name"]
             channel.topic = data["topic"]
-            channel.server_id = data["serverId"]
             db.session.commit()
             return channel.to_dict_messages(), 200
         else:
