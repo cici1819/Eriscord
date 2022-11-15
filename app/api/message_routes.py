@@ -46,11 +46,11 @@ def add_channel_message(channel_id):
 def add_dm_message(server_id):
     form= MessageForm()
     data= form.data
-    # sender_id = current_user.id
+    sender_id = current_user.id
     current_time= datetime.now()
     form['csrf_token'].data = request.cookies['csrf_token']
     # "is_dm" : false because route is only for regular messages
-    new_message= Message(content= data["content"], server_id= data["server_id"], sender_id= 1, created_at=current_time)
+    new_message= Message(content= data["content"], server_id= data["server_id"], sender_id= sender_id, created_at=current_time)
     db.session.add(new_message)
     db.session.commit()
     return json.dumps(new_message.to_dict())
@@ -59,5 +59,5 @@ def add_dm_message(server_id):
 @message_routes.route('/dms/<int:server_id>')
 def dm_messages(server_id):
     id = server_id
-    server_messages = Message.query.filter_by(message_id=id)
+    server_messages = Message.query.filter_by(server_id=id)
     return json.dumps({"messages": [message.to_dict() for message in server_messages]})

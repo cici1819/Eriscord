@@ -13,7 +13,7 @@ import ServerDelete from "../Server/ServerDelete";
 import ChannelListInServer from "../Channel/ChannelListInServer";
 import CurrentUserDm from "../DM/CurrentUserDM";
 import DMBox from "../DM/DMBox";
-import SendRegulerMsg from "../RM/SendRegulerMsg";
+
 
 function MainPage(props) {
     const { dmShow } = props
