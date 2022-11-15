@@ -1,4 +1,10 @@
-.single-server-container{
+.single-server-container {
     display: flex;
     flex-direction: column;
+    align-items: center;
+    gap:5px;
+    height: 100%;
+    width: 80px;
+    background-color: rgb(32,34,37);
+
 }
