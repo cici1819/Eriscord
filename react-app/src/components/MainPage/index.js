@@ -14,7 +14,7 @@ import ChannelListInServer from "../Channel/ChannelListInServer";
 import ServerEditModal from "../Server/ServerEdit";
 import CurrentUserDm from "../DM/CurrentUserDM";
 import DMBox from "../DM/DMBox";
-import SendRegulerMsg from "../RM/SendRegulerMsg";
+
 
 
     function MainPage(props) {
