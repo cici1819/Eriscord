@@ -13,13 +13,12 @@ function ServerEditModal() {
     const { serverId } = useParams()
     const servers = useSelector(state => state.server.servers)
 
-
-    // let logo
-    // if (servers) {
-    //     let currentServer = servers.find(server => server.id = serverId)
-    //     console.log("CURRENT SERVER IN DMS", currentServer)
-    //     logo = currentServer.img
-    // }
+    let name
+    if (servers) {
+        let currentServer = servers.find(server => server.id == serverId)
+        console.log("CURRENT SERVER IN DMS", currentServer)
+        name = currentServer.name
+    }
 
     if (!sessionUser) {
         return null;
@@ -31,10 +30,10 @@ function ServerEditModal() {
                 <div className='server-title' >
                     <div className='logo-div' onClick={() => setShowModal(true)}>
                         <span className='username'>
-                            {sessionUser.username}'server
+                            {name}
                         </span>
                         <span className='arrow-icon' >
-                            <img className = "arrow-img" src={selectMenuIcon} />
+                            <img className="arrow-img" src={selectMenuIcon} />
                         </span>
 
                     </div>
