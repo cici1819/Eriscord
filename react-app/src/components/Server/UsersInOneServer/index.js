@@ -2,8 +2,8 @@ import React, { useEffect } from "react";
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from "react-router";
 import { thunkLoadOneServer } from "../../../store/serverReducer";
+import OneUserInfo from "./OneUserDropDown";
 import './UsersInOneServer.css';
-import eriscord_clear_logo from '../../../img/favicon_clear_eriscord_192x192.png';
 
 
 function UsersInOneServer() {
@@ -42,22 +42,20 @@ function UsersInOneServer() {
                 MEMBERS - {usersInCurrentServer.length}
             </div>
             <div className="members-list-container">
-                {usersInCurrentServer?.map((user) => (
-                    <div className='single-member-container' key={user?.id} >
-                        <img src={eriscord_clear_logo} id="logo-img" style={{ backgroundColor: user?.color }} alt="home-img" />
-
-                        <div className='review-name'>{user?.username}</div>
-
-                    </div>
-                ))}
-
+                {usersInCurrentServer?.map((user) => <OneUserInfo user={user} />)}
             </div>
-
         </div>
     )
 }
 
 
-
-
 export default UsersInOneServer;
+
+
+
+{/* <div className='single-member-container' key={user?.id} >
+                        <img src={eriscord_clear_logo} id="logo-img" style={{ backgroundColor: user?.color }} alt="home-img" />
+
+                        <div className='review-name'>{user?.username}</div>
+
+                    </div> */}

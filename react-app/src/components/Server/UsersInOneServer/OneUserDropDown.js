@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch } from 'react-redux';
 import { Link, useHistory, Redirect } from 'react-router-dom';
+import eriscord_clear_logo from '../../../img/favicon_clear_eriscord_192x192.png';
 // import * as sessionActions from '../../store/session';
-// import './Navigation.css';
-
+import './UsersInOneServer.css';
 
 function OneUserInfo({ user }) {
     const dispatch = useDispatch();
@@ -33,43 +33,82 @@ function OneUserInfo({ user }) {
     // };
 
     return (
-        <div className="nav-bar-drop-down">
-            <button className="profile-buttons" onClick={openUser}>
-                {/* <i className="fas fa-user-circle" /> */}
-                <i className="fa-solid fa-bars nav-bar-drop-down-favicon" />
-                <i className="fa-solid fa-user nav-bar-drop-down-favicon" />
-            </button>
+        <div className='single-member-container' key={user?.id} onClick={openUser} >
+            <img src={eriscord_clear_logo} id="logo-img" style={{ backgroundColor: user?.color }} alt="home-img" />
+            <div className='review-name'>{user?.username}</div>
             {showUser && (
-                <div className="profile-dropdown-container">
-                    <ul className="profile-dropdown">
-                        <div className="profile-dropdown-item">
+                <div className="single-member-dropdown-container">
+                    <img src={eriscord_clear_logo} id="logo-img" style={{ backgroundColor: user?.color }} alt="home-img" />
+                    <div>
+                        <div>{user?.username}</div>
+                        <div>Message @{user?.username}</div>
+                    </div>
+                    {/* <ul className="single-member-dropdown">
+                        <div className="single-member-dropdown-item">
                             {user.username}
                         </div>
-                        <div className="profile-dropdown-item">
+                        <div className="single-member-dropdown-item">
                             {user.email}
                         </div>
-                        <hr className="profile-dropdown-line"></hr>
-                        <div className="profile-dropdown-link-item">
+                        <hr className="single-member-dropdown-line"></hr>
+                        <div className="single-member-dropdown-link-item">
 
                             <Link to={'/spots/current'}> Manage Listings</Link>
 
                         </div>
-                        <div className="profile-dropdown-link-item">
+                        <div className="single-member-dropdown-link-item">
 
                             <Link to={'/reviews/current'}> Manage Reviews</Link>
 
                         </div>
-                        <div className="profile-dropdown-link-item">
+                        <div className="single-member-dropdown-link-item">
 
-                            <div className='profile-dropdown-logout-button' onClick={logout}>
-                                {/* <Redirect to="/spots" /> */}
+                            <div className='single-member-dropdown-logout-button' onClick={logout}>
+                                <Redirect to="/spots" />
                                 Log Out
                             </div>
                         </div>
-                    </ul>
+                    </ul> */}
                 </div>
             )}
         </div>
+        // <div className="nav-bar-drop-down">
+        //     <button className="single-member-buttons" onClick={openUser}>
+        //         {/* <i className="fas fa-user-circle" /> */}
+        //         <i className="fa-solid fa-bars nav-bar-drop-down-favicon" />
+        //         <i className="fa-solid fa-user nav-bar-drop-down-favicon" />
+        //     </button>
+        //     {showUser && (
+        //         <div className="single-member-dropdown-container">
+        //             <ul className="single-member-dropdown">
+        //                 <div className="single-member-dropdown-item">
+        //                     {user.username}
+        //                 </div>
+        //                 <div className="single-member-dropdown-item">
+        //                     {user.email}
+        //                 </div>
+        //                 <hr className="single-member-dropdown-line"></hr>
+        //                 <div className="single-member-dropdown-link-item">
+
+        //                     <Link to={'/spots/current'}> Manage Listings</Link>
+
+        //                 </div>
+        //                 <div className="single-member-dropdown-link-item">
+
+        //                     <Link to={'/reviews/current'}> Manage Reviews</Link>
+
+        //                 </div>
+        //                 <div className="single-member-dropdown-link-item">
+
+        //                     <div className='single-member-dropdown-logout-button' onClick={logout}>
+        //                         {/* <Redirect to="/spots" /> */}
+        //                         Log Out
+        //                     </div>
+        //                 </div>
+        //             </ul>
+        //         </div>
+        //     )}
+        // </div>
     );
 }
 
