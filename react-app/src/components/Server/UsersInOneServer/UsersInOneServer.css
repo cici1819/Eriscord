@@ -1,11 +1,11 @@
 .main-page-server-members-container {
     display: flex;
     flex-direction: column;
-    width: 240px;
+    /* width: 240px; */
     height: auto;
     background-color: #292b2f;
     /* height: calc(100vh - 50px); */
-    height: 100vh;
+    /* height: 100vh; */
 
 }
 
