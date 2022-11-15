@@ -13,6 +13,7 @@ function ServerEditModal() {
     const { serverId } = useParams()
     const servers = useSelector(state => state.server.servers)
 
+
     // let logo
     // if (servers) {
     //     let currentServer = servers.find(server => server.id = serverId)

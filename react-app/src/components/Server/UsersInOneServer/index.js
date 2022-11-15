@@ -26,7 +26,7 @@ function UsersInOneServer() {
     let currentServer = useSelector(state => state.server)
     let usersInCurrentServer = useSelector(state => state.server[+serverId]?.users)
 
-    console.log('usersInCurrentServer!!!!!!!!', usersInCurrentServer)
+    // console.log('usersInCurrentServer!!!!!!!!', usersInCurrentServer)
 
     // console.log('channelArr!!!!!!!!', channelArr)
 

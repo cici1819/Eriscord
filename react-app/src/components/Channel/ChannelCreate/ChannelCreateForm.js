@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from "react-router-dom";
 import { useParams } from "react-router";
 import { thunkAddChannelToServer } from "../../../store/channelReducer";
+import { thunkLoadOneServer } from "../../../store/serverReducer";
 import './ChannelCreate.css';
 
 
@@ -31,7 +32,8 @@ function ChannelCreate({ setShowModal }) {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        setHasSubmitted(true);
+
+        if (validationErrors.length) { return }
 
         const channelPayload = { name }
         channelPayload.serverId = serverId
@@ -46,6 +48,7 @@ function ChannelCreate({ setShowModal }) {
                 setValidationErrors([]);
                 setErrors([]);
                 setShowModal(false);
+                dispatch(thunkLoadOneServer(serverId))
                 console.log(createdChannel)
             }
         }
