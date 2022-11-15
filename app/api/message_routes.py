@@ -24,14 +24,6 @@ def regular_messages(channel_id):
     channel_messages = Message.query.filter_by(channel_id=id)
     return json.dumps({"messages": [message.to_dict() for message in channel_messages]})
 
-<<<<<<< HEAD
-    
-@message_routes.route('/dms/<int:server_id>')
-def dm_messages(server_id):
-    id = server_id
-    channel_messages = Message.query.filter_by(server_id=id)
-    return json.dumps({"messages": [message.to_dict() for message in channel_messages]})
-=======
 @message_routes.route('/channels/<int:channel_id>', methods=["POST"])
 # @login_required
 def add_channel_message(channel_id):
@@ -64,4 +56,3 @@ def dm_messages(server_id):
     id = server_id
     server_messages = Message.query.filter_by(message_id=id)
     return json.dumps({"messages": [message.to_dict() for message in server_messages]})
->>>>>>> 39f60fc7265ab94c3eb241992140a783af6e4f20
