@@ -1,6 +1,6 @@
 from flask import Blueprint, jsonify, session, request
 from app.models import Message,Message, db
-from app.forms import MessageForm
+from app.forms import MessageForm, DmForm
 from datetime import datetime
 import json
 from flask_login import current_user, login_user, logout_user, login_required
@@ -40,14 +40,14 @@ def add_channel_message(channel_id):
 
 @message_routes.route('/dms/<int:server_id>', methods=["POST"])
 # @login_required
-def add_dm_message(channel_id):
-    form= MessageForm()
+def add_dm_message(server_id):
+    form= DmForm()
     data= form.data
     # sender_id = current_user.id
     current_time= datetime.now()
     form['csrf_token'].data = request.cookies['csrf_token']
     # "is_dm" : false because route is only for regular messages
-    new_message= Message(content= data["content"], channel_id= data["channel_id"], server_id= data["server_id"], sender_id= 1, created_at=current_time)
+    new_message= Message(content= data["content"], server_id= server_id, sender_id= 1, created_at=current_time)
     db.session.add(new_message)
     db.session.commit()
     return json.dumps(new_message.to_dict())
