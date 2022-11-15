@@ -55,6 +55,10 @@ function App() {
           <MainPage dmShow= {false}/>
         </ProtectedRoute>
 
+        <ProtectedRoute path='/channels/' exact={true}>
+          <MainPage dmShow= {false}/>
+        </ProtectedRoute>
+
         <ProtectedRoute path='/users' exact={true} >
           <UsersList/>
         </ProtectedRoute>
