@@ -22,8 +22,10 @@ def regular_messages(channel_id):
     id = channel_id
     channel_messages = Message.query.filter_by(channel_id=id)
     return json.dumps({"messages": [message.to_dict() for message in channel_messages]})
+
+    
 @message_routes.route('/dms/<int:server_id>')
-def dm_messages(channel_id):
-    id = channel_id
+def dm_messages(server_id):
+    id = server_id
     channel_messages = Message.query.filter_by(server_id=id)
     return json.dumps({"messages": [message.to_dict() for message in channel_messages]})
