@@ -1,90 +1,31 @@
-import React, { useState } from "react";
-import { useDispatch, useSelector } from 'react-redux';
-import { useHistory } from "react-router-dom";
-import { useParams } from "react-router";
-import { thunkAddServer } from "../../../store/serverReducer";
-import './ServerCreate.css';
 
+import React, { useState } from 'react';
+import { Modal } from '../../../context/Modal';
+import { useSelector } from 'react-redux';
+import ServerCreate from './ServerCreateForm';
 
-function ServerCreate() {
-    const dispatch = useDispatch();
-    const [img, setImg] = useState('');
-    const [name, setName] = useState('');
-    const [description, setDescription] = useState('');
-    const [hasSubmitted, setHasSubmitted] = useState("");
-    const [errors, setErrors] = useState([]);
-    const history = useHistory();
-    // const { channelId, serverId } = useParams();
-
-    const handleSubmit = async (e) => {
-        e.preventDefault();
-        setHasSubmitted(true);
-
-        const serverPayload = { name, img, description }
-        // console.log("serverPayload", name, img, description)
-        // console.log("!!!!!frontend", channelPayload)
-        let createdServer = await dispatch(thunkAddServer(serverPayload)).catch(async (res) => {
-
-            const data = await res.json();
-            console.log("THIS IS RES :",res)
-            if (data && data.errors) {
-                setErrors(data.errors)
-            };
-        });
-        console.log("createdServer+++++++", createdServer)
-        if (createdServer) {
-            // history.push(`/`)
-            console.log(createdServer)
-        }
+function ServerCreateModal() {
+    const [showModal, setShowModal] = useState(false);
+    const sessionUser = useSelector((state) => state.session.user);
+    if (!sessionUser) {
+        return null;
     }
-
 
     return (
         <>
-
-            <div className="tbd">
-                <form className="tbd" onSubmit={handleSubmit}>
-
-                    <div className="tbd"> this is where to create the new server
-
-                        <div className="tbd">
-
-                            <input type="text"
-                                value={name}
-                                onChange={(e) => setName(e.target.value)}
-                                placeholder="SERVER NAME"
-                                required />
-                            <input type="text"
-                                value={img}
-                                onChange={(e) => setImg(e.target.value)}
-                                placeholder="SERVER ICON"
-                                required />
-                            <input type="text"
-                                value={description}
-                                onChange={(e) => setDescription(e.target.value)}
-                                placeholder="SERVER DESCRIPTION"
-                                />
-                        </div>
-
-                    </div>
-
-                    <div className="tbd">
-                        <div className="tbd">
-                            <button type="submit">Create Server</button>
-                        </div>
-
-                    </div>
-
-                </form>
-
+            <div className='add-server'>
+                <div className='plus-icon'>
+                <i className = "fa-regular fa-plus-large" onClick={() => setShowModal(true)} > </i>
+                </div>
+                {showModal && (
+                    <Modal onClose={() => setShowModal(false)}>
+                        <ServerCreate setShowModal={setShowModal}  />
+                    </Modal>
+                )}
             </div>
-
-
         </>
-    )
+    );
 }
 
 
-
-
-export default ServerCreate;
+export default ServerCreateModal;
