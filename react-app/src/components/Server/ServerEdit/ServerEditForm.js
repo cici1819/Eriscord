@@ -6,7 +6,7 @@ import { thunkEditServer } from "../../../store/serverReducer";
 import './ServerEdit.css';
 
 
-function ServerEdit({setShowModal}) {
+function ServerEdit({ setShowModal }) {
     const dispatch = useDispatch();
     const [name, setName] = useState('');
     const [img, setImg] = useState('');
@@ -41,10 +41,7 @@ function ServerEdit({setShowModal}) {
 
     return (
         <>
-            <hr></hr>
-            <>
-                This form you edit the server
-            </>
+
             <div>
                 <form onSubmit={handleSubmit}>
 

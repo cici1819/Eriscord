@@ -6,10 +6,11 @@ import LogoutButton from "../auth/LogoutButton";
 import './MainPage.css';
 import CurrentUserServer from "../Server/CurrentUserServer";
 import UsersInOneServer from "../Server/UsersInOneServer";
-import ServerCreate from "../Server/ServerCreate";
-import ServerEditModal from "../Server/ServerEdit";
+import ServerCreateModal from "../Server/ServerCreate";
+// import ServerEdit from "../Server/ServerEdit/ServerEditForm";
 import ServerDelete from "../Server/ServerDelete";
 import ChannelListInServer from "../Channel/ChannelListInServer";
+import ServerEditModal from "../Server/ServerEdit";
 
 
 function MainPage() {
@@ -17,15 +18,18 @@ function MainPage() {
         <div className="main-page-container">
 
             <div className="server-sidebar">
+                <div>
                 <CurrentUserServer />
-                {/* <div>
-                <ServerCreate />
-                </div> */}
+                </div>
+                <div>
+                <ServerCreateModal/>
+                </div>
             </div>
-
             <div className="channel-or-DM-sidebar">
-
+                <div>
                 <ServerEditModal />
+                </div>
+
                 <ServerDelete />
                 <ChannelListInServer />
                 <div>

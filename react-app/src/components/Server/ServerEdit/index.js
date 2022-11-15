@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { Modal } from '../../../context/Modal';
 import { useSelector } from 'react-redux';
+import { useHistory, useParams } from "react-router-dom";
 import ServerEdit from './ServerEditForm';
-import { useParams } from 'react-router-dom';
 import selectMenuIcon from "../../../img/select-menu-icon.png"
 
 
@@ -13,12 +13,12 @@ function ServerEditModal() {
     const { serverId } = useParams()
     const servers = useSelector(state => state.server.servers)
 
-    let logo
-    if (servers) {
-        let currentServer = servers.find(server => server.id = serverId)
-        console.log("CURRENT SERVER IN DMS", currentServer)
-        logo = currentServer.img
-    }
+    // let logo
+    // if (servers) {
+    //     let currentServer = servers.find(server => server.id = serverId)
+    //     console.log("CURRENT SERVER IN DMS", currentServer)
+    //     logo = currentServer.img
+    // }
 
     if (!sessionUser) {
         return null;
@@ -28,12 +28,12 @@ function ServerEditModal() {
         <>
             <div className='edit-server'>
                 <div className='server-title' >
-                    <div className='logo-div'>
+                    <div className='logo-div' onClick={() => setShowModal(true)}>
                         <span className='username'>
                             {sessionUser.username}'server
                         </span>
-                        <span className='arrow-icon'>
-                            <img className = "arrow-img"src={selectMenuIcon} onClick={() => setShowModal(true)}/>
+                        <span className='arrow-icon' >
+                            <img className = "arrow-img" src={selectMenuIcon} />
                         </span>
 
                     </div>
