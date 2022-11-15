@@ -6,7 +6,6 @@ import './SingleServer.css';
 
 function SingleServer({ server }) {
 
-<<<<<<< HEAD
     if (!server) { return null }
 
     let firstChannelId
@@ -22,9 +21,6 @@ function SingleServer({ server }) {
         )
     } else {
         firstChannelId = 0
-=======
-    if (server?.img?.length !== 0 || server == undefined) {
->>>>>>> 3cca7591641262055026466a4d0f4c200b70959a
         return (
             <>
 
@@ -36,17 +32,6 @@ function SingleServer({ server }) {
         )
     }
 
-<<<<<<< HEAD
-=======
-    return (
-        <>
-            <NavLink
-                to={`/channels/${server?.id}`}>
-                name: {server.name}
-            </NavLink>
-        </>
-    )
->>>>>>> 3cca7591641262055026466a4d0f4c200b70959a
 }
 
 

@@ -23,7 +23,6 @@ function ServerCreate({ setShowModal }) {
         const serverPayload = { name, img, description }
         // console.log("serverPayload", name, img, description)
         // console.log("!!!!!frontend", channelPayload)
-<<<<<<< HEAD
         let createdServer = await dispatch(thunkAddServer(serverPayload)).catch(async (res) => {
 
             const data = await res.json();
@@ -32,17 +31,6 @@ function ServerCreate({ setShowModal }) {
                 setErrors(data.errors)
             };
         });
-=======
-        let createdServer = await dispatch(thunkAddServer(serverPayload))
-        //     .catch(async (res) => {
-
-        //     const data = await res.json();
-        //     console.log("THIS IS RES :",res)
-        //     if (data && data.errors) {
-        //         setErrors(data.errors)
-        //     };
-        // });
->>>>>>> 3cca7591641262055026466a4d0f4c200b70959a
         console.log("createdServer+++++++", createdServer)
         if (createdServer) {
 
