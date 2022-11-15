@@ -32,7 +32,10 @@ function UsersInOneServer() {
 
     if (!usersInCurrentServer) { return null }
 
-    if (!currentServer || currentServer[+serverId].is_dm) return (<></>)
+    if (!currentServer || currentServer[+serverId].is_dm) return (<>
+    </>
+
+    )
 
 
     return (

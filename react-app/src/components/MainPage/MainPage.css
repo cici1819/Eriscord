@@ -49,15 +49,8 @@ body {
     background-color: rgb(47, 49, 54);
 }
 
-.server-users-bar {
-    background-color: rgb(47, 49, 54);
-    position: absolute;
-    right: 0;
-    width: 260px;
-    height: 100%;
-    color: white;
     /* background-color: antiquewhite; */
-}
+
 
 .messages-container {
     background-color: rgb(54, 57, 63);
