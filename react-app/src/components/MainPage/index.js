@@ -14,7 +14,6 @@ import ChannelListInServer from "../Channel/ChannelListInServer";
 import CurrentUserDm from "../DM/CurrentUserDM";
 import DMBox from "../DM/DMBox";
 
-<<<<<<< HEAD
 function MainPage(props) {
     const { dmShow } = props
     let messageShow;
@@ -25,25 +24,11 @@ function MainPage(props) {
         <div className="main-page-container">
 
             <div className="server-sidebar"> direct messages and server bar
-=======
-
-function MainPage() {
-    return (
-        <div className="main-page-container">
-
-            <div className="server-sidebar">
-                <CurrentUserServer />
-                {/* <div>
-                <ServerCreate />
-                </div> */}
-            </div>
->>>>>>> 3f7a171ac4eac6f77768bbf6c3f4e6f4c6a8f053
 
                 <CurrentUserServer />
                 <ServerCreate />
             </div>
 
-<<<<<<< HEAD
             <div className="channel-or-DM-sidebar">
             {messageShow && <ServerEdit />}
                 {messageShow &&<ServerDelete />}
@@ -70,21 +55,6 @@ function MainPage() {
                 </div>
 
                 <div>
-=======
-                <ServerEditModal />
-                <ServerDelete />
-                <ChannelListInServer />
-                <div>
-                    <ChannelCreateModal />
-                </div>
-
-                <div>
-                    <ChannelListInServer />
-                    <ChannelEditModal />
-                </div>
-
-                <div className="currentUser-logout">
->>>>>>> 3f7a171ac4eac6f77768bbf6c3f4e6f4c6a8f053
                     <LogoutButton />
                 </div>
 
@@ -98,7 +68,6 @@ function MainPage() {
             {dmShow &&
             <DMBox />
 
-<<<<<<< HEAD
             }
             <div className="server-users-bar">users who subscribed the server bar
                 <UsersInOneServer />
@@ -106,18 +75,6 @@ function MainPage() {
             <div>
 
             </div>
-=======
-            <div className="messges-user-div">
-                <div className="messages-container"> all the messages map
-                    <MessagesBox />
-                </div>
-
-                <div className="server-users-bar">users who subscribed the server bar
-                    <UsersInOneServer />
-                </div>
-            </div>
-
->>>>>>> 3f7a171ac4eac6f77768bbf6c3f4e6f4c6a8f053
         </div>
     )
 }
