@@ -75,17 +75,17 @@ export const thunkEditOneChannel = (data) => async dispatch => {
 
 
     // console.log('herre')
-    console.log('data')
+    console.log('data', name, topic, channelId, serverId )
 
     const response = await fetch(`/api/channels/${channelId}`, {
         method: "POST",
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-            name, topic, serverId, channelId
+            name, topic
         }),
     });
 
-    console.log('response', response)
+    // console.log('response', response)
 
     if (response.ok) {
         const editedChannel = await response.json();
