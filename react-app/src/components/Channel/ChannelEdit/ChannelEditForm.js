@@ -7,7 +7,7 @@ import ChannelDelete from "../ChannelDelete";
 import './ChannelEdit.css';
 
 
-function ChannelEdit({setShowModal}) {
+function ChannelEdit({ setShowModal }) {
     const dispatch = useDispatch();
     const [name, setName] = useState('');
     const [topic, setTopic] = useState('');
@@ -22,7 +22,7 @@ function ChannelEdit({setShowModal}) {
 
 
 
-        const editedchannelPayload = { name, topic }
+        const editedchannelPayload = { name, topic, channelId }
         editedchannelPayload.channelId = channelId
         console.log("!!!!!frontend", editedchannelPayload)
         let editedChannel = await dispatch(thunkEditOneChannel(editedchannelPayload)).catch(async (res) => {
@@ -50,21 +50,21 @@ function ChannelEdit({setShowModal}) {
             <div>
                 <form onSubmit={handleSubmit}>
 
-                        <label > NAME</label>
-                        <input type="text"
-                            value={name}
-                            onChange={(e) => setName(e.target.value)}
-                            required />
+                    <label > NAME</label>
+                    <input type="text"
+                        value={name}
+                        onChange={(e) => setName(e.target.value)}
+                        required />
 
-                        <label >TOPIC</label>
-                        <input type="text"
-                            value={topic}
-                            onChange={(e) => setTopic(e.target.value)}
-                            required/>
+                    <label >TOPIC</label>
+                    <input type="text"
+                        value={topic}
+                        onChange={(e) => setTopic(e.target.value)}
+                        required />
                     <button type="submit">Edit Channel</button>
                 </form>
                 <div>
-                    <ChannelDelete/>
+                    <ChannelDelete />
                 </div>
             </div>
         </>
