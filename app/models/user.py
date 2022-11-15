@@ -14,7 +14,7 @@ class User(db.Model, UserMixin):
     username = db.Column(db.String(40), nullable=False, unique=True)
     email = db.Column(db.String(255), nullable=False, unique=True)
     hashed_password = db.Column(db.String(255), nullable=False)
-    color = db.Column(db.Integer, nullable=True)
+    color = db.Column(db.String, nullable=True)
 
     server_u = db.relationship(
         "Server", back_populates="user_s", cascade='all, delete')
