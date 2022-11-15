@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from "react-router";
 import { DMServerAddMessage } from "../../../store/messageReducer";
+import { getPersonalDMServers } from "../../../store/serverReducer";
 import './SendDirectMsg.css';
 
 
@@ -17,6 +18,8 @@ function SendDirectMsg() {
         console.log('content, server_id', content, server_id)
         const msgPayload = { content, server_id }
         dispatch(DMServerAddMessage(msgPayload))
+        dispatch(getPersonalDMServers())
+        setContent('')
     }
 
     return (

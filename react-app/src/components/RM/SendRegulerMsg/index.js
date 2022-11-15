@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from "react-router";
 import { channelAddMessage } from "../../../store/messageReducer";
+import { thunkLoadoneChannel } from "../../../store/channelReducer";
 import './SendRegulerMsg.css';
 
 
@@ -18,6 +19,8 @@ function SendRegulerMsg() {
 
         const msgPayload = { content, channel_id, server_id }
         dispatch(channelAddMessage(msgPayload))
+        dispatch(thunkLoadoneChannel(channelId))
+        setContent('')
     }
 
     return (
