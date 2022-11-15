@@ -19,7 +19,7 @@ function ServerCreateModal() {
                 </div>
                 {showModal && (
                     <Modal onClose={() => setShowModal(false)}>
-                        <ServerCreate setShowModal={setShowModal}  />
+                        <ServerCreate setShowModal={setShowModal} />
                     </Modal>
                 )}
             </div>
