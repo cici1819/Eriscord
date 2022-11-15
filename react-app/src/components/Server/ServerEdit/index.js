@@ -23,12 +23,15 @@ function ServerEditModal() {
     if (!sessionUser) {
         return null;
     }
-
+    function handleOpen() {
+        setShowModal(true);
+        console.log("opening_____________________")
+    }
     return (
         <>
             <div className='edit-server'>
                 <div className='server-title' >
-                    <div className='logo-div' onClick={() => setShowModal(true)}>
+                    <div className='logo-div' onClick={handleOpen}>
                         <span className='username'>
                             {name}
                         </span>

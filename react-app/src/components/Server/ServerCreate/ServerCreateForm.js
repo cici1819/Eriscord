@@ -6,7 +6,7 @@ import { thunkAddServer, getPersonalServers } from "../../../store/serverReducer
 import './ServerCreate.css';
 
 
-function ServerCreate({setShowModal}) {
+function ServerCreate({ setShowModal }) {
     const dispatch = useDispatch();
     const [img, setImg] = useState('');
     const [name, setName] = useState('');
@@ -23,6 +23,7 @@ function ServerCreate({setShowModal}) {
         const serverPayload = { name, img, description }
         // console.log("serverPayload", name, img, description)
         // console.log("!!!!!frontend", channelPayload)
+<<<<<<< HEAD
         let createdServer = await dispatch(thunkAddServer(serverPayload)).catch(async (res) => {
 
             const data = await res.json();
@@ -31,6 +32,17 @@ function ServerCreate({setShowModal}) {
                 setErrors(data.errors)
             };
         });
+=======
+        let createdServer = await dispatch(thunkAddServer(serverPayload))
+        //     .catch(async (res) => {
+
+        //     const data = await res.json();
+        //     console.log("THIS IS RES :",res)
+        //     if (data && data.errors) {
+        //         setErrors(data.errors)
+        //     };
+        // });
+>>>>>>> 3cca7591641262055026466a4d0f4c200b70959a
         console.log("createdServer+++++++", createdServer)
         if (createdServer) {
 
@@ -65,7 +77,7 @@ function ServerCreate({setShowModal}) {
                                 value={description}
                                 onChange={(e) => setDescription(e.target.value)}
                                 placeholder="SERVER DESCRIPTION"
-                                />
+                            />
                         </div>
 
                     </div>

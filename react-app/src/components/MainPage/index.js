@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useParams } from "react-router";
 import MessagesBox from "../RM/MessagesBox";
+import MessagesBoxTop from "../RM/MessagesBoxTop";
 import ChannelCreateModal from "../Channel/ChannelCreate";
 import ChannelEditModal from "../Channel/ChannelEdit"
 import LogoutButton from "../auth/LogoutButton";
@@ -50,44 +51,40 @@ function MainPage(props) {
                 {messageShow && <ServerEditModal />}
                 {messageShow && <ServerDelete />}
                 <div>
-                    {messageShow &&
-                        <ChannelCreateModal />
-
-                    }
+                    {messageShow && <ChannelCreateModal />}
                 </div>
 
                 <div>
-                    {
-                        messageShow &&
-                        <ChannelListInServer />
-                    }
-                    {
-                        dmShow &&
-                        <CurrentUserDm />
-
-                    }
-
+                    {messageShow && <ChannelListInServer />}
+                    {dmShow && <CurrentUserDm />}
+                    {messageShow && <ChannelEditModal />}
                 </div>
 
                 <div>
                     <LogoutButton />
                 </div>
-
-
             </div>
-            {messageShow &&
-                <div className="messages-container"> all the messages map
-                    <MessagesBox />
+            <div className="messages-users-container">
+                <>test test</>
+                <div> <MessagesBoxTop /></div>
+                <div>
+                    {messageShow &&
+                        <div className="messages-container"> all the messages map
+                            <MessagesBox />
+                        </div>
+                    }
+                    {dmShow &&
+                        <>
+                            <DMBox />
+                        </>
+                    }
+                    <div className="server-users-bar">
+                        <UsersInOneServer />
+                    </div>
                 </div>
-            }
-            {dmShow &&
-                <>
-                    <DMBox />
-                </>
-            }
-            <div className="server-users-bar">users who subscribed the server bar
-                <UsersInOneServer />
+
             </div>
+
             <div>
 
             </div>

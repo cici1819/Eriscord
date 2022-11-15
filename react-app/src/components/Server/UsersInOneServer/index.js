@@ -32,7 +32,10 @@ function UsersInOneServer() {
 
     if (!usersInCurrentServer) { return null }
 
-    if (!currentServer || currentServer[+serverId].is_dm) return (<></>)
+    if (!currentServer || currentServer[+serverId].is_dm) return (<>
+    </>
+
+    )
 
 
     return (
@@ -42,7 +45,7 @@ function UsersInOneServer() {
                 MEMBERS - {usersInCurrentServer.length}
             </div>
             <div className="members-list-container">
-                {usersInCurrentServer?.map((user) => <OneUserInfo key = {user.id} user={user} />)}
+                {usersInCurrentServer?.map((user) => <OneUserInfo key={user.id} user={user} />)}
             </div>
         </div>
     )
