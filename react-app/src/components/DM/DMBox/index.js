@@ -1,9 +1,10 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from "react-router";
-import { getPersonalDMServers} from "../../../store/serverReducer";
+import { getPersonalDMServers } from "../../../store/serverReducer";
+import SendDirectMsg from "../SendDirectMsg";
+import './DMBox.css';
 
-// import './MessagesBox.css';
 
 
 function DMBox() {
@@ -17,15 +18,15 @@ function DMBox() {
 
 
     // console.log(channelId, serverId)
-    let servers= useSelector(state=>state.server.dmServers)
-    console.log("STATE IN MESSAGES :",servers)
+    let servers = useSelector(state => state.server.dmServers)
+    console.log("STATE IN MESSAGES :", servers)
     let currentServer
     let messagesArr;
-    if (servers){
-        currentServer = servers.find(server=> server.id== serverId)
+    if (servers) {
+        currentServer = servers.find(server => server.id == serverId)
         console.log("CURRENT SERVER IN DMS", currentServer)
-        if (currentServer){
-            messagesArr= currentServer.messages
+        if (currentServer) {
+            messagesArr = currentServer.messages
         }
     }
 
@@ -33,14 +34,14 @@ function DMBox() {
 
 
     return (
-        <>
+        <div className="DM-container">
             <hr></hr>
             <>
                 This gonna be the DM display box!
             </>
 
             <hr></hr>
-            <div>
+            <div className="DM-container">
                 {messagesArr.map((message) => (
                     <div className='single-message-container' key={message.id}>
                         <div className='review-name'>background color:  {message?.sender_color}</div>
@@ -49,10 +50,11 @@ function DMBox() {
                         <hr></hr>
                     </div>
                 ))}
-
+                <br></br>
             </div>
-
-        </>
+            fdsa
+            <SendDirectMsg />
+        </div>
     )
 }
 

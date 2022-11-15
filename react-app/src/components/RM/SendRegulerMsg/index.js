@@ -1,21 +1,23 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from "react-router";
-import { thunkAddChannelToServer } from "../../../store/channelReducer";
+import { channelAddMessage } from "../../../store/messageReducer";
 import './SendRegulerMsg.css';
 
 
 function SendRegulerMsg() {
     const dispatch = useDispatch();
-    const [msgData, setMsgData] = useState('');
+    const [content, setContent] = useState('');
 
     const { channelId, serverId } = useParams();
+    let channel_id = channelId
+    let server_id = serverId
 
     const handleSubmit = async (e) => {
         e.preventDefault();
 
-        const msgPayload = { msgData }
-        dispatch(thunkAddChannelToServer(msgPayload))
+        const msgPayload = { content, channel_id, server_id }
+        dispatch(channelAddMessage(msgPayload))
     }
 
     return (
@@ -23,8 +25,8 @@ function SendRegulerMsg() {
             <div className="create-msg-div">
                 <form className="create-msg-form" onSubmit={handleSubmit}>
                     <input type="text"
-                        value={msgData}
-                        onChange={(e) => setMsgData(e.target.value)}
+                        value={content}
+                        onChange={(e) => setContent(e.target.value)}
                         placeholder="Message Here"
                         required />
                     <div className="m-button-div">

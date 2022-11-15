@@ -1,0 +1,6 @@
+.DM-container{
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    margin-left: 35%;
+}

@@ -60,8 +60,8 @@ export const getRegularMessages = () => async dispatch => {
                     ...state,
                     [action.message.id]: action.message
                 };
-                const messageList = newState.messages.map(id => newState[id]);
-                messageList.push(action.message);
+                const messageList = newState.messages?.map(id => newState[id]);
+                messageList?.push(action.message);
                 newState.messages = messageList;
 
                 return newState;
@@ -69,10 +69,10 @@ export const getRegularMessages = () => async dispatch => {
             return {
                 ...state,
             };
-        case DELETE_MESSAGE:
-            const newMessages = state.messages.filter(message => message.id === action.messageId)
-            newState = { ...state, messages: newMessages }
-            return newState;
+        // case DELETE_MESSAGE:
+        //     const newMessages = state.messages.filter(message => message.id === action.messageId)
+        //     newState = { ...state, messages: newMessages }
+        //     return newState;
         default:
             return state;
     }
