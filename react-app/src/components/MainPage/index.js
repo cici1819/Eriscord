@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { useParams } from "react-router";
 import MessagesBox from "../RM/MessagesBox";
-import MessagesBoxTop from "../RM/MessagesBoxTop";
 import ChannelCreateModal from "../Channel/ChannelCreate";
 import ChannelEditModal from "../Channel/ChannelEdit"
 import LogoutButton from "../auth/LogoutButton";
@@ -15,6 +14,7 @@ import ChannelListInServer from "../Channel/ChannelListInServer";
 import ServerEditModal from "../Server/ServerEdit";
 import CurrentUserDm from "../DM/CurrentUserDM";
 import DMBox from "../DM/DMBox";
+import { channelAddMessage } from "../../store/messageReducer";
 
 
 
@@ -64,30 +64,22 @@ function MainPage(props) {
                     <LogoutButton />
                 </div>
             </div>
-            <div className="messages-users-container">
-                <>test test</>
-                <div> <MessagesBoxTop /></div>
-                <div>
-                    {messageShow &&
-                        <div className="messages-container"> all the messages map
-                            <MessagesBox />
-                        </div>
-                    }
-                    {dmShow &&
-                        <>
-                            <DMBox />
-                        </>
-                    }
-                    <div className="server-users-bar">
-                        <UsersInOneServer />
-                    </div>
-                </div>
-
-            </div>
-
             <div>
-
+                {messageShow &&
+                    <div className="messages-container"> all the messages map
+                        <MessagesBox />
+                    </div>
+                }
+                {dmShow &&
+                    <>
+                        <DMBox />
+                    </>
+                }
+                <div className="server-users-bar">
+                    <UsersInOneServer />
+                </div>
             </div>
+
         </div>
     )
 }

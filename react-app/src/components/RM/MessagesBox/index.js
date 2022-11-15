@@ -32,7 +32,7 @@ function MessagesBox() {
         <>
             <hr></hr>
             <>
-                This gonna be the messages display box!
+                {channel.name}
             </>
 
             <hr></hr>
