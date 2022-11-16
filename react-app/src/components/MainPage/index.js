@@ -71,9 +71,12 @@ function MainPage(props) {
                     </div>
                 }
                 {dmShow &&
-                    <div className="messages-container">
-                        <DMBox />
-                    </div>
+                    <>
+                        <div className="messages-container">
+                            <DMBox />
+                        </div>
+
+                    </>
                 }
                 <div className="server-users-bar">
                     <UsersInOneServer />
