@@ -17,7 +17,7 @@ function ServerCreate({ setShowModal }) {
     const history = useHistory();
     // const { channelId, serverId } = useParams();
 
-    console.log(validationErrors)
+    // console.log(validationErrors)
 
     useEffect(() => {
         const errors = [];
