@@ -64,7 +64,7 @@ function ChannelCreate({ setShowModal }) {
                         Create Channel
                     </div>
                     <div className="mark-logo">
-                        <img className='close-x-img' src='https://static.thenounproject.com/png/1144486-200.png' alt='close' onClick={() => setShowModal(false)}></img>
+                        <img className='close-x-img' src='https://static.thenounproject.com/png/1144486-200.png' alt='close' onClick={() => setShowModal(false)}/>
                     </div>
                     <div className="create-title2">
                         <p>in Text Channels</p>

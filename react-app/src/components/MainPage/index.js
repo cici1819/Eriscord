@@ -48,7 +48,7 @@ function MainPage(props) {
             </div>
 
             <div className="channel-or-DM-sidebar">
-                {messageShow && <ServerEditModal />}
+                {messageShow && <ServerEditModal  />}
                 {messageShow && <ServerDelete />}
                 <div>
                     {messageShow && <ChannelCreateModal />}
