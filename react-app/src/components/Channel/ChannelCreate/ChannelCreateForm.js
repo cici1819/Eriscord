@@ -33,6 +33,7 @@ function ChannelCreate({ setShowModal }) {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
+        setHasSubmitted(true)
 
         if (validationErrors.length) { return }
 
@@ -50,7 +51,7 @@ function ChannelCreate({ setShowModal }) {
                 setErrors([]);
                 setShowModal(false);
                 dispatch(thunkLoadOneServer(serverId))
-                console.log(createdChannel)
+                // console.log(createdChannel)
             }
         }
     }
@@ -70,7 +71,7 @@ function ChannelCreate({ setShowModal }) {
                     <div className="create-title2">
                         <p>in Text Channels</p>
                     </div>
-                    {validationErrors.length && (
+                    {hasSubmitted && !!validationErrors.length && (
                         <div className='error3-lists'>
                             <ul className='error-list'>
                                 {validationErrors.map((error) => <li id='errors' key={error}>{error}</li>)}

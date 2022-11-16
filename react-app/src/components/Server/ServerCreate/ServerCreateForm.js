@@ -18,7 +18,7 @@ function ServerCreate({ setShowModal }) {
     const history = useHistory();
     // const { channelId, serverId } = useParams();
 
-    // console.log(validationErrors)
+    console.log(validationErrors)
 
     useEffect(() => {
         const errors = [];
@@ -83,7 +83,7 @@ function ServerCreate({ setShowModal }) {
                                 <p className="next-line-p">yours and start talking.</p>
                             </div>
                         </div>
-                            {validationErrors.length > 0 && (
+                            {hasSubmitted && !!validationErrors.length && (
                                 <div className='error3-lists'>
                                     <ul className='error-list'>
                                         {validationErrors.map((error) => <li id='errors' key={error}>{error}</li>)}
