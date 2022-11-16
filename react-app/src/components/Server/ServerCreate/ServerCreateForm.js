@@ -18,7 +18,7 @@ function ServerCreate({ setShowModal }) {
     const history = useHistory();
     // const { channelId, serverId } = useParams();
 
-    // console.log(validationErrors)
+    console.log(validationErrors)
 
     useEffect(() => {
         const errors = [];
@@ -36,8 +36,9 @@ function ServerCreate({ setShowModal }) {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        setHasSubmitted(true);
-        if (validationErrors.length) { return }
+        setHasSubmitted(true)
+        console.log(name, img, description)
+        if (!!validationErrors.length) { return }
 
         const serverPayload = { name, img, description }
         // console.log("serverPayload", name, img, description)
@@ -50,7 +51,7 @@ function ServerCreate({ setShowModal }) {
                 setErrors(data.errors)
             };
         });
-        console.log("createdServer+++++++", createdServer)
+        // console.log("createdServer+++++++", createdServer)
         if (createdServer) {
 
             await dispatch(getPersonalServers())
@@ -80,7 +81,7 @@ function ServerCreate({ setShowModal }) {
                                 <p className="next-line-p">yours and start talking.</p>
                             </div>
                         </div>
-                            {validationErrors.length > 0 && (
+                            {hasSubmitted && !!validationErrors.length && (
                                 <div className='error3-lists'>
                                     <ul className='error-list'>
                                         {validationErrors.map((error) => <li id='errors' key={error}>{error}</li>)}

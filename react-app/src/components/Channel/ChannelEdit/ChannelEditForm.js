@@ -99,7 +99,7 @@ function ChannelEdit({ channel, setShowModal }) {
                     <div className="form-title">
                         <h4 className="f-title">OVERVIEW</h4>
                     </div>
-                    {validationErrors.length && (
+                    {hasSubmitted && !!validationErrors.length && (
                         <div className='error3-lists'>
                             <ul className='error-list'>
                                 {validationErrors.map((error) => <li id='errors' key={error}>{error}</li>)}
