@@ -4,6 +4,7 @@ import { useHistory } from "react-router-dom";
 // import { useParams } from "react-router";
 import { thunkAddServer, getPersonalServers } from "../../../store/serverReducer";
 import './ServerCreate.css';
+import creatMyownLogo from "../../../img/create-server-form-icon.png"
 
 
 function ServerCreate({ setShowModal }) {
@@ -44,40 +45,79 @@ function ServerCreate({ setShowModal }) {
     return (
         <>
 
-            <div className="tbd">
-                <form className="tbd" onSubmit={handleSubmit}>
+            <div className="creat-server-container">
+                <form className="creat-server-form" onSubmit={handleSubmit}>
 
-                    <div className="tbd"> this is where to create the new server
+                    <div className="creat-server-content">
+                        <div className="creat-sever-title">
+                        <div className="c-s-text-top">
+                            <h1>
+                                Create a server
+                            </h1>
+                            <div className="mark-logo2">
+                                <img className='close-x-img2' src='https://static.thenounproject.com/png/1144486-200.png' alt='close' onClick={() => setShowModal(false)} />
+                            </div>
+                            <div className="creat-sever-title2">
+                                <p>Your server is where you and your friends hang out.Make</p>
+                                <p className="next-line-p">yours and start talking.</p>
+                            </div>
+                        </div>
+                            {errors.length > 0 && (
+                                <div className='error3-lists'>
+                                    <ul className='error-list'>
+                                        {errors.map((error) => <li id='errors' key={error}>{error}</li>)}
+                                    </ul>
+                                </div>
+                            )}
+                        </div>
+                        <div className="creat-my-own">
+                            <img src={creatMyownLogo} alt="creat my own" />
+                            <span className="creat-my-own-text">
+                                Create My Own
+                            </span>
 
-                        <div className="tbd">
-
-                            <input type="text"
-                                value={name}
-                                onChange={(e) => setName(e.target.value)}
-                                placeholder="SERVER NAME"
-                                required />
-                            <input type="text"
-                                value={img}
-                                onChange={(e) => setImg(e.target.value)}
-                                placeholder="SERVER ICON"
-                                required />
-                            <input type="text"
-                                value={description}
-                                onChange={(e) => setDescription(e.target.value)}
-                                placeholder="SERVER DESCRIPTION"
-                            />
                         </div>
 
-                    </div>
+                        <div className="creat-server-input">
+                            <div className="s-input-title">
+                                SERVER NAME
+                            </div>
+                            <div className="s-c-input1">
+                                <input type="text"
+                                    value={name}
+                                    onChange={(e) => setName(e.target.value)}
+                                    required />
+                            </div>
+                            <div className="s-input-title2">
+                                SERVER ICON
+                            </div>
+                            <div className="s-c-input2">
+                                <input type="text"
+                                    value={img}
+                                    onChange={(e) => setImg(e.target.value)}
+                                    required />
+                            </div>
+                            <div className="s-input-title3">
+                                SERVER DESCRIPTION
+                            </div>
+                            <div className="s-c-input3">
+                                <input type="text"
+                                    value={description}
+                                    onChange={(e) => setDescription(e.target.value)}
+                                />
+                            </div>
 
-                    <div className="tbd">
-                        <div className="tbd">
-                            <button type="submit">Create Server</button>
                         </div>
 
                     </div>
 
                 </form>
+
+                <div className="create-server-button">
+                    <button type="submit">Create Server</button>
+                </div>
+
+
 
             </div>
 
