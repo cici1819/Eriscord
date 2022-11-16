@@ -5,13 +5,15 @@ import { useHistory } from "react-router-dom";
 import { thunkEditOneChannel } from "../../../store/channelReducer";
 import ChannelDelete from "../ChannelDelete";
 import { thunkLoadOneServer } from "../../../store/serverReducer";
-import './ChannelEdit.css';
+import "./ChannelEdit.css"
+import crossLogo from "../../../img/CROSS-ICON.png"
+import buttomimg from "../../../img/channel-edit-buttom.png"
 
 
-function ChannelEdit({ setShowModal }) {
+function ChannelEdit({ channel,setShowModal }) {
     const dispatch = useDispatch();
-    const [name, setName] = useState('');
-    const [topic, setTopic] = useState('');
+    const [name, setName] = useState(channel.name);
+    const [topic, setTopic] = useState(channel.topic);
     const [hasSubmitted, setHasSubmitted] = useState("");
     const [errors, setErrors] = useState([]);
     const history = useHistory();
@@ -45,30 +47,68 @@ function ChannelEdit({ setShowModal }) {
 
     return (
         <>
-            <hr></hr>
-            <>
-                This gonna be where you edit the channel
-            </>
-            <div>
-                <form onSubmit={handleSubmit}>
 
-                    <label > NAME</label>
-                    <input type="text"
-                        value={name}
-                        onChange={(e) => setName(e.target.value)}
-                        required />
+            <div className="channel-edit-div">
 
-                    <label >TOPIC</label>
-                    <input type="text"
-                        value={topic}
-                        onChange={(e) => setTopic(e.target.value)}
-                        required />
-                    <button
-                    onClick={handleSubmit}
-                    type="submit">Edit Channel</button>
+                <div className="edit-sideBar-content">
+                    <div className="sideBar-text">
+                        <div className="c-h-t-div">
+                            <span className="c-e-hashtag">
+                                <i className="fa-light fa-hashtag"> </i>
+                                GENERAL
+                            </span>
+                            <span className="c-text">
+                                TEXT CHANNELS
+                            </span>
+                        </div>
+
+                        <div className="title-overview">
+                            <span className="o-title-left">
+                                OverView
+                            </span>
+                        </div>
+                    </div>
+
+                    <div className="Delete-div">
+                        <ChannelDelete setShowModal={setShowModal} />
+
+                    </div>
+                </div>
+
+                <form onSubmit={handleSubmit} className="channel-edit-form">
+                    <div className="form-title">
+                        <h4 className="f-title">OVERVIEW</h4>
+                    </div>
+                    <div className="input-title1">
+                        <label > CHANNEL NAME</label>
+                    </div>
+                    <div className="input-content-1">
+                        <input type="text"
+                            value={name}
+                            onChange={(e) => setName(e.target.value)}
+                            required />
+                    </div>
+
+                    <div className="input-title2">
+                        <label >TOPIC</label>
+                    </div>
+                    <div className="input-content-2">
+                        <input type="text"
+                            value={topic}
+                            onChange={(e) => setTopic(e.target.value)}
+                            required />
+                    </div>
+                    <div className="editedChannel-button">
+                        <button className="e-c-button"
+                            onClick={handleSubmit}
+                            type="submit">Save Changes</button>
+                    </div>
+                    <div className="e-b-img">
+                        <img className="buttom-img" src={buttomimg} alt="buttom-img" />
+                    </div>
                 </form>
-                <div>
-                    <ChannelDelete setShowModal={setShowModal}/>
+                <div className="edit-right-sideBar">
+                    <img className='e-close-x-img' src={crossLogo} alt='close' onClick={() => setShowModal(false)} />
                 </div>
             </div>
         </>
