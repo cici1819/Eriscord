@@ -34,6 +34,7 @@ function MessagesBox() {
     }, [])
 
     // console.log(channelId, serverId)
+    console.log("A community for all users who want to call a server home. Here we hangout. Have a laugh. We're always looking for lively people so come hangout with us!".length)
 
 
     let channel = useSelector(state => state.channel)

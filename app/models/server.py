@@ -15,7 +15,7 @@ class Server(db.Model):
     description = db.Column(db.String(255), default="DM", nullable=False)
     img = db.Column(db.String(
         255), default="https://logos-world.net/wp-content/uploads/2020/12/Discord-Logo.png", nullable=False)
-    is_dm = db.Column(db.Boolean, nullable=False)
+    is_dm = db.Column(db.Boolean, nullable=True)
 
     user_s = db.relationship("User", back_populates="server_u")
     channel_s = db.relationship(

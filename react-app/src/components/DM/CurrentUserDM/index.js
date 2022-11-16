@@ -64,7 +64,7 @@ function CurrentUserDm() {
             </div>
             {servers?.map((server) => {
                 return (
-                    <div onClick={() => dmRedirect(server.id)} className="other-user-container">
+                    <div onClick={() => dmRedirect(server.id)} key={server.id}  className="other-user-container">
                         <div className="other-user-container-inner">
                             <img src={eriscord_clear_logo} className="other-user-icon" style={{ backgroundColor: server.otherIcon }}></img>
                             <div className='other-user-name'>{server.otherName}</div>

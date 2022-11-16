@@ -18,7 +18,7 @@ function ServerCreate({ setShowModal }) {
     const history = useHistory();
     // const { channelId, serverId } = useParams();
 
-    // console.log(validationErrors)
+    console.log(validationErrors)
 
     useEffect(() => {
         const errors = [];
@@ -37,26 +37,29 @@ function ServerCreate({ setShowModal }) {
     const handleSubmit = async (e) => {
         e.preventDefault();
         setHasSubmitted(true);
-        if (validationErrors.length) { return }
+        if (validationErrors.length) {
+            // console.log("ERRORS FOUND :", validationErrors)
+        } else {
+            const serverPayload = { name, img, description }
+            // console.log("serverPayload", name, img, description)
+            // console.log("!!!!!frontend", channelPayload)
+            let createdServer = await dispatch(thunkAddServer(serverPayload)).catch(async (res) => {
 
-        const serverPayload = { name, img, description }
-        // console.log("serverPayload", name, img, description)
-        // console.log("!!!!!frontend", channelPayload)
-        let createdServer = await dispatch(thunkAddServer(serverPayload)).catch(async (res) => {
+                const data = await res.json();
+                // console.log("THIS IS RES :",res)
+                if (data && data.errors) {
+                    setErrors(data.errors)
+                };
+            });
+            console.log("createdServer+++++++", createdServer)
+            if (createdServer) {
 
-            const data = await res.json();
-            // console.log("THIS IS RES :",res)
-            if (data && data.errors) {
-                setErrors(data.errors)
-            };
-        });
-        console.log("createdServer+++++++", createdServer)
-        if (createdServer) {
-
-            await dispatch(getPersonalServers())
-            await setShowModal(false);
-            await history.push(`/channels/${createdServer.id}`)
+                await dispatch(getPersonalServers())
+                await setShowModal(false);
+                await history.push(`/channels/${createdServer.id}`)
+            }
         }
+
     }
 
 
@@ -80,7 +83,7 @@ function ServerCreate({ setShowModal }) {
                                 <p className="next-line-p">yours and start talking.</p>
                             </div>
                         </div>
-                            {validationErrors.length > 0 && (
+                            {hasSubmitted && !!validationErrors.length && (
                                 <div className='error3-lists'>
                                     <ul className='error-list'>
                                         {validationErrors.map((error) => <li id='errors' key={error}>{error}</li>)}
@@ -132,7 +135,7 @@ function ServerCreate({ setShowModal }) {
                 </form>
 
                 <div className="create-server-button">
-                    <button type="submit">Create Server</button>
+                    <button type="submit" onClick={handleSubmit}>Create Server</button>
                 </div>
 
 
