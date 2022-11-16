@@ -57,7 +57,7 @@ function MainPage(props) {
                 <div>
                     {messageShow && <ChannelListInServer />}
                     {dmShow && <CurrentUserDm />}
-                    {messageShow && <ChannelEditModal />}
+                    {/* {messageShow && <ChannelEditModal />} */}
                 </div>
 
                 <div>
