@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from "react-router-dom";
 // import { useParams } from "react-router";
@@ -12,13 +12,31 @@ function ServerCreate({ setShowModal }) {
     const [name, setName] = useState('');
     const [description, setDescription] = useState('');
     const [hasSubmitted, setHasSubmitted] = useState("");
+    const [validationErrors, setValidationErrors] = useState([]);
     const [errors, setErrors] = useState([]);
     const history = useHistory();
     // const { channelId, serverId } = useParams();
 
+    console.log(validationErrors)
+
+    useEffect(() => {
+        const errors = [];
+        if (!img.includes('.com') && !img.includes('.jpg') && !img.includes('.png') && !img.includes('.jpeg')) {
+            errors.push('please provide a valide image URL!')
+        }
+        if (name.length > 50) {
+            errors.push("Name should be less than 50 characters")
+        }
+        if (name.length < 4) {
+            errors.push("Name should be more than 3 characters")
+        }
+        setValidationErrors(errors);
+    }, [img, name])
+
     const handleSubmit = async (e) => {
         e.preventDefault();
         setHasSubmitted(true);
+        if (validationErrors.length) { return }
 
         const serverPayload = { name, img, description }
         // console.log("serverPayload", name, img, description)
@@ -45,6 +63,13 @@ function ServerCreate({ setShowModal }) {
         <>
 
             <div className="tbd">
+                {validationErrors.length && (
+                    <div className='error3-lists'>
+                        <ul className='error-list'>
+                            {validationErrors.map((error) => <li id='errors' key={error}>{error}</li>)}
+                        </ul>
+                    </div>
+                )}
                 <form className="tbd" onSubmit={handleSubmit}>
 
                     <div className="tbd"> this is where to create the new server
