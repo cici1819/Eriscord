@@ -1,12 +1,17 @@
 """empty message
 
 Revision ID: 74642e7a30c7
-Revises: 
+Revises:
 Create Date: 2022-11-16 03:20:40.092104
 
 """
 from alembic import op
 import sqlalchemy as sa
+
+import os
+environment = os.getenv("FLASK_ENV")
+SCHEMA = os.environ.get("SCHEMA")
+
 
 
 # revision identifiers, used by Alembic.
@@ -28,6 +33,10 @@ def upgrade():
     sa.UniqueConstraint('email'),
     sa.UniqueConstraint('username')
     )
+
+    if environment == "production":
+        op.execute(f"ALTER TABLE users SET SCHEMA {SCHEMA};")
+
     op.create_table('servers',
     sa.Column('id', sa.Integer(), nullable=False),
     sa.Column('name', sa.String(length=50), nullable=False),
@@ -38,6 +47,10 @@ def upgrade():
     sa.ForeignKeyConstraint(['owner_id'], ['users.id'], ),
     sa.PrimaryKeyConstraint('id')
     )
+
+    if environment == "production":
+        op.execute(f"ALTER TABLE servers SET SCHEMA {SCHEMA};")
+
     op.create_table('channels',
     sa.Column('id', sa.Integer(), nullable=False),
     sa.Column('name', sa.String(length=50), nullable=False),
@@ -46,6 +59,10 @@ def upgrade():
     sa.ForeignKeyConstraint(['server_id'], ['servers.id'], ),
     sa.PrimaryKeyConstraint('id')
     )
+
+    if environment == "production":
+        op.execute(f"ALTER TABLE channels SET SCHEMA {SCHEMA};")
+
     op.create_table('server_members',
     sa.Column('users_id', sa.Integer(), nullable=False),
     sa.Column('servers_id', sa.Integer(), nullable=False),
@@ -53,6 +70,10 @@ def upgrade():
     sa.ForeignKeyConstraint(['users_id'], ['users.id'], ),
     sa.PrimaryKeyConstraint('users_id', 'servers_id')
     )
+
+    if environment == "production":
+        op.execute(f"ALTER TABLE server_members SET SCHEMA {SCHEMA};")
+
     op.create_table('messages',
     sa.Column('id', sa.Integer(), nullable=False),
     sa.Column('content', sa.String(length=255), nullable=False),
@@ -65,6 +86,10 @@ def upgrade():
     sa.ForeignKeyConstraint(['server_id'], ['servers.id'], ),
     sa.PrimaryKeyConstraint('id')
     )
+
+    if environment == "production":
+        op.execute(f"ALTER TABLE messages SET SCHEMA {SCHEMA};")
+
     # ### end Alembic commands ###
 
 
