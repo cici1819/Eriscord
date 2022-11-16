@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { useHistory } from "react-router-dom";
 import { useParams } from "react-router";
 import { thunkAddChannelToServer } from "../../../store/channelReducer";
@@ -29,7 +29,7 @@ function ChannelCreate({ setShowModal }) {
         setValidationErrors(errors);
     }, [name])
 
-    console.log("------------------------", validationErrors.length)
+    // console.log("------------------------", validationErrors.length)
 
     const handleSubmit = async (e) => {
         e.preventDefault();
