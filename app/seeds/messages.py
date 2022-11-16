@@ -84,7 +84,7 @@ def seed_messages():
         channel_id=5,
         server_id=7,
         created_at=datetime.now(),
-        sender_id=9
+        sender_id=3
     )
     db.session.add(tenth)
     eleventh = Message(
@@ -92,7 +92,7 @@ def seed_messages():
         channel_id=5,
         server_id=7,
         created_at=datetime.now(),
-        sender_id=10
+        sender_id=2
     )
     db.session.add(eleventh)
     # message id 12 for server 7, channel 6---------------------
