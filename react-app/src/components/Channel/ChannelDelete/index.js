@@ -22,9 +22,13 @@ function ChannelDelete({ setShowModal }) {
 
     return (
         <>
-            <div>
-                <button
-                    onClick={(e) => handleDelete(channelId)}>DELETE CHANNEL</button>
+            <div className="Delete-div2" onClick={(e) => handleDelete(channelId)}>
+                <span className="delete-text">
+                Delete Channel
+                </span>
+                <span className="trash-can-icon">
+                    <i className="fa-solid fa-trash-can"></i>
+                </span>
             </div>
         </>
     )

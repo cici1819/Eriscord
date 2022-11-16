@@ -45,7 +45,7 @@ function ChannelListInServer() {
                         <div>
                             {channel.name}
                         </div>
-                        <ChannelEditModal />
+                        <ChannelEditModal channel={channel}/>
                     </NavLink>
                 ))}
 
