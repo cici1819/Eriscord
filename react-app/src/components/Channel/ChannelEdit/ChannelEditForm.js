@@ -10,7 +10,7 @@ import crossLogo from "../../../img/CROSS-ICON.png"
 import buttomimg from "../../../img/channel-edit-buttom.png"
 
 
-function ChannelEdit({ channel,setShowModal }) {
+function ChannelEdit({ channel, setShowModal }) {
     const dispatch = useDispatch();
     const [name, setName] = useState(channel.name);
     const [topic, setTopic] = useState(channel.topic);
@@ -79,6 +79,13 @@ function ChannelEdit({ channel,setShowModal }) {
                             <span className="o-title-left">
                                 OverView
                             </span>
+                            {errors.length > 0 && (
+                                <div className='error3-lists'>
+                                    <ul className='error-list'>
+                                        {errors.map((error) => <li id='errors' key={error}>{error}</li>)}
+                                    </ul>
+                                </div>
+                            )}
                         </div>
                     </div>
 
