@@ -10,7 +10,10 @@ body {
 }
 
 .server-sidebar {
-    width: 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 72px;
     height: 100%;
     position: fixed;
 
@@ -18,10 +21,10 @@ body {
 
 
 .channel-or-DM-sidebar {
-    width: 260px;
+    width: 240px;
     height: 100%;
     position: fixed;
-    margin-left: 100px;
+    margin-left: 72px;
 }
 
 .channel-or-DM-sidebar {

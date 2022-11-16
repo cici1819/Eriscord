@@ -3,7 +3,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Redirect, useHistory } from 'react-router-dom';
 import { useParams } from "react-router";
 import { getPersonalServers, getRegularServers } from "../../../store/serverReducer";
-import SingleServer from "../SingleServer"
+import SingleServer from "../SingleServer";
+import eriscord_clear_logo from '../../../img/favicon_clear_eriscord_192x192.png';
 import './CurrentUserServer.css';
 
 
@@ -29,14 +30,9 @@ function CurrentUserServer() {
 
     return (
         <>
-            <hr></hr>
-            <>
-            </>
-            <div>
-                YOUR SERVERS:
-            </div>
-            <button onClick={dmRedirect}> VIEW YOUR DMS</button>
-            <hr></hr>
+            <button className='dmlogo-button' onClick={dmRedirect} >
+                <img src={eriscord_clear_logo} className='dm-button' id="logo-img" alt="home-img" />
+            </button>
             <div className="single-server-container">
                 {servers?.map((server) => {
                     return (
