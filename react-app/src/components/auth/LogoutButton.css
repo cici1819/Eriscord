@@ -1,0 +1,14 @@
+.logout-user-container {
+    display: flex;
+    flex-direction: row;
+}
+
+
+
+.other-user-icon {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    padding: 4px 4px;
+    margin-right: 12px;
+}

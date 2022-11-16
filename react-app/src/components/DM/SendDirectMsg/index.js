@@ -1,10 +1,12 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from "react-router";
 import { DMServerAddMessage } from "../../../store/messageReducer";
 import { getPersonalDMServers } from "../../../store/serverReducer";
 import './SendDirectMsg.css';
+import { io } from 'socket.io-client';
 
+let socket;
 
 function SendDirectMsg() {
     const dispatch = useDispatch();
@@ -13,8 +15,20 @@ function SendDirectMsg() {
     const { serverId } = useParams();
     let server_id = serverId
 
+    useEffect(() => {
+        // open socket connection
+        // create websocket
+        socket = io();
+        //for emitting only
+        return (() => {
+            socket.disconnect()
+        })
+    }, [])
     const handleSubmit = async (e) => {
         e.preventDefault();
+        if(socket){
+            socket.emit("DM", content)
+        }
         console.log('content, server_id', content, server_id)
         const msgPayload = { content, server_id }
         await dispatch(DMServerAddMessage(msgPayload))

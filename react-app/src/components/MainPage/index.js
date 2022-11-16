@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { useParams } from "react-router";
 import MessagesBox from "../RM/MessagesBox";
+// import ChatTest from "../chatTest";
+import MessagesBoxTop from "../RM/MessagesBoxTop";
 import ChannelCreateModal from "../Channel/ChannelCreate";
 import ChannelEditModal from "../Channel/ChannelEdit"
 import LogoutButton from "../auth/LogoutButton";

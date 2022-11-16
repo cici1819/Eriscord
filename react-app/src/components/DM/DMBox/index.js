@@ -3,8 +3,10 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from "react-router";
 import { getPersonalDMServers } from "../../../store/serverReducer";
 import SendDirectMsg from "../SendDirectMsg";
+import { io } from 'socket.io-client';
 import './DMBox.css';
 
+let socket;
 
 
 function DMBox() {
@@ -12,11 +14,28 @@ function DMBox() {
     const { serverId } = useParams();
 
 
+
+
     useEffect(() => {
         dispatch(getPersonalDMServers())
     }, [dispatch]);
 
+    useEffect(() => {
+        // open socket connection
+        // create websocket
+        socket = io();
 
+        socket.on("DM", (chat) => {
+            console.log("MESSAGE FROM TEST :", chat)
+            let result = dispatch(getPersonalDMServers())
+            console.log("RESULT OF DISPATCHING POST DM :", result)
+
+        })
+        // when component unmounts, disconnect
+        return (() => {
+            socket.disconnect()
+        })
+    }, [])
     // console.log(channelId, serverId)
     let servers = useSelector(state => state.server.dmServers)
     console.log("STATE IN MESSAGES :", servers)

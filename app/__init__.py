@@ -10,7 +10,7 @@ from .api.auth_routes import auth_routes
 from .api.channel_routes import channel_routes
 from .api.server_routes import server_routes
 from .api.message_routes import message_routes
-from flask_socketio import SocketIO
+from .socket import socketio
 from .seeds import seed_commands
 from .config import Config
 
@@ -38,7 +38,7 @@ app.register_blueprint(message_routes, url_prefix='/api/messages')
 
 db.init_app(app)
 Migrate(app, db)
-
+socketio.init_app(app)
 # Application Security
 CORS(app)
 
@@ -92,3 +92,6 @@ def api_help():
                               app.view_functions[rule.endpoint].__doc__]
                   for rule in app.url_map.iter_rules() if rule.endpoint != 'static'}
     return route_list
+
+if __name__ == '__main__':
+    socketio.run(app)
