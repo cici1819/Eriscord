@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { useHistory } from "react-router-dom";
 import { useParams } from "react-router";
 import { thunkAddChannelToServer } from "../../../store/channelReducer";
@@ -29,6 +29,7 @@ function ChannelCreate({ setShowModal }) {
         setValidationErrors(errors);
     }, [name])
 
+    // console.log("------------------------", validationErrors.length)
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -69,10 +70,10 @@ function ChannelCreate({ setShowModal }) {
                     <div className="create-title2">
                         <p>in Text Channels</p>
                     </div>
-                    {errors.length > 0 && (
+                    {validationErrors.length && (
                         <div className='error3-lists'>
                             <ul className='error-list'>
-                                {errors.map((error) => <li id='errors' key={error}>{error}</li>)}
+                                {validationErrors.map((error) => <li id='errors' key={error}>{error}</li>)}
                             </ul>
                         </div>
                     )}

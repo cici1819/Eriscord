@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { useDispatch, useSelector } from 'react-redux';
+import React, { useState, useEffect } from "react";
+import { useDispatch } from 'react-redux';
 import { useParams } from "react-router";
 import { useHistory } from "react-router-dom";
 import { thunkEditOneChannel } from "../../../store/channelReducer";
@@ -10,20 +10,33 @@ import crossLogo from "../../../img/CROSS-ICON.png"
 import buttomimg from "../../../img/channel-edit-buttom.png"
 
 
-function ChannelEdit({ channel,setShowModal }) {
+function ChannelEdit({ channel, setShowModal }) {
     const dispatch = useDispatch();
     const [name, setName] = useState(channel.name);
     const [topic, setTopic] = useState(channel.topic);
     const [hasSubmitted, setHasSubmitted] = useState("");
+    const [validationErrors, setValidationErrors] = useState([]);
     const [errors, setErrors] = useState([]);
     const history = useHistory();
     const { channelId, serverId } = useParams();
+
+    useEffect(() => {
+        const errors = [];
+        if (!name.length) {
+            errors.push("Name is required")
+        } else if (name.length > 50) {
+            errors.push("Name should be less than 50 characters")
+        } else if (name.length < 4) {
+            errors.push("Name should be more than 3 characters")
+        }
+        setValidationErrors(errors);
+    }, [name])
 
     const handleSubmit = async (e) => {
         e.preventDefault();
         setHasSubmitted(true);
 
-
+        if (validationErrors.length) { return }
 
         const editedchannelPayload = { name, topic, serverId }
         editedchannelPayload.channelId = channelId
@@ -66,6 +79,13 @@ function ChannelEdit({ channel,setShowModal }) {
                             <span className="o-title-left">
                                 OverView
                             </span>
+                            {errors.length > 0 && (
+                                <div className='error3-lists'>
+                                    <ul className='error-list'>
+                                        {errors.map((error) => <li id='errors' key={error}>{error}</li>)}
+                                    </ul>
+                                </div>
+                            )}
                         </div>
                     </div>
 
@@ -79,6 +99,13 @@ function ChannelEdit({ channel,setShowModal }) {
                     <div className="form-title">
                         <h4 className="f-title">OVERVIEW</h4>
                     </div>
+                    {validationErrors.length && (
+                        <div className='error3-lists'>
+                            <ul className='error-list'>
+                                {validationErrors.map((error) => <li id='errors' key={error}>{error}</li>)}
+                            </ul>
+                        </div>
+                    )}
                     <div className="input-title1">
                         <label > CHANNEL NAME</label>
                     </div>
