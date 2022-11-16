@@ -3,8 +3,9 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from "react-router";
 import { thunkLoadoneChannel } from "../../../store/channelReducer"
 import SendRegulerMsg from "../SendRegulerMsg";
+import { io } from 'socket.io-client';
 import './MessagesBox.css';
-
+let socket;
 
 function MessagesBox() {
     const dispatch = useDispatch();
@@ -15,6 +16,22 @@ function MessagesBox() {
         dispatch(thunkLoadoneChannel(channelId))
     }, [dispatch, channelId]);
 
+
+    useEffect(() => {
+        // open socket connection
+        // create websocket
+        socket = io();
+
+        socket.on("RM", (chat) => {
+            console.log("MESSAGE FROM TEST :", chat)
+            dispatch(thunkLoadoneChannel(channelId))
+
+        })
+        // when component unmounts, disconnect
+        return (() => {
+            socket.disconnect()
+        })
+    }, [])
 
     // console.log(channelId, serverId)
 
