@@ -1,8 +1,9 @@
 import React, { useState } from "react";
-import { useParams } from "react-router";
+// import { useParams } from "react-router";
 import MessagesBox from "../RM/MessagesBox";
+// import ChatTest from "../chatTest";
 import ChannelCreateModal from "../Channel/ChannelCreate";
-import ChannelEditModal from "../Channel/ChannelEdit"
+// import ChannelEditModal from "../Channel/ChannelEdit"
 import LogoutButton from "../auth/LogoutButton";
 import './MainPage.css';
 import CurrentUserServer from "../Server/CurrentUserServer";
@@ -48,7 +49,7 @@ function MainPage(props) {
             </div>
 
             <div className="channel-or-DM-sidebar">
-                {messageShow && <ServerEditModal  />}
+                {messageShow && <ServerEditModal />}
                 {messageShow && <ServerDelete />}
                 <div>
                     {messageShow && <ChannelCreateModal />}
