@@ -57,7 +57,7 @@ function MainPage(props) {
                 <div>
                     {messageShow && <ChannelListInServer />}
                     {dmShow && <CurrentUserDm />}
-                    {messageShow && <ChannelEditModal />}
+                    {/* {messageShow && <ChannelEditModal />} */}
                 </div>
 
                 <div>
@@ -71,9 +71,9 @@ function MainPage(props) {
                     </div>
                 }
                 {dmShow &&
-                    <>
+                    <div className="messages-container">
                         <DMBox />
-                    </>
+                    </div>
                 }
                 <div className="server-users-bar">
                     <UsersInOneServer />
