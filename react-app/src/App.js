@@ -10,7 +10,6 @@ import User from './components/User';
 import HomePage from './components/HomePage';
 import MainPage from './components/MainPage';
 import { authenticate } from './store/session';
-
 function App() {
   const [loaded, setLoaded] = useState(false);
   const dispatch = useDispatch();
@@ -41,6 +40,7 @@ function App() {
 
         <ProtectedRoute path='/channels/@me' exact={true}>
           <MainPage dmShow= {true}/>
+
         </ProtectedRoute>
 
         <ProtectedRoute path='/channels/@me/:serverId' exact={true}>
@@ -57,6 +57,7 @@ function App() {
 
         <ProtectedRoute path='/channels' exact={true}>
           <MainPage dmShow= {false}/>
+
         </ProtectedRoute>
 
         <ProtectedRoute path='/users' exact={true} >
