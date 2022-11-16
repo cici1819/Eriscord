@@ -8,3 +8,5 @@ server_member = db.Table(
     db.Column('servers_id', db.Integer, db.ForeignKey(
         add_prefix_for_prod('servers.id')), primary_key=True)
 )
+if environment == 'production':
+    server_member.schema = SCHEMA
