@@ -1,0 +1,11 @@
+.single-server-logo {
+    margin-top: 15px;
+    width:50px;
+    height:50px;
+    border-radius: 50%;
+}
+
+.single-server-logo:hover{
+    background-color: rgb(88,101,242);
+    border-radius:30%;
+}

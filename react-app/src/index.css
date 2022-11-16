@@ -1,1 +1,51 @@
 /* TODO Add site wide styles */
+html,
+body {
+    font-family: "Whitney";
+    box-sizing: border-box;
+    margin: 0;
+}
+
+ul,
+li {
+    list-style-type: none;
+}
+
+button,
+input:hover {
+    cursor: pointer;
+}
+
+a {
+    text-decoration: none;
+    color: rgb(8, 157, 216)
+}
+
+a:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+
+button,
+input:focus {
+    outline: none;
+}
+
+input {
+    color: white;
+    /* outline: none; */
+    /* border: none; */
+    height: 33px;
+    border-radius: 8px;
+    background-color: black;
+    border-color: rgb(54, 57, 63);
+}
+
+button {
+    border: none;
+}
+
+button:hover {
+    filter: brightness(90%)
+}

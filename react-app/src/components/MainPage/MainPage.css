@@ -1,0 +1,56 @@
+body {
+    background-color: rgb(32, 34, 37);
+    height: 100vh;
+}
+
+.main-page-container {
+    display: flex;
+    flex-direction: row;
+    height: 100vh;
+}
+
+.server-sidebar {
+    width: 80px;
+    height: 100%;
+    position: fixed;
+
+}
+
+
+.channel-or-DM-sidebar {
+    width: 260px;
+    height: 100%;
+    position: fixed;
+    margin-left: 100px;
+}
+
+.channel-or-DM-sidebar {
+    background-color: rgb(47, 49, 54);
+}
+
+.messages-container {
+    background-color: rgb(54, 57, 63);
+    position: absolute;
+    left: 360px;
+    height: 100%;
+    width: calc(100vw - 80px - 260px - 260px);
+    color: white;
+}
+
+/* .messges-user-div{
+    display:flex;
+    flex-direction: row-reverse;
+    align-items: flex-end;
+    background-color: aqua;
+} */
+
+.add-server {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    /* width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: rgb(47, 49, 54); */
+}

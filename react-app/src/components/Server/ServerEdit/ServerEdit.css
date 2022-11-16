@@ -1,0 +1,16 @@
+
+
+.logo-div{
+  background-color:rgb(47,49,54) ;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  /* width: 45px; */
+  height: 45px;
+
+}
+
+.username{
+    color: white;
+}

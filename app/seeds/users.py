@@ -1,18 +1,61 @@
 from app.models import db, User, environment, SCHEMA
 
+Colors = ["lightgrey", "lightred", "lightbrown", "lightblue",
+          "lightyellow", "lightgreen", "lightsalmon", "lightpink"]
 
 # Adds a demo user, you can add other users here if you want
-def seed_users():
-    demo = User(
-        username='Demo', email='demo@aa.io', password='password')
-    marnie = User(
-        username='marnie', email='marnie@aa.io', password='password')
-    bobbie = User(
-        username='bobbie', email='bobbie@aa.io', password='password')
+demo = User(
+    username='Demo',
+    email='demo@aa.io',
+    password='password',
+    color=Colors[0])
+freya = User(
+    username='Freya',
+    email='freya@aa.io',
+    password='password',
+    color=Colors[1])
+atlas = User(
+    username='Atlas',
+    email='atlas@aa.io',
+    password='password',
+    color=Colors[2])
+helen = User(
+    username='Helen',
+    email='helen@aa.io',
+    password='password',
+    color=Colors[3])
+apollo = User(
+    username='Apollo',
+    email='apollo@aa.io',
+    password='password',
+    color=Colors[4])
+ares = User(
+    username='Ares',
+    email='ares@aa.io',
+    password='password',
+    color=Colors[5])
+athena = User(
+    username='Athena',
+    email='athena@aa.io',
+    password='password',
+    color=Colors[6])
+phoebe = User(
+    username='Phoebe',
+    email='phoebe@aa.io',
+    password='password',
+    color=Colors[7])
 
+
+def seed_users():
+   
     db.session.add(demo)
-    db.session.add(marnie)
-    db.session.add(bobbie)
+    db.session.add(freya)
+    db.session.add(atlas)
+    db.session.add(helen)
+    db.session.add(apollo)
+    db.session.add(ares)
+    db.session.add(athena)
+    db.session.add(phoebe)
     db.session.commit()
 
 
@@ -24,8 +67,9 @@ def seed_users():
 # it will reset the primary keys for you as well.
 def undo_users():
     if environment == "production":
-        db.session.execute(f"TRUNCATE table {SCHEMA}.users RESTART IDENTITY CASCADE;")
+        db.session.execute(
+            f"TRUNCATE table {SCHEMA}.users RESTART IDENTITY CASCADE;")
     else:
         db.session.execute("DELETE FROM users")
-        
+
     db.session.commit()

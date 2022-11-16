@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 
+
 function User() {
   const [user, setUser] = useState({});
   const { userId }  = useParams();
@@ -21,6 +22,7 @@ function User() {
   }
 
   return (
+    <div>
     <ul>
       <li>
         <strong>User Id</strong> {userId}
@@ -32,6 +34,7 @@ function User() {
         <strong>Email</strong> {user.email}
       </li>
     </ul>
+    </div>
   );
 }
 export default User;
