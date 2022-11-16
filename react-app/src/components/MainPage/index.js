@@ -16,6 +16,7 @@ import ChannelListInServer from "../Channel/ChannelListInServer";
 import ServerEditModal from "../Server/ServerEdit";
 import CurrentUserDm from "../DM/CurrentUserDM";
 import DMBox from "../DM/DMBox";
+import { channelAddMessage } from "../../store/messageReducer";
 
 
 
@@ -49,7 +50,7 @@ function MainPage(props) {
             </div>
 
             <div className="channel-or-DM-sidebar">
-                {messageShow && <ServerEditModal />}
+                {messageShow && <ServerEditModal  />}
                 {messageShow && <ServerDelete />}
                 <div>
                     {messageShow && <ChannelCreateModal />}
@@ -58,37 +59,32 @@ function MainPage(props) {
                 <div>
                     {messageShow && <ChannelListInServer />}
                     {dmShow && <CurrentUserDm />}
-                    {messageShow && <ChannelEditModal />}
+                    {/* {messageShow && <ChannelEditModal />} */}
                 </div>
 
                 <div>
                     <LogoutButton />
                 </div>
             </div>
-            <div className="messages-users-container">
-                <>test test</>
-                <div> <MessagesBoxTop /></div>
-                <div>
-                    {messageShow &&
-                        <div className="messages-container"> all the messages map
-                            <MessagesBox />
-                        </div>
-                    }
-                    {dmShow &&
-                        <>
-                            <DMBox />
-                        </>
-                    }
-                    <div className="server-users-bar">
-                        <UsersInOneServer />
-                    </div>
-                </div>
-
-            </div>
-
             <div>
+                {messageShow &&
+                    <div className="messages-container"> all the messages map
+                        <MessagesBox />
+                    </div>
+                }
+                {dmShow &&
+                    <>
+                        <div className="messages-container">
+                            <DMBox />
+                        </div>
 
+                    </>
+                }
+                <div className="server-users-bar">
+                    <UsersInOneServer />
+                </div>
             </div>
+
         </div>
     )
 }

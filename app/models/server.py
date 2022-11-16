@@ -10,11 +10,12 @@ class Server(db.Model):
 
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(50), nullable=False)
-    owner_id = db.Column(db.Integer, db.ForeignKey('users.id'), nullable=False)
-    description = db.Column(db.String(255),default = "DM",nullable=False)
-    img = db.Column(db.String(100),default = "https://logos-world.net/wp-content/uploads/2020/12/Discord-Logo.png",nullable=False)
+    owner_id = db.Column(db.Integer, db.ForeignKey(
+        add_prefix_for_prod('users.id')), nullable=False)
+    description = db.Column(db.String(255), default="DM", nullable=False)
+    img = db.Column(db.String(
+        100), default="https://logos-world.net/wp-content/uploads/2020/12/Discord-Logo.png", nullable=False)
     is_dm = db.Column(db.Boolean, nullable=False)
-
 
     user_s = db.relationship("User", back_populates="server_u")
     channel_s = db.relationship(

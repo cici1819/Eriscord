@@ -40,7 +40,7 @@
 }
 
 .c-type {
-    color: rgb(138, 140, 144);
+    color: rgb(150, 152, 157);
     font-size: 13px;
     margin-left: 20px;
     margin-top: 20px;
@@ -69,7 +69,7 @@
 .text {
     margin-left: 15px;
     margin-top: -22px;
-    color: white;
+    color: rgb(185, 187, 190);
     font-size: 15px;
 }
 
@@ -93,7 +93,7 @@
 }
 
 .c-name-title {
-    color: rgb(138, 140, 144);
+    color: rgb(150, 152, 157);
     font-size: 13px;
 }
 
@@ -116,7 +116,7 @@
 
 .small-logo {
     font-size: 16px;
-    color: white;
+    color: rgb(185, 187, 190);
     margin-left: 10px;
 }
 
