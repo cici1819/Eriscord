@@ -45,7 +45,7 @@ function MainPage(props) {
     // }
     const { dmShow } = props
     let messageShow;
-    if (dmShow === false) {
+    if (dmShow === false /*|| undefined*/) {
         messageShow = true
     }
     // return (
