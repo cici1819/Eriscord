@@ -40,7 +40,7 @@ function DMBox() {
     }, [])
     // console.log(channelId, serverId)
     let servers = useSelector(state => state.server.dmServers)
-    console.log("STATE IN MESSAGES :", servers)
+    // console.log("STATE IN MESSAGES :", servers)
     let currentServer
     let messagesArr;
     if (servers) {

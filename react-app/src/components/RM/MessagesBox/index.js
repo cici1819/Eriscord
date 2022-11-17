@@ -18,14 +18,15 @@ function MessagesBox() {
 
     useEffect(() => {
         dispatch(thunkLoadoneChannel(channelId))
-    }, [dispatch, channelId]);
+    }, [dispatch, channelId, messagesArr?.length]);
+
 
 
     useEffect(() => {
         // open socket connection
         // create websocket
         socket = io();
-
+        // console.log("chat", socket)
         socket.on("RM", (chat) => {
             console.log("MESSAGE FROM TEST :", chat)
             dispatch(thunkLoadoneChannel(channelId))
