@@ -11,6 +11,9 @@ function MessagesBox() {
     const dispatch = useDispatch();
     const { channelId, serverId } = useParams();
 
+    let channel = useSelector(state => state.channel)
+    let messagesArr = useSelector(state => state.channel[+channelId]?.messages)
+
 
     useEffect(() => {
         dispatch(thunkLoadoneChannel(channelId))
@@ -31,14 +34,13 @@ function MessagesBox() {
         return (() => {
             socket.disconnect()
         })
-    }, [])
+    }, [messagesArr])
 
     // console.log(channelId, serverId)
-    console.log("A community for all users who want to call a server home. Here we hangout. Have a laugh. We're always looking for lively people so come hangout with us!".length)
+    // console.log("A community for all users who want to call a server home. Here we hangout. Have a laugh. We're always looking for lively people so come hangout with us!".length)
 
 
-    let channel = useSelector(state => state.channel)
-    let messagesArr = useSelector(state => state.channel[+channelId]?.messages)
+
     // console.log('messages!!!!!!!!', messagesArr)
     let channelArr = Object.values(channel)
     // console.log('channelArr!!!!!!!!', channelArr)

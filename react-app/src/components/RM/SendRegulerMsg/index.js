@@ -33,9 +33,8 @@ function SendRegulerMsg() {
         e.preventDefault();
 
         const msgPayload = { content, channel_id, server_id }
-        if (socket){
-            socket.emit("RM", content)
-        }
+        await socket.emit("RM", content)
+
         await dispatch(channelAddMessage(msgPayload))
         await dispatch(thunkLoadoneChannel(channelId))
         await setContent('')
