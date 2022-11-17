@@ -38,7 +38,7 @@ function ServerCreate({ setShowModal }) {
         e.preventDefault();
         setHasSubmitted(true);
         if (validationErrors.length) {
-            console.log("ERRORS FOUND :", validationErrors)
+            // console.log("ERRORS FOUND :", validationErrors)
         } else {
             const serverPayload = { name, img, description }
             // console.log("serverPayload", name, img, description)
