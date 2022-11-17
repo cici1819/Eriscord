@@ -14,6 +14,7 @@ let socket;
 function DMBox() {
     const dispatch = useDispatch();
     const { serverId } = useParams();
+    let current = useSelector(state => state.session.user.id)
 
 
 
@@ -39,14 +40,19 @@ function DMBox() {
         })
     }, [])
     // console.log(channelId, serverId)
+    let otherUser
     let servers = useSelector(state => state.server.dmServers)
     console.log("STATE IN MESSAGES :", servers)
     let currentServer
     let messagesArr;
+
     if (servers) {
         currentServer = servers.find(server => server.id == serverId)
         console.log("CURRENT SERVER IN DMS", currentServer)
         if (currentServer) {
+            let users = currentServer.users
+            let notYou = users.find(user => user.id !== current)
+            otherUser = notYou.username
             messagesArr = currentServer.messages
         }
     }
@@ -66,6 +72,7 @@ function DMBox() {
     return (
         <div className="DM-container-chat">
             <div className="dm-chat-page">
+                <div>{otherUser}</div>
                 {messagesArr.map((message) => (
                     <div className='single-dm-container' key={message.id}>
                         <div>
