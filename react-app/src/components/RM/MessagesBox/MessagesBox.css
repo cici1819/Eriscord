@@ -35,21 +35,19 @@
 }
 
 .RM-chat-body-sec {
+    display: flex;
+    flex-direction: column;
     width: calc(100vw - 72px - 240px - 240px);
-    /* background-color: white; */
     overflow: scroll;
     position: absolute;
-    top: 48px;
+    top: 49px;
     bottom: 60px;
-    /* scrollbar-color: white; */
     overflow-x: hidden;
-    /* padding-right: -8px; */
 }
 
 .RM-chat-body-sec::-webkit-scrollbar {
     width: 10px;
     size: 10px;
-
 }
 
 .RM-chat-body-sec::-webkit-scrollbar-thumb {
@@ -131,6 +129,4 @@
     height: 60px;
     border: none;
     outline: none;
-
-    /* margin-bottom: 12px; */
 }

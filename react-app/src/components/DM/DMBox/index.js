@@ -41,6 +41,7 @@ function DMBox() {
     }, [])
     // console.log(channelId, serverId)
     let otherUser
+    let otherColor
     let servers = useSelector(state => state.server.dmServers)
     // console.log("STATE IN MESSAGES :", servers)
     let currentServer
@@ -53,6 +54,7 @@ function DMBox() {
             let users = currentServer.users
             let notYou = users.find(user => user.id !== current)
             otherUser = notYou.username
+            otherColor = notYou.color
             messagesArr = currentServer.messages
         }
     }
@@ -71,8 +73,17 @@ function DMBox() {
 
     return (
         <div className="DM-container-chat">
+            <div className="DM-chat-topbar">
+                <div className="DM-chat-topbar-icon">@</div>
+                <div className="DM-chat-topbar-name">{otherUser}</div>
+            </div>
             <div className="dm-chat-page">
-                <div>{otherUser}</div>
+                <div className="dm-chat-page-user-info">
+                    <img src={eriscord_clear_logo} className="dm-chat-user-icon" style={{ backgroundColor: otherColor }}></img>
+                    <div className="dm-chat-user-name">{otherUser}</div>
+
+                </div>
+
                 {messagesArr.map((message) => (
                     <div className='single-dm-container' key={message.id}>
                         <div>

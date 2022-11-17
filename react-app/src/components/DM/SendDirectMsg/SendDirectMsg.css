@@ -1,4 +1,30 @@
 .create-channel-form {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.dm-text-input {
+    width: calc(100vw - 72px - 240px);
+    background-color: rgb(64, 68, 75);
+    outline: none;
+    border: none;
+}
+
+.m-button-div button {
+    margin-right: 16px;
+    border-radius: 8%;
+    height: 24px;
+    width: 40px;
+    font-size: 12px;
+    color: white;
+    background-color: #5865f2;
+    font-family: "Whitney", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+    margin-left: 12px;
+}
+
+
+.create-channel-form {
 
     /* height:480px;
     width: 480px; */
