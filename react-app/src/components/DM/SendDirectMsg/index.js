@@ -11,7 +11,6 @@ let socket;
 function SendDirectMsg() {
     const dispatch = useDispatch();
     const [content, setContent] = useState('');
-    const { rightSideBar } = props
 
     const { serverId } = useParams();
 
@@ -40,8 +39,7 @@ function SendDirectMsg() {
 
     return (
         <>
-            <div className={rightSideBar ? "Class for rightside show" : "Class for regular show"}
-            >
+            <div className="Class for regular show">
                 <form className="create-msg-form" onSubmit={handleSubmit}>
                     <input type="text"
                         value={content}
