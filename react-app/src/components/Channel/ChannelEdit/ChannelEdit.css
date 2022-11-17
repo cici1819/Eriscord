@@ -214,3 +214,8 @@
     height: 300px;
     margin-left: 20vw;
 }
+
+.gear-div-container {
+    padding: 2px 2px 0px 0px;
+    color: #96989D;
+}
