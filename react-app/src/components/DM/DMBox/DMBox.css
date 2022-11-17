@@ -1,7 +1,92 @@
 .DM-container {
     display: flex;
     flex-direction: column;
-    background-color: white;
+    /* background-color: white; */
     /* margin-left: 35%; */
     width: calc(100vw - 240px - 72px);
+}
+
+/* DM front page  */
+.dm-main-front-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100vh;
+}
+
+.dm-main-page-pic {
+    width: 450px;
+    margin-bottom: 30px;
+}
+
+.dm-main-page-word {
+    margin-top: 8px;
+    color: #a3a6aa;
+    font-size: 16px;
+    font-family: Whitney, "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+
+
+/* dm chat page  */
+.DM-container-chat {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    width: 100%;
+    height: 100vh;
+    font-family: Whitney, "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.single-dm-container {
+    display: flex;
+    flex-direction: row;
+    margin-top: 17px;
+    padding: 2px 48px 2px 16px;
+}
+
+.single-dm-container:hover {
+    background-color: rgb(50, 53, 59);
+}
+
+.single-dm-icon {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    padding: 4px 4px;
+    margin-top: 2px;
+    margin-right: 16px;
+}
+
+.single-dm-container-right {
+    padding-right: 72px;
+}
+
+.single-dm-name-time {
+    display: flex;
+    flex-direction: row;
+    height: 22px;
+    align-items: baseline;
+}
+
+.single-dm-sender-name {
+    color: white;
+    font-size: 16px;
+    font-weight: 500;
+
+}
+
+.single-dm-time {
+    color: rgb(153, 163, 170);
+    font-size: 12px;
+    margin-left: 8px;
+}
+
+.single-dm-content {
+    color: #dcddde;
+    height: 22px;
+    font-size: 16px;
+    font-weight: lighter;
 }
