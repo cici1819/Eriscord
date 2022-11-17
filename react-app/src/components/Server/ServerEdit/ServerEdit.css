@@ -64,8 +64,9 @@
 }
 
 .s-user-icon {
-    height: 100px;
-    width: 100px;
+    height: 90px;
+    width: 90px;
+    padding: 10px;
     border-radius: 50%;
     border: 5px solid rgb(57, 54, 63);
     margin-top: -70px;

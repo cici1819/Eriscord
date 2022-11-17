@@ -82,7 +82,7 @@ function DMBox() {
                 ))}
                 <br></br>
             </div>
-            < SendDirectMsg />
+            < SendDirectMsg rightSideBar={false} />
         </div >
     )
 }
