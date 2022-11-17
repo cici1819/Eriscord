@@ -29,8 +29,12 @@ function ChannelEdit({ channel, setShowModal }) {
         } else if (name.length < 4) {
             errors.push("Name should be more than 3 characters")
         }
+
+        if (topic.length > 50) {
+            errors.push("topic should be less than 50 characters")
+        }
         setValidationErrors(errors);
-    }, [name])
+    }, [name, topic])
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -90,7 +94,7 @@ function ChannelEdit({ channel, setShowModal }) {
                     </div>
 
                     <div className="Delete-div">
-                        <ChannelDelete setShowModal={setShowModal} />
+                        <ChannelDelete setShowModal={setShowModal} channel={channel} />
 
                     </div>
                 </div>
