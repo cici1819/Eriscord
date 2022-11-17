@@ -82,7 +82,7 @@ function ChannelCreate({ setShowModal }) {
                     <div className="c-type">
                         CHANNEL TYPE
                     </div>
-                    <div className="c-type-content">
+                    <div className="c-type-content2">
                         <span className="hashtag">
                             <i className="fa-light fa-hashtag"> </i>
                         </span>
