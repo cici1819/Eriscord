@@ -34,9 +34,9 @@ body {
 .messages-container {
     background-color: rgb(54, 57, 63);
     position: absolute;
-    left: 360px;
+    left: 312px;
     height: 100%;
-    width: calc(100vw - 80px - 260px - 260px);
+    width: calc(100vw - 72px - 240px);
     color: white;
 }
 

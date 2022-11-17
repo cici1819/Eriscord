@@ -4,6 +4,7 @@ import { useParams } from "react-router";
 import { getPersonalDMServers } from "../../../store/serverReducer";
 import SendDirectMsg from "../SendDirectMsg";
 import { io } from 'socket.io-client';
+import sec5_img from "../../../img/two.png"
 import './DMBox.css';
 
 let socket;
@@ -49,7 +50,11 @@ function DMBox() {
         }
     }
 
-    if (!messagesArr) { return "THIS WILL BE DM MESSAGES" }
+    if (!messagesArr) {
+        return (
+            <div>"THIS WILL BE DM MESSAGES"</div>
+        )
+    }
 
 
     return (
@@ -60,7 +65,7 @@ function DMBox() {
             </>
 
             <hr></hr>
-            <div className="DM-container">
+            <div className="">
                 {messagesArr.map((message) => (
                     <div className='single-message-container' key={message.id}>
                         <div className='review-name'>background color:  {message?.sender_color}</div>

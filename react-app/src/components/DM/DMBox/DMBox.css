@@ -1,6 +1,7 @@
-.DM-container{
+.DM-container {
     display: flex;
     flex-direction: column;
     background-color: white;
-    margin-left: 35%;
+    /* margin-left: 35%; */
+    width: calc(100vw - 240px - 72px);
 }
