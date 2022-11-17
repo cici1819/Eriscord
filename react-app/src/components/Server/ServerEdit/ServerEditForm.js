@@ -19,14 +19,18 @@ function ServerEdit({ setShowModal }) {
 
 
     useEffect(() => {
-        let errors = [];
-
+        const errors = [];
         if (!img.includes('.com') && !img.includes('.jpg') && !img.includes('.png') && !img.includes('.jpeg')) {
-          errors.push('please provide a valid image URL!')
+            errors.push('please provide a valide image URL!')
         }
-        // console.log(typeof Number(price))
-        setValidationErrors(errors)
-      }, [img])
+        if (name.length > 50) {
+            errors.push("Name should be less than 50 characters")
+        }
+        if (name.length < 4) {
+            errors.push("Name should be more than 3 characters")
+        }
+        setValidationErrors(errors);
+    }, [img, name])
 
     const handleSubmit = async (e) => {
         e.preventDefault();
