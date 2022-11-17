@@ -82,7 +82,6 @@ function DMBox() {
                 ))}
                 <br></br>
             </div>
-            fdsa
             < SendDirectMsg />
         </div >
     )

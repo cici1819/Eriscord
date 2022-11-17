@@ -84,3 +84,14 @@
     font-weight: lighter;
     padding: 1px 0px;
 }
+
+.single-rm-dm-messagebox-container {
+    width: calc(100vw - 72px - 240px - 240px);
+    display: flex;
+    justify-content: center;
+    margin-bottom: 24px;
+}
+
+.single-rm-dm-messagebox-bottom {
+    width: calc(100vw - 72px - 240px - 240px - 32px);
+}

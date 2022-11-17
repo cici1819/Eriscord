@@ -83,9 +83,13 @@ function MessagesBox() {
                     <button type='submit' id='send-message-btn' style={{display: 'none'}} />
                     </form>
             </div> */}
+            <div className='single-rm-dm-messagebox-container'>
+                <div className='single-rm-dm-messagebox-bottom'>
+                    <SendRegulerMsg channelName={channelName} />
+                </div>
 
+            </div>
 
-            <SendRegulerMsg />
         </div>
     )
 }
