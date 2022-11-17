@@ -38,6 +38,7 @@ function MessagesBox() {
 
 
     let channel = useSelector(state => state.channel)
+    let channelName = useSelector(state => state.channel[+channelId]?.name)
     let messagesArr = useSelector(state => state.channel[+channelId]?.messages)
     // console.log('messages!!!!!!!!', messagesArr)
     let channelArr = Object.values(channel)
@@ -48,12 +49,10 @@ function MessagesBox() {
 
     return (
         <>
-            <hr></hr>
-            <>
-                {channel.name}
-            </>
 
-            <hr></hr>
+            <>
+                {channelName}
+            </>
             <div>
                 {messagesArr.map((message) => (
                     <div className='single-message-container' key={message.id}>

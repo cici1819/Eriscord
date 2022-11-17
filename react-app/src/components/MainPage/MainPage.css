@@ -31,13 +31,20 @@ body {
     background-color: rgb(47, 49, 54);
 }
 
-.messages-container {
+.messages-container-rm {
+    background-color: rgb(54, 57, 63);
+    position: absolute;
+    left: 312px;
+    height: 100%;
+    width: calc(100vw - 72px - 240px - 240px);
+}
+
+.messages-container-dm {
     background-color: rgb(54, 57, 63);
     position: absolute;
     left: 312px;
     height: 100%;
     width: calc(100vw - 72px - 240px);
-    color: white;
 }
 
 /* .messges-user-div{
