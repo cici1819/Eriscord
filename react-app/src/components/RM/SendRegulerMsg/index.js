@@ -45,7 +45,7 @@ function SendRegulerMsg(channelName) {
         <>
             <div className="create-msg-div">
                 <form className="create-msg-form" onSubmit={handleSubmit}>
-                    <input className="m-text-div"
+                    <input className="m-text-input"
                         type="text"
                         value={content}
                         onChange={(e) => setContent(e.target.value)}

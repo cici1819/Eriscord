@@ -1,3 +1,23 @@
+/* server channels side bar  */
+.text-channel {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 24px 10px 12px 10px;
+    justify-content: space-between;
+    color: #96989D;
+}
+
+.text-span {
+    font-size: 12px;
+    font-family: "ABC Ginto Normal", "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+}
+
+
+
+/* ///////////////////////////// */
+
 .create-channel-form {
 
     /* height:480px;
@@ -166,7 +186,7 @@
     width: 20px;
     border: none;
     outline: none;
-    background-color:rgb(64, 68, 75);
+    background-color: rgb(64, 68, 75);
     border-radius: 50%;
 
 
