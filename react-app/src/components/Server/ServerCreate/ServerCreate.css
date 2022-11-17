@@ -74,6 +74,7 @@
   width: 55px;
   height: 55px;
 
+
 }
 
 .creat-my-own-text {
@@ -144,6 +145,8 @@
 .close-x-img2 {
   width: 25px;
   height: 25px;
+  border-radius: 50%;
+  
 }
 
 .mark-logo2 {
@@ -155,6 +158,7 @@
 
 .close-x-img2:hover {
   cursor: pointer;
+  background-color: rgb(227,229,232);
 }
 
 #errors3-list {
