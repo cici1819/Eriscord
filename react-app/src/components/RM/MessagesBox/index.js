@@ -41,7 +41,7 @@ function MessagesBox() {
 
 
 
-    // console.log('messages!!!!!!!!', messagesArr)
+    console.log('messages!!!!!!!!', messagesArr)
     let channelArr = Object.values(channel)
     // console.log('channelArr!!!!!!!!', channelArr)
 
@@ -62,6 +62,7 @@ function MessagesBox() {
                         <div className='review-name'>background color:  {message?.sender_color}</div>
                         <div className='review-name'>sender name:  {message?.sender_name}</div>
                         <div className='review-name'>content:  {message?.content}</div>
+                        <div className='review-name'>time:  {message?.created_at.slice(0, 16)}</div>
                     </div>
                 ))}
 

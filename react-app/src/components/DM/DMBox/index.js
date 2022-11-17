@@ -66,6 +66,7 @@ function DMBox() {
                         <div className='review-name'>background color:  {message?.sender_color}</div>
                         <div className='review-name'>sender name:  {message?.sender_name}</div>
                         <div className='review-name'>content:  {message?.content}</div>
+                        <div className='review-name'>time:  {message?.created_at.slice(0, 16)}</div>
                         <hr></hr>
                     </div>
                 ))}
