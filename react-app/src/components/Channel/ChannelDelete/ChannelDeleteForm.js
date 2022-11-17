@@ -41,7 +41,7 @@ function ChannelDelete({ channel, setShowModal }) {
                 <div className="c-delete-button">
                         <button type="submit" onClick={handleDelete}>Delete Channel</button>
                     </div>
-                    <div className="c1-cancel" onClick={() => setShowModal(false)}>
+                    <div className="channel-cancel" onClick={() => setShowModal(false)}>
                         Cancel
                     </div>
                 </div>

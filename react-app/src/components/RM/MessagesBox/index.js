@@ -4,6 +4,7 @@ import { useParams } from "react-router";
 import { thunkLoadoneChannel } from "../../../store/channelReducer"
 import SendRegulerMsg from "../SendRegulerMsg";
 import { io } from 'socket.io-client';
+import eriscord_clear_logo from '../../../img/favicon_clear_eriscord_192x192.png';
 import './MessagesBox.css';
 let socket;
 
@@ -42,6 +43,10 @@ function MessagesBox() {
 
 
     console.log('messages!!!!!!!!', messagesArr)
+
+    let channelName = useSelector(state => state.channel[+channelId]?.name)
+
+    // console.log('messages!!!!!!!!', messagesArr)
     let channelArr = Object.values(channel)
     // console.log('channelArr!!!!!!!!', channelArr)
 
@@ -49,20 +54,24 @@ function MessagesBox() {
 
 
     return (
-        <>
-            <hr></hr>
-            <>
-                {channel.name}
-            </>
-
-            <hr></hr>
-            <div>
+        <div className="RM-container-chat">
+            <div className="RM-chat-topbar">
+                <div className="RM-chat-topbar-icon">#</div>
+                <div className="RM-chat-topbar-name">{channelName}</div>
+            </div>
+            <div className="RM-chat-body-sec">
                 {messagesArr.map((message) => (
-                    <div className='single-message-container' key={message.id}>
-                        <div className='review-name'>background color:  {message?.sender_color}</div>
-                        <div className='review-name'>sender name:  {message?.sender_name}</div>
-                        <div className='review-name'>content:  {message?.content}</div>
-                        <div className='review-name'>time:  {message?.created_at.slice(0, 16)}</div>
+                    <div className='single-rm-container' key={message.id}>
+                        <div>
+                            <img src={eriscord_clear_logo} className="single-rm-icon" style={{ backgroundColor: message?.sender_color }}></img>
+                        </div>
+                        <div className='single-rm-container-right'>
+                            <div className='single-rm-name-time'>
+                                <div className='single-rm-sender-name'>{message?.sender_name}</div>
+                                <div className='single-rm-time'>{message?.created_at.slice(0, 10)}</div>
+                            </div>
+                            <div className='single-rm-content'>{message?.content}</div>
+                        </div>
                     </div>
                 ))}
 
@@ -79,10 +88,14 @@ function MessagesBox() {
                     <button type='submit' id='send-message-btn' style={{display: 'none'}} />
                     </form>
             </div> */}
+            <div className='single-rm-dm-messagebox-container'>
+                <div className='single-rm-dm-messagebox-bottom'>
+                    <SendRegulerMsg channelName={channelName} />
+                </div>
 
+            </div>
 
-            <SendRegulerMsg />
-        </>
+        </div>
     )
 }
 
