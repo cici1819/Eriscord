@@ -11,15 +11,23 @@ import './ServerEdit.css';
 
 function ServerEdit({ setShowServerEditModal }) {
     const dispatch = useDispatch();
-    const [name, setName] = useState('');
-    const [img, setImg] = useState('');
-    const [description, setDescription] = useState('');
+    const { serverId } = useParams();
+
+    const currentServer = useSelector((state) => state.server[`${serverId}`]);
+
+    const [name, setName] = useState(currentServer.name);
+    const [img, setImg] = useState(currentServer.img);
+    const [description, setDescription] = useState(currentServer.description);
     const [hasSubmitted, setHasSubmitted] = useState("");
     const [validationErrors, setValidationErrors] = useState([]);
     const [errors, setErrors] = useState([]);
     const history = useHistory();
-    const { serverId } = useParams();
+
     const sessionUser = useSelector(state => state.session.user)
+
+
+
+        // console.log('currentServer!!!!!!!!', currentServer)
 
     useEffect(() => {
         const errors = [];
@@ -142,7 +150,7 @@ function ServerEdit({ setShowServerEditModal }) {
                         <input type="text"
                             value={name}
                             onChange={(e) => setName(e.target.value)}
-                            placeholder="SERVER NAME"
+                            // placeholder={currentServer.name}
                             required />
                     </div>
                     <div className="servericon-input">
@@ -152,7 +160,7 @@ function ServerEdit({ setShowServerEditModal }) {
                         <input type="text"
                             value={img}
                             onChange={(e) => setImg(e.target.value)}
-                            placeholder="SERVER ICON"
+                            // placeholder={currentServer.img}
                             required />
                     </div>
                     <div className="server-d-input">
@@ -162,7 +170,7 @@ function ServerEdit({ setShowServerEditModal }) {
                         <input type="text"
                             value={description}
                             onChange={(e) => setDescription(e.target.value)}
-                            placeholder="SERVER DESCRIPTION"
+                            // placeholder={currentServer.description}
                         />
                     </div>
 

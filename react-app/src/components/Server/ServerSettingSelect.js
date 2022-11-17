@@ -75,7 +75,7 @@ const ServerSetting = ({ setShowServerEditModal, setShowServerDeleteModal }) => 
                     <div className='server-delete-div'
                         onClick={() => {
 
-                            console.log("showServerEditModal clickruning!!!!!!!!!!!")
+                            // console.log("showServerEditModal clickruning!!!!!!!!!!!")
 
                             setShowServerDeleteModal(true)
 
