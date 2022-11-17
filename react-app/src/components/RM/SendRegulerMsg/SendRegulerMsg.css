@@ -7,6 +7,17 @@
 }
 
 
+
+
+.m-text-input {
+    /* width: 400px; */
+    width: calc(100vw - 72px - 240px - 240px);
+    background-color: rgb(64, 68, 75);
+    outline: none;
+    border: none;
+
+}
+
 .m-button-div button {
     margin-right: 16px;
     border-radius: 8%;
