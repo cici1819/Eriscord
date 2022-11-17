@@ -31,13 +31,20 @@ body {
     background-color: rgb(47, 49, 54);
 }
 
-.messages-container {
+.messages-container-rm {
     background-color: rgb(54, 57, 63);
     position: absolute;
-    left: 360px;
+    left: 312px;
     height: 100%;
-    width: calc(100vw - 72px - 260px - 260px);
-    color: white;
+    width: calc(100vw - 72px - 240px - 240px);
+}
+
+.messages-container-dm {
+    background-color: rgb(54, 57, 63);
+    position: absolute;
+    left: 312px;
+    height: 100%;
+    width: calc(100vw - 72px - 240px);
 }
 
 /* .messges-user-div{
@@ -59,8 +66,8 @@ body {
 }
 
 
-.select-setting{
-    background-color:rgb(60,63,69) ;
+.select-setting {
+    background-color: rgb(60, 63, 69);
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -73,21 +80,23 @@ body {
     padding-right: 10px;
     padding-left: 10px;
 
-  }
+}
 
-  .select-setting :hover{
+.select-setting :hover {
     cursor: pointer;
-  }
-  .username{
-      color: white;
+}
 
-  }
-.server-setting-dropMenu{
+.username {
+    color: white;
+
+}
+
+.server-setting-dropMenu {
     display: flex;
     flex-direction: column;
     /* align-items: center; */
     position: absolute;
-    background-color:rgb(32, 34, 37);
+    background-color: rgb(32, 34, 37);
     min-width: 160px;
     z-index: 1;
     top: 50px;
@@ -97,12 +106,14 @@ body {
     margin-left: 5px;
 
 }
-.arrow-icon{
-  color: white;
+
+.arrow-icon {
+    color: white;
 }
-.server-edit-div{
-    color:rgb(220,221,222);
-    display:flex;
+
+.server-edit-div {
+    color: rgb(220, 221, 222);
+    display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
@@ -113,20 +124,22 @@ body {
     margin-top: -5px;
 
 }
-  .server-edit-div:hover{
+
+.server-edit-div:hover {
     cursor: pointer;
-    background-color:rgb(71,82,196) ;
-    border-radius:5px ;
-  }
-.server-setting-dropMenu{
-   display: flex;
-   padding: 10px 10px 10px 10px;
+    background-color: rgb(71, 82, 196);
+    border-radius: 5px;
+}
+
+.server-setting-dropMenu {
+    display: flex;
+    padding: 10px 10px 10px 10px;
 
 }
 
-.server-delete-div{
-    color:rgb(220,221,222);
-    display:flex;
+.server-delete-div {
+    color: rgb(220, 221, 222);
+    display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
@@ -135,12 +148,14 @@ body {
     padding-left: 10px;
     padding-right: 10px;
 }
-.server-delete-div:hover{
+
+.server-delete-div:hover {
     cursor: pointer;
-    background-color:rgb(71,82,196) ;
-    border-radius:5px ;
-  }
-.server-e-wapper{
+    background-color: rgb(71, 82, 196);
+    border-radius: 5px;
+}
+
+.server-e-wapper {
     margin-bottom: 5px;
     height: 50%;
     border-bottom: 1px solid rgb(219, 223, 230);
