@@ -8,10 +8,11 @@ import { io } from 'socket.io-client';
 
 let socket;
 
-function SendDirectMsg(props) {
+function SendDirectMsg() {
     const dispatch = useDispatch();
     const [content, setContent] = useState('');
-    const {rightSideBar} = props
+
+    // const { user } = props
 
     const { serverId } = useParams();
 
@@ -28,7 +29,7 @@ function SendDirectMsg(props) {
     }, [])
     const handleSubmit = async (e) => {
         e.preventDefault();
-        if(socket){
+        if (socket) {
             socket.emit("DM", content)
         }
         console.log('content, server_id', content, server_id)
@@ -40,14 +41,17 @@ function SendDirectMsg(props) {
 
     return (
         <>
-            <div className={rightSideBar ? "Class for rightside show" : "Class for regular show"}
->
+            <div className= "Class for regular show"
+            >
                 <form className="create-msg-form" onSubmit={handleSubmit}>
-                    <input type="text"
-                        value={content}
-                        onChange={(e) => setContent(e.target.value)}
-                        placeholder=" Message Here"
-                        required />
+                    <div className= "Dm-msg-input">
+                        <input type="text"
+                            value={content}
+                            onChange={(e) => setContent(e.target.value)}
+                            placeholder={`Message`}
+                            required />
+                    </div>
+
                     <div className="m-button-div">
                         <button type="submit">send</button>
                     </div>

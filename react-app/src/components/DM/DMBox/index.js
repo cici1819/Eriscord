@@ -15,6 +15,7 @@ function DMBox() {
     const dispatch = useDispatch();
     const { serverId } = useParams();
     let current = useSelector(state => state.session.user.id)
+    // const user = useSelector(state => state.server[+serverId]?.users)
 
 
 
@@ -89,7 +90,7 @@ function DMBox() {
                 ))}
                 <br></br>
             </div>
-            < SendDirectMsg rightSideBar={false} />
+            < SendDirectMsg  />
         </div >
     )
 }

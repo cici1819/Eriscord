@@ -105,4 +105,6 @@
 
 .u-s-right-bar{
     background-color: aqua;
+    display: inline-block;
+    
 }
