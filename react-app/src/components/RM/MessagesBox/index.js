@@ -42,7 +42,7 @@ function MessagesBox() {
 
 
 
-    console.log('messages!!!!!!!!', messagesArr)
+    // console.log('messages!!!!!!!!', messagesArr)
 
     let channelName = useSelector(state => state.channel[+channelId]?.name)
 
