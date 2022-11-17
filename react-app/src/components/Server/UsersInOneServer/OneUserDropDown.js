@@ -3,6 +3,7 @@ import { useDispatch } from 'react-redux';
 import { Link, useHistory, Redirect } from 'react-router-dom';
 import eriscord_clear_logo from '../../../img/favicon_clear_eriscord_192x192.png';
 // import * as sessionActions from '../../store/session';
+import SendDirectMsg from "../../DM/SendDirectMsg";
 import './UsersInOneServer.css';
 
 function OneUserInfo({ user }) {
@@ -38,77 +39,31 @@ function OneUserInfo({ user }) {
             <div className='review-name'>{user?.username}</div>
             {showUser && (
                 <div className="single-member-dropdown-container">
-                    <img src={eriscord_clear_logo} id="logo-img" style={{ backgroundColor: user?.color }} alt="home-img" />
-                    <div>
-                        <div>{user?.username}</div>
-                        <div>Message @{user?.username}</div>
+                    <div className="user-logo2">
+                        <div className="card-color2" style={{ backgroundColor: user?.color }}>
+
+                        </div>
+                        <img src={eriscord_clear_logo} className="d-logo-img" style={{ backgroundColor: user?.color }} alt="home-img" />
                     </div>
-                    {/* <ul className="single-member-dropdown">
-                        <div className="single-member-dropdown-item">
-                            {user.username}
-                        </div>
-                        <div className="single-member-dropdown-item">
-                            {user.email}
-                        </div>
-                        <hr className="single-member-dropdown-line"></hr>
-                        <div className="single-member-dropdown-link-item">
 
-                            <Link to={'/spots/current'}> Manage Listings</Link>
+                    <div className="s-user-profile">
+                        <div className="u-s-name">{user?.username}</div>
+                        <div>
 
                         </div>
-                        <div className="single-member-dropdown-link-item">
 
-                            <Link to={'/reviews/current'}> Manage Reviews</Link>
-
+                        <div className="u-s-right-bar">
+                            < SendDirectMsg rightSideBar={true} />
+                            <span>
+                            Message @{user?.username}
+                            </span>
                         </div>
-                        <div className="single-member-dropdown-link-item">
+                    </div>
 
-                            <div className='single-member-dropdown-logout-button' onClick={logout}>
-                                <Redirect to="/spots" />
-                                Log Out
-                            </div>
-                        </div>
-                    </ul> */}
                 </div>
             )}
         </div>
-        // <div className="nav-bar-drop-down">
-        //     <button className="single-member-buttons" onClick={openUser}>
-        //         {/* <i className="fas fa-user-circle" /> */}
-        //         <i className="fa-solid fa-bars nav-bar-drop-down-favicon" />
-        //         <i className="fa-solid fa-user nav-bar-drop-down-favicon" />
-        //     </button>
-        //     {showUser && (
-        //         <div className="single-member-dropdown-container">
-        //             <ul className="single-member-dropdown">
-        //                 <div className="single-member-dropdown-item">
-        //                     {user.username}
-        //                 </div>
-        //                 <div className="single-member-dropdown-item">
-        //                     {user.email}
-        //                 </div>
-        //                 <hr className="single-member-dropdown-line"></hr>
-        //                 <div className="single-member-dropdown-link-item">
 
-        //                     <Link to={'/spots/current'}> Manage Listings</Link>
-
-        //                 </div>
-        //                 <div className="single-member-dropdown-link-item">
-
-        //                     <Link to={'/reviews/current'}> Manage Reviews</Link>
-
-        //                 </div>
-        //                 <div className="single-member-dropdown-link-item">
-
-        //                     <div className='single-member-dropdown-logout-button' onClick={logout}>
-        //                         {/* <Redirect to="/spots" /> */}
-        //                         Log Out
-        //                     </div>
-        //                 </div>
-        //             </ul>
-        //         </div>
-        //     )}
-        // </div>
     );
 }
 

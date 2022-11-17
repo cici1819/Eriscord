@@ -42,7 +42,7 @@ function DMBox() {
     // console.log(channelId, serverId)
     let otherUser
     let servers = useSelector(state => state.server.dmServers)
-    console.log("STATE IN MESSAGES :", servers)
+    // console.log("STATE IN MESSAGES :", servers)
     let currentServer
     let messagesArr;
 
@@ -89,7 +89,7 @@ function DMBox() {
                 ))}
                 <br></br>
             </div>
-            < SendDirectMsg />
+            < SendDirectMsg rightSideBar={false} />
         </div >
     )
 }

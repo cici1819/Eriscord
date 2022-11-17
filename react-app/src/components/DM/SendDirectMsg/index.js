@@ -8,11 +8,13 @@ import { io } from 'socket.io-client';
 
 let socket;
 
-function SendDirectMsg() {
+function SendDirectMsg(props) {
     const dispatch = useDispatch();
     const [content, setContent] = useState('');
+    const {rightSideBar} = props
 
     const { serverId } = useParams();
+
     let server_id = serverId
 
     useEffect(() => {
@@ -38,12 +40,13 @@ function SendDirectMsg() {
 
     return (
         <>
-            <div className="create-msg-div">
+            <div className={rightSideBar ? "Class for rightside show" : "Class for regular show"}
+>
                 <form className="create-msg-form" onSubmit={handleSubmit}>
                     <input type="text"
                         value={content}
                         onChange={(e) => setContent(e.target.value)}
-                        placeholder="Direct Message Here"
+                        placeholder=" Message Here"
                         required />
                     <div className="m-button-div">
                         <button type="submit">send</button>
