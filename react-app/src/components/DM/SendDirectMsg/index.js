@@ -8,7 +8,7 @@ import { io } from 'socket.io-client';
 
 let socket;
 
-function SendDirectMsg(props) {
+function SendDirectMsg() {
     const dispatch = useDispatch();
     const [content, setContent] = useState('');
     const { rightSideBar } = props
@@ -43,7 +43,7 @@ function SendDirectMsg(props) {
             <div className={rightSideBar ? "Class for rightside show" : "Class for regular show"}
             >
                 <form className="create-msg-form" onSubmit={handleSubmit}>
-                    <input type="dm-text-input"
+                    <input type="text"
                         value={content}
                         onChange={(e) => setContent(e.target.value)}
                         placeholder=" Message Here"

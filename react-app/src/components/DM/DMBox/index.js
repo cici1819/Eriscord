@@ -15,6 +15,7 @@ function DMBox() {
     const dispatch = useDispatch();
     const { serverId } = useParams();
     let current = useSelector(state => state.session.user.id)
+    // const user = useSelector(state => state.server[+serverId]?.users)
 
 
 
@@ -49,7 +50,7 @@ function DMBox() {
 
     if (servers) {
         currentServer = servers.find(server => server.id == serverId)
-        console.log("CURRENT SERVER IN DMS", currentServer)
+        // console.log("CURRENT SERVER IN DMS", currentServer)
         if (currentServer) {
             let users = currentServer.users
             let notYou = users.find(user => user.id !== current)
@@ -100,7 +101,7 @@ function DMBox() {
                 ))}
                 <br></br>
             </div>
-            < SendDirectMsg rightSideBar={false} />
+            < SendDirectMsg  />
         </div >
     )
 }

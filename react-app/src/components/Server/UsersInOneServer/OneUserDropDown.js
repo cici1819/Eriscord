@@ -3,7 +3,6 @@ import { useDispatch } from 'react-redux';
 import { Link, useHistory, Redirect } from 'react-router-dom';
 import eriscord_clear_logo from '../../../img/favicon_clear_eriscord_192x192.png';
 // import * as sessionActions from '../../store/session';
-import SendDirectMsg from "../../DM/SendDirectMsg";
 import './UsersInOneServer.css';
 
 function OneUserInfo({ user }) {
@@ -28,11 +27,7 @@ function OneUserInfo({ user }) {
         return () => document.removeEventListener("click", closeUser);
     }, [showUser]);
 
-    // const logout = (e) => {
-    //     e.preventDefault();
-    //     dispatch(sessionActions.logout()).then(() => history.push('/'));
-    // };
-
+  
     return (
         <div className='single-member-container' key={user?.id} onClick={openUser} >
             <img src={eriscord_clear_logo} id="logo-img" style={{ backgroundColor: user?.color }} alt="home-img" />
@@ -53,9 +48,9 @@ function OneUserInfo({ user }) {
                         </div>
 
                         <div className="u-s-right-bar">
-                            < SendDirectMsg rightSideBar={true} />
+                            {/* < SendDirectMsg rightSideBar={true} /> */}
                             <span>
-                            Message @{user?.username}
+                                Message @{user?.username}
                             </span>
                         </div>
                     </div>
