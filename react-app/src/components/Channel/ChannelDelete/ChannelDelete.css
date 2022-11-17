@@ -2,9 +2,11 @@
     width: 500px;
     height: 260px;
     background-color: rgb(47, 49, 54);
-    border-radius: 8px;
+    border-radius: 5px;
     display: flex;
     flex-direction: column;
+    outline: none;
+    overflow: hidden;
 
 
 }
@@ -57,14 +59,14 @@
     font-size: 14px;
     margin-left: 330px;
 }
-.c1-cancel{
+.channel-cancel{
     color: white;
     font-size: 15px;
     margin-top: -30px;
     margin-left: 20px;
 }
 
-.c1-cancel:hover {
+.channel-cancel:hover {
     text-decoration: underline;
     cursor: pointer;
 }

@@ -81,15 +81,9 @@ function ChannelEdit({ channel, setShowModal }) {
 
                         <div className="title-overview">
                             <span className="o-title-left">
-                                OverView
+                                Overview
                             </span>
-                            {errors.length > 0 && (
-                                <div className='error3-lists'>
-                                    <ul className='error-list'>
-                                        {errors.map((error) => <li id='errors' key={error}>{error}</li>)}
-                                    </ul>
-                                </div>
-                            )}
+
                         </div>
                     </div>
 
