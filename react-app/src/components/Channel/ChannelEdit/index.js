@@ -4,7 +4,7 @@ import { Modal } from '../../../context/Modal';
 import { useSelector } from 'react-redux';
 import ChannelEdit from './ChannelEditForm';
 
-function ChannelEditModal({channel}) {
+function ChannelEditModal({ channel }) {
     const [showModal, setShowModal] = useState(false);
     const sessionUser = useSelector((state) => state.session.user);
     if (!sessionUser) {
@@ -14,9 +14,9 @@ function ChannelEditModal({channel}) {
     return (
         <>
             <div className='edit-channel'>
-                <div className='text-channel'>
+                <div className='gear-div-container'>
                     <div className='gear-div'>
-                    <i className="fa-sharp fa-solid fa-gear" onClick={() => setShowModal(true)} > </i>
+                        <i className="fa-sharp fa-solid fa-gear" onClick={() => setShowModal(true)} > </i>
                     </div>
                 </div>
                 {showModal && (

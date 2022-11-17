@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import { Modal } from '../../../context/Modal';
 import { useSelector } from 'react-redux';
 import ChannelCreate from './ChannelCreateForm';
+import './ChannelCreate.css';
 
 function ChannelCreateModal() {
     const [showModal, setShowModal] = useState(false);
@@ -18,7 +19,7 @@ function ChannelCreateModal() {
                     <span className='text-span'>
                         TEXT CHANNELS
                     </span>
-                    <div className='fa-div' >
+                    <div className='add-channel-fa-div' >
                         <i className="fa-regular fa-plus" onClick={() => setShowModal(true)} > </i>
                     </div>
                 </div>
