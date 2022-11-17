@@ -98,13 +98,13 @@ function MainPage(props) {
             </div>
             <div>
                 {messageShow &&
-                    <div className="messages-container"> all the messages map
+                    <div className="messages-container-rm">
                         <MessagesBox />
                     </div>
                 }
                 {dmShow &&
                     <>
-                        <div className="messages-container">
+                        <div className="messages-container-dm">
                             <DMBox />
                         </div>
 

@@ -180,3 +180,25 @@
     border-radius: 50%;
 
 }
+
+
+/* send regular message bottom box */
+.create-msg-form {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+}
+
+
+.m-button-div button {
+    margin-right: 16px;
+    border-radius: 8%;
+    height: 24px;
+    width: 40px;
+    font-size: 12px;
+    color: white;
+    background-color: #5865f2;
+    font-family: "Whitney", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+    margin-left: 12px;
+}
