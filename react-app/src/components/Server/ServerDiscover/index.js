@@ -1,3 +1,7 @@
+import React, { useState, useEffect} from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { useParams, useHistory } from 'react-router-dom';
+import { getRegularServers } from '../../../store/serverReducer';
 function ServerDiscover() {
     const dispatch = useDispatch();
     const { channelId, serverId } = useParams();
@@ -5,7 +9,7 @@ function ServerDiscover() {
     let servers = useSelector(state => state.server.servers)
 
     useEffect(() => {
-        dispatch(getAllServers())
+        dispatch(getRegularServers())
     }, [dispatch]);
 
 
@@ -17,14 +21,15 @@ function ServerDiscover() {
     // const dmRedirect = () => {
     //     history.push("/channels/@me")
     // }
-    console.log (servers)
+    // console.log (servers)
     return (
         <>
             <div className="server-discover-map">
                 {servers?.map((server) => {
                     return (
-                        <div>
+                        <div className='server-display' onClick={()=>{history.push('/channels/'+server.id)}}>
                             {server.name},
+                            {server.description}
                         </div>
                     )
                 })}
