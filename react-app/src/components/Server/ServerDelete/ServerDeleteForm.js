@@ -21,7 +21,9 @@ function ServerDelete({ setShowServerDeleteModal }) {
     useEffect(() => {
         const errors = [];
         if (currentServer.name !== serverName) {
-            setShowError('Please provide the correct server name')
+            setShowError('Please provid the correct server name')
+        } else {
+            setShowError('')
         }
 
     }, [serverName])
