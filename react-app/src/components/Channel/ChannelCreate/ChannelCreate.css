@@ -1,28 +1,54 @@
 /* server channels side bar  */
-.text-channel {
+.add-channel{
+    margin-top: 5px;
     display: flex;
     flex-direction: row;
     align-items: center;
+
     padding: 24px 10px 12px 10px;
-    justify-content: space-between;
+    width: 240px;
+    height: 20px;
     color: #96989D;
-    /* height: 34px; */
+    /* background-color: aqua; */
+}
+.text-channel {
+    width: 92%;
+    height: 35px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 5px;
+    padding-right: 5px;
+    margin-left: -5px;
+    margin-top: -5px;
+    /* height: 3px; */
 }
 .text-channel:hover {
     background-color:rgb(66, 70, 77);
 
-    cursor: pointer;
+
     border-radius:4px;
+
 
 }
 
 .text-span {
-    font-size: 12px;
-    font-family: "ABC Ginto Normal", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    /* font-family: "ABC Ginto Normal", "Helvetica Neue", Helvetica, Arial, sans-serif; */
 
 }
+.text-span:hover {
+    color:white;
 
-
+}
+.add-channel-fa-div{
+    font-size: 15px;
+}
+.add-channel-fa-div:hover{
+    color: white;
+    cursor: pointer;
+}
 
 /* ///////////////////////////// */
 
