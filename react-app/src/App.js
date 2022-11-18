@@ -11,6 +11,7 @@ import HomePage from './components/HomePage';
 import MainPage from './components/MainPage';
 import { authenticate } from './store/session';
 import FourOhFourPage from './components/404Page';
+import ServerDiscover from './components/Server/ServerDiscover';
 function App() {
   const [loaded, setLoaded] = useState(false);
   const dispatch = useDispatch();
@@ -68,7 +69,9 @@ function App() {
         <ProtectedRoute path='/users/:userId' exact={true} >
           <User />
         </ProtectedRoute>
-
+        <ProtectedRoute path='/discover' exact={true} >
+          <ServerDiscover />
+        </ProtectedRoute>
         <Route path='/' exact={true} >
           <HomePage />
         </Route>
