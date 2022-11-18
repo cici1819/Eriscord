@@ -35,12 +35,32 @@
 }
 
 .RM-chat-body-sec {
+    display: flex;
+    flex-direction: column;
     width: calc(100vw - 72px - 240px - 240px);
-    /* background-color: white; */
     overflow: scroll;
     position: absolute;
-    top: 48px;
+    top: 49px;
     bottom: 60px;
+    overflow-x: hidden;
+}
+
+.RM-chat-body-sec::-webkit-scrollbar {
+    width: 10px;
+    size: 10px;
+}
+
+.RM-chat-body-sec::-webkit-scrollbar-thumb {
+    /* Foreground */
+    background: rgb(32, 34, 37);
+    border-radius: 8px;
+}
+
+.RM-chat-body-sec::-webkit-scrollbar-track {
+    /* Background */
+    background: rgb(46, 51, 56);
+    border-radius: 8px;
+    margin-block: 8px;
 }
 
 .single-rm-container {
@@ -109,6 +129,4 @@
     height: 60px;
     border: none;
     outline: none;
-
-    /* margin-bottom: 12px; */
 }
