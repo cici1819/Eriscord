@@ -7,13 +7,14 @@ import { io } from 'socket.io-client';
 import './SendRegulerMsg.css';
 
 let socket;
-function SendRegulerMsg(channelName) {
+function SendRegulerMsg() {
     const dispatch = useDispatch();
     const [content, setContent] = useState('');
 
     const { channelId, serverId } = useParams();
     let channel_id = channelId
     let server_id = serverId
+    const currentChannel = useSelector((state) => state.channel[`${channelId}`])
 
     useEffect(() => {
         // open socket connection
@@ -50,10 +51,10 @@ function SendRegulerMsg(channelName) {
                         type="text"
                         value={content}
                         onChange={(e) => setContent(e.target.value)}
-                        placeholder={"    Message"}
+                        placeholder={` Message # ${currentChannel?.name}`}
                         required />
-                    <div className="m-button-div">
-                        <button type="submit">send</button>
+                    <div className="m-s-icon-div">
+                    <i className="fa-solid fa-paper-plane" onClick={handleSubmit}></i>
                     </div>
                 </form>
             </div>

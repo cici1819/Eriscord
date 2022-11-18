@@ -14,21 +14,22 @@ function ChannelCreateModal() {
 
     return (
         <>
-            <div className='add-channel'>
-                <div className='text-channel' onClick={() => setShowModal(true)}>
+            <div className='add-channel' >
+                <div className='text-channel' >
                     <span className='text-span'>
                         TEXT CHANNELS
                     </span>
-                    <div className='add-channel-fa-div' >
+                    <div className='add-channel-fa-div' onClick={() => setShowModal(true)} >
                         <i className="fa-regular fa-plus"  > </i>
                     </div>
                 </div>
-                {showModal && (
-                    <Modal onClose={() => setShowModal(false)}>
-                        <ChannelCreate setShowModal={setShowModal} />
-                    </Modal>
-                )}
             </div>
+            {showModal && (
+                <Modal onClose={() => setShowModal(false)}>
+                    <ChannelCreate setShowModal={setShowModal} />
+                </Modal>
+            )}
+
         </>
     );
 }

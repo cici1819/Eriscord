@@ -23,7 +23,7 @@ const LogoutButton = () => {
         </div>
       </div>
       <div className='logout-user-right'>
-        <button onClick={onLogout}>Logout</button>
+        <button onClick={onLogout}>Log Out</button>
       </div>
     </div>
   )

@@ -8,7 +8,7 @@ import { io } from 'socket.io-client';
 
 let socket;
 
-function SendDirectMsg() {
+function SendDirectMsg({ otherUser }) {
     const dispatch = useDispatch();
     const [content, setContent] = useState('');
 
@@ -39,16 +39,16 @@ function SendDirectMsg() {
 
     return (
         <>
-            <div className="Class for regular show">
-                <form className="create-msg-form" onSubmit={handleSubmit}>
+            <div className="create-dm-msg-div">
+                <form className="create-dm-msg-form" onSubmit={handleSubmit}>
                     <input className="dm-text-input"
                         type="text"
                         value={content}
                         onChange={(e) => setContent(e.target.value)}
-                        placeholder=" Message Here"
+                        placeholder={` Message @ ${otherUser}`}
                         required />
-                    <div className="dm-button-div">
-                        <button type="submit">send</button>
+                    <div className="dm-s-icon-div">
+                        <i className="fa-solid fa-paper-plane" onClick={handleSubmit}></i>
                     </div>
                 </form>
             </div>
