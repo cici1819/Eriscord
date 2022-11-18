@@ -23,7 +23,7 @@ function ChannelEdit({ channel, setShowModal }) {
     useEffect(() => {
         const errors = [];
         if (!name.length) {
-            errors.push("Name is required")
+            errors.push("Name is ")
         } else if (name.length > 50) {
             errors.push("Name should be less than 50 characters")
         } else if (name.length < 4) {
@@ -111,7 +111,7 @@ function ChannelEdit({ channel, setShowModal }) {
                         <input type="text"
                             value={name}
                             onChange={(e) => setName(e.target.value)}
-                            required />
+                             />
                     </div>
 
                     <div className="input-title2">
@@ -121,7 +121,7 @@ function ChannelEdit({ channel, setShowModal }) {
                         <input type="text"
                             value={topic}
                             onChange={(e) => setTopic(e.target.value)}
-                            required />
+                             />
                     </div>
                     <div className="editedChannel-button">
                         <button className="e-c-button"
