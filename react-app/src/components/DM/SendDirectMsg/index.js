@@ -12,8 +12,6 @@ function SendDirectMsg() {
     const dispatch = useDispatch();
     const [content, setContent] = useState('');
 
-    // const { user } = props
-
     const { serverId } = useParams();
 
     let server_id = serverId
@@ -41,18 +39,15 @@ function SendDirectMsg() {
 
     return (
         <>
-            <div className= "Class for regular show"
-            >
+            <div className="Class for regular show">
                 <form className="create-msg-form" onSubmit={handleSubmit}>
-                    <div className= "Dm-msg-input">
-                        <input type="text"
-                            value={content}
-                            onChange={(e) => setContent(e.target.value)}
-                            placeholder={`Message`}
-                            required />
-                    </div>
-
-                    <div className="m-button-div">
+                    <input className="dm-text-input"
+                        type="text"
+                        value={content}
+                        onChange={(e) => setContent(e.target.value)}
+                        placeholder=" Message Here"
+                        required />
+                    <div className="dm-button-div">
                         <button type="submit">send</button>
                     </div>
                 </form>
