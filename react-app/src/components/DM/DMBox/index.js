@@ -64,6 +64,7 @@ function DMBox() {
         return (
             <div className="DM-container">
                 <div className="dm-main-front-page">
+                    <div className="DM-chat-topbar-1">   </div>
                     <img src={two} className="dm-main-page-pic" alt="chat-with-friends" />
                     <div className="dm-main-page-word">Wumpus is waiting to chat, let's start !</div>
                 </div>
@@ -105,7 +106,7 @@ function DMBox() {
             </div>
             <div className='single-dm-messagebox-container'>
                 <div className='single-dm-messagebox-bottom'>
-                    < SendDirectMsg otherUser={ otherUser} />
+                    < SendDirectMsg otherUser={otherUser} />
                 </div>
 
             </div>

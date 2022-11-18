@@ -18,6 +18,14 @@
     border-bottom: 1px solid rgb(32, 34, 37);
 }
 
+.DM-chat-topbar-1 {
+    height: 48px;
+    position: absolute;
+    top: 0px;
+    width: 100%;
+    border-bottom: 1px solid rgb(32, 34, 37);
+}
+
 /* no chat page  */
 .DM-container {
     display: flex;
@@ -115,15 +123,17 @@
     /* padding-right: 20px; */
     width: 96%;
     color: #96989D;
-    margin-left:25px;
+    margin-left: 25px;
 }
-.dm-chat-topbar-content{
+
+.dm-chat-topbar-content {
     margin-top: -45px;
     margin-bottom: 10px;
     font-size: 18px;
     margin-left: 15px;
     /* background-color: aqua; */
 }
+
 .dm-chat-user-icon {
     width: 70px;
     height: 70px;
