@@ -6,6 +6,14 @@
     padding: 24px 10px 12px 10px;
     justify-content: space-between;
     color: #96989D;
+    /* height: 34px; */
+}
+.text-channel:hover {
+    background-color:rgb(66, 70, 77);
+
+    cursor: pointer;
+    border-radius:4px;
+
 }
 
 .text-span {

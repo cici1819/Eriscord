@@ -15,12 +15,12 @@ function ChannelCreateModal() {
     return (
         <>
             <div className='add-channel'>
-                <div className='text-channel'>
+                <div className='text-channel' onClick={() => setShowModal(true)}>
                     <span className='text-span'>
                         TEXT CHANNELS
                     </span>
                     <div className='add-channel-fa-div' >
-                        <i className="fa-regular fa-plus" onClick={() => setShowModal(true)} > </i>
+                        <i className="fa-regular fa-plus"  > </i>
                     </div>
                 </div>
                 {showModal && (
