@@ -64,6 +64,7 @@ function DMBox() {
         return (
             <div className="DM-container">
                 <div className="dm-main-front-page">
+                    <div className="DM-chat-topbar-1">   </div>
                     <img src={two} className="dm-main-page-pic" alt="chat-with-friends" />
                     <div className="dm-main-page-word">Wumpus is waiting to chat, let's start !</div>
                 </div>
@@ -79,15 +80,18 @@ function DMBox() {
                 <div className="DM-chat-topbar-name">{otherUser}</div>
             </div>
             <div className="dm-chat-page">
-                <div className="dm-chat-page-user-info">
+                <div className="dm-chat-user-info">
                     <img src={eriscord_clear_logo} className="dm-chat-user-icon" style={{ backgroundColor: otherColor }}></img>
                     <div className="dm-chat-user-name">{otherUser}</div>
+                    <div className="dm-chat-topbar-content">This is the beginning of your direct message history with @ {otherUser}</div>
+
                 </div>
 
                 {messagesArr.map((message) => (
                     <div className='single-dm-container' key={message.id}>
                         <div>
                             <img src={eriscord_clear_logo} className="single-dm-icon" style={{ backgroundColor: message.sender_color }}></img>
+
                         </div>
                         <div className='single-dm-container-right'>
                             <div className='single-dm-name-time'>
@@ -102,7 +106,7 @@ function DMBox() {
             </div>
             <div className='single-dm-messagebox-container'>
                 <div className='single-dm-messagebox-bottom'>
-                    < SendDirectMsg />
+                    < SendDirectMsg otherUser={otherUser} />
                 </div>
 
             </div>

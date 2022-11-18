@@ -38,29 +38,35 @@
     display: flex;
     flex-direction: column;
     width: calc(100vw - 72px - 240px - 240px);
-    overflow: scroll;
+    overflow: auto;
     position: absolute;
     top: 49px;
     bottom: 60px;
     overflow-x: hidden;
-}
 
+}
+/* .RM-chat-body-sec {
+    min-width:500px;
+    overflow:scroll
+} */
 .RM-chat-body-sec::-webkit-scrollbar {
-    width: 10px;
-    size: 10px;
+    width: 5px;
+    /* size: 3px; */
 }
 
 .RM-chat-body-sec::-webkit-scrollbar-thumb {
     /* Foreground */
+    height: 5px;
     background: rgb(32, 34, 37);
     border-radius: 8px;
+
 }
 
 .RM-chat-body-sec::-webkit-scrollbar-track {
     /* Background */
     background: rgb(46, 51, 56);
     border-radius: 8px;
-    margin-block: 8px;
+    margin-block: 3px;
 }
 
 .single-rm-container {

@@ -5,14 +5,19 @@
 }
 
 .other-user-container {
-    width: 224px;
-    height: 42px;
+    width: 240px;
+    height: 48px;
+    border-bottom: 1px solid rgb(32, 34, 37);
 }
-
+.other-user-container-inner:hover{
+    background-color: rgb(60, 63, 69);
+    border-radius: 5px;
+    cursor: pointer;
+}
 .other-user-container-inner {
     display: flex;
     flex-direction: row;
-    padding: 0px 8px;
+    /* padding: 0px 8px; */
 }
 
 .other-user-dm {
@@ -29,8 +34,8 @@
     display: flex;
     align-items: center;
     background-color: rgb(60, 63, 69);
-    border-radius: 4px;
-    margin-top: 24px;
+    /* border-radius: 4px; */
+    /* margin-top: 24px; */
 }
 
 .friends-logo-container {

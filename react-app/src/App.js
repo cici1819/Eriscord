@@ -10,12 +10,13 @@ import User from './components/User';
 import HomePage from './components/HomePage';
 import MainPage from './components/MainPage';
 import { authenticate } from './store/session';
+import FourOhFourPage from './components/404Page';
 function App() {
   const [loaded, setLoaded] = useState(false);
   const dispatch = useDispatch();
 
   useEffect(() => {
-    (async() => {
+    (async () => {
       await dispatch(authenticate());
       setLoaded(true);
     })();
@@ -39,29 +40,29 @@ function App() {
         </Route>
 
         <ProtectedRoute path='/channels/@me' exact={true}>
-          <MainPage dmShow= {true}/>
+          <MainPage dmShow={true} />
 
         </ProtectedRoute>
 
         <ProtectedRoute path='/channels/@me/:serverId' exact={true}>
-          <MainPage dmShow= {true} />
+          <MainPage dmShow={true} />
         </ProtectedRoute>
 
         <ProtectedRoute path='/channels/:serverId/:channelId' exact={true}>
-          <MainPage dmShow= {false} />
+          <MainPage dmShow={false} />
         </ProtectedRoute>
 
         <ProtectedRoute path='/channels/:serverId' exact={true}>
-          <MainPage dmShow= {false}/>
+          <MainPage dmShow={false} />
         </ProtectedRoute>
 
         <ProtectedRoute path='/channels' exact={true}>
-          <MainPage dmShow= {false}/>
+          <MainPage dmShow={false} />
 
         </ProtectedRoute>
 
         <ProtectedRoute path='/users' exact={true} >
-          <UsersList/>
+          <UsersList />
         </ProtectedRoute>
 
         <ProtectedRoute path='/users/:userId' exact={true} >
@@ -71,11 +72,10 @@ function App() {
         <Route path='/' exact={true} >
           <HomePage />
         </Route>
-
         <Route>
-          <h2>   Sorry this page is not available!</h2>
+          {/* <h1>THIS IS A 404</h1> */}
+          <FourOhFourPage />
         </Route>
-
       </Switch>
     </BrowserRouter>
   );
