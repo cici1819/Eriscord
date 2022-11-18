@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { useHistory } from "react-router-dom";
 import { useParams } from "react-router";
 import { thunkAddChannelToServer } from "../../../store/channelReducer";
@@ -29,9 +29,11 @@ function ChannelCreate({ setShowModal }) {
         setValidationErrors(errors);
     }, [name])
 
+    // console.log("------------------------", validationErrors.length)
 
     const handleSubmit = async (e) => {
         e.preventDefault();
+        setHasSubmitted(true)
 
         if (validationErrors.length) { return }
 
@@ -49,7 +51,7 @@ function ChannelCreate({ setShowModal }) {
                 setErrors([]);
                 setShowModal(false);
                 dispatch(thunkLoadOneServer(serverId))
-                console.log(createdChannel)
+                // console.log(createdChannel)
             }
         }
     }
@@ -64,15 +66,15 @@ function ChannelCreate({ setShowModal }) {
                         Create Channel
                     </div>
                     <div className="mark-logo">
-                        <img className='close-x-img' src='https://static.thenounproject.com/png/1144486-200.png' alt='close' onClick={() => setShowModal(false)}></img>
+                        <img className='close-x-img' src='https://static.thenounproject.com/png/1144486-200.png' alt='close' onClick={() => setShowModal(false)}/>
                     </div>
                     <div className="create-title2">
                         <p>in Text Channels</p>
                     </div>
-                    {errors.length > 0 && (
+                    {hasSubmitted && !!validationErrors.length && (
                         <div className='error3-lists'>
                             <ul className='error-list'>
-                                {errors.map((error) => <li id='errors' key={error}>{error}</li>)}
+                                {validationErrors.map((error) => <li id='errors' key={error}>{error}</li>)}
                             </ul>
                         </div>
                     )}
@@ -80,7 +82,7 @@ function ChannelCreate({ setShowModal }) {
                     <div className="c-type">
                         CHANNEL TYPE
                     </div>
-                    <div className="c-type-content">
+                    <div className="c-type-content2">
                         <span className="hashtag">
                             <i className="fa-light fa-hashtag"> </i>
                         </span>

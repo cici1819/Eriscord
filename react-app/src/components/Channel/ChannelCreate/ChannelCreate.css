@@ -1,3 +1,57 @@
+/* server channels side bar  */
+.add-channel{
+    margin-top: 5px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    padding: 24px 10px 12px 10px;
+    width: 240px;
+    height: 20px;
+    color: #96989D;
+    /* background-color: aqua; */
+}
+.text-channel {
+    width: 92%;
+    height: 35px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 5px;
+    padding-right: 5px;
+    margin-left: -5px;
+    margin-top: -5px;
+    /* height: 3px; */
+}
+.text-channel:hover {
+    background-color:rgb(66, 70, 77);
+
+
+    border-radius:4px;
+
+
+}
+
+.text-span {
+    font-size: 14px;
+    /* font-family: "ABC Ginto Normal", "Helvetica Neue", Helvetica, Arial, sans-serif; */
+
+}
+.text-span:hover {
+    color:white;
+
+}
+.add-channel-fa-div{
+    font-size: 15px;
+}
+.add-channel-fa-div:hover{
+    color: white;
+    cursor: pointer;
+}
+
+/* ///////////////////////////// */
+
 .create-channel-form {
 
     /* height:480px;
@@ -40,17 +94,17 @@
 }
 
 .c-type {
-    color: rgb(138, 140, 144);
+    color: rgb(150, 152, 157);
     font-size: 13px;
     margin-left: 20px;
     margin-top: 20px;
 }
 
-.c-type-content {
+.c-type-content2 {
     display: flex;
     flex-direction: row;
     align-items: center;
-    background-color: rgb(41, 43, 46);
+    background-color: rgb(64, 68, 75);
     width: 92%;
     height: 60px;
     margin-top: 15px;
@@ -69,7 +123,7 @@
 .text {
     margin-left: 15px;
     margin-top: -22px;
-    color: white;
+    color: rgb(185, 187, 190);
     font-size: 15px;
 }
 
@@ -80,9 +134,6 @@
     margin-left: -25px;
 }
 
-.c-type-content:hover {
-    background-color: rgb(64, 68, 75);
-}
 
 .c-name-div {
     margin-top: 20px;
@@ -93,7 +144,7 @@
 }
 
 .c-name-title {
-    color: rgb(138, 140, 144);
+    color: rgb(150, 152, 157);
     font-size: 13px;
 }
 
@@ -116,7 +167,7 @@
 
 .small-logo {
     font-size: 16px;
-    color: white;
+    color: rgb(185, 187, 190);
     margin-left: 10px;
 }
 
@@ -169,6 +220,8 @@
     width: 20px;
     border: none;
     outline: none;
+    background-color: rgb(64, 68, 75);
+    border-radius: 50%;
 
 
 }

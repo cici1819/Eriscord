@@ -10,7 +10,7 @@ from .api.auth_routes import auth_routes
 from .api.channel_routes import channel_routes
 from .api.server_routes import server_routes
 from .api.message_routes import message_routes
-from flask_socketio import SocketIO
+from .socket import socketio
 from .seeds import seed_commands
 from .config import Config
 
@@ -38,7 +38,7 @@ app.register_blueprint(message_routes, url_prefix='/api/messages')
 
 db.init_app(app)
 Migrate(app, db)
-
+socketio.init_app(app)
 # Application Security
 CORS(app)
 
@@ -69,6 +69,23 @@ def inject_csrf_token(response):
     return response
 
 
+
+
+@app.route("/api/docs")
+def api_help():
+    """
+    Returns all API routes and their doc strings
+    """
+    acceptable_methods = ['GET', 'POST', 'PUT', 'PATCH', 'DELETE']
+    route_list = {rule.rule: [[method for method in rule.methods if method in acceptable_methods],
+                              app.view_functions[rule.endpoint].__doc__]
+                  for rule in app.url_map.iter_rules() if rule.endpoint != 'static'}
+    return route_list
+
+if __name__ == '__main__':
+    socketio.run(app)
+
+
 @app.route('/', defaults={'path': ''})
 @app.route('/<path:path>')
 def react_root(path):
@@ -82,13 +99,6 @@ def react_root(path):
     return app.send_static_file('index.html')
 
 
-@app.route("/api/docs")
-def api_help():
-    """
-    Returns all API routes and their doc strings
-    """
-    acceptable_methods = ['GET', 'POST', 'PUT', 'PATCH', 'DELETE']
-    route_list = {rule.rule: [[method for method in rule.methods if method in acceptable_methods],
-                              app.view_functions[rule.endpoint].__doc__]
-                  for rule in app.url_map.iter_rules() if rule.endpoint != 'static'}
-    return route_list
+@app.errorhandler(404)
+def not_found(e):
+  return app.send_static_file('index.html')

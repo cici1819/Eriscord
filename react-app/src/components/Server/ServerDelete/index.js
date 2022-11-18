@@ -1,38 +1,32 @@
-import React, { useState } from "react";
-import { useDispatch, useSelector } from 'react-redux';
-import { useParams, useHistory } from "react-router";
-import { thunkDeleteOneServer, getPersonalServers } from "../../../store/serverReducer";
-import './ServerDelete.css';
 
+import React, { useState } from 'react';
+import { Modal } from '../../../context/Modal';
+import { useSelector } from 'react-redux';
+import ServerDelete from './ServerDeleteForm';
 
-function ServerDelete() {
-    const dispatch = useDispatch();
-    const history = useHistory();
-
-    const { channelId, serverId } = useParams();
-
-    const handleDelete = async (e) => {
-
-        dispatch(thunkDeleteOneServer(serverId))
-
-        dispatch(getPersonalServers())
-
+function ServerDeleteModal({ server, showServerDeleteModal, setShowServerDeleteModal }) {
+    // const [showModal, setShowModal] = useState(false);
+    const sessionUser = useSelector((state) => state.session.user);
+    if (!sessionUser) {
+        return null;
     }
-
 
     return (
         <>
-            <div>component delete the server
-                <></>
-                <button
-                    onClick={(e) => handleDelete(serverId)}>DELETE SERVER</button>
-                <hr></hr>
-            </div>
+            {/* <div className="s-Delete-div" onClick={(e) => setShowModal(true)}>
+                <span className="s-delete-text">
+                    Delete Server
+                </span>
+            </div> */}
+            {showServerDeleteModal && (
+                <Modal onClose={() => setShowServerDeleteModal(false)}>
+                    <ServerDelete setShowServerDeleteModal={setShowServerDeleteModal} server={server} />
+                </Modal>
+            )}
+
         </>
-    )
+    );
 }
 
 
-
-
-export default ServerDelete;
+export default ServerDeleteModal;

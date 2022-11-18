@@ -1,1 +1,53 @@
+.channel-in-server-container {
+    height: calc(100vh - 47px - 54px - 52px);
+}
 
+.channel-in-server-container a {
+    text-decoration: none;
+}
+
+.single-channel-in-server {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    height: 34px;
+    text-decoration: none;
+    margin: 0px 5px;
+    border-radius: 4px;
+    padding: 0 5px 0 5px;
+
+}
+
+
+.single-channel-in-server-icon {
+    font-size: 24px;
+    color: rgb(139, 143, 148);
+    padding-right: 4px;
+}
+
+.single-channel-in-server-name {
+    color: rgb(139, 143, 148);
+    width: calc(224px - 50px)
+}
+
+.single-channel-in-server-name:hover {
+    color: white;
+}
+
+.single-channel-in-server:hover {
+    background-color: rgb(66, 70, 77);
+}
+
+.single-channel-in-server-left {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+
+.single-channel-in-server {
+    color: white;
+    font-size: 16px;
+
+}

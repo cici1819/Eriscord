@@ -1,0 +1,138 @@
+/* rm chat page  */
+.RM-container-chat {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    width: 100%;
+    height: 100vh;
+    font-family: Whitney, "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.RM-chat-topbar {
+    height: 48px;
+    position: absolute;
+    top: 0px;
+    width: calc(100vw - 72px - 240px - 240px);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    border-bottom: 1px solid rgb(32, 34, 37);
+}
+
+.RM-chat-topbar-icon {
+    font-size: 28px;
+    color: rgb(142, 146, 151);
+    padding: 0px 8px 0px 12px;
+
+}
+
+.RM-chat-topbar-name {
+    color: white;
+    font-size: 17px;
+    font-weight: bolder;
+    font-family: "ABC Ginto Normal", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    padding-top: 6px;
+}
+
+.RM-chat-body-sec {
+    display: flex;
+    flex-direction: column;
+    width: calc(100vw - 72px - 240px - 240px);
+    overflow: auto;
+    position: absolute;
+    top: 49px;
+    bottom: 60px;
+    overflow-x: hidden;
+
+}
+/* .RM-chat-body-sec {
+    min-width:500px;
+    overflow:scroll
+} */
+.RM-chat-body-sec::-webkit-scrollbar {
+    width: 5px;
+    /* size: 3px; */
+}
+
+.RM-chat-body-sec::-webkit-scrollbar-thumb {
+    /* Foreground */
+    height: 5px;
+    background: rgb(32, 34, 37);
+    border-radius: 8px;
+
+}
+
+.RM-chat-body-sec::-webkit-scrollbar-track {
+    /* Background */
+    background: rgb(46, 51, 56);
+    border-radius: 8px;
+    margin-block: 3px;
+}
+
+.single-rm-container {
+    display: flex;
+    flex-direction: row;
+    margin-top: 17px;
+    padding: 2px 48px 2px 16px;
+}
+
+.single-rm-container:hover {
+    background-color: rgb(50, 53, 59);
+}
+
+.single-rm-icon {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    padding: 4px 4px;
+    margin-top: 2px;
+    margin-right: 16px;
+}
+
+.single-rm-container-right {
+    padding-right: 72px;
+}
+
+.single-rm-name-time {
+    display: flex;
+    flex-direction: row;
+    height: 22px;
+    align-items: baseline;
+}
+
+.single-rm-sender-name {
+    color: white;
+    font-size: 16px;
+    font-weight: 500;
+
+}
+
+.single-rm-time {
+    color: rgb(153, 163, 170);
+    font-size: 12px;
+    margin-left: 8px;
+}
+
+.single-rm-content {
+    color: #dcddde;
+    height: 22px;
+    font-size: 16px;
+    font-weight: lighter;
+
+}
+
+.single-rm-messagebox-container {
+    width: calc(100vw - 72px - 240px - 240px);
+    display: flex;
+    justify-content: center;
+    margin-bottom: 24px;
+}
+
+.single-rm-messagebox-bottom {
+    width: calc(100vw - 72px - 240px - 240px);
+    position: absolute;
+    bottom: 0;
+    height: 60px;
+    border: none;
+    outline: none;
+}

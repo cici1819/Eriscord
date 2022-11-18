@@ -27,30 +27,32 @@ function ChannelListInServer() {
 
 
     return (
-        <>
-            <hr></hr>
-            <>
-
-            </>
-            <div>
-                all channels in the server
-            </div>
-
-            <hr></hr>
+        <div className="channel-in-server-container">
             <div>
                 {channelsArr.map((channel) => (
                     <NavLink
                         to={`/channels/${serverId}/${channel.id}`}
                         key={channel.id}>
-                        <div>
-                            {channel.name}
+                        <div className="single-channel-in-server">
+                            <div className="single-channel-in-server-left">
+                                <div className="single-channel-in-server-icon">
+                                    #
+                                </div>
+                                <div className="single-channel-in-server-name">
+                                    {channel.name}
+                                </div>
+                            </div>
+                            <div className="single-channel-in-server-button">
+                                <ChannelEditModal channel={channel} />
+                            </div>
                         </div>
-                        <ChannelEditModal />
+
+
                     </NavLink>
                 ))}
 
             </div>
-        </>
+        </div>
     )
 }
 

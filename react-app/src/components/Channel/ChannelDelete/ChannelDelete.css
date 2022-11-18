@@ -1,0 +1,72 @@
+.delete-channel {
+    width: 500px;
+    height: 260px;
+    background-color: rgb(47, 49, 54);
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    outline: none;
+    overflow: hidden;
+
+
+}
+
+.delete-text-1 {
+    width: 100%;
+    height: 65%;
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(54, 57, 63);
+    font-weight: 600;
+
+
+}
+
+.delete-title {
+    color: white;
+    margin-left: 15px;
+
+}
+
+.delete-warning {
+    color: rgb(149, 151, 154);
+    font-size: 18px;
+    margin-left: 15px;
+    margin-right: 5px;
+    /* margin-bottom: 20px; */
+}
+
+.d-s-2 {
+    color: white;
+
+}
+.d-s-3{
+    margin-left: 5px;
+}
+.c-delete-button{
+    margin-top: 25px;
+
+}
+
+.c-delete-button button {
+
+    background-color: rgb(192,10,10);
+    color: white;
+    border-radius: 5px;
+    width: 150px;
+    height: 40px;
+    margin-right: 170px;
+    font-size: 14px;
+    margin-left: 330px;
+}
+.channel-cancel{
+    color: white;
+    font-size: 15px;
+    margin-top: -30px;
+    margin-left: 20px;
+}
+
+.channel-cancel:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}

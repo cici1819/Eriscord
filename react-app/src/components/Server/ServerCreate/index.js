@@ -13,9 +13,9 @@ function ServerCreateModal() {
 
     return (
         <>
-            <div className='add-server'>
-                <div className='server-create-icon'>
-                    <i className="fa-regular fa-plus" onClick={() => setShowModal(true)} > </i>
+            <div className='add-server' >
+                <div className='server-create-icon'onClick={() => setShowModal(true)}>
+                    <i className="fa-regular fa-plus" id="create-server-plus"> </i>
                 </div>
                 {showModal && (
                     <Modal onClose={() => setShowModal(false)}>
