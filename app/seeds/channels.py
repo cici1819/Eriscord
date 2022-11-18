@@ -62,19 +62,19 @@ def seed_channels():
     )
     # channel id: 10
     server8_channel2 = Channel(
-        name='cats',
+        name='funny-dogs',
         server_id=8,
         topic='Pets-Animals-Cats'
     )
     # channel id: 11
     server8_channel3 = Channel(
-        name='dogs',
+        name='adventure-time-hangout',
         server_id=8,
         topic='Pets-Animals-Dogs'
     )
     # channel id: 12
     server8_channel4 = Channel(
-        name='pets-memes',
+        name='dogs-memes',
         server_id=8,
         topic='Pets-Animals-Memes'
     )
@@ -119,6 +119,26 @@ def seed_channels():
         topic='Fun-Friends-News'
     )
 
+# server 11 channels -- cozy  ------------------------------------------
+    # channel id: 19
+    server11_channel1 = Channel(
+        name='general-rules',
+        server_id=11,
+        topic='Cozy-Chat'
+    )
+    # channel id: 20
+    server11_channel2 = Channel(
+        name='cozy-chat',
+        server_id=11,
+        topic='Cozy-Memes'
+    )
+    # channel id: 21
+    server11_channel3 = Channel(
+        name='fun-friends',
+        server_id=11,
+        topic='Cozy-fun'
+    )
+
     db.session.add(server6_channel1)
     db.session.add(server6_channel2)
     db.session.add(server6_channel3)
@@ -141,6 +161,10 @@ def seed_channels():
     db.session.add(server10_channel1)
     db.session.add(server10_channel2)
     db.session.add(server10_channel3)
+
+    db.session.add(server11_channel1)
+    db.session.add(server11_channel2)
+    db.session.add(server11_channel3)
 
     db.session.commit()
 
