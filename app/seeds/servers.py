@@ -49,8 +49,6 @@ def seed_servers():
         name="Friends Who Study Together",
         owner_id=1,
         description="Our community is always open for you. It is designed to give you a productivity boost",
-        # img="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRqLceauEctTS8nGSv4_6IGIVCic9DNDB_N0g&usqp=CAU",
-        # img="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRZWZgR7KgAqjFd0HD-WRZzRCVw1d5P9sILiw&usqp=CAU",
         img="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ0n2MGFtMrbL3T42-OQfDUopzVAZx4pA5oeg&usqp=CAU",
         is_dm=False,
         server_server_members=[demo, freya, atlas,
@@ -79,7 +77,8 @@ def seed_servers():
         name="Game for Fun!",
         owner_id=4,
         description="Welcome to join us if you are a fan of mystery and detective games and comics.",
-        img="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRAWlzUgeQH0ncHvPXsWF3gHJ40esKNa8Obev_FoSydKAbbtn71KpnUlEkRr1pjroQVias&usqp=CAU",
+        # img="https://th.bing.com/th?q=Game+Station+Logo&w=120&h=120&c=1&rs=1&qlt=90&cb=1&dpr=1.9&pid=InlineBlock&mkt=en-US&cc=US&setlang=en&adlt=moderate&t=1&mw=247",
+        img="https://th.bing.com/th?q=The+Bigs+Video+Game+Transparent+Logo&w=120&h=120&c=1&rs=1&qlt=90&cb=1&dpr=1.9&pid=InlineBlock&mkt=en-US&cc=US&setlang=en&adlt=moderate&t=1&mw=247",
         is_dm=False,
         server_server_members=[demo, freya, apollo, phoebe]
     )
