@@ -115,14 +115,14 @@
 
 }
 
-.single-rm-dm-messagebox-container {
+.single-rm-messagebox-container {
     width: calc(100vw - 72px - 240px - 240px);
     display: flex;
     justify-content: center;
     margin-bottom: 24px;
 }
 
-.single-rm-dm-messagebox-bottom {
+.single-rm-messagebox-bottom {
     width: calc(100vw - 72px - 240px - 240px);
     position: absolute;
     bottom: 0;
