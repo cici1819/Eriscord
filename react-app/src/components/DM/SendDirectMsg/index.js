@@ -71,7 +71,7 @@ function SendDirectMsg({ otherUser }) {
                         value={content}
                         onChange={(e) => setContent(e.target.value)}
                         placeholder={` Message @ ${otherUser}`}
-                        required />
+                   />
                     <div className="dm-s-icon-div">
                         <i className="fa-solid fa-paper-plane" onClick={handleSubmit}></i>
                     </div>

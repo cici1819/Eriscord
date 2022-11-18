@@ -80,7 +80,7 @@ function ChannelCreate({ setShowModal }) {
                     )}
 
                     <div className="c-type">
-                        CHANNEL TYPE
+                        CHANNEL TYPE (VOICE CURRENTLY UNAVAILABLE)
                     </div>
                     <div className="c-type-content2">
                         <span className="hashtag">
@@ -101,7 +101,7 @@ function ChannelCreate({ setShowModal }) {
                                 value={name}
                                 onChange={(e) => setName(e.target.value)}
                                 placeholder="new-channel"
-                                required />
+                        />
                         </div>
 
                     </div>
