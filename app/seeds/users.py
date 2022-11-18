@@ -1,7 +1,10 @@
 from app.models import db, User, environment, SCHEMA
 
-Colors = ["lightgrey", "lightred", "lightbrown", "lightblue",
-          "lightyellow", "lightgreen", "lightsalmon", "lightpink"]
+# Colors = ["lightgrey", "lightred", "lightbrown", "lightblue",
+#           "lightyellow", "lightgreen", "lightsalmon", "lightpink"]
+
+Colors = ['green', 'orange', 'purple', 'red',
+          'gray', 'yellow', 'blue', "salmon"]
 
 # Adds a demo user, you can add other users here if you want
 demo = User(
@@ -47,7 +50,7 @@ phoebe = User(
 
 
 def seed_users():
-   
+
     db.session.add(demo)
     db.session.add(freya)
     db.session.add(atlas)
