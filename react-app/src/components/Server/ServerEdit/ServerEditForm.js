@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from "react-router-dom";
-import { useParams } from "react-router";
-import { thunkEditServer, getPersonalServers } from "../../../store/serverReducer";
+import { Redirect, useParams } from "react-router";
+import { thunkEditServer, getPersonalServers, thunkLoadOneServer } from "../../../store/serverReducer";
 import crossLogo from "../../../img/CROSS-ICON.png"
 import user_clear_logo from "../../../img/favicon_clear_eriscord_192x192.png"
 import profileLogo from "../../../img/Profile-logo.png"
@@ -12,7 +12,7 @@ import './ServerEdit.css';
 function ServerEdit({ setShowServerEditModal }) {
     const dispatch = useDispatch();
     const { serverId } = useParams();
-
+    const history = useHistory();
     const currentServer = useSelector((state) => state.server[`${serverId}`]);
 
     const [name, setName] = useState(currentServer.name);
@@ -21,13 +21,10 @@ function ServerEdit({ setShowServerEditModal }) {
     const [hasSubmitted, setHasSubmitted] = useState("");
     const [validationErrors, setValidationErrors] = useState([]);
     const [errors, setErrors] = useState([]);
-    const history = useHistory();
 
     const sessionUser = useSelector(state => state.session.user)
 
-
-
-        // console.log('currentServer!!!!!!!!', currentServer)
+    // console.log('currentServer!!!!!!!!', currentServer)
 
     useEffect(() => {
         const errors = [];
@@ -52,7 +49,7 @@ function ServerEdit({ setShowServerEditModal }) {
         const editedServerPayload = { serverId, name, img, description }
         editedServerPayload.serverId = serverId
         // console.log("!!!!!editedServerPayload", editedServerPayload)
-        let editedServer = await dispatch(thunkEditServer(editedServerPayload))
+        await dispatch(thunkEditServer(editedServerPayload))
         //     .catch(async (res) => {
 
         //     const data = await res.json();
@@ -61,11 +58,11 @@ function ServerEdit({ setShowServerEditModal }) {
         //         setErrors(data.errors)
         //     };
         // });
+        await dispatch(getPersonalServers())
+        await dispatch(thunkLoadOneServer(serverId))
+        await setShowServerEditModal(false);
 
-        if (editedServer) {
-            setShowServerEditModal(false);
-            dispatch(getPersonalServers())
-        }
+
     }
 
 
@@ -170,7 +167,7 @@ function ServerEdit({ setShowServerEditModal }) {
                         <input type="text"
                             value={description}
                             onChange={(e) => setDescription(e.target.value)}
-                            // placeholder={currentServer.description}
+                        // placeholder={currentServer.description}
                         />
                     </div>
 
