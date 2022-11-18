@@ -6,8 +6,8 @@ from app.models import db, User, environment, SCHEMA
 # Colors = ['green', 'orange', 'purple', 'red',
 #           'gray', 'yellow', 'blue', "salmon"]
 
-Colors = ['limegreen', 'darkorange', 'slateblue',
-          'orangered', 'darkslategray', 'darkred', "lightcoral",  "teal"]
+Colors = ['limegreen', 'darkorange', 'royalblue', 'wheat',
+          'orangered',  'powderblue', "lightcoral",  "teal"]
 
 # Adds a demo user, you can add other users here if you want
 demo = User(
