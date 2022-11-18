@@ -69,8 +69,8 @@ function ServerDelete({ setShowServerDeleteModal }) {
 
                     <span className="error-message">
                     {hasSubmitted && !!showError.length && (
-                                <span id='errors3-list'>
-                                    <span className='error4-list'>
+                                <span id='errors4-list'>
+                                    <span className='error5-list'>
                                         <li id='errors' >{showError}</li>
                                     </span>
                                 </span>

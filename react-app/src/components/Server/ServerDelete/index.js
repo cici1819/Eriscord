@@ -4,7 +4,7 @@ import { Modal } from '../../../context/Modal';
 import { useSelector } from 'react-redux';
 import ServerDelete from './ServerDeleteForm';
 
-function ServerDeleteModal({ server,showServerDeleteModal,setShowServerDeleteModal }) {
+function ServerDeleteModal({ server, showServerDeleteModal, setShowServerDeleteModal }) {
     // const [showModal, setShowModal] = useState(false);
     const sessionUser = useSelector((state) => state.session.user);
     if (!sessionUser) {
@@ -17,7 +17,6 @@ function ServerDeleteModal({ server,showServerDeleteModal,setShowServerDeleteMod
                 <span className="s-delete-text">
                     Delete Server
                 </span>
-
             </div> */}
             {showServerDeleteModal && (
                 <Modal onClose={() => setShowServerDeleteModal(false)}>
