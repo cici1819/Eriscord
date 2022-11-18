@@ -1,5 +1,5 @@
 from flask import Blueprint, jsonify, session, request
-from app.models import Server, db
+from app.models import Server, db, User
 from app.forms import ServerForm
 import json
 from flask_login import current_user, login_user, logout_user, login_required
@@ -83,7 +83,23 @@ def add_server():
     db.session.add(new_server)
     db.session.commit()
     return json.dumps(new_server.to_dict_regulars())
+@server_routes.route('/new/<int:user_id>', methods= ["POST"])
+@login_required
+def add_dm_server(user_id):
+    form= ServerForm()
+    data= form.data
+    this_user_id = current_user.id
+    other_user= User.query.get(user_id)
+    form['csrf_token'].data = request.cookies['csrf_token']
+    # dm server route
+    new_server= Server(name= data["name"], img= data["img"], description= data["description"], is_dm= True, owner_id= this_user_id)
 
+    new_server.server_server_members.append(current_user)
+    new_server.server_server_members.append(other_user)
+
+    db.session.add(new_server)
+    db.session.commit()
+    return json.dumps(new_server.to_dict_dms())
 
 @server_routes.route('/<int:server_id>', methods= ["POST"])
 @login_required
