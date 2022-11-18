@@ -32,11 +32,17 @@ const ServerSetting = ({ setShowServerEditModal, setShowServerDeleteModal }) => 
         return null;
     }
 
+
     let name
+    let sessionUserIsOwner = false
     if (servers) {
         let currentServer = servers.find(server => server?.id == serverId)
-        // console.log("CURRENT SERVER IN DMS", currentServer)
-        name = currentServer?.name
+        if (currentServer){
+            name = currentServer?.name
+            // console.log("current SERVER ",currentServer)
+            sessionUserIsOwner = currentServer.owner_id==sessionUser.id
+            // console.log ("owned by you?" , sessionUserIsOwner)
+        }
     }
 
     return (
@@ -46,14 +52,16 @@ const ServerSetting = ({ setShowServerEditModal, setShowServerDeleteModal }) => 
                 <span className='username'>
                     {name}
                 </span>
+                {sessionUserIsOwner &&
                 <span className='arrow-icon' >
                     {/* <img className="arrow-img" src={selectMenuIcon} /> */}
                     <i className="fa-solid fa-chevron-down"></i>
                 </span>
+}
 
             </div>
 
-            {showMenu && (
+            {showMenu && sessionUserIsOwner && (
                 <div className='server-setting-dropMenu'>
                     <div className='server-e-wapper'>
                     <div className='server-edit-div'

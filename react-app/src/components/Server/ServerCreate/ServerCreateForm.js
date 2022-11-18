@@ -23,7 +23,7 @@ function ServerCreate({ setShowModal }) {
     useEffect(() => {
         const errors = [];
         if (!img.includes('.com') && !img.includes('.jpg') && !img.includes('.png') && !img.includes('.jpeg')) {
-            errors.push('please provide a valide image URL!')
+            errors.push('Please provide a valid image URL!')
         }
         if (name.length > 50) {
             errors.push("Name should be less than 50 characters")
@@ -109,7 +109,7 @@ function ServerCreate({ setShowModal }) {
                                 <input type="text"
                                     value={name}
                                     onChange={(e) => setName(e.target.value)}
-                                    required />
+                                     />
                             </div>
                             <div className="s-input-title2">
                                 SERVER ICON
@@ -118,7 +118,7 @@ function ServerCreate({ setShowModal }) {
                                 <input type="text"
                                     value={img}
                                     onChange={(e) => setImg(e.target.value)}
-                                    required />
+                                     />
                             </div>
                             <div className="s-input-title3">
                                 SERVER DESCRIPTION
@@ -127,7 +127,7 @@ function ServerCreate({ setShowModal }) {
                                 <input type="text"
                                     value={description}
                                     onChange={(e) => setDescription(e.target.value)}
-                                    required
+
                                 />
                             </div>
 

@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 // import { useParams } from "react-router";
 import MessagesBox from "../RM/MessagesBox";
+import { useSelector } from "react-redux";
 // import ChatTest from "../chatTest";
 import ChannelCreateModal from "../Channel/ChannelCreate";
 // import ChannelEditModal from "../Channel/ChannelEdit"
@@ -22,9 +23,6 @@ import { channelAddMessage } from "../../store/messageReducer";
 function MainPage(props) {
     const [showServerEditModal, setShowServerEditModal] = useState(false)
     const [showServerDeleteModal, setShowServerDeleteModal] = useState(false);
-
-
-
     // let sessionLinks;
     // if (sessionUser) {
     //     sessionLinks = (
@@ -112,7 +110,7 @@ function MainPage(props) {
                 }
                 <div className="server-users-bar">
                     <div className="right-user-bar-top">
-                      
+
                     </div>
                     <UsersInOneServer />
                 </div>

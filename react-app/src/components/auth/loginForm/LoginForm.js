@@ -4,6 +4,7 @@ import { Redirect, Link } from 'react-router-dom';
 import { login } from '../../../store/session';
 import DemoUserLogin from '../DemoUser';
 import "../loginForm/loginForm.css"
+import SecondDemo from '../SecondDemo';
 
 const LoginForm = () => {
   const [errors, setErrors] = useState([]);
@@ -81,6 +82,9 @@ const LoginForm = () => {
         </form>
         <div className='Demo-button'>
           <DemoUserLogin />
+        </div>
+        <div className='Demo-button'>
+          <SecondDemo />
         </div>
         <div className='link-register'>
           <span>Need an account?</span>

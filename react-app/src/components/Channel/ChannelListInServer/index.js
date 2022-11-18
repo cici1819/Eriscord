@@ -10,11 +10,13 @@ import './ChannelListInServer.css';
 function ChannelListInServer() {
     const dispatch = useDispatch();
     const { channelId, serverId } = useParams();
+    const sessionUser = useSelector((state) => state.session.user);
 
     useEffect(() => {
         dispatch(thunkLoadOneServer(serverId))
     }, [dispatch, serverId]);
 
+    const servers = useSelector(state => state.server.servers)
 
     // console.log(channelId, serverId)
 
@@ -25,7 +27,15 @@ function ChannelListInServer() {
 
     if (!channelsArr) { return null }
 
-
+    let sessionUserIsOwner = false
+    if (servers) {
+        let currentServer = servers.find(server => server?.id == serverId)
+        if (currentServer) {
+            // console.log("current SERVER ",currentServer)
+            sessionUserIsOwner = currentServer.owner_id == sessionUser.id
+            // console.log("owned by you?", sessionUserIsOwner)
+        }
+    }
     return (
         <div className="channel-in-server-container">
             <div>
@@ -42,9 +52,10 @@ function ChannelListInServer() {
                                     {channel.name}
                                 </div>
                             </div>
-                            <div className="single-channel-in-server-button">
+                            {sessionUserIsOwner && <div className="single-channel-in-server-button">
                                 <ChannelEditModal channel={channel} />
-                            </div>
+                            </div>}
+
                         </div>
 
 
