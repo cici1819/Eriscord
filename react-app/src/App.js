@@ -73,7 +73,7 @@ function App() {
           <HomePage />
         </Route>
         <Route>
-          <h1>THIS IS A 404</h1>
+          {/* <h1>THIS IS A 404</h1> */}
           <FourOhFourPage />
         </Route>
       </Switch>
