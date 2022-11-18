@@ -61,16 +61,6 @@
     font-family: Whitney, "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
-.DM-chat-topbar {
-    height: 48px;
-    position: absolute;
-    top: 0px;
-    width: calc(100vw - 72px - 240px);
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    border-bottom: 1px solid rgb(32, 34, 37);
-}
 
 .DM-chat-topbar-icon {
     font-size: 28px;
@@ -99,8 +89,8 @@
 }
 
 .dm-chat-page::-webkit-scrollbar {
-    width: 10px;
-    size: 10px;
+    width: 5px;
+    size: 5px;
 }
 
 .dm-chat-page::-webkit-scrollbar-thumb {
@@ -113,9 +103,27 @@
     /* Background */
     background: rgb(46, 51, 56);
     border-radius: 8px;
-    margin-block: 8px;
+    margin-block: 3px;
 }
 
+.dm-chat-user-info {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    border-bottom: 1px solid rgb(64, 68, 75);
+    /* padding-left: 5px; */
+    /* padding-right: 20px; */
+    width: 96%;
+    color: #96989D;
+    margin-left:25px;
+}
+.dm-chat-topbar-content{
+    margin-top: -45px;
+    margin-bottom: 10px;
+    font-size: 18px;
+    margin-left: 15px;
+    /* background-color: aqua; */
+}
 .dm-chat-user-icon {
     width: 70px;
     height: 70px;
@@ -134,9 +142,12 @@
     width: calc(100vw - 72px - 240px -60px);
     padding-bottom: 20px;
     margin-bottom: 20px;
-    border-bottom: 1px solid rgb(64, 68, 75);
+    /* border-bottom: 1px solid rgb(64, 68, 75); */
 }
 
+/* .dm-chat-topbar-content{
+
+} */
 /* message section  */
 .single-dm-container {
     display: flex;

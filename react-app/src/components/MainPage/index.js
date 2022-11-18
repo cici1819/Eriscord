@@ -82,7 +82,7 @@ function MainPage(props) {
                     setShowServerDeleteModal={setShowServerDeleteModal}
                 />}
 
-                <div>
+                <div className="mainPage-c-create">
                     {messageShow && <ChannelCreateModal />}
                 </div>
 
@@ -111,6 +111,9 @@ function MainPage(props) {
                     </>
                 }
                 <div className="server-users-bar">
+                    <div className="right-user-bar-top">
+                      
+                    </div>
                     <UsersInOneServer />
                 </div>
             </div>

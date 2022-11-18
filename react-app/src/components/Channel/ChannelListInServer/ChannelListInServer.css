@@ -13,8 +13,9 @@
     justify-content: space-between;
     height: 34px;
     text-decoration: none;
-    margin: 0px 8px;
+    margin: 0px 5px;
     border-radius: 4px;
+    padding: 0 5px 0 5px;
 
 }
 
