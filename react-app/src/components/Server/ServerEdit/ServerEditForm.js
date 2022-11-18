@@ -32,7 +32,7 @@ function ServerEdit({ setShowServerEditModal }) {
     useEffect(() => {
         const errors = [];
         if (!img.includes('.com') && !img.includes('.jpg') && !img.includes('.png') && !img.includes('.jpeg')) {
-            errors.push('please provide a valide image URL!')
+            errors.push('Please provide a valid image URL!')
         }
         if (name.length > 50) {
             errors.push("Name should be less than 50 characters")
