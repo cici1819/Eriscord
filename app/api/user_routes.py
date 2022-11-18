@@ -1,6 +1,6 @@
 from flask import Blueprint, jsonify
-from flask_login import login_required
-from app.models import User
+from flask_login import login_required, current_user
+from app.models import User, Server, db
 
 user_routes = Blueprint('users', __name__)
 
@@ -22,4 +22,12 @@ def user(id):
     Query for a user by id and returns that user in a dictionary
     """
     user = User.query.get(id)
+    return user.to_dict()
+@user_routes.route('/servers/<int:server_id>')
+@login_required
+def add_to_server(server_id):
+    server= Server.query.get(server_id)
+    user= current_user
+    server.server_server_members.append(current_user)
+    db.session.commit()
     return user.to_dict()
