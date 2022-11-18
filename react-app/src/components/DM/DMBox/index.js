@@ -4,6 +4,8 @@ import { useParams } from "react-router";
 import { getPersonalDMServers } from "../../../store/serverReducer";
 import SendDirectMsg from "../SendDirectMsg";
 import { io } from 'socket.io-client';
+import two from "../../../img/two.png";
+import eriscord_clear_logo from '../../../img/favicon_clear_eriscord_192x192.png';
 import './DMBox.css';
 
 let socket;
@@ -12,6 +14,8 @@ let socket;
 function DMBox() {
     const dispatch = useDispatch();
     const { serverId } = useParams();
+    let current = useSelector(state => state.session.user.id)
+    // const user = useSelector(state => state.server[+serverId]?.users)
 
 
 
@@ -37,43 +41,73 @@ function DMBox() {
         })
     }, [])
     // console.log(channelId, serverId)
+    let otherUser
+    let otherColor
     let servers = useSelector(state => state.server.dmServers)
-    console.log("STATE IN MESSAGES :", servers)
+    // console.log("STATE IN MESSAGES :", servers)
     let currentServer
     let messagesArr;
+
     if (servers) {
         currentServer = servers.find(server => server.id == serverId)
-        console.log("CURRENT SERVER IN DMS", currentServer)
+        // console.log("CURRENT SERVER IN DMS", currentServer)
         if (currentServer) {
+            let users = currentServer.users
+            let notYou = users.find(user => user.id !== current)
+            otherUser = notYou.username
+            otherColor = notYou.color
             messagesArr = currentServer.messages
         }
     }
 
-    if (!messagesArr) { return "THIS WILL BE DM MESSAGES" }
+    if (!messagesArr) {
+        return (
+            <div className="DM-container">
+                <div className="dm-main-front-page">
+                    <img src={two} className="dm-main-page-pic" alt="chat-with-friends" />
+                    <div className="dm-main-page-word">Wumpus is waiting to chat, let's start !</div>
+                </div>
+            </div>
+        )
+    }
 
 
     return (
-        <div className="DM-container">
-            <hr></hr>
-            <>
-                This gonna be the DM display box!
-            </>
+        <div className="DM-container-chat">
+            <div className="DM-chat-topbar">
+                <div className="DM-chat-topbar-icon">@</div>
+                <div className="DM-chat-topbar-name">{otherUser}</div>
+            </div>
+            <div className="dm-chat-page">
+                <div className="dm-chat-page-user-info">
+                    <img src={eriscord_clear_logo} className="dm-chat-user-icon" style={{ backgroundColor: otherColor }}></img>
+                    <div className="dm-chat-user-name">{otherUser}</div>
+                </div>
 
-            <hr></hr>
-            <div className="DM-container">
                 {messagesArr.map((message) => (
-                    <div className='single-message-container' key={message.id}>
-                        <div className='review-name'>background color:  {message?.sender_color}</div>
-                        <div className='review-name'>sender name:  {message?.sender_name}</div>
-                        <div className='review-name'>content:  {message?.content}</div>
-                        <hr></hr>
+                    <div className='single-dm-container' key={message.id}>
+                        <div>
+                            <img src={eriscord_clear_logo} className="single-dm-icon" style={{ backgroundColor: message.sender_color }}></img>
+                        </div>
+                        <div className='single-dm-container-right'>
+                            <div className='single-dm-name-time'>
+                                <div className='single-dm-sender-name'>{message?.sender_name}</div>
+                                <div className='single-dm-time'>{message?.created_at.slice(0, 10)}</div>
+                            </div>
+                            <div className='single-dm-content'>{message?.content}</div>
+                        </div>
                     </div>
                 ))}
                 <br></br>
             </div>
-            fdsa
-            <SendDirectMsg />
-        </div>
+            <div className='single-dm-messagebox-container'>
+                <div className='single-dm-messagebox-bottom'>
+                    < SendDirectMsg />
+                </div>
+
+            </div>
+
+        </div >
     )
 }
 

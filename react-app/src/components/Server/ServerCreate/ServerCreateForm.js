@@ -18,7 +18,7 @@ function ServerCreate({ setShowModal }) {
     const history = useHistory();
     // const { channelId, serverId } = useParams();
 
-    console.log(validationErrors)
+    // console.log(validationErrors)
 
     useEffect(() => {
         const errors = [];
@@ -71,21 +71,23 @@ function ServerCreate({ setShowModal }) {
 
                     <div className="creat-server-content">
                         <div className="creat-sever-title">
-                        <div className="c-s-text-top">
-                            <h1>
-                                Create a server
-                            </h1>
-                            <div className="mark-logo2">
-                                <img className='close-x-img2' src='https://static.thenounproject.com/png/1144486-200.png' alt='close' onClick={() => setShowModal(false)} />
-                            </div>
-                            <div className="creat-sever-title2">
-                                <p>Your server is where you and your friends hang out.Make</p>
-                                <p className="next-line-p">yours and start talking.</p>
+                            <div className="c-s-text-top">
+                                <h1>
+                                    Create a server
+                                </h1>
+                                <div className="mark-logo2">
+                                    <img className='close-x-img2' src='https://static.thenounproject.com/png/1144486-200.png' alt='close' onClick={() => setShowModal(false)} />
+                                </div>
+                                <div className="creat-sever-title2">
+                                    <p>Your server is where you and your friends hang out.Make</p>
+                                    <p className="next-line-p">yours and start talking.</p>
+                                </div>
                             </div>
                         </div>
+                        <div>
                             {hasSubmitted && !!validationErrors.length && (
-                                <div className='error3-lists'>
-                                    <ul className='error-list'>
+                                <div id='errors3-list'>
+                                    <ul className='error4-list'>
                                         {validationErrors.map((error) => <li id='errors' key={error}>{error}</li>)}
                                     </ul>
                                 </div>
@@ -125,6 +127,7 @@ function ServerCreate({ setShowModal }) {
                                 <input type="text"
                                     value={description}
                                     onChange={(e) => setDescription(e.target.value)}
+                                    required
                                 />
                             </div>
 

@@ -13,17 +13,18 @@ const LogoutButton = () => {
   let current = useSelector(state => state.session.user)
 
   return (
-    <div>
+    <div className='logout-user-container'>
 
-      <div className='logout-user-container'>
+      <div className='logout-user-left'>
         <img src={eriscord_clear_logo} className="other-user-icon" style={{ backgroundColor: current.color }}></img>
-        <div>
-          <div>{current.username}</div>
-          <div>{current.id}</div>
+        <div className='logout-user-name-id'>
+          <div className='logout-user-name'>{current.username}</div>
+          <div className='logout-user-id'># {current.id}</div>
         </div>
       </div>
-      <button onClick={onLogout}>Logout</button>
-
+      <div className='logout-user-right'>
+        <button onClick={onLogout}>Logout</button>
+      </div>
     </div>
   )
 };

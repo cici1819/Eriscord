@@ -1,6 +1,207 @@
-.DM-container{
+.DM-container-chat {
     display: flex;
     flex-direction: column;
-    background-color: white;
-    margin-left: 35%;
+    justify-content: flex-end;
+    width: 100%;
+    height: 100vh;
+    font-family: Whitney, "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.DM-chat-topbar {
+    height: 48px;
+    position: absolute;
+    top: 0px;
+    width: calc(100vw - 72px - 240px - 240px);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    border-bottom: 1px solid rgb(32, 34, 37);
+}
+
+/* no chat page  */
+.DM-container {
+    display: flex;
+    flex-direction: column;
+    /* background-color: white; */
+    /* margin-left: 35%; */
+    width: calc(100vw - 240px - 72px);
+}
+
+/* DM front page  */
+.dm-main-front-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100vh;
+}
+
+.dm-main-page-pic {
+    width: 450px;
+    margin-bottom: 30px;
+}
+
+.dm-main-page-word {
+    margin-top: 8px;
+    color: #a3a6aa;
+    font-size: 16px;
+    font-family: Whitney, "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+
+
+/* dm chat page  */
+.DM-container-chat {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    width: 100%;
+    height: 100vh;
+    font-family: Whitney, "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.DM-chat-topbar {
+    height: 48px;
+    position: absolute;
+    top: 0px;
+    width: calc(100vw - 72px - 240px);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    border-bottom: 1px solid rgb(32, 34, 37);
+}
+
+.DM-chat-topbar-icon {
+    font-size: 28px;
+    color: rgb(142, 146, 151);
+    padding: 0px 8px 0px 12px;
+
+}
+
+.DM-chat-topbar-name {
+    color: white;
+    font-size: 17px;
+    font-weight: bolder;
+    font-family: "ABC Ginto Normal", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    padding-top: 6px;
+}
+
+.dm-chat-page {
+    display: flex;
+    flex-direction: column;
+    width: calc(100vw - 72px - 240px);
+    overflow: scroll;
+    position: absolute;
+    top: 49px;
+    bottom: 60px;
+    overflow-x: hidden;
+}
+
+.dm-chat-page::-webkit-scrollbar {
+    width: 10px;
+    size: 10px;
+}
+
+.dm-chat-page::-webkit-scrollbar-thumb {
+    /* Foreground */
+    background: rgb(32, 34, 37);
+    border-radius: 8px;
+}
+
+.dm-chat-page::-webkit-scrollbar-track {
+    /* Background */
+    background: rgb(46, 51, 56);
+    border-radius: 8px;
+    margin-block: 8px;
+}
+
+.dm-chat-user-icon {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    padding: 5px 5px;
+    margin-top: 20px;
+    margin-left: 16px;
+}
+
+.dm-chat-user-name {
+    font-size: 32px;
+    color: white;
+    font-family: "ABC Ginto Normal", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    margin-left: 16px;
+    font-weight: bolder;
+    width: calc(100vw - 72px - 240px -60px);
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid rgb(64, 68, 75);
+}
+
+/* message section  */
+.single-dm-container {
+    display: flex;
+    flex-direction: row;
+    margin-top: 17px;
+    padding: 2px 48px 2px 16px;
+}
+
+.single-dm-container:hover {
+    background-color: rgb(50, 53, 59);
+}
+
+.single-dm-icon {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    padding: 4px 4px;
+    margin-top: 2px;
+    margin-right: 16px;
+}
+
+.single-dm-container-right {
+    padding-right: 72px;
+}
+
+.single-dm-name-time {
+    display: flex;
+    flex-direction: row;
+    height: 22px;
+    align-items: baseline;
+}
+
+.single-dm-sender-name {
+    color: white;
+    font-size: 16px;
+    font-weight: 500;
+
+}
+
+.single-dm-time {
+    color: rgb(153, 163, 170);
+    font-size: 12px;
+    margin-left: 8px;
+}
+
+.single-dm-content {
+    color: #dcddde;
+    height: 22px;
+    font-size: 16px;
+    font-weight: lighter;
+    padding: 1px 0px;
+}
+
+.single-dm-messagebox-container {
+    width: calc(100vw - 72px - 240px);
+    display: flex;
+    justify-content: center;
+    margin-bottom: 24px;
+}
+
+.single-dm-messagebox-bottom {
+    width: calc(100vw - 72px - 240px);
+    position: absolute;
+    bottom: 0;
+    height: 60px;
+    border: none;
+    outline: none;
 }

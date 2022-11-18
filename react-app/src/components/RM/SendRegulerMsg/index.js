@@ -7,7 +7,7 @@ import { io } from 'socket.io-client';
 import './SendRegulerMsg.css';
 
 let socket;
-function SendRegulerMsg() {
+function SendRegulerMsg(channelName) {
     const dispatch = useDispatch();
     const [content, setContent] = useState('');
 
@@ -33,9 +33,9 @@ function SendRegulerMsg() {
         e.preventDefault();
 
         const msgPayload = { content, channel_id, server_id }
-        if (socket){
-            socket.emit("RM", content)
-        }
+
+        await socket.emit("RM", content)
+
         await dispatch(channelAddMessage(msgPayload))
         await dispatch(thunkLoadoneChannel(channelId))
         await setContent('')
@@ -44,11 +44,13 @@ function SendRegulerMsg() {
     return (
         <>
             <div className="create-msg-div">
-                <form className="create-msg-form" onSubmit={handleSubmit}>
-                    <input type="text"
+                <form className="create-rm-msg-form" onSubmit={handleSubmit}>
+                    <input
+                        className="rm-text-input"
+                        type="text"
                         value={content}
                         onChange={(e) => setContent(e.target.value)}
-                        placeholder="Message Here"
+                        placeholder={"    Message"}
                         required />
                     <div className="m-button-div">
                         <button type="submit">send</button>

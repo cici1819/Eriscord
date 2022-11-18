@@ -1,3 +1,31 @@
+/* server channels side bar  */
+.text-channel {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 24px 10px 12px 10px;
+    justify-content: space-between;
+    color: #96989D;
+    /* height: 34px; */
+}
+.text-channel:hover {
+    background-color:rgb(66, 70, 77);
+
+    cursor: pointer;
+    border-radius:4px;
+
+}
+
+.text-span {
+    font-size: 12px;
+    font-family: "ABC Ginto Normal", "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+}
+
+
+
+/* ///////////////////////////// */
+
 .create-channel-form {
 
     /* height:480px;
@@ -46,11 +74,11 @@
     margin-top: 20px;
 }
 
-.c-type-content {
+.c-type-content2 {
     display: flex;
     flex-direction: row;
     align-items: center;
-    background-color: rgb(41, 43, 46);
+    background-color: rgb(64, 68, 75);
     width: 92%;
     height: 60px;
     margin-top: 15px;
@@ -80,9 +108,6 @@
     margin-left: -25px;
 }
 
-.c-type-content:hover {
-    background-color: rgb(64, 68, 75);
-}
 
 .c-name-div {
     margin-top: 20px;
@@ -169,6 +194,8 @@
     width: 20px;
     border: none;
     outline: none;
+    background-color: rgb(64, 68, 75);
+    border-radius: 50%;
 
 
 }

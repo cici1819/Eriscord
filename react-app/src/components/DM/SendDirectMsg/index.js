@@ -13,6 +13,7 @@ function SendDirectMsg() {
     const [content, setContent] = useState('');
 
     const { serverId } = useParams();
+
     let server_id = serverId
 
     useEffect(() => {
@@ -26,7 +27,7 @@ function SendDirectMsg() {
     }, [])
     const handleSubmit = async (e) => {
         e.preventDefault();
-        if(socket){
+        if (socket) {
             socket.emit("DM", content)
         }
         console.log('content, server_id', content, server_id)
@@ -38,14 +39,15 @@ function SendDirectMsg() {
 
     return (
         <>
-            <div className="create-msg-div">
+            <div className="Class for regular show">
                 <form className="create-msg-form" onSubmit={handleSubmit}>
-                    <input type="text"
+                    <input className="dm-text-input"
+                        type="text"
                         value={content}
                         onChange={(e) => setContent(e.target.value)}
-                        placeholder="Direct Message Here"
+                        placeholder=" Message Here"
                         required />
-                    <div className="m-button-div">
+                    <div className="dm-button-div">
                         <button type="submit">send</button>
                     </div>
                 </form>
