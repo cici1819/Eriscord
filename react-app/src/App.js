@@ -72,6 +72,10 @@ function App() {
           <HomePage />
         </Route>
 
+        <Route>
+          <h2>   Sorry this page is not available!</h2>
+        </Route>
+
       </Switch>
     </BrowserRouter>
   );
