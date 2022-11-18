@@ -8,14 +8,14 @@ def seed_servers():
         name="Demo-2",
         # img = "https://logos-world.net/wp-content/uploads/2020/12/Discord-Logo.png",
         is_dm=True,
-        description="very active server where we actually talk and not just spam edgy btard memes",
+        description="message server",
         owner_id=1,
         server_server_members=[demo, freya]
     )
     dm_server2 = Server(
         name="Demo-3",
         # img = "https://logos-world.net/wp-content/uploads/2020/12/Discord-Logo.png",
-        description="very active server where we actually talk and not just spam edgy btard memes",
+        description="message server",
         is_dm=True,
         owner_id=3,
         server_server_members=[demo, atlas]
@@ -23,7 +23,7 @@ def seed_servers():
     dm_server3 = Server(
         name="Domo-4",
         # img = "https://logos-world.net/wp-content/uploads/2020/12/Discord-Logo.png",
-        description="very active server where we actually talk and not just spam edgy btard memes",
+        description="message server",
         is_dm=True,
         owner_id=4,
         server_server_members=[demo, helen]
@@ -31,7 +31,7 @@ def seed_servers():
     dm_server4 = Server(
         name="Domo-5",
         # img = "https://logos-world.net/wp-content/uploads/2020/12/Discord-Logo.png",
-        description="very active server where we actually talk and not just spam edgy btard memes",
+        description="message server",
         is_dm=True,
         owner_id=5,
         server_server_members=[demo, apollo]
@@ -39,7 +39,7 @@ def seed_servers():
     dm_server5 = Server(
         name="Domo-6",
         # img = "https://logos-world.net/wp-content/uploads/2020/12/Discord-Logo.png",
-        description="very active server where we actually talk and not just spam edgy btard memes",
+        description="message server",
         is_dm=True,
         owner_id=6,
         server_server_members=[demo, athena]
