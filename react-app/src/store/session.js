@@ -71,9 +71,11 @@ export const logout = () => async (dispatch) => {
 
 
 export const signUp = (username, email, password) => async (dispatch) => {
-  const Colors = ["lightgrey", "lightred", "lightbrown", "lightblue",
-  "lightyellow", "lightgreen", "lightsalmon", "lightpink"]
-  const color= Colors[Math.floor(Math.random() * 7)]
+  // const Colors = ["lightgrey", "lightred", "lightbrown", "lightblue",
+  // "lightyellow", "lightgreen", "lightsalmon", "lightpink"]
+  const Colors = ['green', 'orange', 'purple', 'red',
+    'gray', 'yellow', 'blue', "salmon"]
+  const color = Colors[Math.floor(Math.random() * 7)]
   const response = await fetch('/api/auth/signup', {
     method: 'POST',
     headers: {
