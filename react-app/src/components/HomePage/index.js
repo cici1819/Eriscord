@@ -1,5 +1,6 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, Redirect } from "react-router-dom";
+import { useSelector } from "react-redux";
 import './HomePage.css';
 import eriscord_clear_logo from '../../img/favicon_clear_eriscord_192x192.png';
 import sec2_img from "../../img/home-page/2-1.png"
@@ -9,6 +10,8 @@ import sec5_img from "../../img/home-page/5-1.png"
 
 
 function HomePage() {
+    const currentUser = useSelector(state => state.session.user)
+    if (currentUser) return <Redirect to= "/channels/@me"></Redirect>
     return (
         <div className="home-page-container">
             <div className="home-page-section-1">
