@@ -27,7 +27,7 @@ function OneUserInfo({ user }) {
         return () => document.removeEventListener("click", closeUser);
     }, [showUser]);
 
-  
+
     return (
         <div className='single-member-container' key={user?.id} onClick={openUser} >
             <img src={eriscord_clear_logo} id="logo-img" style={{ backgroundColor: user?.color }} alt="home-img" />
@@ -42,16 +42,27 @@ function OneUserInfo({ user }) {
                     </div>
 
                     <div className="s-user-profile">
-                        <div className="u-s-name">{user?.username}</div>
+                        <div className="r-u-s-name">
+                            <span className="r-user-p-1">
+                                {user?.username}
+                            </span>
+                            <span className="r-user-p-2">
+                                <i className="fa-light fa-hashtag"></i>
+                            </span>
+                            <span className="r-user-p-3">
+                                {user?.id}
+                            </span>
+
+                        </div>
                         <div>
 
                         </div>
 
                         <div className="u-s-right-bar">
                             {/* < SendDirectMsg rightSideBar={true} /> */}
-                            <span>
+                            {/* <span>
                                 Message @{user?.username}
-                            </span>
+                            </span> */}
                         </div>
                     </div>
 
