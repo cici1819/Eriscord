@@ -1,4 +1,4 @@
-.create-channel-form {
+.create-msg-form {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -11,7 +11,7 @@
     border: none;
 }
 
-.m-button-div button {
+.dm-button-div button {
     margin-right: 16px;
     border-radius: 8%;
     height: 24px;
@@ -23,12 +23,10 @@
     margin-left: 12px;
 }
 
-
+/*
 .create-channel-form {
 
-    /* height:480px;
-    width: 480px; */
-    /* margin-top: -20px; */
+
 
     width: 100%;
     height: 80%;
@@ -37,8 +35,7 @@
     background-color: rgb(54, 57, 63);
     border-top-right-radius: 8px;
     border-top-left-radius: 8px;
-    /* border-radius: 50px;
-    box-shadow: 0px,0px,5px,rgb(47,49,54); */
+
 
 }
 
@@ -88,7 +85,7 @@
     position: relative;
     font-size: 30px;
     color: rgb(113, 114, 117);
-    /* margin-top: 20px; */
+
     margin-left: 10px;
 }
 
@@ -179,14 +176,12 @@
 }
 
 .mark-logo {
-    /* margin-left: 410px; */
+
     margin-top: -18px;
     background-color: rgb(54, 57, 63);
     margin-left: 420px;
     border: none;
     outline: none;
-    /* height: 15px;
-    width: 15px; */
 
 }
 
@@ -205,4 +200,4 @@
     cursor: pointer;
     border-radius: 50%;
 
-}
+} */

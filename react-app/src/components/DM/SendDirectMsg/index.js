@@ -41,12 +41,13 @@ function SendDirectMsg() {
         <>
             <div className="Class for regular show">
                 <form className="create-msg-form" onSubmit={handleSubmit}>
-                    <input type="text"
+                    <input className="dm-text-input"
+                        type="text"
                         value={content}
                         onChange={(e) => setContent(e.target.value)}
                         placeholder=" Message Here"
                         required />
-                    <div className="m-button-div">
+                    <div className="dm-button-div">
                         <button type="submit">send</button>
                     </div>
                 </form>

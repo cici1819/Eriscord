@@ -82,7 +82,6 @@ function DMBox() {
                 <div className="dm-chat-page-user-info">
                     <img src={eriscord_clear_logo} className="dm-chat-user-icon" style={{ backgroundColor: otherColor }}></img>
                     <div className="dm-chat-user-name">{otherUser}</div>
-
                 </div>
 
                 {messagesArr.map((message) => (
@@ -101,7 +100,13 @@ function DMBox() {
                 ))}
                 <br></br>
             </div>
-            < SendDirectMsg  />
+            <div className='single-dm-messagebox-container'>
+                <div className='single-dm-messagebox-bottom'>
+                    < SendDirectMsg />
+                </div>
+
+            </div>
+
         </div >
     )
 }
