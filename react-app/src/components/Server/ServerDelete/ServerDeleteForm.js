@@ -13,7 +13,7 @@ function ServerDelete({ setShowServerDeleteModal }) {
     const [hasSubmitted, setHasSubmitted] = useState("");
     const { channelId, serverId } = useParams();
     // console.log('serverId!!!!!!!!!', serverId)
-   
+
     useEffect(() => {
         dispatch(thunkLoadOneServer(serverId))
     }, [dispatch, serverId]);
@@ -22,6 +22,8 @@ function ServerDelete({ setShowServerDeleteModal }) {
         const errors = [];
         if (currentServer.name !== serverName) {
             setShowError('Please provid the correct server name')
+        } else {
+            setShowError('')
         }
 
     }, [serverName])
