@@ -3,7 +3,7 @@ from app.models import User, db
 from app.forms import LoginForm
 from app.forms import SignUpForm
 from flask_login import current_user, login_user, logout_user, login_required
-
+import random
 auth_routes = Blueprint('auth', __name__)
 
 
@@ -61,12 +61,17 @@ def sign_up():
     """
     form = SignUpForm()
     form['csrf_token'].data = request.cookies['csrf_token']
+    Colors = ['limegreen', 'darkorange', 'royalblue', 'wheat',
+    'orangered', 'powderblue', "lightcoral", "teal"]
     if form.validate_on_submit():
+
         user = User(
             username=form.data['username'],
             email=form.data['email'],
-            password=form.data['password']
+            password=form.data['password'],
+            color=  random.choice(Colors)
         )
+
         db.session.add(user)
         db.session.commit()
         login_user(user)
@@ -80,7 +85,3 @@ def unauthorized():
     Returns unauthorized JSON when flask-login authentication fails
     """
     return {'errors': ['Unauthorized']}, 401
-
-
-
-
