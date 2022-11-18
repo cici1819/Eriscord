@@ -8,7 +8,11 @@
     width: 224px;
     height: 42px;
 }
-
+.other-user-container-inner:hover{
+    background-color: rgb(60, 63, 69);
+    border-radius: 5px;
+    cursor: pointer;
+}
 .other-user-container-inner {
     display: flex;
     flex-direction: row;
