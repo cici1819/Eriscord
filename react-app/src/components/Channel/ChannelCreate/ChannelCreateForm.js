@@ -101,7 +101,7 @@ function ChannelCreate({ setShowModal }) {
                                 value={name}
                                 onChange={(e) => setName(e.target.value)}
                                 placeholder="new-channel"
-                                required />
+                        />
                         </div>
 
                     </div>

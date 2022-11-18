@@ -81,7 +81,7 @@ function ServerDelete({ setShowServerDeleteModal }) {
 
                         value={serverName}
                         onChange={(e) => setServerName(e.target.value)}
-                        required
+
                     />
                     </div>
 

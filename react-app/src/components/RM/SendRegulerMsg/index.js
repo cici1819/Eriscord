@@ -52,7 +52,7 @@ function SendRegulerMsg() {
                         value={content}
                         onChange={(e) => setContent(e.target.value)}
                         placeholder={` Message # ${currentChannel?.name}`}
-                        required />
+                 />
                     <div className="m-s-icon-div">
                     <i className="fa-solid fa-paper-plane" onClick={handleSubmit}></i>
                     </div>
