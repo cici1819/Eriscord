@@ -1,11 +1,11 @@
 /* send regular message bottom box */
-.create-msg-form {
+.create-rm-msg-form {
     display: flex;
     flex-direction: row;
     align-items: center;
 }
 
-.m-text-input {
+.rm-text-input {
     /* width: 400px; */
     width: calc(100vw - 72px - 240px - 240px);
     background-color: rgb(64, 68, 75);
