@@ -1,35 +1,3 @@
-# Preflight
-Markdowns for planning features, APIs, etc
-
-
-# Feature List :
-### Eriscord, a discord clone, is the easiest way to talk over text. Talk, chat, hang out, and stay close with your friends and communities.
-
-## 1. New account creation, log in, log out, and guest/demo login
-* Users can sign up, log in, and log out.
-* Users can use a demo login to try the site.
-* Users can't use certain features without logging in (like create a server, a channel or send messages).
-* Logged in users are directed to their direct message page.
-* Logged out users are directed to a home page and need to login or signup.
-
-## 2. Server
-* Logged in users can create new servers.
-* Logged in users can edit and delete their own servers.
-* Each user can view all servers they joined.
-
-## 3. Channel
-###  Each channel blongs to a server
-* Server owners can create a new channel.
-* Server owners can edit and delete their own channels.
-* Server members can post messages to channels.
-
-## 4. Channel Messages
-* Server members can post messages to channels.
-* Messages are visible in channels.
-
-## 5. Direct Messages
-* Users can send direct messages to other users.
-* Messages are visible in DM.
 
 
 # API routes:
