@@ -93,10 +93,10 @@ function HomePage() {
             <div className="home-page-section-7" id="s7">
                 <div className="home-page-section-7-top">
                     <div className="s7-top-left">ERISCORD DEVELOPERS</div>
-                    <a className='s7-top-name' href=''>Cici Cheng</a>
-                    <a className='s7-top-name' href=''>Frank Song</a>
-                    <a className='s7-top-name' href=''>Jason Arnold</a>
-                    <a className='s7-top-name' href=''>Ming Liu</a>
+                    <a className='s7-top-name' href='https://github.com/cici1819'>Cici Cheng</a>
+                    <a className='s7-top-name' href='https://github.com/NYDF'>Frank Song</a>
+                    <a className='s7-top-name' href='https://github.com/QuantitativeSneezing'>Jason Arnold</a>
+                    <a className='s7-top-name' href='https://github.com/EffieML'>Ming Liu</a>
                 </div>
                 <div id='dot'> · </div>
                 <div className="home-page-section-7-bottom">
