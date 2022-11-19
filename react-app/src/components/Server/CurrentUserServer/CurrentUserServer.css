@@ -5,6 +5,25 @@
     height: auto;
     width: 72px;
     background-color: rgb(32, 34, 37);
+    overflow-y: scroll;
+}
+
+.single-server-container::-webkit-scrollbar {
+    width: 0.4px;
+    size: 0.4px;
+}
+
+.single-server-container::-webkit-scrollbar-thumb {
+    /* Foreground */
+    background: rgb(32, 34, 37);
+    border-radius: 8px;
+}
+
+.single-server-container::-webkit-scrollbar-track {
+    /* Background */
+    background: rgb(46, 51, 56);
+    border-radius: 8px;
+    margin-block: 3px;
 }
 
 .dmlogo-button {
