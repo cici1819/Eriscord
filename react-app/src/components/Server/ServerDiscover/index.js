@@ -2,11 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { useParams, useHistory } from 'react-router-dom';
 import { getRegularServers } from '../../../store/serverReducer';
-<<<<<<< HEAD
-import './ServerDiscover.css'
-=======
 import "./ServerDiscover.css"
->>>>>>> 7994d9b034a8dd4dcd7f5b4e7a2024649ba48ce0
 function ServerDiscover() {
     const dispatch = useDispatch();
     const { channelId, serverId } = useParams();
