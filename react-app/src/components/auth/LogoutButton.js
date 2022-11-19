@@ -14,10 +14,10 @@ const LogoutButton = () => {
 
   return (
     <div className='logout-user-container'>
-
       <div className='logout-user-left'>
         <img src={eriscord_clear_logo} className="other-user-icon" style={{ backgroundColor: current.color }}></img>
         <div className='logout-user-name-id'>
+
           <div className='logout-user-name'>{current.username}</div>
           <div className='logout-user-id'># {current.id}</div>
         </div>

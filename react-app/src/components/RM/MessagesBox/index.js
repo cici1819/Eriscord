@@ -71,7 +71,9 @@ function MessagesBox() {
                                 <div className='single-rm-sender-name'>{message?.sender_name}</div>
                                 <div className='single-rm-time'>{message?.created_at.slice(0, 10)}</div>
                             </div>
-                            <div className='single-rm-content'>{message?.content}</div>
+                            <div className='single-rm-content'>
+                                {message?.content}
+                            </div>
                         </div>
                     </div>
                 ))}
