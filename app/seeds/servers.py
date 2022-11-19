@@ -67,8 +67,8 @@ def seed_servers():
     channel_server3 = Server(
         name="Walk and Talk the Dog",
         owner_id=3,
-        description="This is a dog lovers server! Join if you like doggies",
-        img="https://www.travelandleisure.com/thmb/gs7Gj12SUw2hy0F0MM9AMmYV0AU=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/corgi-dog-name-POPDOGS0819-1ebb8efb2c68499eab1c76411c9d1c15.jpg",
+        description="Join if you like doggies.This is a dog lovers server!",
+        img="https://www.rd.com/wp-content/uploads/2022/06/GettyImages-1291814647-e1654796088869.jpg",
         is_dm=False,
         server_server_members=[demo, apollo, athena, phoebe, ares]
     )
