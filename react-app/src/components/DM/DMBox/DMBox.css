@@ -121,9 +121,9 @@
     border-bottom: 1px solid rgb(64, 68, 75);
     /* padding-left: 5px; */
     /* padding-right: 20px; */
-    width: 96%;
+    width: 98%;
     color: #96989D;
-    margin-left: 25px;
+    margin-left: 5px;
 }
 
 .dm-chat-topbar-content {
@@ -140,14 +140,14 @@
     border-radius: 50%;
     padding: 5px 5px;
     margin-top: 20px;
-    margin-left: 16px;
+    margin-left: 10px;
 }
 
 .dm-chat-user-name {
     font-size: 32px;
     color: white;
     font-family: "ABC Ginto Normal", "Helvetica Neue", Helvetica, Arial, sans-serif;
-    margin-left: 16px;
+    margin-left: 12px;
     font-weight: bolder;
     width: calc(100vw - 72px - 240px -60px);
     padding-bottom: 20px;

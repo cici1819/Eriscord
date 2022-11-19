@@ -9,11 +9,12 @@
     background-size: 2560px 626px;
     background-position: center center;
     width: 100%;
-    /* object-fit: cover;
-
-    position: absolute;
-    top: 0; */
-    /* left: 50% */
+}
+#home-login-button:hover{
+    box-shadow: 0px 0px 2px 2px whitesmoke;
+    border: none;
+    cursor: pointer;
+    filter: brightness(105%)
 }
 
 .hps1-nav-bar-section {
@@ -30,13 +31,13 @@
     flex-direction: row;
     align-items: center;
     justify-content: space-around;
-    width: 135px;
+    width: 140px;
     height: 34px;
 }
 
 .hps1-nav-bar-section-left #logo-img {
-    width: 36px;
-    height: 36px;
+    width: 42px;
+    height: 35Spx;
 }
 
 .hps1-nav-bar-section-left #logo-name {
@@ -88,18 +89,6 @@
     margin-top: 40px;
     text-align: center;
 }
-
-/* .hps1-img-background {
-    background-image: url(../../img/home-page/1-0.png);
-    display: none;
-    position: absolute;
-    top: 0;
-    left: 50%
-} */
-
-
-/* background-image: url(../../img/home-page/1-0.png);
-    background-size: 2560px 626px; */
 
 .home-page-section-2-4 {
     display: flex;
@@ -283,7 +272,12 @@
     color: #FFFFFF;
     font-size: 20px;
     vertical-align: bottom;
+}
 
+.s7-top-name:hover {
+    font-size: 20px;
+    font-weight: bolder;
+    text-decoration: none;
 }
 
 .home-page-section-7-bottom {

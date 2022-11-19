@@ -21,7 +21,7 @@ function SendRegulerMsg() {
     useEffect(() => {
         const errors = [];
         if (content.length > 255) {
-            errors.push("Sorry, messages are too long.")
+            errors.push("Sorry, messages should be less than 255 Characters")
         }
         if (content.length < 1) {
             errors.push("Please input messages")
@@ -61,8 +61,8 @@ function SendRegulerMsg() {
     return (
         <>
             <div className="create-msg-div">
-            {hasSubmitted && !!validationErrors.length && (<div className='error3-lists'>
-                    <ul className='error-list'>
+            {hasSubmitted && !!validationErrors.length && (<div className='rm-send-error-lists'>
+                    <ul className='rm-send-error'>
                         {validationErrors.map((error) => <li id='errors' key={error}>{error}</li>)}
                     </ul>
                 </div>)}

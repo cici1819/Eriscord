@@ -20,7 +20,7 @@ function SendDirectMsg({ otherUser }) {
     useEffect(() => {
         const errors = [];
         if (content.length > 255) {
-            errors.push("Sorry, messages are too long.")
+            errors.push("Sorry, messages should be less than 255 Characters")
         }
         if (content.length < 1) {
             errors.push("Please input messages")
@@ -59,19 +59,19 @@ function SendDirectMsg({ otherUser }) {
     return (
         <>
             <div className="create-dm-msg-div">
-
-                <form className="create-dm-msg-form" onSubmit={handleSubmit}>
-                {hasSubmitted && !!validationErrors.length && (<div className='error3-lists'>
-                    <ul className='error-list'>
+                {hasSubmitted && !!validationErrors.length && (<div className='dm-send-error-lists'>
+                    <ul className='dm-send-error'>
                         {validationErrors.map((error) => <li id='errors' key={error}>{error}</li>)}
                     </ul>
                 </div>)}
+                <form className="create-dm-msg-form" onSubmit={handleSubmit}>
+
                     <input className="dm-text-input"
                         type="text"
                         value={content}
                         onChange={(e) => setContent(e.target.value)}
                         placeholder={` Message @ ${otherUser}`}
-                   />
+                    />
                     <div className="dm-s-icon-div">
                         <i className="fa-solid fa-paper-plane" onClick={handleSubmit}></i>
                     </div>
