@@ -22,7 +22,7 @@ function HomePage() {
                     </div>
                     <div className="hps1-nav-bar-section-right">
                         <NavLink to={"/login"}>
-                            <button id="home-login-button">Login</button>
+                            <button id="home-login-button">Log In</button>
                         </NavLink>
                     </div>
                 </div>

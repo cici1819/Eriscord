@@ -15,6 +15,12 @@
     top: 0; */
     /* left: 50% */
 }
+#home-login-button:hover{
+    box-shadow: 0px 0px 2px 2px whitesmoke;
+    border: none;
+    cursor: pointer;
+    filter: brightness(105%)
+}
 
 .hps1-nav-bar-section {
     display: flex;

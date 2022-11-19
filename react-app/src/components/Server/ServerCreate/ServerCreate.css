@@ -12,6 +12,7 @@
   height: 50px;
   background-color: rgb(47, 49, 54);
   border-radius: 50%;
+  margin-top: -10px;
 }
 
 #create-server-plus {

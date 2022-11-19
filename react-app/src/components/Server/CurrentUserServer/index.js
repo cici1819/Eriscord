@@ -34,11 +34,14 @@ function CurrentUserServer() {
                 <img src={eriscord_clear_logo} className='dm-button' id="logo-img" alt="home-img" />
             </button>
             <div className="single-server-container">
+                <div className="c-server-list">
                 {servers?.map((server) => {
                     return (
                         <SingleServer server={server} key={server?.id} />
                     )
                 })}
+                </div>
+
 
             </div>
 
