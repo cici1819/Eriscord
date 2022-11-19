@@ -2,7 +2,8 @@ import React from "react";
 import { NavLink, Redirect } from "react-router-dom";
 import { useSelector } from "react-redux";
 import './HomePage.css';
-import eriscord_clear_logo from '../../img/favicon_clear_eriscord_192x192.png';
+import eriscord_blue_logo from '../../img/home-page/new-home-page-logo-blue.png';
+import eriscord_black_logo from '../../img/home-page/new-home-page-logo-black.png';
 import sec2_img from "../../img/home-page/2-1.png"
 import sec3_img from "../../img/home-page/3-1.png"
 import sec4_img from "../../img/home-page/4-1.png"
@@ -11,13 +12,13 @@ import sec5_img from "../../img/home-page/5-1.png"
 
 function HomePage() {
     const currentUser = useSelector(state => state.session.user)
-    if (currentUser) return <Redirect to= "/channels/@me"></Redirect>
+    if (currentUser) return <Redirect to="/channels/@me"></Redirect>
     return (
         <div className="home-page-container">
             <div className="home-page-section-1">
                 <div className="hps1-nav-bar-section">
                     <div className="hps1-nav-bar-section-left">
-                        <img src={eriscord_clear_logo} id="logo-img" alt="home-img" />
+                        <img src={eriscord_blue_logo} id="logo-img" alt="home-img" />
                         <div id='logo-name'>Eriscord</div>
                     </div>
                     <div className="hps1-nav-bar-section-right">
@@ -92,15 +93,16 @@ function HomePage() {
             <div className="home-page-section-7" id="s7">
                 <div className="home-page-section-7-top">
                     <div className="s7-top-left">ERISCORD DEVELOPERS</div>
-                    <a className='s7-top-name' href=''>Cici Cheng</a>
-                    <a className='s7-top-name' href=''>Frank Song</a>
-                    <a className='s7-top-name' href=''>Jason Arnold</a>
-                    <a className='s7-top-name' href=''>Ming Liu</a>
+                    <a className='s7-top-name' href='https://github.com/cici1819'>Cici Cheng</a>
+                    <a className='s7-top-name' href='https://github.com/NYDF'>Frank Song</a>
+                    <a className='s7-top-name' href='https://github.com/QuantitativeSneezing'>Jason Arnold</a>
+                    <a className='s7-top-name' href='https://github.com/EffieML'>Ming Liu</a>
+                    <a className='s7-top-name' href='https://github.com/EriscordAppacademyProject/Eriscord'>GitHub Repo</a>
                 </div>
                 <div id='dot'> · </div>
                 <div className="home-page-section-7-bottom">
                     <div className="hps1-nav-bar-section-left">
-                        <img src={eriscord_clear_logo} id="logo-img" alt="home-img" />
+                        <img src={eriscord_black_logo} id="logo-img" alt="home-img" />
                         <div id='logo-name'>Eriscord</div>
                     </div>
                     <div className="hps1-nav-bar-section-right">

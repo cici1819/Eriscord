@@ -96,7 +96,7 @@ function DMBox() {
                         <div className='single-dm-container-right'>
                             <div className='single-dm-name-time'>
                                 <div className='single-dm-sender-name'>{message?.sender_name}</div>
-                                <div className='single-dm-time'>{message?.created_at.slice(0, 10)}</div>
+                                <div className='single-dm-time'>{message?.created_at.slice(0, 19)}</div>
                             </div>
                             <div className='single-dm-content'>{message?.content}</div>
                         </div>

@@ -21,7 +21,7 @@ function ServerDelete({ setShowServerDeleteModal }) {
     useEffect(() => {
         const errors = [];
         if (currentServer.name !== serverName) {
-            setShowError('Please provid the correct server name')
+            setShowError('Please provide the correct server name')
         } else {
             setShowError('')
         }
@@ -69,22 +69,22 @@ function ServerDelete({ setShowServerDeleteModal }) {
                     </div>
 
                     <span className="error-message">
-                    {hasSubmitted && !!showError.length && (
-                                <span id='errors4-list'>
-                                    <span className='error5-list'>
-                                        <li id='errors' >{showError}</li>
-                                    </span>
+                        {hasSubmitted && !!showError.length && (
+                            <span id='errors4-list'>
+                                <span className='error5-list'>
+                                    <li id='errors' >{showError}</li>
                                 </span>
-                            )}
                             </span>
+                        )}
+                    </span>
                     <div className="d-s-input">
-                    <span className='delete-server-check'>ENTER SERVER NAME</span>
-                    <input
+                        <span className='delete-server-check'>ENTER SERVER NAME</span>
+                        <input
 
-                        value={serverName}
-                        onChange={(e) => setServerName(e.target.value)}
+                            value={serverName}
+                            onChange={(e) => setServerName(e.target.value)}
 
-                    />
+                        />
                     </div>
 
 
