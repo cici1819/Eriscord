@@ -73,7 +73,6 @@ export const logout = () => async (dispatch) => {
 export const signUp = (username, email, password) => async (dispatch) => {
   // const Colors = ["lightgrey", "lightred", "lightbrown", "lightblue",
   // "lightyellow", "lightgreen", "lightsalmon", "lightpink"]
-
   const response = await fetch('/api/auth/signup', {
     method: 'POST',
     headers: {

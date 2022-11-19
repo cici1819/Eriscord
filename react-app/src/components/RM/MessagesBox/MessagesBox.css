@@ -45,6 +45,7 @@
     overflow-x: hidden;
 
 }
+
 /* .RM-chat-body-sec {
     min-width:500px;
     overflow:scroll
@@ -63,7 +64,7 @@
 }
 
 .RM-chat-body-sec::-webkit-scrollbar-track {
-    /* Background */
+    /* Background height*/
     background: rgb(46, 51, 56);
     border-radius: 8px;
     margin-block: 3px;
@@ -115,10 +116,10 @@
 
 .single-rm-content {
     color: #dcddde;
-    height: 22px;
+    height: fit-content;
     font-size: 16px;
     font-weight: lighter;
-
+    /* word-break: break-word; */
 }
 
 .single-rm-messagebox-container {
