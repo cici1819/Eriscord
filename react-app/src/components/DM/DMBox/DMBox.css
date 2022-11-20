@@ -95,6 +95,13 @@
     bottom: 60px;
     overflow-x: hidden;
 }
+.all-dm-message-div{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    margin-top: 5px;
+    margin-left: 10px;
+}
 
 .dm-chat-page::-webkit-scrollbar {
     width: 5px;
@@ -161,9 +168,10 @@
 /* message section  */
 .single-dm-container {
     display: flex;
-    flex-direction: row;
-    margin-top: 17px;
+    flex-direction:row;
+    margin-top: 10px;
     padding: 2px 48px 2px 16px;
+    margin-bottom: 15px;
 }
 
 .single-dm-container:hover {

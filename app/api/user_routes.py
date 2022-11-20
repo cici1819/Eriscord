@@ -30,4 +30,4 @@ def add_to_server(server_id):
     user= current_user
     server.server_server_members.append(current_user)
     db.session.commit()
-    return user.to_dict()
+    return server.to_dict_regulars()

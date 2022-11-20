@@ -19,24 +19,29 @@
     border: none;
     width: 96%;
 }
-.m-s-icon-div{
-    color:  #5865f2;;
+
+.m-s-icon-div {
+    color: #5865f2;
+    ;
     /* margin-left: 5px; */
     font-size: 18px;
 }
-.m-s-icon-div:hover{
+
+.m-s-icon-div:hover {
     filter: brightness(140%);
     cursor: pointer;
 }
-.rm-send-error-lists{
+
+.rm-send-error-lists {
     margin-top: -20px;
-    margin-left:320px ;
+    /* margin-left:320px ; */
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-end;
     height: 20px;
-    width: 35%;
+    width: 97%;
     font-size: 10px;
     color: rgb(8, 157, 216);
     font-weight: 500;
+    margin-left: -20px;
 }
