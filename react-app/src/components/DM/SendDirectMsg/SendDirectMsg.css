@@ -39,6 +39,7 @@
     flex-direction: column;
     /* align-items: center; */
     align-items: flex-end;
+    margin-left: -20px;
     height: 20px;
     width: 97%;
     font-size: 10px;
