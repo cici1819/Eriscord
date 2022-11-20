@@ -40,7 +40,7 @@ const ServerSetting = ({ setShowServerEditModal, setShowServerDeleteModal }) => 
         if (currentServer){
             name = currentServer?.name
             // console.log("current SERVER ",currentServer)
-            sessionUserIsOwner = currentServer.owner_id===sessionUser.id
+            sessionUserIsOwner = currentServer.owner_id==sessionUser.id
             // console.log ("owned by you?" , sessionUserIsOwner)
         }
     }
