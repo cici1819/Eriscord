@@ -33,12 +33,14 @@
 .dm-send-error-lists{
     /* background-color: aquamarine; */
     margin-top: -15px;
-    margin-left:400px ;
+    /* margin-left:400px ; */
+    /* margin-left: -60px; */
     display: flex;
     flex-direction: column;
-    align-items: center;
+    /* align-items: center; */
+    align-items: flex-end;
     height: 20px;
-    width: 25%;
+    width: 97%;
     font-size: 10px;
     color: rgb(8, 157, 216);
     font-weight: 500;
