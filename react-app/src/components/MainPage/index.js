@@ -45,7 +45,7 @@ function MainPage(props) {
                 </div>
 
                 <div className='server-search-icon' onClick={() => history.push('/discover')}>
-                    <i class="fa-sharp fa-solid fa-compass" id="server-search-logo"> </i>
+                    <i className="fa-sharp fa-solid fa-compass" id="server-search-logo"> </i>
                 </div>
 
             </div>

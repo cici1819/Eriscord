@@ -7,7 +7,7 @@ import SendRegulerMsg from "../SendRegulerMsg";
 import { io } from 'socket.io-client';
 import eriscord_clear_logo from '../../../img/favicon_clear_eriscord_192x192.png';
 import joinInServer from "../../../img/join-server.gif"
-import backgroundImg from"../../../img/j-s-b.webp"
+import backgroundImg from "../../../img/j-s-b.webp"
 import './MessagesBox.css';
 let socket;
 
@@ -48,7 +48,7 @@ function MessagesBox() {
     let inServer = false;
     let server;
     if (servers) {
-        server = servers.find(server => server.id == serverId)
+        server = servers.find(server => server?.id == serverId)
     }
     if (server) {
         for (let i = 0; i < server.users.length; i++) {
@@ -60,18 +60,17 @@ function MessagesBox() {
         if (!server) { return null }
         // if
     }
+
     if (!inServer) {
         return (
             <div >
                 <div className="title-not-in-server-page">
-                    <span>You are currently in preview mode. Join this server to start chatting!</span>
+                    <span>You are currently in preview mode. Join this server to start chatting! (feature will be coming soon)</span>
                     <span> <img src={joinInServer} alt="join server" className="join-s-logo" /></span>
                 </div>
                 <div className="backgroup-img">
-                    <img src={backgroundImg } alt="backgroundImg"className="join-server-background"/>
+                    <img src={backgroundImg} alt="backgroundImg" className="join-server-background" />
                 </div>
-
-
             </div>
         )
     }
