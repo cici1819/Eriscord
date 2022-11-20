@@ -64,9 +64,10 @@ https://aa-eriscord.onrender.com/
 <img src="https://github.com/EriscordAppacademyProject/Eriscord/blob/cici/readme.png/delete-channel.png" alt="Delete channel modal ">
 
                                                                                                                                     
-###Show all server 
+### Show all server 
                                                                                                                                     
-####By click main page left side bar  Search icon , you can open a page show all the channel serevers)
+#### By click main page left side bar  Search icon , you can open a page show all the channel serevers)
+                                                                                                                                    
 <img src="https://github.com/EriscordAppacademyProject/Eriscord/blob/cici/readme.png/show-all-server-page%20(Custom).png" alt="all server page">
 
  ## Features in Progress
