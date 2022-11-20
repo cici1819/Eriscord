@@ -26,4 +26,28 @@ https://aa-eriscord.onrender.com/
 -[User Stories](https://github.com/EriscordAppacademyProject/Eriscord.wiki.git)
 ## Major Features
 ### Home page
-![image](/readme.png/home-page (Custom).png)
+<img src="https://github.com/EriscordAppacademyProject/Eriscord/blob/cici/readme.png/home-page-1%20(Custom).png" alt="home page image">
+<img src="https://github.com/EriscordAppacademyProject/Eriscord/blob/cici/readme.png/home-page-2%20(Custom).png" alt="home page image">
+<img src="https://github.com/EriscordAppacademyProject/Eriscord/blob/cici/readme.png/home-page-3%20(Custom).png" alt="home page image">
+
+#### Login by clicking on the 'Login' button located on the top . You can also sign up by following the Login button then clicking the 'Register' link located near the bottom of the form. Alternatively, there is a sign up button located at the bottom of the home page.
+### Login and Signup
+<img src="https://github.com/EriscordAppacademyProject/Eriscord/blob/cici/readme.png/login-form%20(Custom).png" alt="login-form">
+<img src="https://github.com/EriscordAppacademyProject/Eriscord/blob/cici/readme.png/sign-up%20(Custom).png">
+
+#### After logging in or signing up, you will be at your mian page where you can navigate to your open direct messages (DMs) and chat with friends and you also can navigate to channels by clicking on the servers located on the left sidebar. Here, you can see each of the server's channels and chat with other users in the channel server!
+
+### Main page
+<img src="https://github.com/EriscordAppacademyProject/Eriscord/blob/cici/readme.png/user-first-page%20(Custom).png" alt="main page">
+
+#### Dm message
+<img src="https://github.com/EriscordAppacademyProject/Eriscord/blob/cici/readme.png/dm-messageBox%20(Custom)%20(1).png" alt="Dm message box">
+
+#### Channel message
+<img src="https://github.com/EriscordAppacademyProject/Eriscord/blob/cici/readme.png/channel-server-page%20(Custom).png" alt="channel message box">
+
+### Server  Create , Edit, Delete
+#### Server Setting Menu , Edit and Delete Modal
+<img src="https://github.com/EriscordAppacademyProject/Eriscord/blob/cici/readme.png/sever-setting-menu.png">
+<img src="https://github.com/EriscordAppacademyProject/Eriscord/blob/cici/readme.png/server-editing-form%20(Custom).png" alt="Server Edit image">
+<img src="">
