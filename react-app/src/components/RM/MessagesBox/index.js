@@ -1,7 +1,8 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from 'react-redux';
-import { useParams } from "react-router";
+import { useParams , useHistory} from "react-router";
 import { thunkLoadoneChannel } from "../../../store/channelReducer"
+import { joinServer } from "../../../store/serverReducer";
 import SendRegulerMsg from "../SendRegulerMsg";
 import { io } from 'socket.io-client';
 import eriscord_clear_logo from '../../../img/favicon_clear_eriscord_192x192.png';
@@ -11,16 +12,21 @@ let socket;
 function MessagesBox() {
     const dispatch = useDispatch();
     const { channelId, serverId } = useParams();
-
+    const history= useHistory();
     let channel = useSelector(state => state.channel)
     let messagesArr = useSelector(state => state.channel[+channelId]?.messages)
-
+    const servers = useSelector(state => state.server.servers)
+    const sessionUser = useSelector(state => state.session.user)
+    let channelName = useSelector(state => state.channel[+channelId]?.name)
 
     useEffect(() => {
         dispatch(thunkLoadoneChannel(channelId))
     }, [dispatch, channelId, messagesArr?.length]);
 
-
+    function signup() {
+        dispatch(joinServer(sessionUser.id, serverId))
+        history.push(`/channels/${serverId}/${channelId}`)
+    }
 
     useEffect(() => {
         // open socket connection
@@ -37,7 +43,26 @@ function MessagesBox() {
             socket.disconnect()
         })
     }, [messagesArr])
-
+    let inServer = false;
+    let server;
+    if (servers) {
+        server = servers.find(server => server.id == serverId)
+    }
+    if (server) {
+        for (let i = 0; i < server.users.length; i++) {
+            if (server.users[i].id == sessionUser.id) {
+                inServer = true
+            }
+        }
+        console.log(inServer, "IN THE SERVER")
+        if (!server) { return null }
+        // if
+    }
+    if (!inServer) {
+        return (
+            <div onClick={signup}> CICI PLEASE STYLE THIS AREATO SIGN UP TO THE SERVER</div>
+        )
+    }
     // console.log(channelId, serverId)
     // console.log("A community for all users who want to call a server home. Here we hangout. Have a laugh. We're always looking for lively people so come hangout with us!".length)
 
@@ -45,7 +70,6 @@ function MessagesBox() {
 
     // console.log('messages!!!!!!!!', messagesArr)
 
-    let channelName = useSelector(state => state.channel[+channelId]?.name)
 
     // console.log('messages!!!!!!!!', messagesArr)
     let channelArr = Object.values(channel)
