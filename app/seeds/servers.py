@@ -222,7 +222,7 @@ def seed_servers():
         # img="https://variety.com/wp-content/uploads/2022/05/featured_will_smith_v3.jpg?w=910&h=511&crop=1",
         img="https://m.media-amazon.com/images/I/51btmTAizGL._AC_SY780_.jpg",
         is_dm=False,
-        server_server_members=[demo, freya, atlas]
+        server_server_members=[demo, atlas,helen]
     )
 
     # rm 25 12
@@ -232,7 +232,7 @@ def seed_servers():
         description="We are a starting community from students all around the world. Join us!",
         img="https://ipmssg.org/others/wp-content/uploads/2015/01/cropped-ipmssglogoworld_v4-e1422567267152.png",
         is_dm=False,
-        server_server_members=[demo, freya,
+        server_server_members=[demo,
                                helen, apollo, ares, athena, phoebe]
     )
 
@@ -243,7 +243,7 @@ def seed_servers():
         description="The cat hut is where cat fans are in one wholesome community! We offer a fun community",
         img="https://cdn.create.vista.com/downloads/a5c01566-cc28-4cfa-8350-5c3245fb3751_1024.jpeg",
         is_dm=False,
-        server_server_members=[demo, freya, atlas, apollo, ares, phoebe]
+        server_server_members=[demo,  atlas, apollo, ares, phoebe]
     )
 
     # rm 27 14
@@ -253,7 +253,7 @@ def seed_servers():
         description="Sharing recipes, tips and tricks, community movie nights. All with like minded healthy lifestyle friends!",
         img="https://i.pinimg.com/736x/0d/76/01/0d7601702513dd9bb28b183be3c3c2d9.jpg",
         is_dm=False,
-        server_server_members=[demo, freya, atlas,
+        server_server_members=[demo,  atlas,
                                helen, apollo, ares, athena, phoebe]
     )
 
@@ -264,7 +264,7 @@ def seed_servers():
         description="Here is diversity in Discord. You can play Games, talk about anything okay. Welcome to this server",
         img="https://img.freepik.com/free-vector/hipster-people-talking-using-computers-co-working_74855-5267.jpg",
         is_dm=False,
-        server_server_members=[demo, freya, atlas,
+        server_server_members=[demo,  atlas,
                                helen, athena, phoebe]
     )
 
@@ -275,7 +275,7 @@ def seed_servers():
         description="Server to meet and get to know people to talk about life and have a good time. JOIN, PARTICIPATE, BE AWESOME!",
         img="https://media.istockphoto.com/id/894665208/vector/vector-lemon-seamless-border.jpg?s=612x612&w=0&k=20&c=XcE59q133Koo_1DNudQwr4oEijc5gaSpfN9UfT5HDpA=",
         is_dm=False,
-        server_server_members=[demo, freya, atlas,
+        server_server_members=[demo,  atlas,
                                apollo, ares, athena, phoebe]
     )
 
