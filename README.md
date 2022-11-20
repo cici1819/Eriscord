@@ -56,9 +56,10 @@ https://aa-eriscord.onrender.com/
    
                                                                                                                    
                                                                                                                    
-#### By click Text Channels's  right Plus icon , you can open a creat  channnel modal and add a channel for the current server, and also by click each channnel's right setting icon , you can open edit channel Model where you can edit and delete channenl .
+#### By click Text Channels's  right Plus icon , you can open a creat  channnel modal and add a channel for the current server, and also by click each channnel's right setting icon , you can open edit channel Model where you can edit and delete channenl.
                                                                                                                    
 #### Channle Create ,Edit and Delete Modal
+
 <img src="https://github.com/EriscordAppacademyProject/Eriscord/blob/cici/readme.png/channnel-create-form.png" alt="create channel modal">
 <img src="https://github.com/EriscordAppacademyProject/Eriscord/blob/cici/readme.png/channel-edit-page%20(Custom).png" alt="Edit channel modal">
 <img src="https://github.com/EriscordAppacademyProject/Eriscord/blob/cici/readme.png/delete-channel.png" alt="Delete channel modal ">
