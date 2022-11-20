@@ -35,11 +35,13 @@ function CurrentUserServer() {
             </button>
             <div className="single-server-container">
                 <div className="c-server-list">
-                {servers?.map((server) => {
-                    return (
-                        <SingleServer server={server} key={server?.id} />
-                    )
-                })}
+                    {servers?.map((server) => {
+                        <div key={server?.id}></div>
+                        return (
+                            <SingleServer server={server} key={server?.id} />
+                        )
+
+                    })}
                 </div>
 
 

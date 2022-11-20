@@ -49,7 +49,7 @@ function DMBox() {
     let messagesArr;
 
     if (servers) {
-        currentServer = servers.find(server => server.id == serverId)
+        currentServer = servers.find(server => server?.id == serverId)
         // console.log("CURRENT SERVER IN DMS", currentServer)
         if (currentServer) {
             let users = currentServer.users
