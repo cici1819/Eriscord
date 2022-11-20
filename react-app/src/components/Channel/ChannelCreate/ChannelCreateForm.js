@@ -66,18 +66,12 @@ function ChannelCreate({ setShowModal }) {
                         Create Channel
                     </div>
                     <div className="mark-logo">
-                        <img className='close-x-img' src='https://static.thenounproject.com/png/1144486-200.png' alt='close' onClick={() => setShowModal(false)}/>
+                        <img className='close-x-img' src='https://static.thenounproject.com/png/1144486-200.png' alt='close' onClick={() => setShowModal(false)} />
                     </div>
                     <div className="create-title2">
                         <p>in Text Channels</p>
                     </div>
-                    {hasSubmitted && !!validationErrors.length && (
-                        <div className='error3-lists'>
-                            <ul className='error-list'>
-                                {validationErrors.map((error) => <li id='errors' key={error}>{error}</li>)}
-                            </ul>
-                        </div>
-                    )}
+
 
                     <div className="c-type">
                         CHANNEL TYPE (VOICE CURRENTLY UNAVAILABLE)
@@ -93,6 +87,13 @@ function ChannelCreate({ setShowModal }) {
                         <div className="c-name-title">
                             <label > CHANNEL NAME </label>
                         </div>
+                        {hasSubmitted && !!validationErrors.length && (
+                            <div className='error3-lists'>
+                                <ul className='error-list'>
+                                    {validationErrors.map((error) => <li id='errors' key={error}>{error}</li>)}
+                                </ul>
+                            </div>
+                        )}
                         <div className="c-name-input">
                             <span className="small-logo">
                                 <i className="fa-light fa-hashtag"> </i>
@@ -101,7 +102,7 @@ function ChannelCreate({ setShowModal }) {
                                 value={name}
                                 onChange={(e) => setName(e.target.value)}
                                 placeholder="new-channel"
-                        />
+                            />
                         </div>
 
                     </div>
