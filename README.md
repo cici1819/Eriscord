@@ -54,7 +54,7 @@ https://aa-eriscord.onrender.com/
 <img src="https://github.com/EriscordAppacademyProject/Eriscord/blob/cici/readme.png/server-editing-form%20(Custom).png" alt="Server Edit image">
 <img src="https://github.com/EriscordAppacademyProject/Eriscord/blob/cici/readme.png/server-delete-Modal.png" alt="Serever Delete image>
    
-                                                                                                                   
+#### By click main page left side bar  Plus icon , you can open a creat server modal and add a server for the current user, and also by click server's name's right the arrow icon , you can open a menu edit where you can choose to edit and delete server.                                                                                                          
                                                                                                                    
 #### By click Text Channels's  right Plus icon , you can open a creat  channnel modal and add a channel for the current server, and also by click each channnel's right setting icon , you can open edit channel Model where you can edit and delete channenl.
                                                                                                                    
