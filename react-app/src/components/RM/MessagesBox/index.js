@@ -1,18 +1,20 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from 'react-redux';
-import { useParams , useHistory} from "react-router";
+import { useParams, useHistory } from "react-router";
 import { thunkLoadoneChannel } from "../../../store/channelReducer"
 import { joinServer } from "../../../store/serverReducer";
 import SendRegulerMsg from "../SendRegulerMsg";
 import { io } from 'socket.io-client';
 import eriscord_clear_logo from '../../../img/favicon_clear_eriscord_192x192.png';
+import joinInServer from "../../../img/join-server.gif"
+import backgroundImg from"../../../img/j-s-b.webp"
 import './MessagesBox.css';
 let socket;
 
 function MessagesBox() {
     const dispatch = useDispatch();
     const { channelId, serverId } = useParams();
-    const history= useHistory();
+    const history = useHistory();
     let channel = useSelector(state => state.channel)
     let messagesArr = useSelector(state => state.channel[+channelId]?.messages)
     const servers = useSelector(state => state.server.servers)
@@ -60,7 +62,17 @@ function MessagesBox() {
     }
     if (!inServer) {
         return (
-            <div onClick={signup}> CICI PLEASE STYLE THIS AREATO SIGN UP TO THE SERVER</div>
+            <div >
+                <div className="title-not-in-server-page">
+                    <span>You are currently in preview mode. Join this server to start chatting!</span>
+                    <span> <img src={joinInServer} alt="join server" className="join-s-logo" /></span>
+                </div>
+                <div className="backgroup-img">
+                    <img src={backgroundImg } alt="backgroundImg"className="join-server-background"/>
+                </div>
+
+
+            </div>
         )
     }
     // console.log(channelId, serverId)

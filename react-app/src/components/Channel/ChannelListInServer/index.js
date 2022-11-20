@@ -29,7 +29,7 @@ function ChannelListInServer() {
 
     let sessionUserIsOwner = false
     if (servers) {
-        let currentServer = servers.find(server => server?.id === serverId)
+        let currentServer = servers.find(server => server?.id == serverId)
         if (currentServer) {
             // console.log("current SERVER ",currentServer)
             sessionUserIsOwner = currentServer.owner_id == sessionUser.id
