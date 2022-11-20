@@ -66,7 +66,7 @@ https://aa-eriscord.onrender.com/
                                                                                                                                     
 ### Show all server 
                                                                                                                                     
-#### By click main page left side bar  Search icon , you can open a page show all the channel serevers)
+#### By click main page left side bar  Search icon , you can open a page show all the channel serevers
                                                                                                                                     
 <img src="https://github.com/EriscordAppacademyProject/Eriscord/blob/cici/readme.png/show-all-server-page%20(Custom).png" alt="all server page">
 
