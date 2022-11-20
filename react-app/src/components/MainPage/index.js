@@ -25,24 +25,8 @@ function MainPage(props) {
     const [showServerEditModal, setShowServerEditModal] = useState(false)
     const [showServerDeleteModal, setShowServerDeleteModal] = useState(false);
     const history = useHistory();
-    // let sessionLinks;
-    // if (sessionUser) {
-    //     sessionLinks = (
-    //         <>
-    //             <ProfileButton user={sessionUser} />
-    //         </>
-    //     )
-    // } else {
-    //     sessionLinks = (
-    //         <>
 
-    //             <LoginButton
-    //                 setShowLoginModal={setShowLoginModal}
-    //                 setShowSignupModal={setShowSignupModal}
-    //             />
-    //         </>
-    //     );
-    // }
+
     const { dmShow } = props
     let messageShow;
     if (dmShow === false /*|| undefined*/) {
