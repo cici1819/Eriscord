@@ -34,8 +34,8 @@ function ServerEdit({ setShowServerEditModal }) {
         if (name.length > 50) {
             errors.push("Name should be less than 50 characters")
         }
-        if (name.length < 4) {
-            errors.push("Name should be more than 3 characters")
+        if (name.length < 3) {
+            errors.push("Name should be more than 2 characters")
         }
         setValidationErrors(errors);
     }, [img, name])

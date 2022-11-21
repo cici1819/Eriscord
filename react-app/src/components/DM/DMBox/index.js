@@ -49,7 +49,7 @@ function DMBox() {
     let messagesArr;
 
     if (servers) {
-        currentServer = servers.find(server => server.id == serverId)
+        currentServer = servers.find(server => server?.id == serverId)
         // console.log("CURRENT SERVER IN DMS", currentServer)
         if (currentServer) {
             let users = currentServer.users
@@ -86,23 +86,23 @@ function DMBox() {
                     <div className="dm-chat-topbar-content">This is the beginning of your direct message history with @ {otherUser}</div>
 
                 </div>
+                <div className="all-dm-message-div">
+                    {messagesArr.map((message) => (
+                        <div className='single-dm-container' key={message.id}>
+                            <div>
+                                <img src={eriscord_clear_logo} className="single-dm-icon" style={{ backgroundColor: message.sender_color }}></img>
 
-                {messagesArr.map((message) => (
-                    <div className='single-dm-container' key={message.id}>
-                        <div>
-                            <img src={eriscord_clear_logo} className="single-dm-icon" style={{ backgroundColor: message.sender_color }}></img>
-
-                        </div>
-                        <div className='single-dm-container-right'>
-                            <div className='single-dm-name-time'>
-                                <div className='single-dm-sender-name'>{message?.sender_name}</div>
-                                <div className='single-dm-time'>{message?.created_at.slice(0, 10)}</div>
                             </div>
-                            <div className='single-dm-content'>{message?.content}</div>
+                            <div className='single-dm-container-right'>
+                                <div className='single-dm-name-time'>
+                                    <div className='single-dm-sender-name'>{message?.sender_name}</div>
+                                    <div className='single-dm-time'>{message?.created_at.slice(0, 19)}</div>
+                                </div>
+                                <div className='single-dm-content'>{message?.content}</div>
+                            </div>
                         </div>
-                    </div>
-                ))}
-                <br></br>
+                    ))}
+                </div>
             </div>
             <div className='single-dm-messagebox-container'>
                 <div className='single-dm-messagebox-bottom'>

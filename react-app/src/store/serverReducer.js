@@ -32,6 +32,7 @@ export const loadDm = (servers) => {
         servers
     }
 }
+
 // export const current = (servers) => {
 //     return {
 //         type: CURRENT,
@@ -67,11 +68,26 @@ export const getRegularServers = () => async dispatch => {
       return result
     }
   };
+export const joinServer = (userId, serverId) => async dispatch =>{
+    const response = await fetch(`/api/users/servers/${serverId}`);
+    if (response.ok) {
+    //   const servers = await response.json();
+    //   console.log("THUNK SERVERS :", servers)
+    //   const result = dispatch(loadAll(servers.servers))
+      //console.log("RESULT OF DISPATCHING :", result)
+      return "added to server"
+
+      //Yeah this is terrible lol, does the job though
+    }
+    // console.log (userId, serverId, "IN THUNK FOR JOIN")
+  };
+
+
   export const getDMServers = () => async dispatch => {
     const response = await fetch(`/api/servers/dm`);
     if (response.ok) {
       const servers = await response.json();
-      //console.log("THUNK SERVERS :", servers)
+    //   console.log("THUNK SERVERS :", servers)
       const result = dispatch(loadAll(servers.servers))
       //console.log("RESULT OF DISPATCHING :", result)
       return result

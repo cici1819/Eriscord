@@ -95,6 +95,13 @@
     bottom: 60px;
     overflow-x: hidden;
 }
+.all-dm-message-div{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    margin-top: 5px;
+    margin-left: 10px;
+}
 
 .dm-chat-page::-webkit-scrollbar {
     width: 5px;
@@ -121,9 +128,9 @@
     border-bottom: 1px solid rgb(64, 68, 75);
     /* padding-left: 5px; */
     /* padding-right: 20px; */
-    width: 96%;
+    width: 98%;
     color: #96989D;
-    margin-left: 25px;
+    margin-left: 5px;
 }
 
 .dm-chat-topbar-content {
@@ -140,14 +147,14 @@
     border-radius: 50%;
     padding: 5px 5px;
     margin-top: 20px;
-    margin-left: 16px;
+    margin-left: 10px;
 }
 
 .dm-chat-user-name {
     font-size: 32px;
     color: white;
     font-family: "ABC Ginto Normal", "Helvetica Neue", Helvetica, Arial, sans-serif;
-    margin-left: 16px;
+    margin-left: 12px;
     font-weight: bolder;
     width: calc(100vw - 72px - 240px -60px);
     padding-bottom: 20px;
@@ -161,9 +168,10 @@
 /* message section  */
 .single-dm-container {
     display: flex;
-    flex-direction: row;
-    margin-top: 17px;
+    flex-direction:row;
+    margin-top: 10px;
     padding: 2px 48px 2px 16px;
+    margin-bottom: 15px;
 }
 
 .single-dm-container:hover {
@@ -205,7 +213,7 @@
 
 .single-dm-content {
     color: #dcddde;
-    height: 22px;
+    height: fit-content;
     font-size: 16px;
     font-weight: lighter;
     padding: 1px 0px;

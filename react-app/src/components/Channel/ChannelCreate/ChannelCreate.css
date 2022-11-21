@@ -1,5 +1,5 @@
 /* server channels side bar  */
-.add-channel{
+.add-channel {
     margin-top: 5px;
     display: flex;
     flex-direction: row;
@@ -11,6 +11,7 @@
     color: #96989D;
     /* background-color: aqua; */
 }
+
 .text-channel {
     width: 92%;
     height: 35px;
@@ -24,11 +25,12 @@
     margin-top: -5px;
     /* height: 3px; */
 }
+
 .text-channel:hover {
-    background-color:rgb(66, 70, 77);
+    background-color: rgb(66, 70, 77);
 
 
-    border-radius:4px;
+    border-radius: 4px;
 
 
 }
@@ -38,14 +40,17 @@
     /* font-family: "ABC Ginto Normal", "Helvetica Neue", Helvetica, Arial, sans-serif; */
 
 }
+
 .text-span:hover {
-    color:white;
+    color: white;
 
 }
-.add-channel-fa-div{
+
+.add-channel-fa-div {
     font-size: 15px;
 }
-.add-channel-fa-div:hover{
+
+.add-channel-fa-div:hover {
     color: white;
     cursor: pointer;
 }
@@ -243,5 +248,5 @@
     font-size: 10px;
     color: rgb(8, 157, 216);
     font-weight: 500;
-    margin-top: -15px;
+    margin-top: -10px;
 }

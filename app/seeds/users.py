@@ -7,44 +7,52 @@ from app.models import db, User, environment, SCHEMA
 #           'gray', 'yellow', 'blue', "salmon"]
 
 Colors = ['limegreen', 'darkorange', 'royalblue', 'wheat',
-          'orangered',  'powderblue', "lightcoral",  "teal"]
+          'orangered',  'powderblue', 'lightcoral',  'teal']
 
 # Adds a demo user, you can add other users here if you want
+# user 1
 demo = User(
     username='Demo',
     email='demo@aa.io',
     password='password',
     color=Colors[0])
+# user 2
 freya = User(
     username='Freya',
     email='freya@aa.io',
     password='password',
     color=Colors[1])
+# user 3
 atlas = User(
     username='Atlas',
     email='atlas@aa.io',
     password='password',
     color=Colors[2])
+# user 4
 helen = User(
     username='Helen',
     email='helen@aa.io',
     password='password',
     color=Colors[3])
+# user 5
 apollo = User(
     username='Apollo',
     email='apollo@aa.io',
     password='password',
     color=Colors[4])
+# user 6
 ares = User(
     username='Ares',
     email='ares@aa.io',
     password='password',
     color=Colors[5])
+# user 7
 athena = User(
     username='Athena',
     email='athena@aa.io',
     password='password',
     color=Colors[6])
+# user 8
 phoebe = User(
     username='Phoebe',
     email='phoebe@aa.io',

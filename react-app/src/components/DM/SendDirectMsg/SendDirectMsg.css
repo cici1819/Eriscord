@@ -22,11 +22,28 @@
 
 .dm-s-icon-div {
     color: #5865f2;
-    margin-left: 5px;
+    /* margin-left: -10px; */
     font-size: 18px;
 }
 
 .dm-s-icon-div:hover {
     filter: brightness(140%);
     cursor: pointer;
+}
+.dm-send-error-lists{
+    /* background-color: aquamarine; */
+    margin-top: -15px;
+    /* margin-left:400px ; */
+    /* margin-left: -60px; */
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    align-items: flex-end;
+    margin-left: -20px;
+    height: 20px;
+    width: 97%;
+    font-size: 10px;
+    color: rgb(8, 157, 216);
+    font-weight: 500;
+
 }

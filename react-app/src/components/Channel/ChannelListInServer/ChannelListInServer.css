@@ -1,9 +1,28 @@
 .channel-in-server-container {
     height: calc(100vh - 47px - 54px - 52px);
+    overflow-y: scroll;
+
 }
 
 .channel-in-server-container a {
     text-decoration: none;
+
+}
+
+.channel-in-server-container::-webkit-scrollbar {
+    width: 2px;
+    size: 2px;
+}
+
+.channel-in-server-container::-webkit-scrollbar-thumb {
+    background: rgb(32, 34, 37);
+    border-radius: 8px;
+}
+
+.channel-in-server-container::-webkit-scrollbar-track {
+    background: rgb(46, 51, 56);
+    border-radius: 8px;
+    margin-block: 3px;
 }
 
 .single-channel-in-server {
@@ -16,7 +35,6 @@
     margin: 0px 5px;
     border-radius: 4px;
     padding: 0 5px 0 5px;
-
 }
 
 

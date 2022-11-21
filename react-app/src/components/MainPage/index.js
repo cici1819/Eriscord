@@ -16,6 +16,7 @@ import ChannelListInServer from "../Channel/ChannelListInServer";
 import ServerEditModal from "../Server/ServerEdit";
 import CurrentUserDm from "../DM/CurrentUserDM";
 import DMBox from "../DM/DMBox";
+import { useParams, useHistory } from 'react-router-dom';
 import { channelAddMessage } from "../../store/messageReducer";
 
 
@@ -23,39 +24,15 @@ import { channelAddMessage } from "../../store/messageReducer";
 function MainPage(props) {
     const [showServerEditModal, setShowServerEditModal] = useState(false)
     const [showServerDeleteModal, setShowServerDeleteModal] = useState(false);
-    // let sessionLinks;
-    // if (sessionUser) {
-    //     sessionLinks = (
-    //         <>
-    //             <ProfileButton user={sessionUser} />
-    //         </>
-    //     )
-    // } else {
-    //     sessionLinks = (
-    //         <>
+    const history = useHistory();
 
-    //             <LoginButton
-    //                 setShowLoginModal={setShowLoginModal}
-    //                 setShowSignupModal={setShowSignupModal}
-    //             />
-    //         </>
-    //     );
-    // }
+
     const { dmShow } = props
     let messageShow;
     if (dmShow === false /*|| undefined*/) {
         messageShow = true
     }
-    // return (
-    //     <div className="main-page-container">
 
-    //         <div className="server-sidebar">
-    //             <div>
-    //             <CurrentUserServer />
-    //             </div>
-    //             <div>
-    //             <ServerCreateModal/>
-    //             </div>
 
 
     return (
@@ -65,6 +42,10 @@ function MainPage(props) {
                 <CurrentUserServer />
                 <div className="server-plus">
                     <ServerCreateModal />
+                </div>
+
+                <div className='server-search-icon' onClick={() => history.push('/discover')}>
+                    <i className="fa-sharp fa-solid fa-compass" id="server-search-logo"> </i>
                 </div>
 
             </div>

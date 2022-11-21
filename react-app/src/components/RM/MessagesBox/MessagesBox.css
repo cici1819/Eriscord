@@ -45,6 +45,7 @@
     overflow-x: hidden;
 
 }
+
 /* .RM-chat-body-sec {
     min-width:500px;
     overflow:scroll
@@ -63,7 +64,7 @@
 }
 
 .RM-chat-body-sec::-webkit-scrollbar-track {
-    /* Background */
+    /* Background height*/
     background: rgb(46, 51, 56);
     border-radius: 8px;
     margin-block: 3px;
@@ -115,10 +116,10 @@
 
 .single-rm-content {
     color: #dcddde;
-    height: 22px;
+    height: fit-content;
     font-size: 16px;
     font-weight: lighter;
-
+    /* word-break: break-word; */
 }
 
 .single-rm-messagebox-container {
@@ -135,4 +136,48 @@
     height: 60px;
     border: none;
     outline: none;
+}
+
+.join-s-logo {
+    width: 43px;
+    height: 42px;
+    border-radius: 50%;
+
+
+}
+
+.title-not-in-server-page {
+    background-color: rgb(60, 69, 165);
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    /* gap:20px; */
+    position: absolute;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    top: 0;
+    right: 0;
+    height: 48px;
+    color: white;
+    font-size: 15px;
+    width: calc(100vw - 72px - 240px - 240px);
+    border-bottom: 1px solid rgb(47,49,54);
+
+
+}
+
+.backgroup-img {
+    width: calc(100vw - 72px - 240px - 240px);
+    height: calc(100vh - 48px);
+    background-color: rgb(53, 56, 62);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.join-server-background {
+    width: 100%;
+    min-height: 600px;
+    max-width: 800px;
 }
