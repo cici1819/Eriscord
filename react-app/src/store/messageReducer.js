@@ -64,7 +64,7 @@ export const channelAddMessage = (data) => async dispatch => {
 
 export const DMServerAddMessage = (data) => async dispatch => {
     const { content, server_id } = data
-    console.log("reducer here", content, server_id)
+    console.log("reducer here HELLO CECE", content, server_id)
     const response = await fetch(`/api/messages/dms/${server_id}`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
