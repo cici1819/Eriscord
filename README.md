@@ -1,6 +1,6 @@
 # Welcome to Eriscord!
 
- Erisecord is a Discord clone where users can join and create servers to live chat with others. Users are able to sign up and make a new account, or log into an existing account in order to live message other users directly or through a public or private server. Messages are organized into individual conversations and channels and built using Flask-SQLAlchemy, React, Redux.The backend utilizes Flask-SocketIO while the frontend utilizes socket.io-client to set up its websocket connection.
+ Eriscord is a Discord clone where users can join and create servers to live chat with others. Users are able to sign up and make a new account, or log into an existing account in order to live message other users directly or through a public or private server. Messages are organized into individual conversations and channels and built using Flask-SQLAlchemy, React, Redux.The backend utilizes Flask-SocketIO while the frontend utilizes socket.io-client to set up its websocket connection.
 
 ## Live chat
 https://aa-eriscord.onrender.com/
