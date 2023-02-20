@@ -22,13 +22,13 @@ function UsersInOneServer() {
     }, [dispatch]);
 
 
-    // console.log(channelId, serverId)
+    // //console.log(channelId, serverId)
     let currentServer = useSelector(state => state.server)
     let usersInCurrentServer = useSelector(state => state.server[+serverId]?.users)
 
-    // console.log('usersInCurrentServer!!!!!!!!', usersInCurrentServer)
+    // //console.log('usersInCurrentServer!!!!!!!!', usersInCurrentServer)
 
-    // console.log('channelArr!!!!!!!!', channelArr)
+    // //console.log('channelArr!!!!!!!!', channelArr)
 
     if (!usersInCurrentServer) { return null }
 

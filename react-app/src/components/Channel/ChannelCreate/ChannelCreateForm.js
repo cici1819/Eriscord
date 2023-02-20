@@ -29,7 +29,7 @@ function ChannelCreate({ setShowModal }) {
         setValidationErrors(errors);
     }, [name])
 
-    // console.log("------------------------", validationErrors.length)
+    // //console.log("------------------------", validationErrors.length)
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -39,7 +39,7 @@ function ChannelCreate({ setShowModal }) {
 
         const channelPayload = { name }
         channelPayload.serverId = serverId
-        // console.log("!!!!!frontend", channelPayload)
+        // //console.log("!!!!!frontend", channelPayload)
         let createdChannel = await dispatch(thunkAddChannelToServer(channelPayload))
 
         setErrors(validationErrors)
@@ -51,7 +51,7 @@ function ChannelCreate({ setShowModal }) {
                 setErrors([]);
                 setShowModal(false);
                 dispatch(thunkLoadOneServer(serverId))
-                // console.log(createdChannel)
+                // //console.log(createdChannel)
             }
         }
     }

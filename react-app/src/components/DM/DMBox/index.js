@@ -30,9 +30,9 @@ function DMBox() {
         socket = io();
 
         socket.on("DM", (chat) => {
-            console.log("MESSAGE FROM TEST :", chat)
+            //console.log("MESSAGE FROM TEST :", chat)
             let result = dispatch(getPersonalDMServers())
-            console.log("RESULT OF DISPATCHING POST DM :", result)
+            //console.log("RESULT OF DISPATCHING POST DM :", result)
 
         })
         // when component unmounts, disconnect
@@ -40,17 +40,17 @@ function DMBox() {
             socket.disconnect()
         })
     }, [])
-    // console.log(channelId, serverId)
+    // //console.log(channelId, serverId)
     let otherUser
     let otherColor
     let servers = useSelector(state => state.server.dmServers)
-    // console.log("STATE IN MESSAGES :", servers)
+    // //console.log("STATE IN MESSAGES :", servers)
     let currentServer
     let messagesArr;
 
     if (servers) {
         currentServer = servers.find(server => server?.id == serverId)
-        // console.log("CURRENT SERVER IN DMS", currentServer)
+        // //console.log("CURRENT SERVER IN DMS", currentServer)
         if (currentServer) {
             let users = currentServer.users
             let notYou = users.find(user => user.id !== current)

@@ -24,7 +24,7 @@ def get_channel_by_id(channel_id):
 @login_required
 def add_channel():
     # args = request.args
-    # console.log("args!!!!", args)
+    # //console.log("args!!!!", args)
     print('here')
     form = ChannelForm()
     form['csrf_token'].data = request.cookies['csrf_token']

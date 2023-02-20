@@ -14,15 +14,15 @@ function ServerDiscover() {
     }, [dispatch]);
 
 
-    // console.log(channelId, serverId)
+    // //console.log(channelId, serverId)
 
-    // console.log('servers!!!!!!!!', servers)
+    // //console.log('servers!!!!!!!!', servers)
 
     if (!servers) { return null }
     // const dmRedirect = () => {
     //     history.push("/channels/@me")
     // }
-    // console.log(servers, "@@@@@@@@@@@@@@@@@@@@@@@@@@@")
+    // //console.log(servers, "@@@@@@@@@@@@@@@@@@@@@@@@@@@")
     return (
         <>
             <div className="server-discover-map">

@@ -9,7 +9,7 @@ function SingleServer({ server }) {
     if (!server) { return null }
 
     let firstChannelId
-    // console.log("server!!!!!!!!!!!!!!!!!", server)
+    // //console.log("server!!!!!!!!!!!!!!!!!", server)
 
     if (server.hasOwnProperty('channels') && server.channels.length > 0) {
         firstChannelId = server.channels[0].id
