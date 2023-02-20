@@ -29,7 +29,7 @@ function ChannelCreate({ setShowModal }) {
         setValidationErrors(errors);
     }, [name])
 
-    // //console.log("------------------------", validationErrors.length)
+    //console.log("------------------------", validationErrors.length)
 
     const handleSubmit = async (e) => {
         e.preventDefault();
