@@ -38,7 +38,7 @@ function ServerDiscover() {
                                 <div className='all-server-name'> {server.name}</div>
                                 <div className='allserver-description'>{server.description}</div>
                                 <div className='user-in-serverList'>
-                                   <span className='star-icon'> * </span>
+                                    <span className='star-icon'> * </span>
                                     <span className='user-num'>{server.users.length} Members</span>
                                 </div>
 

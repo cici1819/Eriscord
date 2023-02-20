@@ -56,7 +56,7 @@ function ChannelEdit({ channel, setShowModal }) {
 
         if (editedChannel) {
 
-            await await dispatch(thunkLoadOneServer(serverId))
+            await dispatch(thunkLoadOneServer(serverId))
             await setShowModal(false);
         }
     }
