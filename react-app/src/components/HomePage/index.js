@@ -8,6 +8,8 @@ import sec2_img from "../../img/home-page/2-1.png"
 import sec3_img from "../../img/home-page/3-1.png"
 import sec4_img from "../../img/home-page/4-1.png"
 import sec5_img from "../../img/home-page/5-1.png"
+import github from "../../img/githublogo.png"
+import linkedIn from "../../img/linkedin.jpg"
 
 
 function HomePage() {
@@ -93,11 +95,40 @@ function HomePage() {
             <div className="home-page-section-7" id="s7">
                 <div className="home-page-section-7-top">
                     <div className="s7-top-left">ERISCORD DEVELOPERS</div>
-                    <a className='s7-top-name' href='https://github.com/cici1819'>Cici Cheng</a>
-                    <a className='s7-top-name' href='https://github.com/NYDF'>Frank Song</a>
-                    <a className='s7-top-name' href='https://github.com/QuantitativeSneezing'>Jason Arnold</a>
-                    <a className='s7-top-name' href='https://github.com/EffieML'>Ming Liu</a>
-                    <a className='s7-top-name' href='https://github.com/EriscordAppacademyProject/Eriscord'>GitHub Repo</a>
+                    <div className='s7-top-links-container'>
+                        <a className='s7-top-name' href='https://cici1819.github.io/' target="_blank">Cici Cheng</a>
+                        <div className='s7-bttm'>
+                            <a className='s7-bttm-logo1' href='https://github.com/cici1819' target="_blank"><img src={github} alt='github' /></a>
+                            <a className='s7-bttm-logo2' href='https://www.linkedin.com/in/cici-cheng-87386a259/' target="_blank"><img src={linkedIn} alt='linkedin' /></a>
+                        </div>
+                    </div>
+                    <div className='s7-top-links-container'>
+                        <a className='s7-top-name' href='https://nydf.github.io/' target="_blank">Frank Song</a>
+                        <div className='s7-bttm'>
+                            <a className='s7-bttm-logo1' href='https://github.com/NYDF' target="_blank"><img src={github} alt='github' /></a>
+                            <a className='s7-bttm-logo2' href='https://www.linkedin.com/in/dongfang-song-25261218a/' target="_blank"><img src={linkedIn} alt='linkedin' /></a>
+                        </div>
+                    </div>
+                    <div className='s7-top-links-container'>
+                        <a className='s7-top-name' href='https://quantitativesneezing.github.io/' target="_blank">Jason Arnold</a>
+                        <div className='s7-bttm'>
+                            <a className='s7-bttm-logo1' href='https://github.com/QuantitativeSneezing' target="_blank"><img src={github} alt='github' /></a>
+                            <a className='s7-bttm-logo2' href='https://www.linkedin.com/in/jason-arnold-539005183/' target="_blank"><img src={linkedIn} alt='linkedin' /></a>
+                        </div>
+                    </div>
+                    <div className='s7-top-links-container'>
+                        <a className='s7-top-name' href='https://effieml.github.io/' target="_blank">Ming Liu</a>
+                        <div className='s7-bttm'>
+                            <a className='s7-bttm-logo1' href='https://github.com/EffieML' target="_blank"><img src={github} alt='github' /></a>
+                            <a className='s7-bttm-logo2' href='https://www.linkedin.com/in/effie-liu-b57372261/' target="_blank"><img src={linkedIn} alt='linkedin' /></a>
+                        </div>
+                    </div>
+                    <div className='s7-top-links-container'>
+                        <a className='s7-top-name s7-repo' href='https://github.com/EriscordAppacademyProject/Eriscord' target="_blank">
+                            <div>Eriscord</div>
+                            <div>GitHub Repo</div>
+                        </a>
+                    </div>
                 </div>
                 <div id='dot'> · </div>
                 <div className="home-page-section-7-bottom">

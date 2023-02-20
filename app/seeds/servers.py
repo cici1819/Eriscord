@@ -3,7 +3,7 @@ from .users import demo, freya, atlas, helen, apollo, ares, athena, phoebe
 
 
 def seed_servers():
-    # DM server id 1-5
+    # DM server id 1-7
     # dm 1  Demo to everyone ///////////////////////////////////////////
     dm_server1_2 = Server(
         name="Demo-1-2",
@@ -222,7 +222,7 @@ def seed_servers():
         # img="https://variety.com/wp-content/uploads/2022/05/featured_will_smith_v3.jpg?w=910&h=511&crop=1",
         img="https://m.media-amazon.com/images/I/51btmTAizGL._AC_SY780_.jpg",
         is_dm=False,
-        server_server_members=[demo, atlas,helen]
+        server_server_members=[demo, atlas, helen]
     )
 
     # rm 25 12

@@ -49,7 +49,7 @@ def seed_channels():
     )
     # channel id: 8
     server15_channel4 = Channel(
-        name='userful-resources',
+        name='useful-resources',
         server_id=15,
         topic='Tech-Resources'
     )

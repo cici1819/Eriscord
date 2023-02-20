@@ -267,10 +267,25 @@
     font-family: "Ginto Nord", "Whitney", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
 }
 
+.s7-top-links-container {
+    display: flex;
+    flex-direction: column;
+    width: 180px;
+    align-items: center;
+    justify-content: center;
+    padding-top: 8px;
+}
+
+.s7-repo {
+    display: flex;
+    flex-direction: column;
+    height: 50px;
+    justify-content: space-between;
+}
+
 .s7-top-name {
     display: flex;
     align-items: center;
-    width: 220px;
     color: #FFFFFF;
     font-size: 20px;
     vertical-align: bottom;
@@ -280,6 +295,38 @@
     font-size: 20px;
     font-weight: bolder;
     text-decoration: none;
+}
+
+.s7-bttm {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+
+}
+
+.s7-bttm-logo1 img {
+    height: 27px;
+    width: 27px;
+    padding: 6px 6px 0;
+}
+
+.s7-bttm-logo1 img:hover {
+    height: 30px;
+    width: 30px;
+    padding: 3px 6px 0;
+}
+
+
+.s7-bttm-logo2 img {
+    height: 24px;
+    width: 24px;
+    padding: 9px 6px 0;
+}
+
+.s7-bttm-logo2 img:hover {
+    height: 27px;
+    width: 27px;
+    padding: 6px 6px 0;
 }
 
 .home-page-section-7-bottom {
