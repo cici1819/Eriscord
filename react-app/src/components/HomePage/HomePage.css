@@ -334,14 +334,25 @@
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    width: 1180px;
+    width: 1130px;
     height: 80px;
     vertical-align: bottom;
     padding-top: 30px;
     border-top: 1.5px solid #5865F2;
+    margin-right: 40px;
+    padding-right: 10px;
 }
 
 .home-page-section-7-bottom button {
     background-color: #5865F2;
     color: #FFFFFF;
+}
+
+.acad-container {
+    color: #5865F2;
+    font-weight: 600;
+    padding: 4px;
+    border: 1px solid #5865F2;
+    box-shadow: 0 0 10px 0 rgb(160, 217, 255);
+    border-radius: 6px;
 }

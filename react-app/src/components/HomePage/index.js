@@ -136,6 +136,10 @@ function HomePage() {
                         <img src={eriscord_black_logo} id="logo-img" alt="home-img" />
                         <div id='logo-name'>Eriscord</div>
                     </div>
+                    <div className='acad-container'>
+                        <div className='acad-inner'>Inspired by Discord</div>
+                        <div className='acad-inner'>Academic Use Only</div>
+                    </div>
                     <div className="hps1-nav-bar-section-right">
                         <NavLink to={"/sign-up"}>
                             <button id="home-login-button">Sign up</button>
@@ -146,7 +150,6 @@ function HomePage() {
         </div>
     )
 }
-
 
 
 
