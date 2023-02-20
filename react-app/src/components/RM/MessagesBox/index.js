@@ -34,9 +34,9 @@ function MessagesBox() {
         // open socket connection
         // create websocket
         socket = io();
-        // console.log("chat", socket)
+        // //console.log("chat", socket)
         socket.on("RM", (chat) => {
-            console.log("MESSAGE FROM TEST :", chat)
+            //console.log("MESSAGE FROM TEST :", chat)
             dispatch(thunkLoadoneChannel(channelId))
 
         })
@@ -56,7 +56,7 @@ function MessagesBox() {
                 inServer = true
             }
         }
-        console.log(inServer, "IN THE SERVER")
+        //console.log(inServer, "IN THE SERVER")
         if (!server) { return null }
         // if
     }
@@ -74,17 +74,17 @@ function MessagesBox() {
             </div>
         )
     }
-    // console.log(channelId, serverId)
-    // console.log("A community for all users who want to call a server home. Here we hangout. Have a laugh. We're always looking for lively people so come hangout with us!".length)
+    // //console.log(channelId, serverId)
+    // //console.log("A community for all users who want to call a server home. Here we hangout. Have a laugh. We're always looking for lively people so come hangout with us!".length)
 
 
 
-    // console.log('messages!!!!!!!!', messagesArr)
+    // //console.log('messages!!!!!!!!', messagesArr)
 
 
-    // console.log('messages!!!!!!!!', messagesArr)
+    // //console.log('messages!!!!!!!!', messagesArr)
     let channelArr = Object.values(channel)
-    // console.log('channelArr!!!!!!!!', channelArr)
+    // //console.log('channelArr!!!!!!!!', channelArr)
 
     if (!messagesArr) { return null }
 

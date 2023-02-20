@@ -29,7 +29,7 @@ function SendDirectMsg({ otherUser }) {
         setValidationErrors(errors);
     }, [content])
 
-    console.log(validationErrors)
+    //console.log(validationErrors)
 
     useEffect(() => {
         // open socket connection
@@ -48,7 +48,7 @@ function SendDirectMsg({ otherUser }) {
         if (socket) {
             socket.emit("DM", content)
         }
-        console.log('content, server_id', content, server_id)
+        //console.log('content, server_id', content, server_id)
         const msgPayload = { content, server_id }
         await dispatch(DMServerAddMessage(msgPayload))
         await dispatch(getPersonalDMServers())

@@ -19,9 +19,9 @@ function CurrentUserServer() {
     }, [dispatch]);
 
 
-    // console.log(channelId, serverId)
+    // //console.log(channelId, serverId)
 
-    // console.log('servers!!!!!!!!', servers)
+    // //console.log('servers!!!!!!!!', servers)
 
     if (!servers) { return null }
     const dmRedirect = () => {

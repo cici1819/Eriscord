@@ -62,7 +62,7 @@ export const getRegularServers = () => async dispatch => {
     const response = await fetch(`/api/servers/regular`);
     if (response.ok) {
       const servers = await response.json();
-      console.log("THUNK SERVERS :", servers)
+      //console.log("THUNK SERVERS :", servers)
       const result = dispatch(loadAll(servers.servers))
       //console.log("RESULT OF DISPATCHING :", result)
       return result
@@ -72,14 +72,14 @@ export const joinServer = (userId, serverId) => async dispatch =>{
     const response = await fetch(`/api/users/servers/${serverId}`);
     if (response.ok) {
     //   const servers = await response.json();
-    //   console.log("THUNK SERVERS :", servers)
+    //   //console.log("THUNK SERVERS :", servers)
     //   const result = dispatch(loadAll(servers.servers))
       //console.log("RESULT OF DISPATCHING :", result)
       return "added to server"
 
       //Yeah this is terrible lol, does the job though
     }
-    // console.log (userId, serverId, "IN THUNK FOR JOIN")
+    // //console.log (userId, serverId, "IN THUNK FOR JOIN")
   };
 
 
@@ -87,7 +87,7 @@ export const joinServer = (userId, serverId) => async dispatch =>{
     const response = await fetch(`/api/servers/dm`);
     if (response.ok) {
       const servers = await response.json();
-    //   console.log("THUNK SERVERS :", servers)
+    //   //console.log("THUNK SERVERS :", servers)
       const result = dispatch(loadAll(servers.servers))
       //console.log("RESULT OF DISPATCHING :", result)
       return result
@@ -97,7 +97,7 @@ export const joinServer = (userId, serverId) => async dispatch =>{
     const response = await fetch(`/api/servers/current`);
     if (response.ok) {
       const servers = await response.json();
-    //   console.log("THUNK SERVERS :", servers)
+    //   //console.log("THUNK SERVERS :", servers)
       const result = dispatch(loadAll(servers.servers))
       //console.log("RESULT OF DISPATCHING :", result)
       return result
@@ -106,7 +106,7 @@ export const joinServer = (userId, serverId) => async dispatch =>{
   };
 export const thunkAddServer = (data) => async dispatch => {
     const { name, img, description } = data
-    // console.log('thunk!!!!!', name, img, description)
+    // //console.log('thunk!!!!!', name, img, description)
     const response = await fetch(`/api/servers/new`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -122,7 +122,7 @@ export const getPersonalDMServers = () => async dispatch => {
     const response = await fetch(`/api/servers/current/dm`);
     if (response.ok) {
       const servers = await response.json();
-    //   console.log("THUNK SERVERS :", servers)
+    //   //console.log("THUNK SERVERS :", servers)
       const result = dispatch(loadDm(servers.servers))
       //console.log("RESULT OF DISPATCHING :", result)
       return result
@@ -142,7 +142,7 @@ export const thunkLoadOneServer = (serverId) => async (dispatch) => {
 
 export const thunkEditServer = (data) => async dispatch => {
     const { serverId, name, img, description } = data;
-    console.log(serverId, name, img, description)
+    //console.log(serverId, name, img, description)
     const response = await fetch(`/api/servers/${serverId}`, {
         method: "POST",
         headers: { 'Content-Type': 'application/json' },
@@ -168,7 +168,7 @@ export const thunkDeleteOneServer = (serverId) => async dispatch => {
     });
     if (response.ok) {
         const toDelete = await response.json();
-        console.log(toDelete)
+        //console.log(toDelete)
         dispatch(deleteServer(serverId));
     }
 }

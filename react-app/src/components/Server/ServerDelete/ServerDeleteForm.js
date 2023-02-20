@@ -12,7 +12,7 @@ function ServerDelete({ setShowServerDeleteModal }) {
     const [serverName, setServerName] = useState('');
     const [hasSubmitted, setHasSubmitted] = useState("");
     const { channelId, serverId } = useParams();
-    // console.log('serverId!!!!!!!!!', serverId)
+    // //console.log('serverId!!!!!!!!!', serverId)
 
     useEffect(() => {
         dispatch(thunkLoadOneServer(serverId))
@@ -30,9 +30,9 @@ function ServerDelete({ setShowServerDeleteModal }) {
 
 
     const currentServer = useSelector((state) => state.server[`${serverId}`]);
-    // console.log('currentServer!!!!!!!!', currentServer)
+    // //console.log('currentServer!!!!!!!!', currentServer)
     // currentServer[`${serverId}`]
-    // console.log('showError!!!!', showError)
+    // //console.log('showError!!!!', showError)
 
     const handleDelete = async (e) => {
         setHasSubmitted(true);

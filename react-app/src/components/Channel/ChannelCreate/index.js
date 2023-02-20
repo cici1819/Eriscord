@@ -16,9 +16,9 @@ function ChannelCreateModal() {
     if (servers) {
         let currentServer = servers.find(server => server?.id == serverId)
         if (currentServer) {
-            // console.log("current SERVER ",currentServer)
+            // //console.log("current SERVER ",currentServer)
             sessionUserIsOwner = currentServer.owner_id == sessionUser.id
-            // console.log("owned by you?", sessionUserIsOwner)
+            // //console.log("owned by you?", sessionUserIsOwner)
         }
     }
     if (!sessionUser) {

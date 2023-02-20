@@ -21,30 +21,30 @@ function CurrentUserDm() {
     }, [dispatch]);
 
 
-    // console.log(channelId, serverId)
+    // //console.log(channelId, serverId)
 
     let servers = useSelector(state => state.server.dmServers)
     let current = useSelector(state => state.session.user.id)
-    // console.log(current)
+    // //console.log(current)
 
-    console.log('state of dm servers!!!!!!!!', servers)
+    //console.log('state of dm servers!!!!!!!!', servers)
     if (!servers) {
         return null
     }
     if (servers) {
-        console.log("SERVERS HERE :", servers, servers.length)
+        //console.log("SERVERS HERE :", servers, servers.length)
         for (let i = 0; i < servers.length; i++) {
             const currentServer = servers[i]
             let users = currentServer.users
-            // console.log("USERS ITERATION :", users)
+            // //console.log("USERS ITERATION :", users)
             let notYou = users.find(user => user.id !== current)
-            // console.log("OTHER USER :", notYou)
+            // //console.log("OTHER USER :", notYou)
             currentServer.otherIcon = notYou.color
             currentServer.otherName = notYou.username
-            // console.log(currentServer)
+            // //console.log(currentServer)
         }
     }
-    // console.log('channelArr!!!!!!!!', channelArr)
+    // //console.log('channelArr!!!!!!!!', channelArr)
 
     // if (!) { return null }
     return (

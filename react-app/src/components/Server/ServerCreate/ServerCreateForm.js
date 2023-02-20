@@ -18,7 +18,7 @@ function ServerCreate({ setShowModal }) {
     const history = useHistory();
     // const { channelId, serverId } = useParams();
 
-    // console.log(validationErrors)
+    // //console.log(validationErrors)
 
     useEffect(() => {
         const errors = [];
@@ -38,20 +38,20 @@ function ServerCreate({ setShowModal }) {
         e.preventDefault();
         setHasSubmitted(true);
         if (validationErrors.length) {
-            // console.log("ERRORS FOUND :", validationErrors)
+            // //console.log("ERRORS FOUND :", validationErrors)
         } else {
             const serverPayload = { name, img, description }
-            // console.log("serverPayload", name, img, description)
-            // console.log("!!!!!frontend", channelPayload)
+            // //console.log("serverPayload", name, img, description)
+            // //console.log("!!!!!frontend", channelPayload)
             let createdServer = await dispatch(thunkAddServer(serverPayload)).catch(async (res) => {
 
                 const data = await res.json();
-                // console.log("THIS IS RES :",res)
+                // //console.log("THIS IS RES :",res)
                 if (data && data.errors) {
                     setErrors(data.errors)
                 };
             });
-            console.log("createdServer+++++++", createdServer)
+            //console.log("createdServer+++++++", createdServer)
             if (createdServer) {
 
                 await dispatch(getPersonalServers())

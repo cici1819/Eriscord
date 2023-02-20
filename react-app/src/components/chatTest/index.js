@@ -15,7 +15,7 @@
 //         socket = io();
 
 //         socket.on("chat", (chat) => {
-//             console.log("MESSAGE FROM TEST :", chat)
+//             //console.log("MESSAGE FROM TEST :", chat)
 //             setMessages(messages => [...messages, chat])
 //         })
 //         // when component unmounts, disconnect
