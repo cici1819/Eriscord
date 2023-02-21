@@ -24,7 +24,7 @@ function ServerEdit({ setShowServerEditModal }) {
 
     const sessionUser = useSelector(state => state.session.user)
 
-    // console.log('currentServer!!!!!!!!', currentServer)
+    // //console.log('currentServer!!!!!!!!', currentServer)
 
     useEffect(() => {
         const errors = [];
@@ -44,11 +44,11 @@ function ServerEdit({ setShowServerEditModal }) {
         e.preventDefault();
         setHasSubmitted(true);
         if (validationErrors.length) { return }
-        // console.log('serverId', serverId)
+        // //console.log('serverId', serverId)
 
         const editedServerPayload = { serverId, name, img, description }
         editedServerPayload.serverId = serverId
-        // console.log("!!!!!editedServerPayload", editedServerPayload)
+        // //console.log("!!!!!editedServerPayload", editedServerPayload)
         await dispatch(thunkEditServer(editedServerPayload))
         //     .catch(async (res) => {
 

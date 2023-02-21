@@ -36,7 +36,7 @@ function SendRegulerMsg() {
         socket = io();
 
         // socket.on("RM", (chat) => {
-        //     console.log("MESSAGE FROM TEST :", chat)
+        //     //console.log("MESSAGE FROM TEST :", chat)
         // })
         // when component unmounts, disconnect
         return (() => {

@@ -5,11 +5,11 @@ from datetime import datetime
 
 def seed_messages():
     # channel messages -----------------------------------------
-    # message id 1-6 for server 14, channel 2---------------------
+    # message id 1-6 for server 6, channel 2---------------------
     first = Message(
         content="HELLO, I AM NEW",
         channel_id=2,
-        server_id=14,
+        server_id=6,
         created_at=datetime.now(),
         sender_id=1
     )
@@ -17,7 +17,7 @@ def seed_messages():
     second = Message(
         content="Please stop yelling",
         channel_id=2,
-        server_id=14,
+        server_id=6,
         created_at=datetime.now(),
         sender_id=2
     )
@@ -25,7 +25,7 @@ def seed_messages():
     third = Message(
         content="DON'T LISTEN, YELL ALL YOU WANT",
         channel_id=2,
-        server_id=14,
+        server_id=6,
         created_at=datetime.now(),
         sender_id=3
     )
@@ -33,7 +33,7 @@ def seed_messages():
     fourth = Message(
         content="IT'S REALLY LOUD IN HERE",
         channel_id=2,
-        server_id=14,
+        server_id=6,
         created_at=datetime.now(),
         sender_id=4
     )
@@ -41,7 +41,7 @@ def seed_messages():
     fifth = Message(
         content="IKR!?!?",
         channel_id=2,
-        server_id=14,
+        server_id=6,
         created_at=datetime.now(),
         sender_id=5
     )
@@ -49,16 +49,16 @@ def seed_messages():
     sixth = Message(
         content="sorry caps",
         channel_id=2,
-        server_id=14,
+        server_id=6,
         created_at=datetime.now(),
         sender_id=1
     )
     db.session.add(sixth)
-    # message id 7-11 for server 15, channel 5---------------------
+    # message id 7-11 for server 7, channel 5---------------------
     seventh = Message(
         content="Hey, how's everyone doing?",
         channel_id=5,
-        server_id=15,
+        server_id=7,
         created_at=datetime.now(),
         sender_id=1
     )
@@ -66,7 +66,7 @@ def seed_messages():
     eighth = Message(
         content="P good, hbu?",
         channel_id=5,
-        server_id=15,
+        server_id=7,
         created_at=datetime.now(),
         sender_id=8
     )
@@ -74,7 +74,7 @@ def seed_messages():
     ninth = Message(
         content="Not bad, thanks!",
         channel_id=5,
-        server_id=15,
+        server_id=7,
         created_at=datetime.now(),
         sender_id=1
     )
@@ -82,7 +82,7 @@ def seed_messages():
     tenth = Message(
         content="Now kith",
         channel_id=5,
-        server_id=15,
+        server_id=7,
         created_at=datetime.now(),
         sender_id=3
     )
@@ -90,16 +90,15 @@ def seed_messages():
     eleventh = Message(
         content="LOL",
         channel_id=5,
-        server_id=15,
+        server_id=7,
         created_at=datetime.now(),
         sender_id=2
     )
     db.session.add(eleventh)
-    # message id 12 for server 16, channel 9---------------------
+    # message id 12 for server 7, channel 6---------------------
     twelfth = Message(
         content="Anyone here?",
-        channel_id=9,
-        server_id=16,
+        server_id=1,
         created_at=datetime.now(),
         sender_id=2
     )

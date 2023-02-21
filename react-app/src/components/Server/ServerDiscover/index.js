@@ -14,15 +14,15 @@ function ServerDiscover() {
     }, [dispatch]);
 
 
-    // console.log(channelId, serverId)
+    // //console.log(channelId, serverId)
 
-    // console.log('servers!!!!!!!!', servers)
+    // //console.log('servers!!!!!!!!', servers)
 
     if (!servers) { return null }
     // const dmRedirect = () => {
     //     history.push("/channels/@me")
     // }
-    // console.log(servers, "@@@@@@@@@@@@@@@@@@@@@@@@@@@")
+    // //console.log(servers, "@@@@@@@@@@@@@@@@@@@@@@@@@@@")
     return (
         <>
             <div className="server-discover-map">
@@ -38,7 +38,7 @@ function ServerDiscover() {
                                 <div className='all-server-name'> {server.name}</div>
                                 <div className='allserver-description'>{server.description}</div>
                                 <div className='user-in-serverList'>
-                                   <span className='star-icon'> * </span>
+                                    <span className='star-icon'> * </span>
                                     <span className='user-num'>{server.users.length} Members</span>
                                 </div>
 

@@ -16,7 +16,7 @@ function ServerEditModal({showServerEditModal, setShowServerEditModal}) {
     // let name
     // if (servers) {
     //     let currentServer = servers.find(server => server?.id == serverId)
-    //     console.log("CURRENT SERVER IN DMS", currentServer)
+    //     //console.log("CURRENT SERVER IN DMS", currentServer)
     //     name = currentServer?.name
     // }
 
@@ -25,7 +25,7 @@ function ServerEditModal({showServerEditModal, setShowServerEditModal}) {
     // }
     // function handleOpen() {
     //     setShowModal(true);
-    //     console.log("opening_____________________")
+    //     //console.log("opening_____________________")
     // }
     return (
         <>

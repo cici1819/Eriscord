@@ -267,10 +267,25 @@
     font-family: "Ginto Nord", "Whitney", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
 }
 
+.s7-top-links-container {
+    display: flex;
+    flex-direction: column;
+    width: 180px;
+    align-items: center;
+    justify-content: center;
+    padding-top: 8px;
+}
+
+.s7-repo {
+    display: flex;
+    flex-direction: column;
+    height: 50px;
+    justify-content: space-between;
+}
+
 .s7-top-name {
     display: flex;
     align-items: center;
-    width: 220px;
     color: #FFFFFF;
     font-size: 20px;
     vertical-align: bottom;
@@ -282,19 +297,62 @@
     text-decoration: none;
 }
 
+.s7-bttm {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+
+}
+
+.s7-bttm-logo1 img {
+    height: 27px;
+    width: 27px;
+    padding: 6px 6px 0;
+}
+
+.s7-bttm-logo1 img:hover {
+    height: 30px;
+    width: 30px;
+    padding: 3px 6px 0;
+}
+
+
+.s7-bttm-logo2 img {
+    height: 24px;
+    width: 24px;
+    padding: 9px 6px 0;
+}
+
+.s7-bttm-logo2 img:hover {
+    height: 27px;
+    width: 27px;
+    padding: 6px 6px 0;
+}
+
 .home-page-section-7-bottom {
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    width: 1180px;
+    width: 1130px;
     height: 80px;
     vertical-align: bottom;
     padding-top: 30px;
     border-top: 1.5px solid #5865F2;
+    margin-right: 40px;
+    padding-right: 10px;
 }
 
 .home-page-section-7-bottom button {
     background-color: #5865F2;
     color: #FFFFFF;
+}
+
+.acad-container {
+    color: #5865F2;
+    font-weight: 600;
+    padding: 4px;
+    border: 1px solid #5865F2;
+    box-shadow: 0 0 10px 0 rgb(160, 217, 255);
+    border-radius: 6px;
 }

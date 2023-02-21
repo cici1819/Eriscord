@@ -18,11 +18,11 @@ function ChannelListInServer() {
 
     const servers = useSelector(state => state.server.servers)
 
-    // console.log(channelId, serverId)
+    // //console.log(channelId, serverId)
 
     let channelsArr = useSelector(state => state.server[serverId]?.channels)
 
-    // console.log('channelsArr!!!!!!!!', channelsArr)
+    // //console.log('channelsArr!!!!!!!!', channelsArr)
 
 
     if (!channelsArr) { return null }
@@ -31,9 +31,9 @@ function ChannelListInServer() {
     if (servers) {
         let currentServer = servers.find(server => server?.id == serverId)
         if (currentServer) {
-            // console.log("current SERVER ",currentServer)
+            // //console.log("current SERVER ",currentServer)
             sessionUserIsOwner = currentServer.owner_id == sessionUser.id
-            // console.log("owned by you?", sessionUserIsOwner)
+            // //console.log("owned by you?", sessionUserIsOwner)
         }
     }
     return (

@@ -39,9 +39,9 @@ const ServerSetting = ({ setShowServerEditModal, setShowServerDeleteModal }) => 
         let currentServer = servers.find(server => server?.id == serverId)
         if (currentServer){
             name = currentServer?.name
-            // console.log("current SERVER ",currentServer)
+            // //console.log("current SERVER ",currentServer)
             sessionUserIsOwner = currentServer.owner_id==sessionUser.id
-            // console.log ("owned by you?" , sessionUserIsOwner)
+            // //console.log ("owned by you?" , sessionUserIsOwner)
         }
     }
 
@@ -67,7 +67,7 @@ const ServerSetting = ({ setShowServerEditModal, setShowServerDeleteModal }) => 
                     <div className='server-edit-div'
                         onClick={() => {
 
-                            // console.log("loginon click running````````````")
+                            // //console.log("loginon click running````````````")
                             setShowServerEditModal(true)
                         }
                         }
@@ -83,7 +83,7 @@ const ServerSetting = ({ setShowServerEditModal, setShowServerDeleteModal }) => 
                     <div className='server-delete-div'
                         onClick={() => {
 
-                            // console.log("showServerEditModal clickruning!!!!!!!!!!!")
+                            // //console.log("showServerEditModal clickruning!!!!!!!!!!!")
 
                             setShowServerDeleteModal(true)
 
