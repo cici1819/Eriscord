@@ -147,8 +147,8 @@ def seed_servers():
         name="Game for Fun!",
         owner_id=4,
         description="Welcome to join us if you are a fan of mystery and detective games and comics.",
-        # img="https://th.bing.com/th?q=Game+Station+Logo&w=120&h=120&c=1&rs=1&qlt=90&cb=1&dpr=1.9&pid=InlineBlock&mkt=en-US&cc=US&setlang=en&adlt=moderate&t=1&mw=247",
-        img="https://s3-us-east-2.amazonaws.com/maryville/wp-content/uploads/2021/03/04131433/MVU-BFADM-2020-Q4-Skyscraper-Future-of-Video-Games-Trends-Technology-Types-header-v2-1000x523.jpg",
+        img="https://th.bing.com/th?q=Game+Station+Logo&w=120&h=120&c=1&rs=1&qlt=90&cb=1&dpr=1.9&pid=InlineBlock&mkt=en-US&cc=US&setlang=en&adlt=moderate&t=1&mw=247",
+        # img="https://s3-us-east-2.amazonaws.com/maryville/wp-content/uploads/2021/03/04131433/MVU-BFADM-2020-Q4-Skyscraper-Future-of-Video-Games-Trends-Technology-Types-header-v2-1000x523.jpg",
         is_dm=False,
         server_server_members=[demo, freya, atlas,
                                helen, apollo, ares, phoebe]
