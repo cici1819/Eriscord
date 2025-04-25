@@ -3,6 +3,13 @@ import { useSelector, useDispatch } from 'react-redux';
 import { useParams, useHistory } from 'react-router-dom';
 import { getRegularServers } from '../../../store/serverReducer';
 import "./ServerDiscover.css"
+import defaultServerImage from '../../../img/two.png';
+
+
+
+
+
+
 function ServerDiscover() {
     const dispatch = useDispatch();
     const { channelId, serverId } = useParams();
@@ -34,7 +41,16 @@ function ServerDiscover() {
                     {servers?.map((server) => {
                         return (
                             <div className='server-display-card' onClick={() => { history.push('/channels/' + server.id) }}>
-                                <div className="all-server-img"> <img src={server.img} alt="server-logo" className='server-img' /></div>
+                                <div className="all-server-img">
+                                <img
+                                src={server.img}
+                                onError={(e) => {
+                                    e.target.onerror = null;
+                                    e.target.src = defaultServerImage;
+                                  }}
+                                alt="server-logo"
+                                className='server-img' />
+                                </div>
                                 <div className='all-server-name'> {server.name}</div>
                                 <div className='allserver-description'>{server.description}</div>
                                 <div className='user-in-serverList'>
